@@ -14,6 +14,8 @@ Integrantes del grupo:
 
 2- Samuel Rivera-
 
+3- Mi nombre es Mariano Cosco, tengo 22 años y vivo en Argentina - Buenos Aires, esta es mi primera experiencia en programación.
+
 Paginas de referencia:
 https://www.turismocity.com
 https://www.booking.com
