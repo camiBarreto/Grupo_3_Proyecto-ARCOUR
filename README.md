@@ -16,6 +16,8 @@ Integrantes del grupo:
 
 3- Mi nombre es Mariano Cosco, tengo 22 años y vivo en Argentina - Buenos Aires, esta es mi primera experiencia en programación.
 
+4-Mi nombre es Santiago Baya Casal, tengo 18 años, vivo en Argentina - Buenos Aires. Esta es mi primera experiencia en programación.
+
 Paginas de referencia:
 https://www.turismocity.com
 https://www.booking.com
