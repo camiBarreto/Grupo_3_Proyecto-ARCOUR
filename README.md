@@ -12,11 +12,13 @@ Público al que apunta: Turistas, mayores de 18 años, jubilados y aventureros q
 Integrantes del grupo:
 1- Mi nombre es Camila, tengo 28 años, vivo en Montevideo - Uruguay, en mi tiempo libre juego al volley. Es mi primera experiencia en programación.
 
-2- Samuel Rivera- tengo 17 años, vivo en Medellin, Colombia- Tengo experiencia básica previa en programación.
+2- Mi nombre es Samuel Rivera- tengo 17 años, vivo en Medellin, Colombia- Tengo experiencia básica previa en programación.
 
 3- Mi nombre es Mariano Cosco, tengo 22 años y vivo en Argentina - Buenos Aires, esta es mi primera experiencia en programación.
 
-4-Mi nombre es Santiago Baya Casal, tengo 18 años, vivo en Argentina - Buenos Aires. Esta es mi primera experiencia en programación.
+4- Mi nombre es Santiago Baya Casal, tengo 18 años, vivo en Argentina - Buenos Aires. Esta es mi primera experiencia en programación.
+
+5- Mi nombre es Noé Esteves, tengo 44 años, vivo en Buenos Aires, Argentina. Esta es mi primer experiencia en programación.
 
 Paginas de referencia:
 https://www.turismocity.com
