@@ -12,7 +12,7 @@ Público al que apunta: Turistas, mayores de 18 años, jubilados y aventureros q
 Integrantes del grupo:
 1- Mi nombre es Camila, tengo 28 años, vivo en Montevideo - Uruguay, en mi tiempo libre juego al volley. Es mi primera experiencia en programación.
 
-2- Samuel Rivera-
+2- Samuel Rivera- tengo 17 años, vivo en Medellin, Colombia- Tengo experiencia básica previa en programación.
 
 3- Mi nombre es Mariano Cosco, tengo 22 años y vivo en Argentina - Buenos Aires, esta es mi primera experiencia en programación.
 
