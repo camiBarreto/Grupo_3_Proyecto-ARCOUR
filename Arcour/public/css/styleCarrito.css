@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@300;400&family=Hind+Siliguri:wght@500&family=Roboto:wght@100;400&display=swap');
+
+header img {
+    width: 20vw;
+    margin: 1vw;
+}
+
+header i {
+    font-size: 3vw;
+    margin: 10px;
+    color: #1c1c62;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid #f3eb0e;
+
+}
+
+
+* {
+    font-family: 'Bitter', serif;
+}
+
+h2 {
+    color: #767676;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin: 20px;
+}
+
+h3 {
+    color: #767676;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 20px;
+    
+}
+
+section {
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.nombre-apellido, .pagos, .pedido{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: space-around;
+        width: 50%;
+        height: 240px;
+        border: solid #bccdd133;
+        background-color: #a0b7c717;
+        margin: 20px;
+        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.331);
+    }
+
+label {
+    color: #767676;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 5px;
+}    
+
+button{
+    color: white;
+    background: green;
+    width: 20vw;
+    height: 4vh;
+    border-radius: 6px;
+    border: white;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    font:arial;
+    margin-bottom: 50px;
+
+
+}
+
+    

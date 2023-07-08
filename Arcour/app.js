@@ -42,7 +42,7 @@ app.get("/register.html", (req, res) => {
 });
 
 app.get("/product-cart.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/product-cart.html"));
+  res.sendFile(path.join(__dirname, "./views/productCart.html"));
 });
 
 app.get("/product-detail.html", (req, res) => {
