@@ -6,7 +6,7 @@ header img {
 header i {
     font-size: 3vw;
     margin: 10px;
-    color: #1c1c62;
+    color: black;
 }
 
 
@@ -32,7 +32,7 @@ ul {
 }
 
 .main-nav {
-    background-color: #1c1c62;
+    background-color: #ffffff;
 
 }
 
@@ -47,25 +47,30 @@ ul {
     padding: 0;
     margin: 0;
     Font-Weight: bold;
+    border-top: solid rgb(163, 214, 242);;
+    background-color: #ededed;
 
 }
 
 .menu a {
     text-decoration: none;
-    color: white;
+    
+}
+
+.menu__link{
+font-size: 12px;
+color: black;
 }
 
 h2 {
-    color: #767676;
+    color: black;
     font-size: 22px;
-    letter-spacing: 1px;
     margin: 20px;
 }
 
 h3 {
     color: #767676;
     font-size: 18px;
-    letter-spacing: 1px;
     text-align: center;
     margin: 20px;
 
@@ -92,9 +97,8 @@ section {
 }
 
 label {
-    color: #767676;
+    color: black;
     font-size: 15px;
-    letter-spacing: 1px;
     margin: 5px;
 }
 
