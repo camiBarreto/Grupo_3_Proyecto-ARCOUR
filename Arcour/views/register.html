@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCOUR</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/Logo ARCOUR.ico">
+</head>
+<body>
+    <header>
+        <img src="/images/Logo ARCOUR.jpg" class="imagen" alt="">
+        <nav class="main-nav">
+            <ul class="menu" id="menu">
+                <li class="menu__item"><a href="" class="menu__link">HOME</a></li>
+                <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">DESTINOS<svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
+                    </svg></a>
+                <ul class="submenu">
+                    <li class="menu__item"><a href="montevideo" class="menu__link">Montevideo, Uruguay</a></li>
+                    <li class="menu__item"><a href="bogota" class="menu__link">Bogotá, Colombia</a></li>
+                    <li class="menu__item"><a href="buenosAires" class="menu__link">Buenos Aires, Argentina</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="menu__item"><a href="nuestra-empresa" class="menu__link">NUESTRA EMPRESA</a></li>
+                <li class="menu__item"><a href="empresas-amigas" class="menu__link">EMPRESAS AMIGAS</a></li>
+                <li class="menu__item"><a href="contacto" class="menu__link">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contenido-register">
+            
+            <div class="login-box">
+                <form action="/" method="get" class="register-form">
+                    <div class="datos">
+                        <input type="text" minlength="5" maxlength="25" placeholder="Nombre y Apellido" id="name" name="nombre">
+                    </div>
+
+                    <div class="datos">
+                        <input type="text" maxlength="15" placeholder="Nombre de Usuario" id="usuario" name="usuario">
+                    </div>
+
+                    <div class="datos">
+                        <input type="email" placeholder="E-mail" id="email" name="email">
+                    </div>
+
+                    <div class="datos">
+                        <p class="fecha">Fecha de Nacimiento</p>
+                        <input type="date" id="nacimiento" name="nacimiento">
+                    </div>
+
+                    <div class="datos">
+                        <input type="text" placeholder="Domicilio" id="domicilio" name="domicilio">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <script>src = "script.js"</script>
+    
+    <footer class="footer">Todos los Derechos Reservados ® 2023 ARCOUR</footer>
+</body>
+</html>

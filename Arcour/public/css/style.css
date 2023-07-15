@@ -81,10 +81,6 @@ footer {
   text-align: center;
 }
 
-.imagen {
-  margin-top: 0;
-  margin-left: 5.5cm;
-}
 
 .subtitulo {
   margin-top: -1cm;
@@ -172,6 +168,11 @@ footer {
   padding-left: 40px;
 }
 
+.lateral-link {
+  color: #222;
+  text-decoration: none;
+}
+
 .mostrar {
   margin-left: 0;
 }
@@ -202,6 +203,11 @@ li a {
 }
 
 @media (min-width: 1024px) {
+  .imagen {
+    margin-top: 0;
+    margin-left: 5.5cm;
+  }
+
   .nav-bar {
     display: none;
   }

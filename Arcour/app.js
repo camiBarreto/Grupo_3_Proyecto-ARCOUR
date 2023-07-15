@@ -9,43 +9,43 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/home.html"));
 });
 
-app.get("/contacto.html", (req, res) => {
+app.get("/contacto", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/contacto.html"));
 });
 
-app.get("/nuestra-empresa.html", (req, res) => {
+app.get("/nuestra-empresa", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/nuestra-empresa.html"));
 });
 
-app.get("/empresas-amigas.html", (req, res) => {
+app.get("/empresas-amigas", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/empresas-amigas.html"));
 });
 
-app.get("/buenosAires.html", (req, res) => {
+app.get("/buenosAires", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/buenosAires.html"));
 });
 
-app.get("/bogota.html", (req, res) => {
+app.get("/bogota", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/bogota.html"));
 });
 
-app.get("/montevideo.html", (req, res) => {
+app.get("/montevideo", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/montevideo.html"));
 });
 
-app.get("/login.html", (req, res) => {
+app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/login.html"));
 });
 
-app.get("/register.html", (req, res) => {
+app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/register.html"));
 });
 
-app.get("/product-cart.html", (req, res) => {
+app.get("/product-cart", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/productCart.html"));
 });
 
-app.get("/product-detail.html", (req, res) => {
+app.get("/product-detail", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/product-detail.html"));
 });
 
