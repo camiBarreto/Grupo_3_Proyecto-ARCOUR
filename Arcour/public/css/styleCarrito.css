@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@300;400&family=Hind+Siliguri:wght@500&family=Montserrat&family=Roboto:wght@100;400&display=swap');
+
+
 header img {
-    width: 20vw;
+    width: 30%;
     margin: 1vw;
 }
 
 header i {
     font-size: 3vw;
     margin: 10px;
-    color: black;
+    color: rgb(255, 255, 255);
+    
 }
 
+.iconos-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
 header {
     display: flex;
@@ -16,6 +26,7 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    background-color: #181B59;
 
 }
 
@@ -28,13 +39,9 @@ ul {
 }
 
 * {
-    font-family: 'arial';
+    font-family: 'Montserrat', sans-serif;
 }
 
-.main-nav {
-    background-color: #ffffff;
-
-}
 
 .menu {
     display: flex;
@@ -47,29 +54,52 @@ ul {
     padding: 0;
     margin: 0;
     Font-Weight: bold;
-    border-top: solid rgb(163, 214, 242);;
-    background-color: #ededed;
+    background-color: #F2F2F2;
 
+
+}
+
+.menu__item:hover {
+background-color: #dedddd;
 }
 
 .menu a {
     text-decoration: none;
-    
+    height: 40px;
+
+
 }
 
-.menu__link{
-font-size: 12px;
-color: black;
+.menu__link {
+    font-size: 12px;
+    color: #181B59;
+    display: flex;
+    align-items: center;
 }
+
+.burger-menu {
+    color: #ffffff;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px
+}
+
+
 
 h2 {
     color: black;
-    font-size: 22px;
+    font-size: 19px;
     margin: 20px;
+    text-align: center;
 }
 
 h3 {
-    color: #767676;
+    color: #000000;
     font-size: 18px;
     text-align: center;
     margin: 20px;
@@ -77,6 +107,9 @@ h3 {
 }
 
 section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 50px;
     box-sizing: border-box;
 }
@@ -88,12 +121,14 @@ section {
     flex-direction: column;
     align-content: flex-start;
     justify-content: space-around;
-    width: 50%;
-    height: 240px;
-    border: solid #bccdd133;
-    background-color: #a0b7c717;
-    margin: 20px;
-    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.331);
+    width: 90%;
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 10px rgb(183, 183, 183);
+
+}
+
+section input {
+    margin-bottom: 20px;
 }
 
 label {
@@ -105,7 +140,8 @@ label {
 button {
     color: white;
     background: green;
-    width: 20vw;
+    text-align: center;
+    width: 90%;
     height: 4vh;
     border-radius: 6px;
     border: white;
@@ -116,4 +152,56 @@ button {
     margin-bottom: 50px;
 
 
+}
+
+.main-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+i:hover {
+    color: #F2CB07;
+}
+
+button:hover {
+    background-color: #F2CB07;
+}
+
+
+/*cel*/
+
+@media (max-width: 361px) {
+
+    .main-nav {
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+}
+
+/* tablet */
+@media (min-width: 362px) and (max-width: 768px) {
+
+    .burger-menu {
+        display: none;
+    }
+    .burger-container {
+    display: none;}
+}
+
+/* tablet */
+@media (min-width: 769px) {
+
+    .burger-menu {
+        display: none;
+    }
+    .burger-container {
+    display: none;}
 }
