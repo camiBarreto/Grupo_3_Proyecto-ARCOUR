@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
+    <link rel="icon" href="/images/Logo-ARCOUR.ico">
     <link rel="stylesheet" href="/css/styleCarrito.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
 <body>
     <header>
 
-        <img src="images/Logo ARCOUR.png">
+        <img src="images/logo-ARCOUR.png">
         <div class="iconos-header">
             <i class="fas fa-user"></i>
             <i class="fas fa-shopping-cart"></i>
@@ -28,7 +29,7 @@
     </header>
     <nav class="main-nav">
         <ul class="menu" id="menu">
-            <li class="menu__item"><a href="" class="menu__link">HOME</a></li>
+            <li class="menu__item"><a href="/" class="menu__link">HOME</a></li>
             <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">DESTINOS <svg
                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
@@ -36,9 +37,9 @@
                             d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
                     </svg></a>
             </li>
-            <li class="menu__item"><a href="nuestra-empresa.html" class="menu__link">NUESTRA EMPRESA</a></li>
-            <li class="menu__item"><a href="empresas-amigas.html" class="menu__link">EMPRESAS AMIGAS</a></li>
-            <li class="menu__item"><a href="contacto.html" class="menu__link">CONTACTO</a></li>
+            <li class="menu__item"><a href="nuestra-empresa" class="menu__link">NUESTRA EMPRESA</a></li>
+            <li class="menu__item"><a href="empresas-amigas" class="menu__link">EMPRESAS AMIGAS</a></li>
+            <li class="menu__item"><a href="contacto" class="menu__link">CONTACTO</a></li>
         </ul>
         </div>
     </nav>
@@ -52,7 +53,7 @@
             <h2>Completa tus datos y finaliza la compra!</h2>
             <div class="nombre-apellido">
                 <h3>Titular de la reserva</h3>
-                <form action="/productCart.html" method="POST"></form>
+                <form action="/productCart" method="POST"></form>
                 <label for="nombres">Nombres</label>
                 <input type="text" name="nombres" id="nombres">
                 <label for="apellidos">Apellidos</label>
@@ -64,7 +65,7 @@
         <section>
             <div class="pagos">
                 <h2> Datos de la tarjeta</h2>
-                <form action="/productCart.html" method="POST"></form>
+                <form action="/productCart" method="POST"></form>
                 <label for="tarjeta">Numero de la tarjeta</label>
                 <input type="number" name="tarjeta" id="tarjeta">
                 <label for="titular">Titular de la tarjeta</label>

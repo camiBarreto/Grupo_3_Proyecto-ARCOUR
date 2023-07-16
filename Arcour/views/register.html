@@ -1,67 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARCOUR</title>
-    <link rel="stylesheet" href="/css/register.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/images/Logo ARCOUR.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arcour</title>
+        <link rel="icon" href="/images/Logo-ARCOUR.ico">
+        <link rel="stylesheet" href="/css/register.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    
 </head>
+    
 <body>
-    <header>
-        <img src="/images/Logo ARCOUR.jpg" class="imagen" alt="">
+        <header>
+    
+            <img src="images/logo-ARCOUR.png">
+            <div class="iconos-header">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <div class="burger-menu">
+                    <i class="fas fa-bars" style="color: white;"></i>
+                </div>
+            </div>
+        </header>
+
         <nav class="main-nav">
             <ul class="menu" id="menu">
-                <li class="menu__item"><a href="" class="menu__link">HOME</a></li>
-                <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">DESTINOS<svg
-                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
-                    </svg></a>
-                <ul class="submenu">
-                    <li class="menu__item"><a href="montevideo" class="menu__link">Montevideo, Uruguay</a></li>
-                    <li class="menu__item"><a href="bogota" class="menu__link">Bogotá, Colombia</a></li>
-                    <li class="menu__item"><a href="buenosAires" class="menu__link">Buenos Aires, Argentina</a>
-                    </li>
-                </ul>
+                <li class="menu__item"><a href="/" class="menu__link">HOME</a></li>
+                <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">DESTINOS <svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
+                        </svg></a>
                 </li>
                 <li class="menu__item"><a href="nuestra-empresa" class="menu__link">NUESTRA EMPRESA</a></li>
                 <li class="menu__item"><a href="empresas-amigas" class="menu__link">EMPRESAS AMIGAS</a></li>
                 <li class="menu__item"><a href="contacto" class="menu__link">CONTACTO</a></li>
             </ul>
+            </div>
         </nav>
-    </header>
 
     <main>
-        <section class="contenido-register">
-            
+        <img class="imagen-header" src="images/punta-del-este.jpg">
+        <div class="contenido-register">
+
             <div class="login-box">
+                <h2 class="register-subtitulo">01 Datos Personales</h2>
                 <form action="/" method="get" class="register-form">
-                    <div class="datos">
-                        <input type="text" minlength="5" maxlength="25" placeholder="Nombre y Apellido" id="name" name="nombre">
+
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="name" title>Nombre</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="text" maxlength="25" id="name" name="nombre">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="apellidos" title>Apellidos</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="text" maxlength="15" id="apellidos" name="apellidos">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="datos">
-                        <input type="text" maxlength="15" placeholder="Nombre de Usuario" id="usuario" name="usuario">
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="gender">Género:</label>
+                                </div>
+                                <div class="ant-input">
+                                    <select name="genero" id="gender">
+                                        <option value="masculino" selected>Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="id" title>Número de documento</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="number" maxlength="15"  id="id" name="documento">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="datos">
-                        <input type="email" placeholder="E-mail" id="email" name="email">
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="fecha" title>Fecha de nacimiento</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="date" id="fecha" name="fecha-nacimiento">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="cel" title>Celular</label>
+                                </div>
+                                <div class="ant-input">
+                                <input type="text" maxlength="15" id="cel" name="numero-celular">
+                                </div>
+                            </div>
+                        </div>
+
+                   
                     </div>
 
-                    <div class="datos">
-                        <p class="fecha">Fecha de Nacimiento</p>
-                        <input type="date" id="nacimiento" name="nacimiento">
+                    <h2 class="register-subtitulo2">02 Datos de Acceso</h2>
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="mail" title>Correo electrónico</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="email" maxlength="40" id="mail" name="correo-mail">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="mail-re" title>Confirmar correo electrónico</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="email" maxlength="40" id="mail-re" name="correo-mail-reconfirm">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="datos">
-                        <input type="text" placeholder="Domicilio" id="domicilio" name="domicilio">
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                <label for="pass">Contraseña</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="password" maxlength="15" id="pass" name="contraseña">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="pass-re" title>Confirmar contraseña</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input type="password" maxlength="15"  id="pass-re" name="contraseña-reconfirm">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-            </div>
-        </section>
+
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="pais" title>País</label>
+                                </div>
+                                <div class="ant-input">
+                                    <select name="pais" id="pais">
+                                        <option value="argentina" selected>Argentina</option>
+                                        <option value="colombia">Colombia</option>
+                                        <option value="uruguay">Uruguay</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="aereo" title>Aerolínea preferida</label>
+                                </div>
+                                <div class="ant-input">
+                                    <select name="aerolinea" id="aereo">
+                                        <option value="latam" selected>LATAM Airlines</option>
+                                        <option value="avianca">Avianca</option>
+                                        <option value="">Opcion</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                   
+                    </div>
+                </form>
+        </div>
     </main>
 
     <script>src = "script.js"</script>

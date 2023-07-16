@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@300;400&family=Hind+Siliguri:wght@500&family=Montserrat&family=Roboto:wght@100;400&display=swap');
 
+* {
+    font-family: 'Montserrat', sans-serif;
+}
 
 header img {
     width: 30%;
@@ -37,11 +40,6 @@ ul {
 .imagen-header {
     width: 100%;
 }
-
-* {
-    font-family: 'Montserrat', sans-serif;
-}
-
 
 .menu {
     display: flex;
