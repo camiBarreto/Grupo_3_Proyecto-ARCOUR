@@ -17,11 +17,16 @@ header i {
     
 }
 
+i:hover {
+  color: #F2CB07;
+}
+
 .iconos-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 20px;
 }
 
 header {
