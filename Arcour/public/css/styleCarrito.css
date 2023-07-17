@@ -13,7 +13,7 @@ header i {
     font-size: 3vw;
     margin: 10px;
     color: rgb(255, 255, 255);
-    
+
 }
 
 .iconos-header {
@@ -59,7 +59,7 @@ ul {
 }
 
 .menu__item:hover {
-background-color: #dedddd;
+    background-color: #dedddd;
 }
 
 .menu a {
@@ -88,20 +88,18 @@ background-color: #dedddd;
     margin: 10px
 }
 
-
-
-h2 {
-    color: black;
-    font-size: 19px;
-    margin: 20px;
-    text-align: center;
-}
-
 h3 {
-    color: #000000;
+    color: white;
     font-size: 18px;
     text-align: center;
-    margin: 20px;
+    background-color: #181B59;
+    height: 40px;
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    margin-bottom: 15px;
 
 }
 
@@ -109,7 +107,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     box-sizing: border-box;
 }
 
@@ -122,8 +120,17 @@ section {
     justify-content: space-around;
     width: 90%;
     background-color: #F2F2F2;
-    box-shadow: 0px 0px 10px rgb(183, 183, 183);
+    border: black 1px solid;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 
+}
+
+h6 {
+    margin: 0px;
+}
+
+h2 {
+    text-align: center;
 }
 
 section input {
@@ -167,6 +174,24 @@ button:hover {
     background-color: #F2CB07;
 }
 
+footer {
+    padding: 0px;
+    margin: 0px;
+    background-color: #000000;
+}
+
+.login-main {
+    margin-top: 15px;
+}
+
+.titulos-footer {
+    display: flex;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
 /*cel*/
 
@@ -191,8 +216,10 @@ button:hover {
     .burger-menu {
         display: none;
     }
+
     .burger-container {
-    display: none;}
+        display: none;
+    }
 }
 
 /* tablet */
@@ -201,6 +228,8 @@ button:hover {
     .burger-menu {
         display: none;
     }
+
     .burger-container {
-    display: none;}
+        display: none;
+    }
 }
