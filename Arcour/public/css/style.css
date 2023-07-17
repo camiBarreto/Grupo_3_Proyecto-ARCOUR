@@ -1,34 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@300;400&family=Hind+Siliguri:wght@500&family=Montserrat&family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@300;400&family=Hind+Siliguri:wght@500&family=Montserrat&family=Roboto:wght@100;400&display=swap");
 
 * {
-  font-family: 'Montserrat', sans-serif;
-}
-
-* {
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 
+header img {
+  width: 30%;
+  margin: 1vw;
+}
+
+header i {
+  font-size: 3vw;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.iconos-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 header {
-  .link2 {
-    margin-left: 2%;
-    margin-top: 150px;
-    color: black;
-    text-decoration: none;
-    background-color: transparent;
-    font-weight: semibold;
-    color: #444;
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
-    border: 2px solid #eee;
-    border-radius: 0.5rem;
-    box-shadow: 0.5rem 0.5rem 1rem #ccc, -0.5rem -0.5rem 1rem #fff;
-  }
-  .btn:hover {
-    box-shadow: 0.5rem 0.5rem 1rem #fff, -0.5rem -0.5rem 1rem #ccc;
-  }
-  .btn:active {
-    box-shadow: inset 0.2rem 0.2rem 1rem #fff, -0.2rem -0.2rem 1rem #ccc;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181b59;
+}
+
+ul {
+  list-style: none;
+}
+
+.imagen-header {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+.menu__item:hover {
+  background-color: #dedddd;
+}
+
+.menu a {
+  text-decoration: none;
+  height: 40px;
+}
+
+.menu__link {
+  font-size: 12px;
+  color: #181b59;
+  display: flex;
+  align-items: center;
 }
 
 .body {
@@ -82,7 +121,6 @@ header {
 footer {
   text-align: center;
 }
-
 
 .subtitulo {
   margin-top: -1cm;
@@ -255,4 +293,255 @@ li a {
   margin-top: 2%;
   padding: 7px;
   margin-bottom: 3%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@300;400&family=Hind+Siliguri:wght@500&family=Montserrat&family=Roboto:wght@100;400&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+header img {
+  width: 30%;
+  margin: 1vw;
+}
+
+header i {
+  font-size: 3vw;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+}
+
+i:hover {
+  color: #f2cb07;
+}
+
+.iconos-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181b59;
+}
+
+ul {
+  list-style: none;
+}
+
+.imagen-header {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+.menu__item:hover {
+  background-color: #dedddd;
+}
+
+.menu a {
+  text-decoration: none;
+  height: 40px;
+}
+
+.menu__link {
+  font-size: 12px;
+  color: #181b59;
+  display: flex;
+  align-items: center;
+}
+
+.burger-menu {
+  color: #ffffff;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+body {
+  margin: 0px;
+}
+
+main {
+  background-color: #fff;
+}
+
+.contenido-register {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 0 0.5rem;
+}
+
+.login-box {
+  padding: 1rem;
+}
+
+.register-subtitulo {
+  font-size: 1.4em;
+  color: black;
+}
+.register-subtitulo2 {
+  font-size: 1.4rem;
+  color: black;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: "tnum", "tnum";
+}
+
+.ant-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.ant-col {
+  width: 100%;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.ant-inside {
+  position: relative;
+  height: auto;
+  zoom: 1;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: "tnum", "tnum";
+  margin: 0 0 24px;
+  vertical-align: top;
+}
+
+.ant-label {
+  position: absolute;
+  z-index: 9;
+  top: -4px;
+  left: 5px;
+  margin: 0px;
+  height: 18px;
+  line-height: 0em;
+  text-align: left;
+  white-space: normal;
+}
+
+form label {
+  position: relative;
+  padding: 0px 5px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+}
+
+select {
+  width: 100%;
+  border-radius: 10px;
+  height: 4vh;
+}
+
+.ant-input {
+  position: relative;
+  line-height: 40px;
+  zoom: 1;
+}
+
+.ant-input input {
+  height: 2.5em;
+  border: 1px solid #797979;
+  border-radius: 5px;
+  max-height: 2.62em;
+  margin: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: "tnum", "tnum";
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  background-image: none;
+}
+
+/*cel*/
+
+@media (max-width: 361px) {
+  .main-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .ant-row {
+    display: flex;
+    flex-flow: nowrap;
+  }
+
+  .ant-col {
+    padding: 10px;
+  }
+}
+
+/* tablet */
+@media (min-width: 362px) and (max-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+  .burger-container {
+    display: none;
+  }
+}
+
+/* tablet */
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+  .burger-container {
+    display: none;
+  }
 }
