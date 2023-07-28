@@ -287,7 +287,8 @@ li a {
 .productos,
 .carrito,
 .registro,
-.login {
+.login,
+.admin {
   background-color: rgb(135, 206, 250);
   margin-right: 24px;
   margin-top: 2%;
@@ -381,7 +382,6 @@ ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  
 }
 
 body {
