@@ -1,33 +1,32 @@
 const path = require("path");
 
-const controllerMain= { //controlador para todas las vistas del home
-    home: (req, res) => {
-            res.sendFile(path.join(__dirname, "../views/main/home.html"));
-          },
-          
-    contact: (req, res) => {
-        res.sendFile(path.join(__dirname, "../views/main/contacto.html"));
-      },
+const controllerMain = { //controlador para todas las vistas del home
+  home: (req, res) => {
+    res.render("home");
+  },
 
-    aboutUs: (req, res) => {
-      res.sendFile(path.join(__dirname, "../views/main/nuestra-empresa.html"));
-    },
+  contact: (req, res) => {
+    res.render("contacto");
+  },
+  aboutUs: (req, res) => {
+    res.render("nuestra-empresa");
+  },
 
-    allies: (req, res) => {
-      res.sendFile(path.join(__dirname, "../views/main/empresas-amigas.html"));
-    },
+  allies: (req, res) => {
+    res.render("empresas-amigas");
+  },
 
-    buenosAires: (req, res) => {
-      res.sendFile(path.join(__dirname, "../views/main/buenosAires.html"));
-    },
+  buenosAires: (req, res) => {
+    res.render("buenosAires");
+  },
 
-    bogota: (req, res) => {
-      res.sendFile(path.join(__dirname, "../views/main/bogota.html"));
-    },
+  bogota: (req, res) => {
+    res.render("bogota");
+  },
 
-    montevideo: (req, res) => {
-      res.sendFile(path.join(__dirname, "../views/main/montevideo.html"));
-    },
+  montevideo: (req, res) => {
+    res.render("montevideo");
+  },
 }
 
 module.exports = controllerMain;
