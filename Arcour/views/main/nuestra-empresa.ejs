@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARCOUR</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/images/logo-ARCOUR.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <%- include("../partials/head.ejs") %>
 </head>
+
+<header>
+    <%- include("../partials/header.ejs") %>
+</header>
+
+<nav>
+    <%- include("../partials/navBar.ejs") %>
+</nav>
 
 <body>
     <img src="/images/logo-ARCOUR.jpg" class="imagen" alt="">
@@ -35,6 +37,8 @@
 
 </body>
 <br><br><br><br><br><br>
-<footer class="footer">Todos los Derechos Reservados ® 2023 ARCOUR</footer>
+<footer>
+    <%- include("../partials/footer.ejs") %>
+</footer>
 
 </html>

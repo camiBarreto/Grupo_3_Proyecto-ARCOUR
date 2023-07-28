@@ -16,32 +16,10 @@
 
 <body>
     <header>
-
-        <img src="/images/arcour-fondo-blanco.png">
-        <div class="iconos-header">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-shopping-cart"></i>
-            <div class="burger-menu">
-                <i class="fas fa-bars" style="color: white;"></i>
-            </div>
-        </div>
-
+        <%- include("../partials/header.ejs") %>
     </header>
-    <nav class="main-nav">
-        <ul class="menu" id="menu">
-            <li class="menu__item"><a href="/" class="menu__link">HOME</a></li>
-            <li class="menu__item container-submenu"><a href="#" class="menu__link submenu-btn">DESTINOS <svg
-                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z" />
-                    </svg></a>
-            </li>
-            <li class="menu__item"><a href="nuestra-empresa" class="menu__link">NUESTRA EMPRESA</a></li>
-            <li class="menu__item"><a href="empresas-amigas" class="menu__link">EMPRESAS AMIGAS</a></li>
-            <li class="menu__item"><a href="contacto" class="menu__link">CONTACTO</a></li>
-        </ul>
-        </div>
+    <nav>
+        <%- include("../partials/navBar.ejs") %>
     </nav>
 
 </body>
@@ -95,12 +73,7 @@
     </div>
 </main>
 <footer>
-    <div class="titulos-footer">
-        <h6><b>ARCOUR</b>/ ARCOUR International cb, Box 2018,912 31 Uppsala, Arg. Org no. 756531-1237, VAT no.
-            MI196588136521</h6>
-        <br>
-        <h6>© 2023 ARCOUR. Todos los derechos reservados.</h6>
-    </div>
+    <%- include("../partials/footer.ejs") %>
 </footer>
 
 
