@@ -1,7 +1,10 @@
 const express = require("express");
 const path = require("path");
 const dotenv = require("dotenv").config();
+const methodOverride = require("method-override");
+
 const port = process.env.PORT || 3000;
+
 const mainRouter = require("./routers/mainRouter");
 const userRouter = require("./routers/usersRouter");
 const productRouter = require("./routers/productRouter");
@@ -11,6 +14,7 @@ const app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
+app.use(methodOverride("_method"));
 
 app.set("view engine", "ejs");
 
