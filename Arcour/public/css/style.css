@@ -32,12 +32,12 @@ header {
   background-color: #181b59;
 }
 
-ul {
-  list-style: none;
+i:hover {
+  color: lightblue;
 }
 
-.imagen-header {
-  width: 100%;
+ul {
+  list-style: none;
 }
 
 .menu {
@@ -68,6 +68,11 @@ ul {
   color: #181b59;
   display: flex;
   align-items: center;
+}
+
+.bi-arrow-down-square-fill {
+  padding-left: 0.08cm;
+  margin-bottom: -1.8%;
 }
 
 .body {
@@ -132,36 +137,6 @@ footer {
   color: rgb(0, 0, 100);
 }
 
-.valores {
-  color: green;
-  float: left;
-  padding-left: 5px;
-  padding-right: 10px;
-  margin-left: 1%;
-  margin-top: 10px;
-  color: black;
-  text-decoration: none;
-  background-color: transparent;
-  font-weight: semibold;
-  color: #444;
-  font-size: 1rem;
-  padding: 1rem 1.5rem;
-  border: 2px solid #eee;
-  border-radius: 0.5rem;
-  box-shadow: 0.5rem 0.5rem 1rem #ccc, -0.5rem -0.5rem 1rem #fff;
-}
-.btn:hover {
-  box-shadow: 0.5rem 0.5rem 1rem #fff, -0.5rem -0.5rem 1rem #ccc;
-}
-.btn:active {
-  box-shadow: inset 0.2rem 0.2rem 1rem #fff, -0.2rem -0.2rem 1rem #ccc;
-}
-
-.bi-arrow-down-square-fill {
-  padding-left: 0.08cm;
-  margin-bottom: -1.8%;
-}
-
 .nav-bar {
   background: #2b01ff;
   padding: 20px;
@@ -192,23 +167,10 @@ footer {
   font-size: 1.2em;
 }
 
-.menu__link:hover {
-  background: lightblue;
-}
-
-.submenu .menu__link:hover {
-  background: lightblue;
-}
-
 .submenu {
   height: 0;
   overflow: hidden;
   transition: all 0.3s;
-}
-
-.submenu .menu__link {
-  background: lightblue;
-  padding-left: 40px;
 }
 
 .lateral-link {
@@ -278,25 +240,6 @@ li a {
 
 #titulo {
   text-align: center;
-}
-
-.contenedor-lateral {
-  width: 25%;
-  display: grid;
-  justify-content: right;
-  margin-left: 75%;
-  text-align: center;
-}
-.productos,
-.carrito,
-.registro,
-.login,
-.admin {
-  background-color: rgb(135, 206, 250);
-  margin-right: 24px;
-  margin-top: 2%;
-  padding: 7px;
-  margin-bottom: 3%;
 }
 
 header img {
@@ -388,7 +331,7 @@ main {
 }
 footer {
   background-color: black;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: 20px;
@@ -607,9 +550,6 @@ h2 {
 }
 .m-a-a {
   padding-right: 5px;
-}
-i:hover {
-  color: #f2cb07;
 }
 
 button:hover {

@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcour</title>
+    <title>ARCOUR</title>
     <link rel="icon" href="/images/Logo-ARCOUR.ico">
-    <link rel="stylesheet" href="/css/register.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 
 <body>
@@ -28,7 +27,7 @@
         <div class="contenido-register">
 
             <div class="login-box">
-                <h1>Formulario de Carga y Edición de Productos</h1>
+                <h2 id="titulo">Formulario de Carga y Edición de Productos</h2>
                 <h2 class="register-subtitulo">01 Datos de la Empresa</h2>
                 <form action="/" method="get" class="register-form">
 
@@ -50,7 +49,7 @@
                                     <label for="apellidos" title>País de Orígen</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="pais" name="pais">
+                                    <input class="input-box" type="text" maxlength="15" id="apellidos" name="apellidos">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +60,7 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="mail" title>Correo electrónico</label>
+                                    <label for="mail" title>Correo Empresarial</label>
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="email" maxlength="40" id="mail" name="correo-mail">
@@ -72,7 +71,7 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="mail-re" title>Confirmar correo electrónico</label>
+                                    <label for="mail-re" title>Contraseña</label>
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="email" maxlength="40" id="mail-re"
@@ -86,7 +85,7 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="pass">Contraseña</label>
+                                    <label for="pass">Monto del pasaje agregado</label>
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="password" maxlength="15" id="pass" name="contraseña">
@@ -97,7 +96,7 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="pass-re" title>Confirmar contraseña</label>
+                                    <label for="pass-re" title>Confirmación de Monto</label>
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="password" maxlength="15" id="pass-re"
@@ -126,32 +125,32 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="aereo" title>Monto del pasaje agregado</label>
+                                    <label for="aereo" title>Aerolínea que agrega la Nueva Ruta</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="pais" name="pais">
+                                    <select name="aerolinea" id="aereo">
+                                        <option value="latam" selected>LATAM Airlines</option>
+                                        <option value="avianca">Avianca</option>
+                                        <option value="aero-ar">Aerolíneas Argentinas</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="ant-col">
-                            <div class="ant-inside">
-                                <div class="ant-label">
-                                    <label for="aereo" title>Confirmación de Monto</label>
-                                </div>
-                                <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="pais" name="pais">
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
 
                     <h2 class="register-subtitulo2">03 Observaciones</h2>
-                    <div class="ant-input">
-                        <input class="input-box" type="text" maxlength="500" id="pais" name="pais">
+
+                    <div class="ant-col">
+                        <div class="ant-inside">
+                            <div class="ant-label">
+                            </div>
+                            <div class="ant-input">
+                                <input class="input-box" type="text" maxlength="50">
+                            </div>
+                        </div>
                     </div>
+
                     <div class="ant-row">
                         <div class="ant-col">
                             <div class="ant-inside">
@@ -164,7 +163,8 @@
                                         <span class="tyc">
                                             Acepto<a target="_blank" class="link-tc" href="">&nbsp;Términos y
                                                 Condiciones&nbsp;</a>
-                                            y<a target="_blank" class="link-tc" href="">&nbsp;políticas de protección de
+                                            y<a target="_blank" class="link-tc" href="">&nbsp;políticas de
+                                                protección de
                                                 datos&nbsp;</a>
                                         </span>
                                     </label>
@@ -175,14 +175,12 @@
 
                     <div class="crear-cuenta">
                         <button title="Crear Cuenta" type="submit" class="boton-submit">
-                            <span>Ingresar Moficicaciones Autorizadas</span>
+                            <span>Confirmar Modificación Aprobada</span>
                         </button>
                     </div>
                 </form>
             </div>
     </main>
-
-    <script>src = "script.js"</script>
 
     <footer>
         <%- include("../partials/footer.ejs") %>

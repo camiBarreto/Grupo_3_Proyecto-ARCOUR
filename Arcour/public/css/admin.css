@@ -37,12 +37,12 @@ header {
   background-color: #181b59;
 }
 
-ul {
-  list-style: none;
+#titulo {
+  text-align: center;
 }
 
-.imagen-header {
-  width: 100%;
+ul {
+  list-style: none;
 }
 
 .menu {
@@ -66,7 +66,6 @@ ul {
 .menu a {
   text-decoration: none;
   height: 40px;
-  padding: 0px 20px 0px 20px;
 }
 
 .menu__link {
@@ -74,6 +73,7 @@ ul {
   color: #181b59;
   display: flex;
   align-items: center;
+  padding: 20px;
 }
 
 .burger-menu {
@@ -292,12 +292,24 @@ footer {
   background-color: black;
   text-align: center;
   position: relative;
+  bottom: 0;
   width: 100%;
   height: 20px;
   color: white;
 }
 
-/*cel*/
+.titulos-footer {
+  display: flex;
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h6 {
+  margin: 0px;
+}
 
 @media (max-width: 361px) {
   .main-nav {
