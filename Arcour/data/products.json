@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "usuario": "Pedro",
+    "nueva-empresa": "xxxx",
+    "nuevo-viaje": "fff",
+    "nuevo-destino": "zzzz",
+    "promociones": true,
+    "viajero-frecuente": true,
+    "miles": 333333,
+    "admin": false,
+    "precio": 222
+  },
+
+  {
+    "id": 2,
+    "usuario": "Edgardo",
+    "nueva-empresa": "xxxx",
+    "nuevo-viaje": "fff",
+    "nuevo-destino": "zzzz",
+    "promociones": true,
+    "viajero-frecuente": true,
+    "miles": 333333,
+    "admin": false,
+    "precio": 222
+  },
+
+  {
+    "id": 3,
+    "usuario": "Ignacio",
+    "nueva-empresa": "xxxx",
+    "nuevo-viaje": "fff",
+    "nuevo-destino": "zzzz",
+    "promociones": true,
+    "viajero-frecuente": true,
+    "miles": 333333,
+    "admin": false,
+    "precio": 222
+  },
+
+  {
+    "id": 4,
+    "usuario": "Rocio",
+    "nueva-empresa": "xxxx",
+    "nuevo-viaje": "fff",
+    "nuevo-destino": "zzzz",
+    "promociones": true,
+    "viajero-frecuente": true,
+    "miles": 333333,
+    "admin": false,
+    "precio": 222
+  }
+]
