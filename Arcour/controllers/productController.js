@@ -28,7 +28,7 @@ const controllerProduct = {
     const newProduct = {
       title: req.body.title,
       price: req.body.price,
-      talle: req.body.talle,
+      img: req.file.filename
     };
 
     const createdProduct = productModel.createProduct(newProduct);
