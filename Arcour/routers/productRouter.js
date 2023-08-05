@@ -31,6 +31,6 @@ router.get("/:id/detail", controllerProduct.getDetail);
 //@ GET /products/create
 router.get("/create", controllerProduct.getCreate);
 //@ POST /products
-router.post("/", upload.any('img') ,controllerProduct.postProduct);
+router.post("/", controllerProduct.postProduct);
 
 module.exports = router;

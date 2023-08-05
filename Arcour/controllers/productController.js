@@ -19,8 +19,8 @@ const controllerProduct = {
     const selectedProduct = productModel.findById(productId);
     res.render("productDetail", { product: selectedProduct });
   },
-  getCreate: (req, res) => {
-    res.render("createProducts");
+  getCreate: (req,res) => {
+    res.render("createProduct")
   },
   postProduct: (req, res) => {
     console.log(req.body);
