@@ -37,3 +37,9 @@ app.listen(port || 3000, () => {
       3000
   );
 });
+
+
+/*  1. Controller de User que se conecte con los modelos respectivos, para manejar los datos de users.json.
+    2. Crear la vista de formulario de creacion de productos ejs. 
+    3. Conectar el product-detail con los datos de los productos para mostrarlos de forma dinámica.
+*/
