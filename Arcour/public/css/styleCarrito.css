@@ -156,8 +156,6 @@ label {
 button {
   cursor: pointer;
   margin: 0px;
-  padding-right: 2rem;
-  padding-left: 2rem;
   width: 25vw;
   height: 32px;
   border: 0px;
@@ -166,6 +164,7 @@ button {
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
   background-color: #292fa2;
   transition: color 300ms;
+  margin-top:10px
 }
 
 
@@ -213,6 +212,10 @@ footer {
   .main-nav {
     display: none;
   }
+  
+  .botones-ingresar {
+    font-size: 10px;
+}
 }
 
 @media (min-width: 769px) {
@@ -230,6 +233,9 @@ footer {
   .burger-container {
     display: none;
   }
+  .botones-ingresar {
+    font-size: 12px;
+}
 }
 
 /* tablet */
