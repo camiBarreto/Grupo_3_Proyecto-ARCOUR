@@ -1,1 +1,34 @@
-
+[
+    {
+      "id": 1,
+      "usuario": "Pedro",
+      "password": "**",
+      "viajero-frecuente": true,
+      "miles": 333333
+    },
+  
+    {
+      "id": 2,
+      "usuario": "Edgardo",
+      "password": "**",
+      "viajero-frecuente": true,
+      "miles": 333333
+    },
+  
+    {
+      "id": 3,
+      "usuario": "Ignacio",
+      "password": "**",
+      "viajero-frecuente": true,
+      "miles": 333333
+    },
+  
+    {
+      "id": 4,
+      "usuario": "Rocio",
+      "password": "**",
+      "viajero-frecuente": true,
+      "miles": 333333
+    }
+  ]
+  

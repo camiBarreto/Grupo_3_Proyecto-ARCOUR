@@ -39,6 +39,7 @@ const modelo = {
 
     return newProduct;
   },
+  
 };
 
 module.exports = modelo;

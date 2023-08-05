@@ -1,53 +1,52 @@
 [
   {
-    "id": 1,
-    "usuario": "Pedro",
-    "nueva-empresa": "xxxx",
-    "nuevo-viaje": "fff",
-    "nuevo-destino": "zzzz",
-    "promociones": true,
-    "viajero-frecuente": true,
-    "miles": 333333,
-    "admin": false,
-    "precio": 222
+    "flight_number": 7211,
+    "departure_airport": "RHL",
+    "arrival_airport": "CCK",
+    "departure_date": "12/15/2022",
+    "arrival_date": "1/27/2022",
+    "departure_time": "8:54 AM",
+    "arrival_time": "9:58 AM",
+    "ticket_price": 329.95
   },
-
   {
-    "id": 2,
-    "usuario": "Edgardo",
-    "nueva-empresa": "xxxx",
-    "nuevo-viaje": "fff",
-    "nuevo-destino": "zzzz",
-    "promociones": true,
-    "viajero-frecuente": true,
-    "miles": 333333,
-    "admin": false,
-    "precio": 222
+    "flight_number": 7376,
+    "departure_airport": "KPO",
+    "arrival_airport": "BYR",
+    "departure_date": "4/28/2022",
+    "arrival_date": "7/22/2022",
+    "departure_time": "3:38 AM",
+    "arrival_time": "2:39 AM",
+    "ticket_price": 676.19
   },
-
   {
-    "id": 3,
-    "usuario": "Ignacio",
-    "nueva-empresa": "xxxx",
-    "nuevo-viaje": "fff",
-    "nuevo-destino": "zzzz",
-    "promociones": true,
-    "viajero-frecuente": true,
-    "miles": 333333,
-    "admin": false,
-    "precio": 222
+    "flight_number": 2372,
+    "departure_airport": "MSY",
+    "arrival_airport": "AJI",
+    "departure_date": "5/25/2022",
+    "arrival_date": "11/30/2022",
+    "departure_time": "12:58 PM",
+    "arrival_time": "8:46 PM",
+    "ticket_price": 767.53
   },
-
   {
-    "id": 4,
-    "usuario": "Rocio",
-    "nueva-empresa": "xxxx",
-    "nuevo-viaje": "fff",
-    "nuevo-destino": "zzzz",
-    "promociones": true,
-    "viajero-frecuente": true,
-    "miles": 333333,
-    "admin": false,
-    "precio": 222
+    "flight_number": 8321,
+    "departure_airport": "ZLX",
+    "arrival_airport": "PDI",
+    "departure_date": "5/9/2022",
+    "arrival_date": "2/9/2022",
+    "departure_time": "9:36 PM",
+    "arrival_time": "3:03 AM",
+    "ticket_price": 678.32
+  },
+  {
+    "flight_number": 9671,
+    "departure_airport": "PKZ",
+    "arrival_airport": "YEK",
+    "departure_date": "2/4/2022",
+    "arrival_date": "7/23/2022",
+    "departure_time": "9:13 PM",
+    "arrival_time": "5:41 PM",
+    "ticket_price": 877.15
   }
 ]

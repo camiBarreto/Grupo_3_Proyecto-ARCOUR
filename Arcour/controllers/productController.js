@@ -20,15 +20,19 @@ const controllerProduct = {
     res.render("productDetail", { product: selectedProduct });
   },
   getCreate: (req, res) => {
-    res.render("createProduct");
+    res.render("createProducts");
   },
   postProduct: (req, res) => {
     console.log(req.body);
 
     const newProduct = {
-      title: req.body.title,
-      price: req.body.price,
-      img: req.file.filename
+      departure_airport:req.body.a ,
+      arrival_airport:req.body.a ,
+      departure_date:req.body.a ,
+      arrival_date:req.body.a ,
+      departure_time:req.body.a ,
+      arrival_time:req.body.a ,
+      ticket_price:req.body.a 
     };
 
     const createdProduct = productModel.createProduct(newProduct);

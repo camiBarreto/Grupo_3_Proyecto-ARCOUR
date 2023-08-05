@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "empresa": "Pedro",
+        "correo empresarial": "",
+        "password": "**",
+        "pais de origen": "",
+        "aerolinea": "",
+        "pais ruta": ""
+    },
+    {
+        "id": 2,
+        "empresa": "Pedro",
+        "correo empresarial": "",
+        "password": "**",
+        "pais de origen": "",
+        "aerolinea": "",
+        "pais ruta": ""
+    },
+    {
+        "id": 3,
+        "empresa": "Pedro",
+        "correo empresarial": "",
+        "password": "**",
+        "pais de origen": "",
+        "aerolinea": "",
+        "pais ruta": ""
+    },
+    {
+        "id": 4,
+        "empresa": "Pedro",
+        "correo empresarial": "",
+        "password": "**",
+        "pais de origen": "",
+        "aerolinea": "",
+        "pais ruta": ""
+    },
+    {
+        "id": 5,
+        "empresa": "Pedro",
+        "correo empresarial": "",
+        "password": "**",
+        "pais de origen": "",
+        "aerolinea": "",
+        "pais ruta": ""
+    }
+]
