@@ -124,7 +124,7 @@ section {
 .pedido {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 50%;
   background-color: #f2f2f2;
   border: black 1px solid;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
@@ -149,15 +149,16 @@ label {
 }
 
 .botones-ingresar {
+  display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 button {
   cursor: pointer;
-  margin: 0px;
-  width: 25vw;
-  height: 32px;
+  margin: 30px;
+  width: 45vw;
+  height: 5vh;
   border: 0px;
   border-radius: 50px;
   color: #fff;
@@ -167,6 +168,27 @@ button {
   margin-top:10px
 }
 
+.link-register {
+  text-align: center;
+  padding: 20px;
+}
+
+.tyc {
+  padding-right: 8px;
+  padding-left: 8px;
+  width: 100%;
+}
+
+.link-tc {
+  color: #292fa2;
+  text-decoration: underline;
+  transition: color 300ms;
+}
+
+.link-tc:hover {
+  color: #f2cb07;
+  text-decoration: none;
+}
 
 .main-flex {
   display: flex;
@@ -225,7 +247,7 @@ footer {
 }
 
 /* tablet */
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 525px) and (max-width: 768px) {
   .burger-menu {
     display: none;
   }
@@ -235,6 +257,10 @@ footer {
   }
   .botones-ingresar {
     font-size: 12px;
+}
+button {
+  width: 25vw;
+  height: 5vh;
 }
 }
 
@@ -246,5 +272,24 @@ footer {
 
   .burger-container {
     display: none;
+  }
+  button {
+    width: 20vw;
+    height: 4vh;
+  }
+}
+
+/*Monitor*/
+@media (min-width: 1000px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .burger-container {
+    display: none;
+  }
+  button {
+    width: 15vw;
+    height: 4vh;
   }
 }

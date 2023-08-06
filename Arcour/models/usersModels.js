@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const modelo = {
-  fileRoute: path.join(__dirname, "../data/admin.json"),
+  fileRoute: path.join(__dirname, "../data/users.json"),
 
   findAll: () => {
     // Buscamos el contenido del archivo json

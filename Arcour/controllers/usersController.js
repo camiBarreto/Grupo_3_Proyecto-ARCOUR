@@ -1,4 +1,5 @@
 const path = require("path");
+const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 
 const controllerUser = {
@@ -6,7 +7,22 @@ const controllerUser = {
     res.render("login");
   },
   postUser: (req, res) => {
+    const newUser = {
+      nombre: req.body.nombre, 
+      apellido: req.body.apellidos, 
+      genero: req.body.genero, 
+      documento: req.body.documento, 
+      fechaNacimiento: req.body.fechaNacimiento, 
+      celular: req.body.celular, 
+      correo: req.body.mail,
+      password: req.body.contraseña, 
+      pais: req.body.pais, 
+      aerolineaFav: req.body.aerolinea, 
+    };
 
+    userModel.createUsers(newUser);
+
+    res.redirect("/");
   },
 
   register: (req, res) => {
@@ -20,8 +36,6 @@ const controllerUser = {
     res.render("createAdmin");
   },
   postAdmin: (req, res) => {
-    console.log(req.body);
-
     const newCompany = {
       empresa: req.body.nombreEmpresa,
       correoEmpresarial: req.body.correo,
@@ -32,12 +46,12 @@ const controllerUser = {
       observaciones: req.body.observaciones
     };
 
-    userModel.createUsers(newCompany);
+    adminModel.createAdmin(newCompany);
 
-    res.redirect("/");
+    res.redirect("/users/admin");
 
     // Desde los POST no renderizamos vistas, solo redireccionamos
-    //res.redirect('/products');
+    //res.redirect('/');
   },
 };
 

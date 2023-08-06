@@ -26,18 +26,18 @@ const controllerProduct = {
     console.log(req.body);
 
     const newProduct = {
-      departure_airport:req.body.a ,
-      arrival_airport:req.body.a ,
-      departure_date:req.body.a ,
-      arrival_date:req.body.a ,
-      departure_time:req.body.a ,
-      arrival_time:req.body.a ,
-      ticket_price:req.body.a 
+      departureAirport:req.body.departureAirport ,
+      arrivalAirport:req.body.arrivalAirport ,
+      departureDate:req.body.departureAirport,
+      arrivalDate:req.body.arrivalDate ,
+      departureTime:req.body.departureTime ,
+      arrivalTime:req.body.arrivalTime ,
+      ticketPrice:req.body.ticketPrice,
     };
 
     const createdProduct = productModel.createProduct(newProduct);
 
-    res.redirect("/products/" + createdProduct.id + "/detail");
+    res.redirect("/users/admin");
 
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/products');

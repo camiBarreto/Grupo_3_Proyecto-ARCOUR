@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "empresa": "Avianca",
+        "correoEmpresarial": "avianca@hotmail.com",
+        "password": "tararata",
+        "paisDeOrigen": "Colombia",
+        "aerolinea": "avianca",
+        "paisRuta": "argentina",
+        "observaciones": "Casi la cagamos"
+    },
+    {
+        "id": 2,
+        "empresa": "Latam",
+        "correoEmpresarial": "latam@hotmail.com",
+        "password": "latamazi",
+        "paisDeOrigen": "Chile",
+        "aerolinea": "latam",
+        "paisRuta": "colombia",
+        "observaciones": "Casi la cagamos"
+    },
+    {
+        "id": 3,
+        "empresa": "Avianca",
+        "correoEmpresarial": "avianca@hotmail.com",
+        "password": "tararata",
+        "paisDeOrigen": "Colombia",
+        "aerolinea": "avianca",
+        "paisRuta": "argentina",
+        "observaciones": "Casi la cagamos"
+    },
+    {
+        "id": 4,
+        "empresa": "Latam",
+        "correoEmpresarial": "latam@hotmail.com",
+        "password": "latamazi",
+        "paisDeOrigen": "Chile",
+        "aerolinea": "latam",
+        "paisRuta": "colombia",
+        "observaciones": "Casi la cagamos"
+    },
+    {
+        "id": 5,
+        "empresa": "Avianca",
+        "correoEmpresarial": "avianca@hotmail.com",
+        "password": "tararata",
+        "paisDeOrigen": "Colombia",
+        "aerolinea": "avianca",
+        "paisRuta": "argentina",
+        "observaciones": "Casi la cagamos"
+    },
+    {
+        "id": 6,
+        "empresa": "Latam",
+        "correoEmpresarial": "latam@hotmail.com",
+        "password": "latamazi",
+        "paisDeOrigen": "Chile",
+        "aerolinea": "latam",
+        "paisRuta": "colombia",
+        "observaciones": "Casi la cagamos"
+    },
+    {
+        "id": 7,
+        "empresa": "Greyson",
+        "correoEmpresarial": "greyson@hotmail.com",
+        "password": "greyson34",
+        "paisDeOrigen": "venezuela",
+        "aerolinea": "aero-ar",
+        "paisRuta": "uruguay",
+        "observaciones": "hola hola"
+    }
+]

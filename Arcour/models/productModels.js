@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const r = require("lodash") // Libreria para generar numeros aleatorios
 
 const modelo = {
   fileRoute: path.join(__dirname, "../data/products.json"),
@@ -19,15 +20,15 @@ const modelo = {
     );
 
     return selectedProduct;
-  }, // retorna productos segun su ID del archivo products.json.
+  }, // Retorna productos segun su ID del archivo products.json.
 
   createProduct: (bodyData) => {
     let products = modelo.findAll();
 
-    const lastProdId = products[products.length - 1].id;
+    const randomInt = r.random(1000, 9999) // Genera un número aleatorio entre 1000 - 9999 para el número de vuelo
 
     const newProduct = {
-      id: lastProdId + 1,
+      flightNumber: randomInt,
       ...bodyData,
     };
 

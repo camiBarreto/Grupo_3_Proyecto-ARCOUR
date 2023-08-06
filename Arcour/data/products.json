@@ -1,47 +1,20 @@
 [
-  {
-    "flightNumber": 7211,
-    "departureAirport": "RHL",
-    "arrivalAirport": "CCK",
-    "departureDate": "12/15/2022",
-    "departureTime": "8:54 AM",
-    "arrivalTime": "9:58 AM",
-    "ticketPrice": 329.95
-  },
-  {
-    "flightNumber": 7376,
-    "departureAirport": "KPO",
-    "arrivalAirport": "BYR",
-    "departureDate": "4/28/2022",
-    "departureTime": "3:38 AM",
-    "arrivalTime": "2:39 AM",
-    "ticketPrice": 676.19
-  },
-  {
-    "flightNumber": 2372,
-    "departureAirport": "MSY",
-    "arrivalAirport": "AJI",
-    "departureDate": "5/25/2022",
-    "departureTime": "12:58 PM",
-    "arrivalTime": "8:46 PM",
-    "ticketPrice": 767.53
-  },
-  {
-    "flightNumber": 8321,
-    "departureAirport": "ZLX",
-    "arrivalAirport": "PDI",
-    "departureDate": "5/9/2022",
-    "departureTime": "9:36 PM",
-    "arrivalTime": "3:03 AM",
-    "ticketPrice": 678.32
-  },
-  {
-    "flightNumber": 9671,
-    "departureAirport": "PKZ",
-    "arrivalAirport": "YEK",
-    "departureDate": "2/4/2022",
-    "departureTime": "9:13 PM",
-    "arrivalTime": "5:41 PM",
-    "ticketPrice": 877.15
-  }
+    {
+        "flightNumber": 3835,
+        "departureAirport": "Aeropuerto Internacional El Dorado",
+        "arrivalAirport": "Aeropuerto Internacional Ministro Pistarini",
+        "departureDate": "Aeropuerto Internacional El Dorado",
+        "departureTime": "18:05",
+        "arrivalTime": "22:09",
+        "ticketPrice": "456"
+    },
+    {
+        "flightNumber": 6982,
+        "departureAirport": "Aeropuerto Internacional de Carrasco",
+        "arrivalAirport": "Aeropuerto Internacional Ministro Pistarini",
+        "departureDate": "Aeropuerto Internacional de Carrasco",
+        "departureTime": "09:05",
+        "arrivalTime": "10:06",
+        "ticketPrice": "35"
+    }
 ]

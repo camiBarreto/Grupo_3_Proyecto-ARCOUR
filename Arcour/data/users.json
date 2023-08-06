@@ -1,34 +1,28 @@
 [
     {
-      "id": 1,
-      "usuario": "Pedro",
-      "password": "**",
-      "viajero-frecuente": true,
-      "miles": 333333
+        "id": 1,
+        "nombre": "Pedro",
+        "apellido": "",
+        "genero": "",
+        "documento": 333333,
+        "fechaNacimiento": "",
+        "celular": 333333,
+        "correo": "",
+        "password": "",
+        "pais": "",
+        "aerolineaFav": ""
     },
-  
     {
-      "id": 2,
-      "usuario": "Edgardo",
-      "password": "**",
-      "viajero-frecuente": true,
-      "miles": 333333
-    },
-  
-    {
-      "id": 3,
-      "usuario": "Ignacio",
-      "password": "**",
-      "viajero-frecuente": true,
-      "miles": 333333
-    },
-  
-    {
-      "id": 4,
-      "usuario": "Rocio",
-      "password": "**",
-      "viajero-frecuente": true,
-      "miles": 333333
+        "id": 2,
+        "nombre": "Samuel",
+        "apellido": "Rivera",
+        "genero": "masculino",
+        "documento": "1213343",
+        "fechaNacimiento": "2005-10-20",
+        "celular": "3105088909",
+        "correo": "samuelrivera639@gmail.com",
+        "password": "notanez",
+        "pais": "colombia",
+        "aerolineaFav": "avianca"
     }
-  ]
-  
+]

@@ -26,7 +26,7 @@
 
             <div class="login-box">
                 <h2 class="register-subtitulo">01 Datos Personales</h2>
-                <form action="/" method="get" class="register-form">
+                <form action="/users/post" method="post" class="register-form">
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -86,7 +86,7 @@
                                     <label for="fecha" title>Fecha de nacimiento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="fecha" name="fecha-nacimiento">
+                                    <input class="input-box" type="date" id="fecha" name="fechaNacimiento">
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="cel" name="numero-celular">
+                                    <input class="input-box" type="text" maxlength="15" id="cel" name="celular">
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                                     <label for="mail" title>Correo electrónico</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correo-mail">
+                                    <input class="input-box" type="email" maxlength="40" id="mail" name="mail">
                                 </div>
                             </div>
                         </div>
@@ -167,6 +167,13 @@
                                         <option value="argentina" selected>Argentina</option>
                                         <option value="colombia">Colombia</option>
                                         <option value="uruguay">Uruguay</option>
+                                        <option value="bolivia">Bolivia</option>
+                                        <option value="paraguay">Paraguay</option>
+                                        <option value="peru">Peru</option>
+                                        <option value="brasil">Brasil</option>
+                                        <option value="venezuela">Venezuela</option>
+                                        <option value="chile">Chile</option>
+                                        <option value="ecuador">Ecuador</option>
                                     </select>
                                 </div>
                             </div>

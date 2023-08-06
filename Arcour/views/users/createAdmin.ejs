@@ -27,18 +27,18 @@
         <div class="contenido-register">
 
             <div class="login-box">
-                <h2 id="titulo">Formulario de Carga y Edición de Productos</h2>
-                <h2 class="register-subtitulo">Salida y llegada</h2>
-                <form action="/users/post" method="post" class="register-form">
+                <h2 id="titulo">Crea tu cuenta de Administrador</h2>
+                <h2 class="register-subtitulo">01 Datos de la Empresa</h2>
+                <form action="/users/post/admin" method="post" class="register-form">
 
                     <div class="ant-row">
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="salida" title>Sale desde</label>
+                                    <label for="name" title>Nombre de la Empresa</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="25" id="salida" name="departureAirport">
+                                    <input class="input-box" type="text" maxlength="25" id="name" name="nombreEmpresa">
                                 </div>
                             </div>
                         </div>
@@ -46,24 +46,35 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="llegada" title>Llega a</label>
+                                    <label for="apellidos" title>País de Orígen</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="llegada" name="arrivalAirport">
+                                    <select name="paisOrigen" id="pais">
+                                        <option value="argentina" selected>Argentina</option>
+                                        <option value="colombia">Colombia</option>
+                                        <option value="uruguay">Uruguay</option>
+                                        <option value="bolivia">Bolivia</option>
+                                        <option value="paraguay">Paraguay</option>
+                                        <option value="peru">Peru</option>
+                                        <option value="brasil">Brasil</option>
+                                        <option value="venezuela">Venezuela</option>
+                                        <option value="chile">Chile</option>
+                                        <option value="ecuador">Ecuador</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <h2 class="register-subtitulo2">Datos del viaje</h2>
+                    <h2 class="register-subtitulo2">02 Datos de Acceso</h2>
                     <div class="ant-row">
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="horarioSalida" title>Hora de Salida</label>
+                                    <label for="mail" title>Correo Empresarial</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="40" id="horarioSalida" name="departureTime">
+                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correo">
                                 </div>
                             </div>
                         </div>
@@ -71,10 +82,11 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="horarioLlegada" title>Hora de llegada</label>
+                                    <label for="mail-re" title>Contraseña</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="40" id="horarioLlegada" name="arrivalTime">
+                                    <input class="input-box" type="password" maxlength="40" id="mail-re"
+                                        name="password">
                                 </div>
                             </div>
                         </div>
@@ -86,10 +98,14 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="diaVuelo" title>Dia del vuelo</label>
+                                    <label for="pais" title>País a agregar Ruta</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="diaVuelo" name="departureDate">
+                                    <select name="paisRuta" id="pais">
+                                        <option value="argentina" selected>Argentina</option>
+                                        <option value="colombia">Colombia</option>
+                                        <option value="uruguay">Uruguay</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -97,18 +113,35 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="precio" title>Precio del vuelo</label>
+                                    <label for="aereo" title>Aerolínea que agrega la Nueva Ruta</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" id="precio" name="ticketPrice">
+                                    <select name="aerolinea" id="aereo">
+                                        <option value="latam" selected>LATAM Airlines</option>
+                                        <option value="avianca">Avianca</option>
+                                        <option value="aero-ar">Aerolíneas Argentinas</option>
+                                    </select>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h2 class="register-subtitulo2">03 Observaciones</h2>
+
+                    <div class="ant-col">
+                        <div class="ant-inside">
+                            <div class="ant-label">
+                            </div>
+                            <div class="ant-input">
+                                <input name="observaciones" class="input-box" type="text" maxlength="250">
                             </div>
                         </div>
                     </div>
 
                     <div class="crear-cuenta">
-                        <button title="Crear Cuenta" type="submit" class="boton-submit">
-                            <span>Confirmar Modificación Aprobada</span>
+                        <button title="Crear Admin" type="submit" class="boton-submit">
+                            <span>Crear Cuenta de Administrador</span>
                         </button>
                     </div>
                 </form>

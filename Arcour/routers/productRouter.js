@@ -31,6 +31,6 @@ router.get("/:id/detail", controllerProduct.getDetail);
 //@ GET /products/create
 router.get("/create", controllerProduct.getCreate);
 //@ POST /products
-router.post("/", controllerProduct.postProduct);
+router.post("/post", controllerProduct.postProduct);
 
 module.exports = router;

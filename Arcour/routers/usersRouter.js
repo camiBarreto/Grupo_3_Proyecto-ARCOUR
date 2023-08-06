@@ -7,8 +7,8 @@ router.get("/login", controllerUser.login);
 
 //@ GET /users/register
 router.get("/register", controllerUser.register);
-//@ POST /users
-router.post("/", controllerUser.postUser);
+//@ POST /users/post
+router.post("/post", controllerUser.postUser);
 
 //@ GET /users/admin
 router.get("/admin", controllerUser.admin);
@@ -16,6 +16,6 @@ router.get("/admin", controllerUser.admin);
 //@ GET /users/create
 router.get("/create", controllerUser.getCreateAdmin);
 //@ POST /users
-router.post("/post", controllerUser.postAdmin);
+router.post("/post/admin", controllerUser.postAdmin);
 
 module.exports = router;
