@@ -99,6 +99,7 @@ ul {
   left: 120px;
   border-radius: 45%;
 }
+
 .aero2 {
   background-color: yellow;
   font-size: 25px;
@@ -153,6 +154,7 @@ footer {
   padding: 0;
   margin: 0;
 }
+
 .menu {
   background: #555;
   width: 100%;
@@ -203,6 +205,7 @@ li a {
 .contenedor-bogota {
   display: inline;
 }
+
 .contenedor-buenosAires {
   display: inline;
 }
@@ -216,13 +219,16 @@ li a {
   .nav-bar {
     display: none;
   }
+
   .menu {
     margin-left: 0;
     display: flex;
   }
+
   .container-submenu {
     position: relative;
   }
+
   .submenu {
     position: absolute;
     top: 66px;
@@ -232,6 +238,7 @@ li a {
     opacity: 0;
     visibility: hidden;
   }
+
   .container-submenu:hover .submenu {
     opacity: 1;
     visibility: visible;
@@ -329,6 +336,7 @@ main {
   margin: 0px;
   background-color: #fff;
 }
+
 footer {
   background-color: black;
   position: relative;
@@ -337,6 +345,7 @@ footer {
   height: 20px;
   color: white;
 }
+
 p {
   padding: 0px;
   margin: 0px;
@@ -347,13 +356,16 @@ p {
   margin-left: 2px;
   margin-right: 2px;
 }
+
 .icono1 {
   margin-left: 1px;
   margin-right: 1px;
 }
+
 .icono12 {
   margin-right: 3px;
 }
+
 .main-arriba {
   display: flex;
   justify-content: space-between;
@@ -362,29 +374,36 @@ p {
   padding-right: 16px;
   border-bottom: gray dashed 1px;
 }
+
 .arriba-izq {
   margin: 5px;
   margin-left: 10px;
 }
+
 .arriba-der {
   margin-right: 10px;
 }
+
 .boton-main-arriba {
   margin: 1px;
   display: flex;
   padding: 1px;
 }
+
 .fecha-cantidad {
   display: flex;
   padding: 1px;
 }
+
 .span-header {
   display: flex;
 }
+
 .fyc {
   margin-left: 3px;
   margin-right: 3px;
 }
+
 .titulos-footer {
   display: flex;
   color: white;
@@ -393,9 +412,11 @@ p {
   align-items: center;
   justify-content: center;
 }
+
 h6 {
   margin: 0px;
 }
+
 .main-arriba1 {
   display: flex;
   justify-content: space-between;
@@ -403,15 +424,18 @@ h6 {
   padding-left: 16px;
   padding-right: 16px;
 }
+
 .boton-main2 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .rcmbmc {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .boton-main3 {
   display: flex;
   align-items: center;
@@ -420,13 +444,16 @@ h6 {
   width: 23vw;
   justify-content: center;
 }
+
 .boton-int {
   margin: 5px;
 }
+
 .boton-int1 {
   margin: 5px;
   color: #bebebe;
 }
+
 .cuadrado {
   background-color: white;
   display: flex;
@@ -435,6 +462,7 @@ h6 {
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
   margin: 20px;
 }
+
 .cuadrado-ultimo {
   background-color: white;
   display: flex;
@@ -443,6 +471,7 @@ h6 {
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
   margin: 20px 20px 0px 20px;
 }
+
 .titulo-cuadrado {
   background-color: #181b59;
   color: white;
@@ -452,12 +481,14 @@ h6 {
   font-size: 14px;
   border-bottom: solid 1px black;
 }
+
 .subtitulo {
   display: flex;
   justify-content: center;
   background-color: #cccccc;
   padding: 2px;
 }
+
 .economy {
   font-size: 12px;
   display: flex;
@@ -469,10 +500,12 @@ h6 {
   width: fit-content;
   margin: 5px 0px 0px 30px;
 }
+
 .espacio {
   padding-right: 5px;
   padding-left: 5px;
 }
+
 .horario {
   display: flex;
   padding: 0px 30px 15px 30px;
@@ -482,24 +515,29 @@ h6 {
   align-items: center;
   border-bottom: gray 1px dotted;
 }
+
 h3,
 h4,
 h2 {
   margin: 0px;
 }
+
 .hora {
   font-size: 24px;
   font-weight: 700;
 }
+
 .latam {
   display: flex;
   align-items: center;
 }
+
 .salida {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .equipaje {
   display: flex;
   flex-wrap: nowrap;
@@ -507,6 +545,7 @@ h2 {
   align-items: flex-start;
   width: 20%;
 }
+
 .horario-adentro {
   display: flex;
   flex-direction: row;
@@ -515,17 +554,20 @@ h2 {
   align-items: center;
   flex-wrap: nowrap;
 }
+
 .reservar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: #cccccc;
 }
+
 .reservar-precio {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .boton-reservar {
   padding: 10px 50px;
   margin: 10px;
@@ -533,21 +575,25 @@ h2 {
   border-radius: 15px;
   transition: 1s;
 }
+
 .boton-reservar:hover {
   background-color: rgb(124, 88, 255);
 }
+
 .main-abajo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .main-abajo-adentro {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   padding: 15px 15px 0px 15px;
 }
+
 .m-a-a {
   padding-right: 5px;
 }
@@ -556,10 +602,60 @@ button:hover {
   background-color: #f2cb07;
 }
 
+.buscador-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+
+.boton-buscador-vuelos {
+  color: white;
+  font-weight: 900;
+  background-color: #181b59;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.boton-buscador-vuelos:hover {
+  background-color: #f2cb07;
+}
+
+.fondo-buscador-vuelos {
+  background-color: #dbdbdb;
+  margin: 0px;
+  height: 50px;
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.margin-label{
+margin-right: 10px;
+}
+
+.margen-buscador-vuelos{
+margin-top:10px;
+margin-bottom: 25px;}
+
+.titulo-buscador-vuelos{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
 @media (min-width: 769px) {
   .burger-menu {
     display: none;
   }
+
   .burger-container {
     display: none;
   }
@@ -569,21 +665,27 @@ button:hover {
   .a {
     display: none;
   }
+
   .horario-adentro {
     width: 100%;
   }
+
   .equipaje {
     width: auto;
   }
+
   .hora {
     font-size: 22px;
   }
+
   .tamaño-boton {
     font-size: 13px;
   }
+
   .tamaño-main {
     font-size: 14px;
   }
+
   .main-abajo {
     flex-direction: column;
   }
@@ -593,15 +695,20 @@ button:hover {
   .burger-menu {
     display: none;
   }
+
   .burger-container {
     display: none;
   }
+
   .tamaño-boton {
     font-size: 11px;
   }
+
   .tamaño-main {
     font-size: 12px;
   }
+
+  
 }
 
 @media (max-width: 361px) {
