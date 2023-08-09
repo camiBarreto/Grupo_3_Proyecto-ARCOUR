@@ -22,9 +22,9 @@ const upload = multer({ storage });
 //@ GET /product-cart
 router.get("/product-cart", controllerProduct.productCart);
 //@ GET /product-detail
-router.get("/product-detail", controllerProduct.productDetail);
+router.get("/product-detail", controllerProduct.getProductDetail);
 //@ GET /products
-router.get("/", controllerProduct.getList);
+router.get("/data", controllerProduct.getProductList);
 //@ GET /products/:id/detail
 router.get("/:id/detail", controllerProduct.getDetail);
 

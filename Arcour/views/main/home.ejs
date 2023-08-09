@@ -19,36 +19,52 @@
         <div class="margen-buscador-vuelos">
             <h5 class="titulo-buscador-vuelos">Buscador de vuelos</h5>
             <div class="buscador-flex fondo-buscador-vuelos">
-                <div class="fondo-buscador-vuelos">
-                    <label for="origen" title class="margin-label">Origen</label>
-                    <select name="origen">
-                        <option value="uruguay" selected>Uruguay</option>
-                        <option value="argentina">Argentina</option>
-                        <option value="colombia">Colombia</option>
-
-                    </select>
-                </div>
-                <div class="fondo-buscador-vuelos">
-                    <label for="destino" title class="margin-label">Destino</label>
-                    <select name="destino">
-                        <option value="uruguay">Uruguay</option>
-                        <option value="argentina" selected>Argentina</option>
-                        <option value="colombia">Colombia</option>
-
-                    </select>
-                </div>
-                <div class="fondo-buscador-vuelos">
-                    <label for="partida" title class="margin-label">Partida</label>
-                    <input type="date" name="partida">
-                </div>
-                <div class="fondo-buscador-vuelos">
-                    <label for="arribo" title class="margin-label">Arribo</label>
-                    <input type="date" name="arribo">
-                </div>
-                <div>
-                    <i class="fa-solid fa-magnifying-glass boton-buscador-vuelos"></i>
-                </div>
+                <form action="/products/product-detail" method="get" class="buscador-flex fondo-buscador-vuelos">
+                    <div class="fondo-buscador-vuelos fondo-interno">
+                        <label for="origen" title class="margin-label">Origen</label>
+                        <select name="departureAirport" id="origen" class="input-buscador">
+                            <option value="Aeropuerto Internacional El Dorado" selected>Aeropuerto Internacional El Dorado</option>
+                            <option value="Aeropuerto Internacional Ministro Pistarini">Aeropuerto Internacional Ministro Pistarini</option>
+                            <option value="Aeropuerto Internacional de Carrasco">Aeropuerto Internacional de Carrasco</option>
+                        </select>
+                    </div>
+                    <div class="fondo-buscador-vuelos fondo-interno">
+                        <label for="destino" title class="margin-label">Destino</label>
+                        <select name="arrivalAirport" id="destino" class="input-buscador">
+                            <option value="Aeropuerto Internacional El Dorado" selected>Aeropuerto Internacional El Dorado</option>
+                            <option value="Aeropuerto Internacional Ministro Pistarini">Aeropuerto Internacional Ministro Pistarini</option>
+                            <option value="Aeropuerto Internacional de Carrasco">Aeropuerto Internacional de Carrasco</option>
+                        </select>
+                    </div>
+                    <div class="fondo-buscador-vuelos fondo-interno">
+                        <label for="partida" title class="margin-label">Partida</label>
+                        <input type="date" name="departureDate" id="partida" class="input-buscador">
+                    </div>
+                    <div class="fondo-buscador-vuelos fondo-interno">
+                        <label for="arribo" title class="margin-label">Arribo</label>
+                        <input type="date" name="returnDate" id="arribo" class="input-buscador">
+                    </div>
+                    <div class="fondo-buscador-vuelos fondo-interno">
+                        <label class="margin-label">Tipo de vuelo</label>
+                        <div class="radio-container">
+                            <label class="radio-label">
+                                <input type="radio" name="flightType" value="ida" checked class="input-buscador">
+                                Solo Ida
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="flightType" value="ida-vuelta" class="input-buscador">
+                                Ida y Vuelta
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="boton-buscador" type="submit">
+                            <i class="fa-solid fa-magnifying-glass boton-buscador-vuelos"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
+
         </div>
         <h5 class="titulo-buscador-vuelos">Opciones de destinos</h5>
         <div class="flex-img-home">

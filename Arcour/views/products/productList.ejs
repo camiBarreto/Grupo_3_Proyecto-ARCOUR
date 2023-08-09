@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<header>
+    <%- include("../partials/header.ejs") %>
+</header>
+
+<nav>
+    <%- include("../partials/navBar.ejs") %>
+</nav>
+
+<body>
+    <div class="flight-list">
+        <% for (const flight of flights) { %>
+            <div class="flight-item">
+                <div class="flight-number">Vuelo #<%= flight.flightNumber %>
+                </div>
+                <div class="titles">Salida: <span class="departure-date-badge">
+                        <%= flight.departureDate %>
+                    </span>
+                    <%= flight.departureTime %>
+                </div>
+                <div class="titles">Llegada: <%= flight.arrivalDate %>
+                        <%= flight.arrivalTime %>
+                </div>
+                <div class="titles">Duración: <%= flight.flightDuration %>
+                </div>
+                <div class="titles">Aeropuerto de salida: <%= flight.departureAirport %>
+                </div>
+                <div class="titles">Aeropuerto de llegada: <%= flight.arrivalAirport %>
+                </div>
+                <div class="buttons">
+                    <button class="edit-button">Editar</button>
+                    <button class="delete-button">Eliminar</button>
+                </div>
+            </div>
+            <% } %>
+    </div>
+</body>
+
+<footer>
+    <%- include("../partials/footer.ejs") %>
+</footer>
+
+</html>
