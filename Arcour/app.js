@@ -9,6 +9,8 @@ const mainRouter = require("./routers/mainRouter");
 const userRouter = require("./routers/usersRouter");
 const productRouter = require("./routers/productRouter");
 
+const notFoundMiddleware = require("./middlewares/middleware404")
+
 const app = express();
 
 app.use(express.static("public"));
@@ -30,6 +32,9 @@ app.use("/", mainRouter);
 app.use("/users", userRouter);
 
 app.use("/products", productRouter);
+
+//Middleware de eror 404 Not found.
+app.use(notFoundMiddleware);
 
 app.listen(port || 3000, () => {
   console.log(
