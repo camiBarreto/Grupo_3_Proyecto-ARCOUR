@@ -25,8 +25,12 @@ router.get("/product-cart", controllerProduct.productCart);
 router.get("/product-detail", controllerProduct.getProductDetail);
 //@ GET /products
 router.get("/data", controllerProduct.getProductList);
-//@ GET /products/:id/detail
-router.get("/:id/detail", controllerProduct.getDetail);
+
+//@ GET /products/:id/productEdits
+router.get("/:id/productEdits", controllerProduct.getProductEdits);
+//@ PUT /products/:id/productEdits
+router.put("/:id/put", controllerProduct.updateProduct);
+
 
 //@ GET /products/create
 router.get("/create", controllerProduct.getCreate);

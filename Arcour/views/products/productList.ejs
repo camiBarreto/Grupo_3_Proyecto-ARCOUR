@@ -34,8 +34,8 @@
                 <div class="titles">Aeropuerto de llegada: <%= flight.arrivalAirport %>
                 </div>
                 <div class="buttons">
-                    <button class="edit-button">Editar</button>
-                    <button class="delete-button">Eliminar</button>
+                    <a href="/products/<%= flight.flightNumber %>/productEdits"><button class="edit-button">Editar</button></a>
+                    <a href=""><button class="delete-button">Eliminar</button></a>
                 </div>
             </div>
             <% } %>

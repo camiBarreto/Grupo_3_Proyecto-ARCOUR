@@ -21,15 +21,33 @@ const controllerProduct = {
     res.render("productList", {flights});
   },
 
+  getProductEdits:(req,res)=>{
+    const flight = productModel.findByflightNumber(Number(req.params.id));
+    res.render("productEdits", { flight });
+  },
+  updateProduct: (req, res) => {
+    let updatedProduct = {
+        flightNumber: Number(req.params.id)
+    };
+
+    updatedProduct = {
+        ...updatedProduct,
+        ...req.body
+    };
+
+    /* 
+        const updatedProduct = req.body;
+        updatedProduct.id = Number(req.params.id); 
+    */
+
+    productModel.updateProduct(updatedProduct);
+
+    res.redirect("/products/data");
+},
   productCart: (req, res) => {
     res.render("productCart");
   },
-  getDetail: (req, res) => {
-    const productId = req.params.id;
 
-    const selectedProduct = productModel.findById(productId);
-    res.render("productDetail", { product: selectedProduct });
-  },
   getCreate: (req, res) => {
     res.render("createProduct")
   },
