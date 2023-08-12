@@ -33,10 +33,23 @@
                 </div>
                 <div class="titles">Aeropuerto de llegada: <%= flight.arrivalAirport %>
                 </div>
-                <div class="buttons">
-                    <a href="/products/<%= flight.flightNumber %>/productEdits"><button class="edit-button">Editar</button></a>
-                    <a href=""><button class="delete-button">Eliminar</button></a>
+                <div class="info-container">
+                    <div class="flight-price">
+                        Precio: $<%= flight.ticketPrice %>
+                    </div>
                 </div>
+                <div class="buttons">
+                    <div class="button-container">
+                        <a href="/products/<%= flight.flightNumber %>/productEdits">
+                            <button class="edit-button">Editar</button>
+                        </a>
+
+                        <form action="/products/<%= flight.flightNumber %>/delete?_method=DELETE" method="post">
+                            <input class="delete-button" type="submit" value="Eliminar">
+                        </form>
+                    </div>
+                </div>
+                
             </div>
             <% } %>
     </div>

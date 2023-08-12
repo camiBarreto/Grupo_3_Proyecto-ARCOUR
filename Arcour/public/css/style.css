@@ -107,13 +107,38 @@ ul {
   margin-right: 5px;
 }
 
-/* Estilos adicionales a tu elección */
-
 /* Estilos para los botones de edición y eliminación */
 
-.buttons {
-  margin: 5px;
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
+.flight-price {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #2c3e50;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  display: inline-block;
+  margin-left: auto; /* Agrega esta línea */
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+/* ... Estilos para los botones ... */
+
 
 .edit-button,
 .delete-button {
@@ -139,149 +164,6 @@ ul {
 .delete-button:hover {
   background-color: #34495e;
   color: lightblue;
-}
-
-/*//*/
-
-
-.bi-arrow-down-square-fill {
-  padding-left: 0.08cm;
-  margin-bottom: -1.8%;
-}
-
-.body {
-  display: grid;
-  min-height: 200vh;
-  grid-template-rows: auto 1fr auto;
-}
-
-.contenedor-aero {
-  position: relative;
-  display: flex;
-  margin-top: 100px;
-  margin-bottom: 200px;
-}
-
-.aero1 {
-  background-color: rgb(144, 222, 255);
-  font-size: 25px;
-  font-weight: 900;
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  position: absolute;
-  left: 120px;
-  border-radius: 45%;
-}
-
-.aero2 {
-  background-color: yellow;
-  font-size: 25px;
-  font-weight: 900;
-  color: red;
-  padding: 10px;
-  text-decoration: none;
-  position: absolute;
-  left: 520px;
-  border-radius: 45%;
-}
-
-.aero3 {
-  background-color: #0151ff;
-  font-size: 25px;
-  font-weight: 900;
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  position: absolute;
-  left: 920px;
-  border-radius: 45%;
-}
-
-footer {
-  padding: 0px;
-  margin: 0px;
-  background-color: #000000;
-  display: block;
-}
-
-.subtitulo {
-  margin-top: -1cm;
-  margin-left: 3cm;
-  font-size: large;
-  color: rgb(0, 0, 100);
-}
-
-.nav-bar {
-  background: #2b01ff;
-  padding: 20px;
-  display: block;
-  color: white;
-  cursor: pointer;
-  font-size: 1.5em;
-  width: 100%;
-}
-
-.menu,
-.submenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu {
-  background: #555;
-  width: 100%;
-  margin-left: -100%;
-  transition: all 0.5s;
-}
-
-.menu__link {
-  display: block;
-  padding: 20px;
-  color: white;
-  font-size: 1.2em;
-}
-
-.submenu {
-  height: 0;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-
-.lateral-link {
-  color: #222;
-  text-decoration: none;
-}
-
-.mostrar {
-  margin-left: 0;
-}
-
-li a {
-  display: block;
-  color: white;
-  padding: 2px 2px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.contenedor {
-  margin-left: 25%;
-  padding: 1px 16px;
-  height: 500px;
-}
-
-.contenedor-montevideo {
-  display: inline;
-}
-
-.contenedor-bogota {
-  display: inline;
-}
-
-.contenedor-buenosAires {
-  display: inline;
 }
 
 @media (min-width: 1024px) {
@@ -593,6 +475,7 @@ h6 {
 h3,
 h4,
 h2 {
+  color: #1D267D;
   margin: 0px;
 }
 
@@ -672,183 +555,14 @@ h2 {
   padding-right: 5px;
 }
 
-/*
-.buscador-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px;
-}
-
-.boton-buscador-vuelos {
-  color: white;
-  font-weight: 900;
-  background-color: #181b59;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-}
-
-.boton-buscador-vuelos:hover {
-  background-color: #f2cb07;
-}
-
-.fondo-buscador-vuelos {
-  background-color: #dbdbdb;
-  margin: 0px;
-  height: 50px;
-  display: flex;
-  height: 50px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.margin-label {
-  margin-right: 10px;
-}
-
-.margen-buscador-vuelos {
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
-
-.titulo-buscador-vuelos {
-  font-size: 20px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-*/
-
-.titulo-bienvenidos {
-  text-align: center;
-  font-size: 24px;
-  color: #181b59;
-}
-
-.div-nuestra-empresa {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-  width: 45%;
-  height: 240px;
-  margin: 20px;
-  background-color: white;
-}
-
-
-
-
-.flex-nuestra-empresa {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #f0f1f4
-}
-
-.flex-img-home {
-  display: flex;
-}
-
-.img-centrada-home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.imagenes-home {
-  width: 80%;
-  border-radius: 15px;
-}
-
-@media (min-width: 769px) {
-  .burger-menu {
-    display: none;
-  }
-
-  .burger-container {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .a {
-    display: none;
-  }
-
-  .horario-adentro {
-    width: 100%;
-  }
-
-  .equipaje {
-    width: auto;
-  }
-
-  .hora {
-    font-size: 22px;
-  }
-
-  .tamaño-boton {
-    font-size: 13px;
-  }
-
-  .tamaño-main {
-    font-size: 14px;
-  }
-
-  .main-abajo {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .burger-menu {
-    display: none;
-  }
-
-  .burger-container {
-    display: none;
-  }
-
-  .tamaño-boton {
-    font-size: 11px;
-  }
-
-  .tamaño-main {
-    font-size: 12px;
-  }
-
-
-}
-
-@media (max-width: 361px) {
-  .main-nav {
-    display: none;
-  }
-}
-
-
-
-/* Estilos para la barra de búsqueda con botón de búsqueda y opciones más llamativos */
+/* Estilos para la barra de búsqueda con botón de búsqueda*/
 .margen-buscador-vuelos {
   margin: 20px;
 }
 
 .titulo-buscador-vuelos {
   font-size: 24px;
-  color: #181b59;
+  color: #1D267D;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -878,7 +592,7 @@ h2 {
   margin-bottom: 8px;
   display: block;
   font-weight: bold;
-  color: #181b59;
+  color: #1D267D;
 }
 
 /* Estilos para el botón de búsqueda */
@@ -985,6 +699,102 @@ h2 {
 
 /* Estilos adicionales a tu elección */
 
+.titulo-bienvenidos {
+  text-align: center;
+  font-size: 24px;
+  color: #181b59;
+}
+
+.div-nuestra-empresa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  width: 45%;
+  height: 240px;
+  margin: 20px;
+  background-color: white;
+}
+
+
+
+
+.flex-nuestra-empresa {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f0f1f4
+}
+
+.flex-img-home {
+  display: flex;
+}
+
+.img-centrada-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagenes-home {
+  width: 80%;
+  border-radius: 15px;
+}
+
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .a {
+    display: none;
+  }
+
+  .horario-adentro {
+    width: 100%;
+  }
+
+  .equipaje {
+    width: auto;
+  }
+
+  .hora {
+    font-size: 22px;
+  }
+
+  .tamaño-boton {
+    font-size: 13px;
+  }
+
+  .tamaño-main {
+    font-size: 14px;
+  }
+
+  .main-abajo {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .tamaño-boton {
+    font-size: 11px;
+  }
+
+  .tamaño-main {
+    font-size: 12px;
+  }
+
+
+}
 
 /* Media queries para tablet */
 @media (max-width: 1024px) {
@@ -1014,6 +824,10 @@ h2 {
 
 /* Media queries para dispositivos móviles */
 @media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
   .buscador-flex {
     padding: 10px;
   }
@@ -1034,5 +848,10 @@ h2 {
   .radio-label input[type="radio"] {
     width: 14px;
     height: 14px;
+  }
+
+  .div-nuestra-empresa {
+    width: 60%;
+    height: 50%;
   }
 }

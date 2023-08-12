@@ -26,13 +26,14 @@ const controllerProduct = {
     res.render("productEdits", { flight });
   },
   updateProduct: (req, res) => {
-    let updatedProduct = {
+    let firstId = {
         flightNumber: Number(req.params.id)
     };
 
     updatedProduct = {
-        ...updatedProduct,
-        ...req.body
+        ...firstId,
+        ...req.body,
+        flightDuration: productModel.calculateDuration(req.body)
     };
 
     /* 
@@ -44,7 +45,15 @@ const controllerProduct = {
 
     res.redirect("/products/data");
 },
-  productCart: (req, res) => {
+destroyProduct: (req,res) => {
+  const flightId = Number(req.params.id);
+
+  productModel.destroyProduct(flightId);
+
+  res.redirect("/products/data")
+},
+
+  getProductCart: (req, res) => {
     res.render("productCart");
   },
 

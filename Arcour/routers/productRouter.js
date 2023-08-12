@@ -20,11 +20,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //@ GET /product-cart
-router.get("/product-cart", controllerProduct.productCart);
+router.get("/product-cart", controllerProduct.getProductCart);
 //@ GET /product-detail
 router.get("/product-detail", controllerProduct.getProductDetail);
 //@ GET /products
 router.get("/data", controllerProduct.getProductList);
+//@ DELETE /products/delete
+router.delete("/:id/delete", controllerProduct.destroyProduct);
+
 
 //@ GET /products/:id/productEdits
 router.get("/:id/productEdits", controllerProduct.getProductEdits);
