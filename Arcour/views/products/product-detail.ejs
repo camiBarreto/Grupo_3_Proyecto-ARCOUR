@@ -72,7 +72,7 @@
                 </button>
             </div>
         </div>
-
+        
         <div class="rcmbmc">
             <div>
                 <button class="boton-main3">
@@ -111,20 +111,22 @@
                 </button>
             </div>
         </div>
-
-        <div class="cuadrado">
+        <% vuelosVuelta.forEach(vueloVuelta =>  { %>
+        
+            
+            <div class="cuadrado">
             <div class="titulo-cuadrado">
                 <b>Más barato | Relación calidad-precio</b>
             </div>
             <div class="subtitulo">
                 <div><i class="fa-solid fa-plane"></i></div>
-                <div><b> Salida</b> jueves 13 jul</div>
+                <div><b> Salida</b> <%= vuelosVuelta.departureDate  %> </div>
             </div>
             <div class="economy">
                 <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
                 <div class="espacio">Economy</div>
             </div>
-
+            
             <div class="horario">
                 <div class="horario-adentro">
                     <div class="latam">
@@ -132,20 +134,20 @@
                         <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
                     </div>
                     <div class="salida">
-                        <div class="hora">05:10</div>
+                        <div class="hora"><%= vuelosVuelta.departureTime %></div>
                         <div class="tamaño-main"><b>EZE</b> Buenos Aires</div>
                         <div class="tamaño-main">
                             <h4>Buenos Aires</h4>
                         </div>
                     </div>
                     <div class="salida">
-                        <div class="tamaño-main">11 h 5min</div>
+                        <div class="tamaño-main"><%= vuelosVuelta.flightDuration %></div>
                         <div class="tamaño-main"> ----o----></div>
                         <div class="tamaño-main">1 cambio</div>
                     </div>
                     <div>
                         <div class="salida">
-                            <div class="hora">15:15</div>
+                            <div class="hora"><%= vuelosVuelta.arrivalTime %></div>
                             <div class="tamaño-main"><b>BOG</b> Bogota</div>
                             <div class="tamaño-main">
                                 <h4>Bogota</h4>
@@ -201,302 +203,17 @@
                     <div class="tamaño-main">no incluye equipaje facturado</div>
                 </div>
             </div>
-
+            
             <div class="reservar">
                 <div class="reservar-precio">
-                    <div class="tamaño-main"><b>AR$319,801.26</b></div>
+                    <div class="tamaño-main"><b>AR$<%= vuelosVuelta.ticketPrice %></b></div>
                     <div class="tamaño-main">Precio por adulto</div>
                 </div>
-                <button class="boton-reservar">Reservar</button>
+                <button class="boton-reservar"><a href="">ver detalles</a></button>
             </div>
         </div>
+        <% }) %>
 
-        <div class="cuadrado">
-            <div class="titulo-cuadrado">
-                <b>Menos tiempo de vuelo</b>
-            </div>
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane"></i></div>
-                <div><b> Salida</b> jueves 13 jul</div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
-                    </div>
-                    <div class="salida">
-                        <div class="hora">21:53</div>
-                        <div class="tamaño-main"><b>EZE</b> Buenos Aires</div>
-                        <div class="tamaño-main">
-                            <h4>Buenos Aires</h4>
-                        </div>
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main">9 h 5min</div>
-                        <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora">05:48</div>
-                            <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                            <div class="tamaño-main">
-                                <h4>Bogota</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="tamaño-main">no incluye equipaje facturado</div>
-                </div>
-            </div>
-
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane fa-rotate-180"></i></i></div>
-                <div><b> Vuelta</b> jueves 20 jul</div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
-                    </div>
-                    <div class="salida">
-                        <div class="hora">04:10</div>
-                        <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                        <div class="tamaño-main">
-                            <h4>Bogota</h4>
-                        </div>
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main">9 h 5min</div>
-                        <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora">13:15</div>
-                            <div class="tamaño-main"><b>EZE</b> Buenos aires</div>
-                            <div class="tamaño-main">
-                                <h4>Buenos Aires</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="tamaño-main">no incluye equipaje facturado</div>
-                </div>
-            </div>
-            <div class="reservar">
-                <div class="reservar-precio">
-                    <div class="tamaño-main"><b>AR$442,032.34</b></div>
-                    <div class="tamaño-main">Precio por adulto</div>
-                </div>
-                <button class="boton-reservar">Reservar</button>
-            </div>
-        </div>
-
-        <div class="cuadrado">
-            <div class="titulo-cuadrado">
-                <b>Estadía más prolongada</b>
-            </div>
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane"></i></div>
-                <div><b> Salida</b> jueves 13 jul</div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
-                    </div>
-                    <div class="salida">
-                        <div class="hora">05:10</div>
-                        <div class="tamaño-main"><b>EZE</b> Buenos Aires</div>
-                        <div class="tamaño-main">
-                            <h4>Buenos Aires</h4>
-                        </div>
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main">13 h 5min</div>
-                        <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora">18:15</div>
-                            <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                            <div class="tamaño-main">
-                                <h4>Bogota</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="tamaño-main">no incluye equipaje facturado</div>
-                </div>
-            </div>
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane fa-rotate-180"></i></i></div>
-                <div><b> Vuelta</b> jueves 20 jul</div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
-                    </div>
-                    <div class="salida">
-                        <div class="hora">15:10</div>
-                        <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                        <div class="tamaño-main">
-                            <h4>Bogota</h4>
-                        </div>
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main">18 h 5min</div>
-                        <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora">09:15</div>
-                            <div class="tamaño-main"><b>EZE</b> Buenos aires</div>
-                            <div class="tamaño-main">
-                                <h4>Buenos Aires</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="tamaño-main">no incluye equipaje facturado</div>
-                </div>
-            </div>
-            <div class="reservar">
-                <div class="reservar-precio">
-                    <div class="tamaño-main"><b>AR$319,801.26</b></div>
-                    <div class="tamaño-main">Precio por adulto</div>
-                </div>
-                <button class="boton-reservar">Reservar</button>
-            </div>
-        </div>
-        <div class="cuadrado-ultimo">
-            <div class="titulo-cuadrado">
-                <b>Relacion calidad-precio</b>
-            </div>
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane"></i></div>
-                <div><b> Salida</b> jueves 13 jul</div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
-                    </div>
-                    <div class="salida">
-                        <div class="hora">05:10</div>
-                        <div class="tamaño-main"><b>EZE</b> Buenos Aires</div>
-                        <div class="tamaño-main">
-                            <h4>Buenos Aires</h4>
-                        </div>
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main">11 h 40min</div>
-                        <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora">13:50</div>
-                            <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                            <div class="tamaño-main">
-                                <h4>Bogota</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="tamaño-main">no incluye equipaje facturado</div>
-                </div>
-            </div>
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane fa-rotate-180"></i></i></div>
-                <div><b> Vuelta</b> jueves 20 jul</div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
-                    </div>
-                    <div class="salida">
-                        <div class="hora">15:10</div>
-                        <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                        <div class="tamaño-main">
-                            <h4>Bogota</h4>
-                        </div>
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main">11 h 5min</div>
-                        <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora">16:15</div>
-                            <div class="tamaño-main"><b>EZE</b> Buenos aires</div>
-                            <div class="tamaño-main">
-                                <h4>Buenos Aires</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div>no incluye equipaje facturado</div>
-                </div>
-            </div>
-            <div class="reservar">
-                <div class="reservar-precio">
-                    <div class="tamaño-main"><b>AR$396,502.92</b></div>
-                    <div class="tamaño-main">Precio por adulto</div>
-                </div>
-                <button class="boton-reservar">Reservar</button>
-            </div>
-        </div>
         <div class="main-abajo">
             <div class="main-abajo-adentro">
                 <div class="m-a-a"><i class="fa-solid fa-plane"></i></div>
