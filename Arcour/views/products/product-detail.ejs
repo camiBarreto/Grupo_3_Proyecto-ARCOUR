@@ -31,13 +31,13 @@
         <div class="main-arriba">
             <div class="arriba-izq">
                 <div class="destino">
-                    <b>Buenos Aires - Bogota</b>
+                    <b> buenos aires -  colombia</b>
                 </div>
                 <div class="fecha-cantidad">
                     <div class="fecha">
                         <span class="span-header">
                             <div><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="fyc"> jue 13 jul - mié 19 jul </div>
+                            <div class="fyc"> 15 de julio - 19 de julio </div>
                         </span>
                     </div>
                     <div class="cantidad">
@@ -134,24 +134,17 @@
                         <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
                     </div>
                     <div class="salida">
-                        <div class="hora"><%= vuelosVuelta.departureTime %></div>
-                        <div class="tamaño-main"><b>EZE</b> Buenos Aires</div>
-                        <div class="tamaño-main">
-                            <h4>Buenos Aires</h4>
-                        </div>
+                        <div class="hora"><%= vueloVuelta.departureTime %></div>
+                        <div class="tamaño-main"><%= vueloVuelta.departureAirport %> </div>                       
                     </div>
                     <div class="salida">
                         <div class="tamaño-main"><%= vueloVuelta.flightDuration %></div>
                         <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
                     </div>
                     <div>
                         <div class="salida">
                             <div class="hora"><%= vueloVuelta.arrivalTime %></div>
-                            <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                            <div class="tamaño-main">
-                                <h4>Bogota</h4>
-                            </div>
+                            <div class="tamaño-main"> <%= vueloVuelta.arrivalAirport  %> </div>                           
                         </div>
                     </div>
                 </div>
@@ -160,16 +153,32 @@
                     <div class="tamaño-main">no incluye equipaje facturado</div>
                 </div>
             </div>
-
+            
+            <div class="reservar">
+                <div class="reservar-precio">
+                    <div class="tamaño-main"><b>AR$<%= vueloVuelta.ticketPrice %></b></div>
+                    <div class="tamaño-main">Precio por adulto</div>
+                </div>
+                <button class="boton-reservar"><a href="">ver detalles</a></button>
+            </div>
+        </div>
+        <% }) %>
+        <% vuelosIda.forEach(vueloVuelta =>  { %>
+        
+            
+            <div class="cuadrado">
+            <div class="titulo-cuadrado">
+                <b>Más barato | Relación calidad-precio</b>
+            </div>
             <div class="subtitulo">
-                <div><i class="fa-solid fa-plane fa-rotate-180"></i></i></div>
-                <div><b> Vuelta</b> jueves 20 jul</div>
+                <div><i class="fa-solid fa-plane"></i></div>
+                <div><b> Salida</b> <%= vueloVuelta.departureDate  %> </div>
             </div>
             <div class="economy">
                 <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
                 <div class="espacio">Economy</div>
             </div>
-
+            
             <div class="horario">
                 <div class="horario-adentro">
                     <div class="latam">
@@ -177,24 +186,17 @@
                         <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
                     </div>
                     <div class="salida">
-                        <div class="hora">15:15</div>
-                        <div class="tamaño-main"><b>BOG</b> Bogota</div>
-                        <div class="tamaño-main">
-                            <h4>Bogota</h4>
-                        </div>
+                        <div class="hora"><%= vueloVuelta.departureTime %></div>
+                        <div class="tamaño-main"><%= vueloVuelta.departureAirport %> </div>                       
                     </div>
                     <div class="salida">
-                        <div class="tamaño-main">11 h 5min</div>
+                        <div class="tamaño-main"><%= vueloVuelta.flightDuration %></div>
                         <div class="tamaño-main"> ----o----></div>
-                        <div class="tamaño-main">1 cambio</div>
                     </div>
                     <div>
                         <div class="salida">
-                            <div class="hora">05:10</div>
-                            <div class="tamaño-main"><b>EZE</b> Buenos aires</div>
-                            <div class="tamaño-main">
-                                <h4>Buenos Aires</h4>
-                            </div>
+                            <div class="hora"><%= vueloVuelta.arrivalTime %></div>
+                            <div class="tamaño-main"> <%= vueloVuelta.arrivalAirport  %> </div>                           
                         </div>
                     </div>
                 </div>
