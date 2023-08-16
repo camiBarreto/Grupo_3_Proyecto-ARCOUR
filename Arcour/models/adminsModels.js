@@ -29,6 +29,7 @@ const modelo = {
     const newAdmin = {
       id: lastAdminsId + 1,
       ...bodyData,
+      admin: true
     };
 
     admins.push(newAdmin);

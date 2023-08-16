@@ -482,6 +482,10 @@ h2 {
   margin: 0px;
 }
 
+.paises-link {
+  text-decoration: none;
+}
+
 .hora {
   font-size: 24px;
   font-weight: 700;

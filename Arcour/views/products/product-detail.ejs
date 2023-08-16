@@ -28,40 +28,10 @@
         <%- include("../partials/navBar.ejs") %>
     </nav>
     <main>
-        <div class="main-arriba">
-            <div class="arriba-izq">
-                <div class="destino">
-                    <b> buenos aires -  colombia</b>
-                </div>
-                <div class="fecha-cantidad">
-                    <div class="fecha">
-                        <span class="span-header">
-                            <div><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="fyc"> 15 de julio - 19 de julio </div>
-                        </span>
-                    </div>
-                    <div class="cantidad">
-                        <span class="span-header">
-                            <div><i class="fa-solid fa-users"></i></div>
-                            <div class="fyc"> 1 adulto</div>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <button class="arriba-der">
-                    <span class="boton-main-arriba">
-                        <div class="icono12"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        <div class="a" class="icono1">Buscar</div>
-                    </span>
-                </button>
-            </div>
-        </div>
-
+        
         <div class="main-arriba1">
             <div class="arriba-izq">
-                <b>Filtro:</b>4 Vuelos
+                <b>Cantidad de vuelos filtrados: <%= vuelosVuelta.length + vuelosIda.length %></b>
             </div>
             <div class="boton-main2">
                 <button class="arriba-der">
@@ -72,6 +42,19 @@
                 </button>
             </div>
         </div>
+
+        <% if (vuelosIda.length === 0 || vuelosVuelta.length === 0) { %>
+
+            <div class="not-found-container">
+
+                <h1>¡Oops! No se ha encontrado un iterinario para tu viaje</h1>
+                <p>Vuelve a intentarlo nuevamente o cambia tus fechas</p>
+                <a href="/" class="back-home-link">Volver a la página de inicio</a>
+            </div>
+        
+
+        <% } else { %>
+         
         
         <div class="rcmbmc">
             <div>
@@ -111,12 +94,118 @@
                 </button>
             </div>
         </div>
+        <div class="main-arriba">
+            <div class="arriba-izq">
+                <div class="destino">
+                    <b> <%= `${vuelosIda[0].departureAirport} - ${vuelosVuelta[0].departureAirport}` %></b>
+                </div>
+                <div class="fecha-cantidad">
+                    <div class="fecha">
+                        <span class="span-header">
+                            <div><i class="fa-solid fa-calendar-days"></i></div>
+                            <div class="fyc"> 
+                                <%= `${vuelosIda[0].departureDate}` %>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="cantidad">
+                        <span class="span-header">
+                            <div><i class="fa-solid fa-users"></i></div>
+                            <div class="fyc"> 1 adulto</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <% vuelosIda.forEach(vueloIda =>  { %>
+            
+            <div class="cuadrado">
+            <div class="titulo-cuadrado">
+                <b>Vuelos Ida</b>
+            </div>
+            <div class="subtitulo">
+                <div><i class="fa-solid fa-plane"></i></div>
+                <div><b> Salida</b> <%= vueloIda.departureDate  %> </div>
+            </div>
+            <div class="economy">
+                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
+                <div class="espacio">Economy</div>
+            </div>
+            
+            <div class="horario">
+                <div class="horario-adentro">
+                    <div class="latam">
+                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
+                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
+                    </div>
+                    <div class="salida">
+                        <div class="hora"><%= vueloIda.departureTime %></div>
+                        <div class="tamaño-main"><%= vueloIda.departureAirport %> </div>                       
+                    </div>
+                    <div class="salida">
+                        <div class="tamaño-main"><%= vueloIda.flightDuration %></div>
+                        <div class="tamaño-main"> ----o----></div>
+                    </div>
+                    <div>
+                        <div class="salida">
+                            <div class="hora"><%= vueloIda.arrivalTime %></div>
+                            <div class="tamaño-main"> <%= vueloIda.arrivalAirport  %> </div>                           
+                        </div>
+                    </div>
+                </div>
+                <div class="equipaje">
+                    <div><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="tamaño-main">no incluye equipaje facturado</div>
+                </div>
+            </div>
+            
+            <div class="reservar">
+                <button class="boton-detalles"><a class="reservar-detalles" href="">Ver detalles</a></button>
+                <div class="caja-reservar">
+                    <div class="reservar-precio">
+                        <b class="tamaño-main">USD$<%= vueloIda.ticketPrice %></b>
+                        <b class="tamaño-main">Precio por adulto</b>
+                    </div>
+                    <button class="boton-reservar"><a class="reservar-detalles" href="/products/product-cart">Reservar</a></button>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+
+
+        <div class="main-arriba">
+            <div class="arriba-izq">
+                <div class="destino">
+                    <b> <%= `${vuelosVuelta[0].departureAirport} - ${vuelosIda[0].departureAirport}` %></b>
+                </div>
+                <div class="fecha-cantidad">
+                    <div class="fecha">
+                        <span class="span-header">
+                            <div><i class="fa-solid fa-calendar-days"></i></div>
+                            <div class="fyc"> 
+                                <%= `${vuelosVuelta[0].departureDate}` %>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="cantidad">
+                        <span class="span-header">
+                            <div><i class="fa-solid fa-users"></i></div>
+                            <div class="fyc"> 1 adulto</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
         <% vuelosVuelta.forEach(vueloVuelta =>  { %>
         
             
             <div class="cuadrado">
             <div class="titulo-cuadrado">
-                <b>Más barato | Relación calidad-precio</b>
+                <b>Vuelos Vuelta</b>
             </div>
             <div class="subtitulo">
                 <div><i class="fa-solid fa-plane"></i></div>
@@ -155,63 +244,14 @@
             </div>
             
             <div class="reservar">
-                <div class="reservar-precio">
-                    <div class="tamaño-main"><b>AR$<%= vueloVuelta.ticketPrice %></b></div>
-                    <div class="tamaño-main">Precio por adulto</div>
-                </div>
-                <button class="boton-reservar"><a href="">ver detalles</a></button>
-            </div>
-        </div>
-        <% }) %>
-        <% vuelosIda.forEach(vueloVuelta =>  { %>
-        
-            
-            <div class="cuadrado">
-            <div class="titulo-cuadrado">
-                <b>Más barato | Relación calidad-precio</b>
-            </div>
-            <div class="subtitulo">
-                <div><i class="fa-solid fa-plane"></i></div>
-                <div><b> Salida</b> <%= vueloVuelta.departureDate  %> </div>
-            </div>
-            <div class="economy">
-                <div class="espacio"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="espacio">Economy</div>
-            </div>
-            
-            <div class="horario">
-                <div class="horario-adentro">
-                    <div class="latam">
-                        <div><img src="/images/logo-ARCOUR.ico" width="50px"></div>
-                        <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
+                <button class="boton-detalles"><a class="reservar-detalles" href="">Ver detalles</a></button>
+                <div class="caja-reservar">
+                    <div class="reservar-precio">
+                        <b class="tamaño-main">USD$<%= vueloVuelta.ticketPrice %></b>
+                        <b class="tamaño-main">Precio por adulto</b>
                     </div>
-                    <div class="salida">
-                        <div class="hora"><%= vueloVuelta.departureTime %></div>
-                        <div class="tamaño-main"><%= vueloVuelta.departureAirport %> </div>                       
-                    </div>
-                    <div class="salida">
-                        <div class="tamaño-main"><%= vueloVuelta.flightDuration %></div>
-                        <div class="tamaño-main"> ----o----></div>
-                    </div>
-                    <div>
-                        <div class="salida">
-                            <div class="hora"><%= vueloVuelta.arrivalTime %></div>
-                            <div class="tamaño-main"> <%= vueloVuelta.arrivalAirport  %> </div>                           
-                        </div>
-                    </div>
+                    <button class="boton-reservar"><a class="reservar-detalles" href="/products/product-cart">Reservar</a></button>
                 </div>
-                <div class="equipaje">
-                    <div><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="tamaño-main">no incluye equipaje facturado</div>
-                </div>
-            </div>
-            
-            <div class="reservar">
-                <div class="reservar-precio">
-                    <div class="tamaño-main"><b>AR$<%= vueloVuelta.ticketPrice %></b></div>
-                    <div class="tamaño-main">Precio por adulto</div>
-                </div>
-                <button class="boton-reservar"><a href="">ver detalles</a></button>
             </div>
         </div>
         <% }) %>
@@ -230,6 +270,8 @@
                 <div>Pago seguro</div>
             </div>
         </div>
+
+        <% } %>
 
     </main>
     <footer>

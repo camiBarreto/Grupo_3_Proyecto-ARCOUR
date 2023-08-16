@@ -1,82 +1,90 @@
 [
-    {
-        "id": 1,
-        "empresa": "Avianca",
-        "correoEmpresarial": "avianca@hotmail.com",
-        "password": "tararata",
-        "paisDeOrigen": "Colombia",
-        "aerolinea": "avianca",
-        "paisRuta": "argentina",
-        "observaciones": "Casi la cagamos"
-    },
-    {
-        "id": 2,
-        "empresa": "Latam",
-        "correoEmpresarial": "latam@hotmail.com",
-        "password": "latamazi",
-        "paisDeOrigen": "Chile",
-        "aerolinea": "latam",
-        "paisRuta": "colombia",
-        "observaciones": "Casi la cagamos"
-    },
-    {
-        "id": 3,
-        "empresa": "Avianca",
-        "correoEmpresarial": "avianca@hotmail.com",
-        "password": "tararata",
-        "paisDeOrigen": "Colombia",
-        "aerolinea": "avianca",
-        "paisRuta": "argentina",
-        "observaciones": "Casi la cagamos"
-    },
-    {
-        "id": 4,
-        "empresa": "Latam",
-        "correoEmpresarial": "latam@hotmail.com",
-        "password": "latamazi",
-        "paisDeOrigen": "Chile",
-        "aerolinea": "latam",
-        "paisRuta": "colombia",
-        "observaciones": "Casi la cagamos"
-    },
-    {
-        "id": 5,
-        "empresa": "Avianca",
-        "correoEmpresarial": "avianca@hotmail.com",
-        "password": "tararata",
-        "paisDeOrigen": "Colombia",
-        "aerolinea": "avianca",
-        "paisRuta": "argentina",
-        "observaciones": "Casi la cagamos"
-    },
-    {
-        "id": 6,
-        "empresa": "Latam",
-        "correoEmpresarial": "latam@hotmail.com",
-        "password": "latamazi",
-        "paisDeOrigen": "Chile",
-        "aerolinea": "latam",
-        "paisRuta": "colombia",
-        "observaciones": "Casi la cagamos"
-    },
-    {
-        "id": 7,
-        "empresa": "Greyson",
-        "correoEmpresarial": "greyson@hotmail.com",
-        "password": "greyson34",
-        "paisDeOrigen": "venezuela",
-        "aerolinea": "aero-ar",
-        "paisRuta": "uruguay",
-        "observaciones": "hola hola"
-    },
-    {
-        "id": 8,
-        "empresa": "",
-        "correoEmpresarial": "",
-        "password": "",
-        "paisDeOrigen": "argentina",
-        "aerolinea": "latam",
-        "paisRuta": "argentina",
-        "observaciones": ""
-    }
+  {
+    "id": 1,
+    "empresa": "Avianca",
+    "correoEmpresarial": "avianca@hotmail.com",
+    "password": "tararata",
+    "paisDeOrigen": "Colombia",
+    "aerolinea": "avianca",
+    "paisRuta": "argentina",
+    "observaciones": "Casi la cagamos",
+    "admin": true
+  },
+  {
+    "id": 2,
+    "empresa": "Latam",
+    "correoEmpresarial": "latam@hotmail.com",
+    "password": "latamazi",
+    "paisDeOrigen": "Chile",
+    "aerolinea": "latam",
+    "paisRuta": "colombia",
+    "observaciones": "Casi la cagamos",
+    "admin": true
+  },
+  {
+    "id": 3,
+    "empresa": "Avianca",
+    "correoEmpresarial": "avianca@hotmail.com",
+    "password": "tararata",
+    "paisDeOrigen": "Colombia",
+    "aerolinea": "avianca",
+    "paisRuta": "argentina",
+    "observaciones": "Casi la cagamos",
+    "admin": true
+  },
+  {
+    "id": 4,
+    "empresa": "Latam",
+    "correoEmpresarial": "latam@hotmail.com",
+    "password": "latamazi",
+    "paisDeOrigen": "Chile",
+    "aerolinea": "latam",
+    "paisRuta": "colombia",
+    "observaciones": "Casi la cagamos",
+    "admin": true
+  },
+  {
+    "id": 5,
+    "empresa": "Avianca",
+    "correoEmpresarial": "avianca@hotmail.com",
+    "password": "tararata",
+    "paisDeOrigen": "Colombia",
+    "aerolinea": "avianca",
+    "paisRuta": "argentina",
+    "observaciones": "Casi la cagamos",
+    "admin": true
+  },
+  {
+    "id": 6,
+    "empresa": "Latam",
+    "correoEmpresarial": "latam@hotmail.com",
+    "password": "latamazi",
+    "paisDeOrigen": "Chile",
+    "aerolinea": "latam",
+    "paisRuta": "colombia",
+    "observaciones": "Casi la cagamos",
+    "admin": true
+  },
+  {
+    "id": 7,
+    "empresa": "Greyson",
+    "correoEmpresarial": "greyson@hotmail.com",
+    "password": "greyson34",
+    "paisDeOrigen": "venezuela",
+    "aerolinea": "aero-ar",
+    "paisRuta": "uruguay",
+    "observaciones": "hola hola",
+    "admin": true
+  },
+  {
+    "id": 8,
+    "empresa": "Latam",
+    "correoEmpresarial": "greyson@hotmail.com",
+    "password": "345678",
+    "paisDeOrigen": "uruguay",
+    "aerolinea": "avianca",
+    "paisRuta": "colombia",
+    "observaciones": "aaaa",
+    "admin": true
+  }
 ]
