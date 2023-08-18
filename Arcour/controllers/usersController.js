@@ -1,6 +1,7 @@
 const path = require("path");
 const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
+const bcrypt = require("bcryptjs");
 
 const controllerUser = {
   login: (req, res) => {
@@ -53,6 +54,50 @@ const controllerUser = {
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/');
   },
+  processLogin:(req, res) => {
+    const userData = req.body
+    const user = userModel.findByEmail(userData.correo)
+    const admin = adminModel.findByEmail(userData.correo)
+    const errors = {
+      email: {
+        msg: "Credenciales invalidas",
+      }
+    }
+    if(user){
+      let isOkThePassword = bcrypt.compareSync(req.body.password, user.password);
+      if(isOkThePassword){
+        req.session.loggedUser = user;
+        console.log(req.session.loggedUser)
+        return res.redirect("/users/profile")
+      }
+      else {
+        return res.send(errors)
+      }
+
+      //login de user
+    } else if (admin) {
+      let isOkThePassword = bcrypt.compareSync(req.body.password, admin.password);
+      if(isOkThePassword){
+        req.session.loggedAdmin = admin;
+        console.log(req.session.loggedAdmin)
+        return res.redirect("/users/admin")
+      }
+      else {
+        return res.send(errors)
+      }
+
+      //login de admin
+    } else {
+      return res.send(errors)
+
+      //error email inexistente
+    }
+  },
+  logOut: (req,res) => {
+    res.clearCookie("email");
+    req.session.destroy();
+    return res.redirect("/")
+  }
 };
 
 module.exports = controllerUser;

@@ -1,5 +1,7 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcryptjs");
+const uuid = require("uuid");
 
 const modelo = {
   fileRoute: path.join(__dirname, "../data/users.json"),
@@ -17,27 +19,33 @@ const modelo = {
     const selectedUsers = users.find(
       (usuarioActual) => usuarioActual.id == id
     );
-
+     // retorna productos segun su ID del archivo users.json.
     return selectedUsers;
-  }, // retorna productos segun su ID del archivo users.json.
+  },
+  findByEmail:(email)=>{
+    const users = modelo.findAll(); // Para utilizar this.findAll debo declarar la funcion con la palabra function
+    const selectedEmail = users.find(
+      (usuarioActual) => usuarioActual.correo == email
+    );
+     // retorna productos segun su EMAIL del archivo users.json.
+    return selectedEmail;
+  }, 
 
   createUsers: (bodyData) => {
     let users = modelo.findAll();
-
-    const lastUsersId = users[users.length - 1].id;
-
-    const newUsers = {
-      id: lastUsersId + 1,
+    
+    const newUser = {
+      id: uuid.v4(),
       ...bodyData,
     };
-
-    users.push(newUsers);
+    newUser.password = bcrypt.hashSync(newUser.password,10);
+    users.push(newUser);
 
     const jsonData = JSON.stringify(users); // Convertimos el Javascript en JSON
 
     fs.writeFileSync(modelo.fileRoute, jsonData, "utf-8");
 
-    return newUsers;
+    return newUser;
   },
   
 };
