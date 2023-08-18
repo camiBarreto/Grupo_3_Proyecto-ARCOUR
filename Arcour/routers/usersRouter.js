@@ -7,7 +7,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 
 
 //@ GET /users/login
-router.get("/login",guestMiddleware, controllerUser.login);
+router.get("/login", guestMiddleware, controllerUser.login);
 //@ POST /users/login/post
 router.post("/login/post", controllerUser.processLogin);
 
@@ -17,10 +17,10 @@ router.get("/register",guestMiddleware, controllerUser.register);
 router.post("/post", controllerUser.postUser);
 
 //@ GET /users/admin
-router.get("/admin",adminMiddleware , controllerUser.admin);
+router.get("/admin",adminMiddleware, controllerUser.admin);
 
 //@ GET /users/create
-router.get("/create",adminMiddleware, controllerUser.getCreateAdmin);
+router.get("/create", controllerUser.getCreateAdmin);
 //@ GET /users/logOut
 router.get("/logOut", authMiddleware, controllerUser.logOut);
 

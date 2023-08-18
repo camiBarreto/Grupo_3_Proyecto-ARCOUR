@@ -1,5 +1,5 @@
 const adminMiddleware = (req,res,next)=> {
-    if(!req.session.userLogged.admin){
+    if(!req.session.loggedAdmin){
         return res.redirect("/")
     }
     next();
