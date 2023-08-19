@@ -46,7 +46,7 @@
                         <label for="partida" title class="margin-label">Partida</label>
                         <input type="date" name="departureDate" id="partida" class="input-buscador">
                     </div>
-                    <div class="fondo-buscador-vuelos fondo-interno">
+                    <div class="fondo-buscador-vuelos fondo-interno" id="seccionArribo">
                         <label for="arribo" title class="margin-label">Arribo</label>
                         <input type="date" name="returnDate" id="arribo" class="input-buscador">
                     </div>
@@ -54,11 +54,11 @@
                         <label class="margin-label">Tipo de vuelo</label>
                         <div class="radio-container">
                             <label class="radio-label">
-                                <input type="radio" name="flightTypeIda" value="ida" checked class="input-buscador">
+                                <input type="radio" name="flightTypeIda" value="ida" id="ida" class="input-buscador">
                                 Solo Ida
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="flightType" value="ida-vuelta" class="input-buscador">
+                                <input type="radio" name="flightType" value="ida-vuelta" id="idaVuelta" checked class="input-buscador">
                                 Ida y Vuelta
                             </label>
                         </div>
@@ -68,7 +68,7 @@
                             <i class="fa-solid fa-magnifying-glass boton-buscador-vuelos"></i>
                         </button>
                     </div>
-                </form>
+                </form>    
             </div>
 
         </div>
@@ -185,6 +185,8 @@
     <footer>
         <%- include("../partials/footer.ejs") %>
     </footer>
+
+    <script src="/js/scriptBarraHome.js"></script>
 </body>
 
 
