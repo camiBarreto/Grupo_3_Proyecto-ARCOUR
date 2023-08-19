@@ -20,5 +20,16 @@
     "paisRuta": "colombia",
     "observaciones": "la maquina samuel",
     "admin": true
+  },
+  {
+    "id": "00299dc9-1635-488a-87a0-670ceff43f3b",
+    "empresa": "Greyson",
+    "correoEmpresarial": "greyson@hotmail.com",
+    "password": "$2a$10$UJKDM0Pa1u4s9Xj65cJyxe251dUQaFgDBIizfZlteIcNA3z0uylCO",
+    "paisDeOrigen": "paraguay",
+    "aerolinea": "aero-ar",
+    "paisRuta": "uruguay",
+    "observaciones": "aaaa",
+    "admin": true
   }
 ]

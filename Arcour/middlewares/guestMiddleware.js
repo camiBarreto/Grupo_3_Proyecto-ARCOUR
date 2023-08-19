@@ -1,6 +1,6 @@
-const guestMiddleware = (req,res,next)=> {
-    if(req.session.userLogged){
-        return res.redirect("/users/login")
+const guestMiddleware = (req,res,next) => {
+    if(req.session.loggedUser || req.session.loggedAdmin){
+        return res.redirect("/")
     }
     next();
 }

@@ -1,5 +1,5 @@
 const authMiddleware = (req,res,next)=> {
-    if(!req.session.userLogged){
+    if(!req.session.loggedUser || !req.session.loggedAdmin) {
         return res.redirect("/")
     }
     next();

@@ -79,7 +79,7 @@ const controllerUser = {
       let isOkThePassword = bcrypt.compareSync(req.body.password, admin.password);
       if(isOkThePassword){
         req.session.loggedAdmin = admin;
-        console.log(req.session.loggedAdmin)
+        console.log("te has logueado como admin" + req.session.loggedAdmin)
         return res.redirect("/users/admin")
       }
       else {

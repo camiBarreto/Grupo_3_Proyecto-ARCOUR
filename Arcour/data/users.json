@@ -1,1 +1,54 @@
-[{"id":"285a18e6-1b82-439f-b8c8-262ca61a9316","nombre":"Mariano","apellido":"cosco","genero":"masculino","documento":"12345678","fechaNacimiento":"2023-09-01","celular":"12345678","correo":"adfadsfa@gmail.com","password":"$2a$10$b73IbDeNc9ymoonV8omg2enQw8G8Tl/RK60FCWhvTUjVZthaDtHK6","pais":"argentina","aerolineaFav":"latam"},{"id":"d826d313-2baf-4183-8263-a4e8d230e3db","nombre":"samuel","apellido":"samuel2","genero":"femenino","documento":"1231456","fechaNacimiento":"2023-09-23","celular":"1234567789","correo":"fsdfsdfsdf@gmail.com","password":"$2a$10$qnUJHDCPgJdVYJPlPA009OKZ1hN03xRLSq4m3ss9v6XITEshkurUS","pais":"argentina","aerolineaFav":"latam"},{"id":"2d0ddb97-dd3c-4dbe-bcc9-c1cb73075500","nombre":"cami","apellido":"camila","genero":"masculino","documento":"123245678","fechaNacimiento":"2023-08-23","celular":"123423546","correo":"camia@gmail.com","password":"$2a$10$xmR6.yPcjdGRGi110aGaRuCECUHFWFxidSI1gcezey7IDCYLzLY9u","pais":"argentina","aerolineaFav":"latam"},{"id":"e821d837-08a4-4bef-bb1a-69a507d93b9a","nombre":"Mariano","apellido":"cosco","genero":"masculino","documento":"12345678","fechaNacimiento":"2023-09-08","celular":"1","correo":"mariano@gmail.com","password":"$2a$10$3xb8TJel76NMCWgemKz/iuLzDz5JCzQhtYvlHCHAqwaTOjbz9KSru","pais":"argentina","aerolineaFav":"latam"}]
+[
+  {
+    "id": "285a18e6-1b82-439f-b8c8-262ca61a9316",
+    "nombre": "Mariano",
+    "apellido": "cosco",
+    "genero": "masculino",
+    "documento": "12345678",
+    "fechaNacimiento": "2023-09-01",
+    "celular": "12345678",
+    "correo": "adfadsfa@gmail.com",
+    "password": "$2a$10$b73IbDeNc9ymoonV8omg2enQw8G8Tl/RK60FCWhvTUjVZthaDtHK6",
+    "pais": "argentina",
+    "aerolineaFav": "latam"
+  },
+  {
+    "id": "d826d313-2baf-4183-8263-a4e8d230e3db",
+    "nombre": "samuel",
+    "apellido": "samuel2",
+    "genero": "femenino",
+    "documento": "1231456",
+    "fechaNacimiento": "2023-09-23",
+    "celular": "1234567789",
+    "correo": "fsdfsdfsdf@gmail.com",
+    "password": "$2a$10$qnUJHDCPgJdVYJPlPA009OKZ1hN03xRLSq4m3ss9v6XITEshkurUS",
+    "pais": "argentina",
+    "aerolineaFav": "latam"
+  },
+  {
+    "id": "2d0ddb97-dd3c-4dbe-bcc9-c1cb73075500",
+    "nombre": "cami",
+    "apellido": "camila",
+    "genero": "masculino",
+    "documento": "123245678",
+    "fechaNacimiento": "2023-08-23",
+    "celular": "123423546",
+    "correo": "camia@gmail.com",
+    "password": "$2a$10$xmR6.yPcjdGRGi110aGaRuCECUHFWFxidSI1gcezey7IDCYLzLY9u",
+    "pais": "argentina",
+    "aerolineaFav": "latam"
+  },
+  {
+    "id": "e821d837-08a4-4bef-bb1a-69a507d93b9a",
+    "nombre": "Mariano",
+    "apellido": "cosco",
+    "genero": "masculino",
+    "documento": "12345678",
+    "fechaNacimiento": "2023-09-08",
+    "celular": "1",
+    "correo": "mariano@gmail.com",
+    "password": "$2a$10$3xb8TJel76NMCWgemKz/iuLzDz5JCzQhtYvlHCHAqwaTOjbz9KSru",
+    "pais": "argentina",
+    "aerolineaFav": "latam"
+  }
+]
