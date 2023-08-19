@@ -12,7 +12,7 @@ const controllerProduct = {
     console.log({vuelosIda, vuelosVuelta});
 
     //Pasarle a la vista, product-detail los datos para mostrarlos dinamicamente.
-    res.render("product-detail", { vuelosIda, vuelosVuelta });
+    res.render("product-detail", { vuelosIda, vuelosVuelta, queryData });
   },
 
   getProductList: (req, res) => {
