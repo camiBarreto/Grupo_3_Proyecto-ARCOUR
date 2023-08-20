@@ -16,22 +16,11 @@ const userRouter = require("./routers/usersRouter");
 const productRouter = require("./routers/productRouter");
 
 //Middlewares requires
+const isLoggedMiddleware = require("./middlewares/isLoggedMiddleware")
 const notFoundMiddleware = require("./middlewares/middleware404")
 
 //Application express
 const app = express();
-
-//Application middlewares
-app.use(session({
-  secret:"mariano la maquina",
-  resave: false,
-  saveUninitialized: true
-}));
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(express.json());
-app.use(methodOverride("_method"));
 
 //EJS
 app.set("view engine", "ejs");
@@ -44,6 +33,23 @@ app.set("views", [
   path.join(__dirname, "./views/partials"),
 ]);
 
+
+//Application dependencies middlewares
+app.use(session({
+  secret:"mariano la maquina",
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.json());
+app.use(methodOverride("_method"));
+
+//Locals application middlewares
+app.use(isLoggedMiddleware);
+
+
 //Router middlewares
 app.use("/", mainRouter);
 
@@ -51,9 +57,8 @@ app.use("/users", userRouter);
 
 app.use("/products", productRouter);
 
-//Not found 404 middleware
+//Not found Middleware (debe ir aqui o si no se rompe el codigo (lo digo despues de 2 horas de frustracion))
 app.use(notFoundMiddleware);
-
 
 //Server start (Entry point)
 app.listen(port || 3000, () => {
@@ -63,7 +68,3 @@ app.listen(port || 3000, () => {
   );
 });
 
-
-/*
-    1. Conectar el product-detail con los datos de los productos para mostrarlos de forma dinámica.
-*/
