@@ -50,5 +50,18 @@
     "password": "$2a$10$3xb8TJel76NMCWgemKz/iuLzDz5JCzQhtYvlHCHAqwaTOjbz9KSru",
     "pais": "argentina",
     "aerolineaFav": "latam"
+  },
+  {
+    "id": "c4002cc5-2b38-4c1b-a545-09f8e052688c",
+    "nombre": "Juanchito",
+    "apellido": "Bistuco",
+    "genero": "femenino",
+    "documento": "1107245321",
+    "fechaNacimiento": "2005-05-13",
+    "celular": "3223086789",
+    "correo": "juanpablogomez@gmail.com",
+    "password": "$2a$10$gC6cOgyYVhGb7hPgVEef6uTapNk6IWpDwn957auUFK5b/OYAebujG",
+    "pais": "venezuela",
+    "aerolineaFav": "avianca"
   }
 ]
