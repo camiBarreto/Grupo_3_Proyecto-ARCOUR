@@ -168,6 +168,22 @@ button {
   margin-top:10px
 }
 
+.recordarme{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recordarme-input{
+  display: flex;
+  margin: 10px;
+}
+
+.recordarme-label{
+  display: flex;
+  margin: 0px;
+}
+
 .link-register {
   text-align: center;
   padding: 20px;
