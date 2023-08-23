@@ -8,10 +8,13 @@
     <div class="iconos-header">
         <% if (locals.validationUser) { %>
             <!-- Implementacion del profile-->
-            <h3><%= locals.loggedUser.nombre %></h3>
+            
+            <a href="/users/profile"><h3> Hola <%= locals.loggedUser.nombre %></h3></a>
+            <a href="/users/logOut">Cerrar Sesion</a>
         <% } else if (locals.validationAdmin) { %>
             <!-- Implementacion del profile y el icono admin-->
-            <h3><%= locals.loggedAdmin.empresa %></h3>
+            <h3>hola <%= locals.loggedAdmin.empresa %></h3>
+            <a href="/users/logOut">Cerrar Sesion</a>
 
         <% } else { %>       
             <a href="/users/login"><i class=" fa-solid fa-user"></i></a>

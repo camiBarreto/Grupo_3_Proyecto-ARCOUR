@@ -3,7 +3,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const path = require("path");
 const dotenv = require("dotenv").config();
-const cookieParser = require("cookie-parser");
+const cookies = require("cookie-parser");
 const session = require("express-session");
 
 
@@ -40,9 +40,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookies());
 app.use(express.json());
 app.use(methodOverride("_method"));
 

@@ -25,7 +25,7 @@ const modelo = {
   findByEmail:(email)=>{
     const users = modelo.findAll(); // Para utilizar this.findAll debo declarar la funcion con la palabra function
     const selectedEmail = users.find(
-      (usuarioActual) => usuarioActual.correo == email
+      (usuarioActual) => usuarioActual.correo === email
     );
      // retorna productos segun su EMAIL del archivo users.json.
     return selectedEmail;

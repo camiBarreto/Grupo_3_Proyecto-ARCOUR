@@ -5,6 +5,17 @@ const isLogged = (req, res, next) => {
     res.locals.validationUser = false;
     res.locals.validationAdmin = false;
 
+    let emailInCookie = req.cookies.userEmail;
+	let userFromCookie = userModel.findByEmail(emailInCookie);
+	let adminFromCookie = adminModel.findByEmail(emailInCookie);
+
+
+    if (userFromCookie) {
+		req.session.loggedUser = userFromCookie;
+	} else if (adminFromCookie){
+		req.session.loggedAdmin = adminFromCookie;
+    }
+
     //Cokkies validation (Parte de mariano)
 
     if(req.session.loggedUser) {
@@ -14,6 +25,7 @@ const isLogged = (req, res, next) => {
         res.locals.validationAdmin = true;
         res.locals.loggedAdmin = req.session.loggedAdmin;
     }
+    
     next();
 }
 

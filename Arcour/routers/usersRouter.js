@@ -21,10 +21,12 @@ router.get("/admin",adminMiddleware, controllerUser.admin);
 
 //@ GET /users/create
 router.get("/create", controllerUser.getCreateAdmin);
-//@ GET /users/logOut
-router.get("/logOut", authMiddleware, controllerUser.logOut);
-
 //@ POST /users
 router.post("/post/admin", controllerUser.postAdmin);
+
+//@ GET /users/logOut
+router.get("/logOut",authMiddleware, controllerUser.logOut);
+
+router.get("/profile",authMiddleware, controllerUser.profile);
 
 module.exports = router;
