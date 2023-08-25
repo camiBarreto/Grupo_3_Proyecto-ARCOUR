@@ -20,6 +20,14 @@ const controllerProduct = {
 
     res.render("productList", {flights});
   },
+  getVerDetalle: (req, res) => {
+     //Obtener los datos de búsqueda del formulario
+     const flight = productModel.findByflightNumber(Number(req.params.id));
+
+     //Guardar las listas de vuelos de ida y vuelta recibidos por el modelo.
+ 
+    res.render("ver-detalle", {flight})
+  },
 
   getProductEdits:(req,res)=>{
     const flight = productModel.findByflightNumber(Number(req.params.id));

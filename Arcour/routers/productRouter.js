@@ -25,6 +25,8 @@ const upload = multer({ storage });
 router.get("/product-cart", controllerProduct.getProductCart);
 //@ GET /product-detail
 router.get("/product-detail", controllerProduct.getProductDetail);
+//@ GET /product-detail/ver-detalle
+router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
 //@ GET /products
 router.get("/data",adminMiddleware, controllerProduct.getProductList);
 //@ DELETE /products/delete
