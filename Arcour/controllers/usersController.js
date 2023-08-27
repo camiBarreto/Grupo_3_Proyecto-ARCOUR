@@ -97,7 +97,7 @@ const controllerUser = {
     }
   },
   profile:(req,res)=>{
-    return res.redirect("/");
+    return res.render("profile");
   },
   logOut: (req, res) => {
     res.clearCookie("userEmail");
