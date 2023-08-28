@@ -1,27 +1,5 @@
 [
   {
-    "id": "5f2b9a95-9824-40bb-ac09-ac15a031bad6",
-    "empresa": "marianoEmpresa",
-    "correoEmpresarial": "mariano1@gmail.com",
-    "password": "$2a$10$jECUDpEtbnV3eYg/jlWJH..Uj/gxL6K6WU5AWjvWMLsnosmTo0flW",
-    "paisDeOrigen": "argentina",
-    "aerolinea": "latam",
-    "paisRuta": "argentina",
-    "observaciones": "la maquina mariano",
-    "admin": true
-  },
-  {
-    "id": "20eed312-c0bc-4b88-afcb-b7af82b1a141",
-    "empresa": "samuelEmpresa",
-    "correoEmpresarial": "samuelEmpresa@gmail.com",
-    "password": "$2a$10$k7iqqre73RTAZDq2Q1a3IuwjuVm7oHP74dILN6ax30u0hMdGvdXm.",
-    "paisDeOrigen": "argentina",
-    "aerolinea": "latam",
-    "paisRuta": "colombia",
-    "observaciones": "la maquina samuel",
-    "admin": true
-  },
-  {
     "id": "00299dc9-1635-488a-87a0-670ceff43f3b",
     "empresa": "Greyson",
     "correoEmpresarial": "greyson@hotmail.com",
@@ -29,7 +7,18 @@
     "paisDeOrigen": "paraguay",
     "aerolinea": "aero-ar",
     "paisRuta": "uruguay",
-    "observaciones": "aaaa",
+    "contacto": "+57 601 3073940",
+    "admin": true
+  },
+  {
+    "id": "c6315c90-1e27-4834-8fc8-53da87f5d783",
+    "empresa": "kayak",
+    "correoEmpresarial": "kayak@gmail.com",
+    "password": "$2a$10$/1uZbmkcKMVkdd5lhkd5s.gdQMIyDmVL/TtL4gt0Jq.6pX/zLz/72",
+    "paisDeOrigen": "ecuador",
+    "aerolinea": "aerolíneas Argentinas",
+    "paisRuta": "colombia",
+    "contacto": "+ 593 1 3819260",
     "admin": true
   }
 ]

@@ -106,7 +106,7 @@ h3 {
   margin-bottom: 15px;
 }
 
-section {
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,16 +114,12 @@ section {
   box-sizing: border-box;
 }
 
-.nombre-apellido {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 .nombre-apellido,
 .pagos,
 .pedido {
   display: flex;
   flex-direction: column;
+  align-self: center;
   width: 50%;
   background-color: #f2f2f2;
   border: black 1px solid;
@@ -136,6 +132,44 @@ h6 {
 
 h2 {
   text-align: center;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.login-main {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-main h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.login-main label {
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-main input[type="text"],
+.login-main input[type="password"] {
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.checkbox {
+  text-align: center;
+  margin-top: 10px;
 }
 
 section input {
@@ -240,6 +274,14 @@ button {
   flex-direction: column;
   margin-top: 20px;
 }
+.main-flex1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 188px;
+}
 
 i:hover {
   color: lightblue;
@@ -247,10 +289,6 @@ i:hover {
 
 button:hover {
   background-color: #181b59;
-}
-
-.login-main {
-  margin-top: 15px;
 }
 
 footer {

@@ -1,56 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include("../partials/head.ejs") %>
-</head>
+  </head>
 
-<body>
-    <header>
-        <%- include("../partials/header.ejs") %>
-    </header>
+  <body>
+    <header><%- include("../partials/header.ejs") %></header>
 
-    <nav class="main-nav">
-        <%- include("../partials/navBar.ejs") %>
-    </nav>
+    <nav class="main-nav"><%- include("../partials/navBar.ejs") %></nav>
 
     <main>
-        <div class="contenido-register">
-          <div class="login-box">
-            <div class="user-avatar">
-                <h2 class="titulo-buscador-vuelos">Hola Camila!</h2>
-              <img src="/images/person.jpg" alt="Imagen de Usuario">
-            </div>
-           
-              <div class="input-box">
-                <h3>Nombre y Apellido</h3> <br>
-                <p>Camila Barreto</p>
-               </div>
-              <div class="input-box">
-                <h3>Documento de Identidad</h3> <br>
-                <p>12345675</p>
-               
-              </div>
-              <div class="input-box">
-                <h3>Fecha de Nacimiento</h3><br>
-                <p>00/00/0000</p>
-               
-              </div>
+      <div class="contenido-register">
+        <div class="login-box">
+          <div class="user-avatar">
+            <h2 class="titulo-buscador-vuelos">
+              <% if (locals.validationUser) { %> Hola <%=
+              locals.loggedUser.nombre %> <% } 
+              else { %> Administra tu empresa
+              <%= locals.loggedAdmin.empresa.charAt(0).toUpperCase() +
+              locals.loggedAdmin.empresa.slice(1) %> 
+              <% } %>
+            </h2>
+            <% if ( locals.validationUser && locals.loggedUser.genero ==
+            "masculino" ) { %>
+            <img src="/images/hombre.png" alt="Imagen de Usuario" />
 
-              <div class="input-box">
-                <h3>Número de Celular</h3><br>
-                <p>05455124554</p>
-              </div>
-              <div class="input-box">
-                <h3>Correo Electrónico</h3><br>
-                <p>camila@gmail.com</p>
-                
-              </div>
-              <div class="botones">
-                <button class="boton-submit" id="editar">Editar</button>
-                <button class="boton-submit" id="eliminar">Eliminar</button>
-              </div>
-           
+            <% } else if (locals.validationUser && locals.loggedUser.genero ==
+            "femenino") { %>
+            <img src="/images/mujer.png" alt="Imagen de Usuario" />
+
+            <% } else { %>
+            <img src="/images/perfil.png" alt="Imagen de Usuario" />
+            <% } %>
+          </div>
+
+          <% if (locals.validationUser) { %>
+          <div class="input-box">
+            <h3>Nombre y Apellido</h3>
+            <p>
+              <%= (`${locals.loggedUser.nombre} ${locals.loggedUser.apellido}`)
+              %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Documento de Identidad</h3>
+            <p><%= locals.loggedUser.documento %></p>
+          </div>
+          <div class="input-box">
+            <h3>Fecha de Nacimiento</h3>
+            <p><%= locals.loggedUser.fechaNacimiento %></p>
+          </div>
+
+          <div class="input-box">
+            <h3>Número de Celular</h3>
+            <p><%= locals.loggedUser.celular %></p>
+          </div>
+          <div class="input-box">
+            <h3>Correo Electrónico</h3>
+            <p><%= locals.loggedUser.correo%></p>
+          </div>
+          <div class="input-box">
+            <h3>País</h3>
+            <p>
+              <%= locals.loggedUser.pais.charAt(0).toUpperCase() +
+              locals.loggedUser.pais.slice(1)%>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Aerolínea preferida</h3>
+            <p><%= (locals.loggedUser.aerolineaFav).toUpperCase()%></p>
+          </div>
+
+          <% } else if (locals.validationAdmin) { %>
+          <div class="input-box">
+            <h3>Empresa</h3>
+            <p>
+              <%= locals.loggedAdmin.empresa.charAt(0).toUpperCase() +
+              locals.loggedAdmin.empresa.slice(1) %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>País de Origen</h3>
+            <p>
+              <%= locals.loggedAdmin.paisDeOrigen.charAt(0).toUpperCase() +
+              locals.loggedAdmin.paisDeOrigen.slice(1) %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Aerolínea</h3>
+            <p><%= (locals.loggedAdmin.aerolinea).toUpperCase() %></p>
+          </div>
+
+          <div class="input-box">
+            <h3>País de Operación</h3>
+            <p>
+              <%= locals.loggedAdmin.paisRuta.charAt(0).toUpperCase() +
+              locals.loggedAdmin.paisRuta.slice(1) %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Correo Empresarial</h3>
+            <p><%= locals.loggedAdmin.correoEmpresarial %></p>
+          </div>
+          <div class="input-box">
+            <h3>Correo Empresarial</h3>
+            <p><%= locals.loggedAdmin.contacto %></p>
+          </div>
+
+          <% } %>
+          <div class="botones">
+            <button class="boton-submit" id="editar">Editar Usuario</button>
+            <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
+  </body>
+</html>

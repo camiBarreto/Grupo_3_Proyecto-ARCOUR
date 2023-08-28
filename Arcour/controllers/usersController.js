@@ -46,7 +46,7 @@ const controllerUser = {
       paisDeOrigen: req.body.paisOrigen,
       aerolinea: req.body.aerolinea,
       paisRuta: req.body.paisRuta,
-      observaciones: req.body.observaciones
+      contacto: req.body.contacto
     };
 
     adminModel.createAdmin(newCompany);
