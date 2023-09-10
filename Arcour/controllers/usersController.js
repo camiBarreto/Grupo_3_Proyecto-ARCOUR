@@ -59,15 +59,15 @@ const controllerUser = {
   processLogin: (req, res) => {
     let user = userModel.findByEmail(req.body.correo);
     let admin = adminModel.findByEmail(req.body.correo);
-    
+
     if (user) {
       let isOkThePassword = bcrypt.compareSync(req.body.password, user.password);
       if (isOkThePassword) {
         delete user.password;
         req.session.loggedUser = user;
-          if (req.body.recordarme) {
-            res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 2 })
-          }
+        if (req.body.recordarme) {
+          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 2 })
+        }
         return res.redirect("/users/profile")
       }
       else {
@@ -80,9 +80,9 @@ const controllerUser = {
       if (isOkThePassword) {
         delete admin.password;
         req.session.loggedAdmin = admin;
-          if (req.body.recordarme) {
-            res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 2 })
-          }
+        if (req.body.recordarme) {
+          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 2 })
+        }
         return res.redirect("/users/admin")
       }
       else {
@@ -96,13 +96,34 @@ const controllerUser = {
       //error email inexistente
     }
   },
-  profile:(req,res)=>{
+  profile: (req, res) => {
     return res.render("profile");
   },
   logOut: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/")
+  },
+  getEditUser: (req, res) => {    
+    const user = userModel.findById(req.params.id);
+    return res.render("editUser", { user });
+  },
+  putEditUser: (req, res) => {
+
+    let firstId = {
+      id: Number(req.params.id)
+    };
+
+    updatedUser = {
+      ...firstId,
+      ...req.body,
+      
+    };
+
+    userModel.updateUser(updatedUser);
+
+
+    return res.redirect("/profile")
   }
 };
 

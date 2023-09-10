@@ -24,6 +24,11 @@ router.get("/create", controllerUser.getCreateAdmin);
 //@ POST /users
 router.post("/post/admin", controllerUser.postAdmin);
 
+router.get ("/:id/editUser",controllerUser.getEditUser)
+
+//@ PUT /users
+router.put("/:id/put/user", controllerUser.putEditUser)
+
 //@ GET /users/logOut
 router.get("/logOut",authMiddleware, controllerUser.logOut);
 

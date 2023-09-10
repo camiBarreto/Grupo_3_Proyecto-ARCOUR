@@ -47,7 +47,20 @@ const modelo = {
 
     return newUser;
   },
-  
+  updateUser: (updatedUser) => {
+    // Buscar array de usuarios ya existentes
+    let users = modelo.findAll();
+    // Conseguir en qué indice de ese array, está guardado el producto del id en cuestión
+    const userIndex = users.findIndex(
+      usuarioActual => usuarioActual.id === updatedUser.id
+    );
+    // Modificar el elemento del array en ese índice, por el que nos pasaron por parámetro
+    users[userIndex] = updatedUser;
+    // Convertir este nuevo array en JSON
+    const usersJson = JSON.stringify(users);
+    // Guardar todo al JSON
+    fs.writeFileSync(modelo.fileRoute, usersJson, "utf-8");
+    }
 };
 
 module.exports = modelo;
