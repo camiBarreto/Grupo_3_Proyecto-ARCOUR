@@ -71,6 +71,13 @@
             <p><%= (locals.loggedUser.aerolineaFav).toUpperCase()%></p>
           </div>
 
+          <div class="botones">
+            <a href="/users/<%= locals.loggedUser.id %>/editUser">
+              <button class="boton-submit" id="editar">Editar Usuario</button>
+            </a>
+            <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
+          </div>
+
           <% } else if (locals.validationAdmin) { %>
           <div class="input-box">
             <h3>Empresa</h3>
@@ -107,11 +114,15 @@
             <p><%= locals.loggedAdmin.contacto %></p>
           </div>
 
-          <% } %>
           <div class="botones">
-            <button class="boton-submit" id="editar">Editar Usuario</button>
+            <a href="/users/<%=locals.loggedAdmin.id%>/editUser">
+              <button class="boton-submit" id="editar">Editar Admministrador</button>
+            </a>
             <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
           </div>
+
+          <% } %>
+          
         </div>
       </div>
     </main>
