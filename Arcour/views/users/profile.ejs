@@ -14,9 +14,9 @@
         <div class="login-box">
           <div class="user-avatar">
             <h2 class="titulo-buscador-vuelos">
-              <% if (locals.validationUser) { %> Hola <%=
+              <% if (locals.validationUser) { %> <span>Hola</span> <%=
               locals.loggedUser.nombre %> <% } 
-              else { %> Administra tu empresa
+              else { %> <span>Administra tu empresa</span>
               <%= locals.loggedAdmin.empresa.charAt(0).toUpperCase() +
               locals.loggedAdmin.empresa.slice(1) %> 
               <% } %>
