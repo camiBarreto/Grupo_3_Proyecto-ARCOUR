@@ -25,7 +25,7 @@ const controllerUser = {
 
     userModel.createUsers(newUser);
 
-    res.redirect("/");
+    res.redirect("/users/login");
   },
 
   register: (req, res) => {
@@ -111,8 +111,12 @@ const controllerUser = {
   putEditUser: (req, res) => {
 
     let firstId = {
-      id: Number(req.params.id)
+      id: (req.params.id)
     };
+
+    if (req.body.hasOwnProperty("t&c")) {
+      delete req.body["t&c"];
+    }
 
     updatedUser = {
       ...firstId,
@@ -123,7 +127,7 @@ const controllerUser = {
     userModel.updateUser(updatedUser);
 
 
-    return res.redirect("/profile")
+    return res.redirect("/users/profile")
   }
 };
 
