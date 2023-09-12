@@ -128,6 +128,26 @@ const controllerUser = {
 
 
     return res.redirect("/users/profile")
+  },
+  getEditAdmin: (req, res) => {    
+    const admin = adminModel.findById(req.params.id);
+    return res.render("editAdmin", { admin });
+  },
+  putEditAdmin: (req, res) => {
+
+    let firstId = {
+      id: (req.params.id)
+    };
+
+    updatedAdmin = {
+      ...firstId,
+      ...req.body,
+    };
+
+    adminModel.updateAdmin(updatedAdmin);
+
+
+    return res.redirect("/users/profile")
   }
 };
 

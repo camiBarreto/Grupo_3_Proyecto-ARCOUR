@@ -50,6 +50,24 @@ const modelo = {
 
     return newAdmin;
   },
+  updateAdmin: (updatedAdmin) => {
+    // Buscar array de admins ya existentes
+    let admins = modelo.findAll();
+    // Conseguir en qué indice de ese array, está guardado el producto del id en cuestión
+    const adminIndex =  admins.findIndex(
+      adminActual => adminActual.id === updatedAdmin.id
+    );
+
+    updatedAdmin.password = admins[adminIndex].password;
+    updatedAdmin.admin = true;
+    
+    // Modificar el elemento del array en ese índice, por el que nos pasaron por parámetro
+    admins[adminIndex] = updatedAdmin;
+    // Convertir este nuevo array en JSON
+    const adminsJson = JSON.stringify(admins);
+    // Guardar todo al JSON
+    fs.writeFileSync(modelo.fileRoute, adminsJson, "utf-8");
+    }
 };
 
 module.exports = modelo;

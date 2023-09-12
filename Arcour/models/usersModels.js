@@ -54,6 +54,8 @@ const modelo = {
     const userIndex = users.findIndex(
       usuarioActual => usuarioActual.id === updatedUser.id
     );
+
+    updatedUser.password = users[userIndex].password;
     // Modificar el elemento del array en ese índice, por el que nos pasaron por parámetro
     users[userIndex] = updatedUser;
     // Convertir este nuevo array en JSON

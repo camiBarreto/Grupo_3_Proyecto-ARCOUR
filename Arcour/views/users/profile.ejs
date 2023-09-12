@@ -110,15 +110,15 @@
             <p><%= locals.loggedAdmin.correoEmpresarial %></p>
           </div>
           <div class="input-box">
-            <h3>Correo Empresarial</h3>
+            <h3>Información de contacto</h3>
             <p><%= locals.loggedAdmin.contacto %></p>
           </div>
 
           <div class="botones">
-            <a href="/users/<%=locals.loggedAdmin.id%>/editUser">
+            <a href="/users/<%=locals.loggedAdmin.id%>/editAdmin">
               <button class="boton-submit" id="editar">Editar Admministrador</button>
             </a>
-            <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
+            <button class="boton-submit" id="eliminar">Eliminar Administrador</button>
           </div>
 
           <% } %>

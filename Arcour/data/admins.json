@@ -1,24 +1,13 @@
 [
   {
-    "id": "00299dc9-1635-488a-87a0-670ceff43f3b",
+    "id": "570110b1-0180-4f20-97cb-168f0c6fd211",
     "empresa": "Greyson",
+    "paisDeOrigen": "bolivia",
     "correoEmpresarial": "greyson@hotmail.com",
-    "password": "$2a$10$UJKDM0Pa1u4s9Xj65cJyxe251dUQaFgDBIizfZlteIcNA3z0uylCO",
-    "paisDeOrigen": "paraguay",
-    "aerolinea": "aero-ar",
-    "paisRuta": "uruguay",
-    "contacto": "+57 601 3073940",
-    "admin": true
-  },
-  {
-    "id": "c6315c90-1e27-4834-8fc8-53da87f5d783",
-    "empresa": "kayak",
-    "correoEmpresarial": "kayak@gmail.com",
-    "password": "$2a$10$/1uZbmkcKMVkdd5lhkd5s.gdQMIyDmVL/TtL4gt0Jq.6pX/zLz/72",
-    "paisDeOrigen": "ecuador",
-    "aerolinea": "aerolíneas Argentinas",
-    "paisRuta": "colombia",
+    "paisRuta": "argentina",
+    "aerolinea": "latam Airlines",
     "contacto": "+ 593 1 3819260",
+    "password": "$2a$10$61zOiNSkS0Z3B/sWbVXtYObWksh.PcbVs50y3ES3jCH01uACq0hl6",
     "admin": true
   }
 ]

@@ -55,13 +55,26 @@
     "id": "15025215-c618-454c-b174-25d2799d8c4b",
     "nombre": "Samuel",
     "apellido": "Rivera",
-    "genero": "femenino",
+    "genero": "masculino",
     "documento": "123456",
     "fechaNacimiento": "2023-09-22",
     "celular": "3223086789",
     "correo": "samuelrivera639@gmail.com",
-    "password": "$2a$10$Ppmhk5uUURn3jzb5kOBSAOve07FIfIdMayNYXXUEVZ.uwO/VcWniS",
     "pais": "colombia",
+    "aerolineaFav": "latam",
+    "password": "$2a$10$Ppmhk5uUURn3jzb5kOBSAOve07FIfIdMayNYXXUEVZ.uwO/VcWniS"
+  },
+  {
+    "id": "52a36bca-0ee0-410b-b03e-b79ae34de9fe",
+    "nombre": "Claritos",
+    "apellido": "Gordo",
+    "genero": "masculino",
+    "documento": "4567939382",
+    "fechaNacimiento": "2006-06-06",
+    "celular": "3105088909",
+    "correo": "claritos@gmail.com",
+    "password": "$2a$10$R8SL3/lzMHUhURJzBoKqDO.Phb9wnjhaTsuB3eOGrXmAbLSENJAui",
+    "pais": "brasil",
     "aerolineaFav": "latam"
   }
 ]
