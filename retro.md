@@ -1,4 +1,4 @@
-Sprint 3 – Retrospectiva.
+Sprint 5 – Retrospectiva de sprint.
 
 En este sprint, cada integrante del equipo se encargó de tareas puntuales, descriptas en el TRELLO del Proyecto para la página web ARCOUR.
 
