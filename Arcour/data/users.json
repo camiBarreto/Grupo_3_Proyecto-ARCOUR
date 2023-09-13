@@ -13,19 +13,6 @@
     "aerolineaFav": "latam"
   },
   {
-    "id": "d826d313-2baf-4183-8263-a4e8d230e3db",
-    "nombre": "samuel",
-    "apellido": "samuel2",
-    "genero": "femenino",
-    "documento": "1231456",
-    "fechaNacimiento": "2023-09-23",
-    "celular": "1234567789",
-    "correo": "fsdfsdfsdf@gmail.com",
-    "password": "$2a$10$qnUJHDCPgJdVYJPlPA009OKZ1hN03xRLSq4m3ss9v6XITEshkurUS",
-    "pais": "argentina",
-    "aerolineaFav": "latam"
-  },
-  {
     "id": "2d0ddb97-dd3c-4dbe-bcc9-c1cb73075500",
     "nombre": "cami",
     "apellido": "camila",
@@ -52,16 +39,42 @@
     "aerolineaFav": "latam"
   },
   {
-    "id": "5585c091-03c8-4a18-834f-37761df18a3f",
-    "nombre": "Mariano",
-    "apellido": "cosco",
+    "id": "25dec4e8-a260-42d6-acde-9925194a1ff3",
+    "nombre": "Cami",
+    "apellido": "Barreto",
     "genero": "masculino",
-    "documento": "123451",
-    "fechaNacimiento": "2023-09-07",
-    "celular": "1",
-    "correo": "mariano@gmail.com",
-    "password": "$2a$10$DFkPeyC4HXSFJX/zZ5oiFeyyPUGBeLHYFtcatUYctLggTGEdrV3nO",
+    "documento": "1234",
+    "fechaNacimiento": "0005-05-05",
+    "celular": "36",
+    "correo": "camila@hotmail.com",
+    "password": "$2a$10$r1kcfxMSD/Q4lxhtlkzTOO9SUbULOpt..MU6JvaYI/oLUnSJfe2ba",
     "pais": "argentina",
+    "aerolineaFav": "latam"
+  },
+  {
+    "id": "15025215-c618-454c-b174-25d2799d8c4b",
+    "nombre": "Samuel",
+    "apellido": "Rivera",
+    "genero": "masculino",
+    "documento": "123456",
+    "fechaNacimiento": "2023-09-22",
+    "celular": "3223086789",
+    "correo": "samuelrivera639@gmail.com",
+    "pais": "colombia",
+    "aerolineaFav": "latam",
+    "password": "$2a$10$Ppmhk5uUURn3jzb5kOBSAOve07FIfIdMayNYXXUEVZ.uwO/VcWniS"
+  },
+  {
+    "id": "52a36bca-0ee0-410b-b03e-b79ae34de9fe",
+    "nombre": "Claritos",
+    "apellido": "Gordo",
+    "genero": "masculino",
+    "documento": "4567939382",
+    "fechaNacimiento": "2006-06-06",
+    "celular": "3105088909",
+    "correo": "claritos@gmail.com",
+    "password": "$2a$10$R8SL3/lzMHUhURJzBoKqDO.Phb9wnjhaTsuB3eOGrXmAbLSENJAui",
+    "pais": "brasil",
     "aerolineaFav": "latam"
   }
 ]
