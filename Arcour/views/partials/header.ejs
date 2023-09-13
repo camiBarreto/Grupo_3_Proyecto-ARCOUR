@@ -12,42 +12,29 @@
             <a href="/users/profile">
                 <h3> Hola <%= locals.loggedUser.nombre %>
                 </h3>
+
+                <% if ( locals.validationUser && locals.loggedUser.genero=="masculino" ) { %>
+                    <img class="img-user1" src="/images/hombre1.png" alt="Imagen de Usuario" />
+
+                    <% } else if (locals.validationUser && locals.loggedUser.genero=="femenino" ) { %>
+                        <img class="img-user1" src="/images/mujer1.png" alt="Imagen de Usuario" />
+
+                        <% } else { %>
+                            <img class="img-user1" src="/images/perfil.png" alt="Imagen de Usuario" />
+                            <% } %>
+
+
             </a>
-            <a href="/users/logOut">Cerrar Sesion</a>
+            <!--<a href="/users/logOut">Cerrar Sesion</a> -->
             <% } else if (locals.validationAdmin) { %>
                 <!-- Implementacion del profile y el icono admin-->
-                <a href="/users/profile">
-                    <h3> Hola <%= locals.loggedAdmin.empresa %>
-                    </h3>
-                </a>
+                <h3>hola <%= locals.loggedAdmin.empresa %>
+                </h3>
                 <a href="/users/logOut">Cerrar Sesion</a>
 
-                <a href="/users/profile">
-                    <h3> Hola <%= locals.loggedUser.nombre %>
-                    </h3>
-
-                    <% if ( locals.validationUser && locals.loggedUser.genero=="masculino" ) { %>
-                        <img class="img-user1" src="/images/hombre1.png" alt="Imagen de Usuario" />
-
-                        <% } else if (locals.validationUser && locals.loggedUser.genero=="femenino" ) { %>
-                            <img class="img-user1" src="/images/mujer1.png" alt="Imagen de Usuario" />
-
-                            <% } else { %>
-                                <img class="img-user1" src="/images/perfil.png" alt="Imagen de Usuario" />
-                                <% } %>
-
-
-                </a>
-                <!--<a href="/users/logOut">Cerrar Sesion</a> -->
-                <% } else if (locals.validationAdmin) { %>
-                    <!-- Implementacion del profile y el icono admin-->
-                    <h3>hola <%= locals.loggedAdmin.empresa %>
-                    </h3>
-                    <a href="/users/logOut">Cerrar Sesion</a>
-
-                    <% } else { %>
-                        <a href="/users/login"><i class=" fa-solid fa-user"></i></a>
-                        <a href="/users/register"><i class="fa-solid fa-registered"></i></a>
-                        <% } %>
+                <% } else { %>
+                    <a href="/users/login"><i class=" fa-solid fa-user"></i></a>
+                    <a href="/users/register"><i class="fa-solid fa-registered"></i></a>
+                    <% } %>
     </div>
 </div>

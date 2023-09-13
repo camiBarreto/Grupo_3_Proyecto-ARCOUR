@@ -76,13 +76,6 @@
             </p>
           </div>
 
-          <div class="botones">
-            <a href="/users/<%= locals.loggedUser.id %>/editUser">
-              <button class="boton-submit" id="editar">Editar Usuario</button>
-            </a>
-            <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
-          </div>
-
           <% } else if (locals.validationAdmin) { %>
             <div class="input-box">
               <h3>Empresa</h3>
@@ -104,62 +97,31 @@
               </p>
             </div>
 
-            <<<<<<< HEAD <div class="input-box">
+            <div class="input-box">
               <h3>País de Operación</h3>
               <p>
                 <%= locals.loggedAdmin.paisRuta.charAt(0).toUpperCase() + locals.loggedAdmin.paisRuta.slice(1) %>
               </p>
+            </div>
+            <div class="input-box">
+              <h3>Correo Empresarial</h3>
+              <p>
+                <%= locals.loggedAdmin.correoEmpresarial %>
+              </p>
+            </div>
+            <div class="input-box">
+              <h3>Correo Empresarial</h3>
+              <p>
+                <%= locals.loggedAdmin.contacto %>
+              </p>
+            </div>
+
+            <% } %>
+              <div class="botones">
+                <button class="boton-submit" id="editar">Editar Usuario</button>
+                <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
+              </div>
       </div>
-      <div class="input-box">
-        <h3>Correo Empresarial</h3>
-        <p>
-          <%= locals.loggedAdmin.correoEmpresarial %>
-        </p>
-      </div>
-      <div class="input-box">
-        <h3>Correo Empresarial</h3>
-        <p>
-          <%= locals.loggedAdmin.contacto %>
-        </p>
-      </div>
-
-      <% } %>
-        <div class="botones">
-          <button class="boton-submit" id="editar">Editar Usuario</button>
-          <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
-        </div>
-        =======
-        <div class="input-box">
-          <h3>País de Operación</h3>
-          <p>
-            <%= locals.loggedAdmin.paisRuta.charAt(0).toUpperCase() + locals.loggedAdmin.paisRuta.slice(1) %>
-          </p>
-        </div>
-        <div class="input-box">
-          <h3>Correo Empresarial</h3>
-          <p>
-            <%= locals.loggedAdmin.correoEmpresarial %>
-          </p>
-        </div>
-        <div class="input-box">
-          <h3>Información de contacto</h3>
-          <p>
-            <%= locals.loggedAdmin.contacto %>
-          </p>
-        </div>
-
-        <div class="botones">
-          <a href="/users/<%=locals.loggedAdmin.id%>/editAdmin">
-            <button class="boton-submit" id="editar">Editar Admministrador</button>
-          </a>
-          <button class="boton-submit" id="eliminar">Eliminar Administrador</button>
-        </div>
-
-        <% } %>
-
-    </div>
-    >>>>>>> 5aaa51c8f93cb8b079b895faedfa32a9db8a6f9b
-    </div>
     </div>
   </main>
 </body>
