@@ -1,0 +1,18 @@
+npm init -y
+npm i express
+npm nodemon
+npm i dotenv
+npm run dev
+npm i ejs
+npm i method-override
+npm i multer
+npm i express-validator
+npm i PARA ACTUALIZAR TODO POR SI ALGO FALLA. SOLAMENTE CORRERLO SI FALLA ALGO
+npm i uuid PARA GENERAR ID DE USUARIOS AUTOMATICAMENTE
+npm i bcrypt PARA HASHING DE CONTRASEÑA
+npm i express-session PARA MANTENER INICIADA LA SESION TEMPORALMENTE HASTA QUE SE CIERRE LA MISMA
+npm i cookie-parser
+npm i sequelize
+npm i mysql2
+npm i sequelize-cli -g (la g es porque se instala globalmente en la carpeta raiz de la computadora)
+sequelize-cli init

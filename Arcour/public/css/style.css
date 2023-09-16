@@ -65,7 +65,6 @@ ul {
   align-items: center;
 }
 
-
 /* Estilos para el product list */
 .flight-list {
   max-width: 800px;
@@ -104,7 +103,6 @@ ul {
 
 /* Estilos para los botones de edición y eliminación */
 
-
 .info-container {
   display: flex;
   justify-content: space-between;
@@ -136,7 +134,6 @@ ul {
 }
 
 /* ... Estilos para los botones ... */
-
 
 .edit-button,
 .delete-button {
@@ -473,7 +470,7 @@ h6 {
 h3,
 h4,
 h2 {
-  color: #1D267D;
+  color: #1d267d;
   margin: 0px;
 }
 
@@ -564,13 +561,13 @@ h2 {
 
 .titulo-buscador-vuelos {
   font-size: 24px;
-  color: #1D267D;
+  color: #1d267d;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .paises-home {
-  margin: 15px
+  margin: 15px;
 }
 
 .buscador-flex {
@@ -594,7 +591,7 @@ h2 {
   margin-bottom: 8px;
   display: block;
   font-weight: bold;
-  color: #1D267D;
+  color: #1d267d;
 }
 
 /* Estilos para el botón de búsqueda */
@@ -633,7 +630,6 @@ h2 {
   align-content: space-around;
   align-items: center;
 }
-
 
 .fondo-interno:hover {
   background-color: #e2e4e7;
@@ -732,9 +728,8 @@ h2 {
 }
 
 .padding-div-beneficios {
-  padding: 15px
+  padding: 15px;
 }
-
 
 .flex-nuestra-empresa {
   display: flex;
@@ -743,7 +738,7 @@ h2 {
   align-content: space-around;
   justify-content: space-around;
   align-items: center;
-  background-color: #f0f1f4
+  background-color: #f0f1f4;
 }
 
 .flex-img-home {
@@ -763,14 +758,14 @@ h2 {
 
 .fa-square-check {
   font-size: 30px;
-  color: #1D267D;
+  color: #1d267d;
 }
 
 .nuestros-valores {
   text-align: center;
   font-size: 24px;
   color: #181b59;
-  margin: 25px
+  margin: 25px;
 }
 
 .valores-i {
@@ -783,7 +778,7 @@ h2 {
 
 .valores {
   padding: 10px;
-  color: black
+  color: black;
 }
 
 .flex-valores {
@@ -834,8 +829,6 @@ h2 {
   .tamaño-main {
     font-size: 12px;
   }
-
-
 }
 
 /* Media queries para tablet */
@@ -878,7 +871,7 @@ h2 {
   }
 
   .valores-i {
-  width: 50%;
+    width: 50%;
   }
 }
 
@@ -914,7 +907,6 @@ h2 {
     width: 90%;
   }
 
-
   .flex-img-home {
     display: flex;
     flex-direction: column;
@@ -934,11 +926,8 @@ h2 {
 
   .valores-i {
     width: 50%;
-    }
+  }
 }
-
-
-
 
 .contenido-register {
   display: flex;
@@ -962,7 +951,7 @@ h2 {
 .input-box label {
   display: block;
   font-size: 14px;
-  color: #1D267D;
+  color: #1d267d;
   margin-bottom: 5px;
 }
 
@@ -995,33 +984,33 @@ h2 {
 }
 
 #editar {
-    cursor: pointer;
-    margin: 0px;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    width: 25vw;
-    height: 32px;
-    border: 0px;
-    border-radius: 50px;
-    color: #fff;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    background-color: #292fa2;
-    transition: all 500ms;
+  cursor: pointer;
+  margin: 0px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 25vw;
+  height: 32px;
+  border: 0px;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  background-color: #292fa2;
+  transition: all 500ms;
 }
 
 #eliminar {
-    cursor: pointer;
-    margin: 0px;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    width: 25vw;
-    height: 32px;
-    border: 0px;
-    border-radius: 50px;
-    color: #fff;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    transition: color 300ms;
-    background-color: #e74c3c;
+  cursor: pointer;
+  margin: 0px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 25vw;
+  height: 32px;
+  border: 0px;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  transition: color 300ms;
+  background-color: #e74c3c;
 }
 
 #editar:hover {
@@ -1040,7 +1029,7 @@ h2 {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 80%;
-  margin: 0 auto; 
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -1049,6 +1038,10 @@ h2 {
 }
 
 .user-avatar img {
-  width: 200px; 
+  width: 200px;
   border-radius: 50%;
+}
+
+.img-user1 {
+  width: 20%;
 }
