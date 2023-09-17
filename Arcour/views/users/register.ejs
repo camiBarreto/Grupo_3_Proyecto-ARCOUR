@@ -38,22 +38,37 @@
                                     <label for="name" title>Nombre</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="25" id="name" name="nombre">
+                                    <input class="input-box <%= locals.errors && errors.nombre ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.nombre : null %>" maxlength="25" id="name" name="nombre">
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
                                     <label for="apellidos" title>Apellidos</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="apellidos" name="apellidos">
+                                    <input class="input-box <%= locals.errors && errors.apellidos ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.apellidos : null %>" maxlength="15" id="apellidos" name="apellidos">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <% if (locals.errors) { %>
+                        <div class="text-danger">
+                            <% if (errors.nombre) { %>
+                                <div class="text1">
+                                    <%= errors.nombre.msg %>
+                                </div>
+                            <% } %>
+                            <% if (errors.apellidos) { %>
+                                <div class="text1"></div>
+                                <div class="text2">
+                                    <%= errors.apellidos.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% } %>
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -63,8 +78,15 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="genero" id="gender">
-                                        <option value="masculino" selected>Masculino</option>
-                                        <option value="femenino">Femenino</option>
+                                        <%  
+									    let generos = ["Masculino", "Femenino"];
+									%>
+									<% for (const oneGender of generos) { %>
+										<option 
+											value="<%= oneGender %>"
+											<%= locals.oldData && (oneGender === oldData.genero) ? 'selected' : null %> 
+										> <%= oneGender %> </option>
+									<% } %>
                                     </select>
                                 </div>
                             </div>
@@ -76,11 +98,19 @@
                                     <label for="id" title>Número de documento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" maxlength="15" id="id" name="documento">
+                                    <input class="input-box <%= locals.errors && errors.documento ? 'is-invalid' : '' %>" type="number" value="<%= locals.oldData ? oldData.documento : null %>" maxlength="15" id="id" name="documento">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <% if (locals.errors && errors.documento) { %>
+                        <div class="text-danger">
+                            <div class="text1"></div>
+                            <div class="text2">
+                                <%= errors.documento.msg %> 
+                            </div>
+                        </div>
+                    <% } %>
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -89,7 +119,7 @@
                                     <label for="fecha" title>Fecha de nacimiento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="fecha" name="fechaNacimiento">
+                                    <input class="input-box <%= locals.errors && errors.fechaNacimiento ? 'is-invalid' : '' %>" type="date" value="<%= locals.oldData ? oldData.fechaNacimiento : null %>" id="fecha" name="fechaNacimiento">
                                 </div>
                             </div>
                         </div>
@@ -100,13 +130,26 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="cel" name="celular">
+                                    <input class="input-box <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.celular : null %>" maxlength="15" id="cel" name="celular">
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
+                    <% if (locals.errors) { %>
+                        <div class="text-danger">
+                            <% if (errors.fechaNacimiento) { %>
+                                <div class="text1">
+                                    <%= errors.fechaNacimiento.msg %>
+                                </div>
+                            <% } %>
+                            <% if (errors.celular) { %>
+                                <div class="text1"></div>
+                                <div class="text2">
+                                    <%= errors.celular.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% } %>
 
                     <h2 class="register-subtitulo2">02 Datos de Acceso</h2>
                     <div class="ant-row">
@@ -116,7 +159,7 @@
                                     <label for="mail" title>Correo electrónico</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail" name="mail">
+                                    <input class="input-box <%= locals.errors && errors.mail ? 'is-invalid' : '' %>" type="email" value="<%= locals.oldData ? oldData.mail : null %>" maxlength="40" id="mail" name="mail">
                                 </div>
                             </div>
                         </div>
@@ -127,12 +170,28 @@
                                     <label for="mail-re" title>Confirmar correo electrónico</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail-re"
-                                        name="correo-mail-reconfirm">
+                                    <input class="input-box <%= locals.errors && errors.mailConfirm  ? 'is-invalid' : '' %>" type="email" value="<%= locals.oldData ? oldData.mailConfirm : null %>" maxlength="40" id="mail-re" name="mailConfirm">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <% if (locals.errors) { %>
+                        <div class="text-danger">
+                            <% if (errors.mail) { %>
+                                <div class="text1">
+                                    <%= errors.mail.msg %>
+                                </div>
+                            <% } %>
+                            <% if (errors.mailConfirm) { %>
+                                <div class="text1"></div>
+                                <div class="text2">
+                                    <%= errors.mailConfirm.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% } %>
+                        
+                    
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -141,7 +200,7 @@
                                     <label for="pass">Contraseña</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="password" maxlength="15" id="pass" name="contraseña">
+                                    <input class="input-box <%= locals.errors && errors.password ? 'is-invalid' : '' %>" type="password" id="pass" name="password">
                                 </div>
                             </div>
                         </div>
@@ -152,12 +211,28 @@
                                     <label for="pass-re" title>Confirmar contraseña</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="password" maxlength="15" id="pass-re"
-                                        name="contraseña-reconfirm">
+                                    <input class="input-box <%= locals.errors && errors.passConfirm ? 'is-invalid' : '' %>" type="password" maxlength="15" id="passConfirm"
+                                        name="passConfirm">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <% if (locals.errors) { %>
+                        <div class="text-danger">
+                            <% if (errors.password) { %>
+                                <div class="text1">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+                            <% if (errors.passConfirm) { %>
+                                <div class="text1"></div>
+                                <div class="text2">
+                                    <%= errors.passConfirm.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% } %>
+                    
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -167,16 +242,15 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="pais" id="pais">
-                                        <option value="argentina" selected>Argentina</option>
-                                        <option value="colombia">Colombia</option>
-                                        <option value="uruguay">Uruguay</option>
-                                        <option value="bolivia">Bolivia</option>
-                                        <option value="paraguay">Paraguay</option>
-                                        <option value="peru">Peru</option>
-                                        <option value="brasil">Brasil</option>
-                                        <option value="venezuela">Venezuela</option>
-                                        <option value="chile">Chile</option>
-                                        <option value="ecuador">Ecuador</option>
+                                    <%  
+									    let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
+									%>
+									<% for (const oneCountry of countries) { %>
+										<option 
+											value="<%= oneCountry %>"
+											<%= locals.oldData && (oneCountry === oldData.pais) ? 'selected' : null %> 
+										> <%= oneCountry %> </option>
+									<% } %>
                                     </select>
                                 </div>
                             </div>
@@ -189,9 +263,15 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="aerolinea" id="aereo">
-                                        <option value="latam" selected>LATAM Airlines</option>
-                                        <option value="avianca">Avianca</option>
-                                        <option value="aero-ar">Aerolíneas Argentinas</option>
+                                    <%  
+									    let aerolineas = ["Latam Airlines", "Avianca", "Aerolíneas Argentinas"];
+									%>
+									<% for (const oneLinea of aerolineas) { %>
+										<option 
+											value="<%= oneLinea %>"
+											<%= locals.oldData && (oneLinea === oldData.aerolinea) ? 'selected' : null %> 
+										> <%= oneLinea %> </option>
+									<% } %>
                                     </select>
                                 </div>
                             </div>

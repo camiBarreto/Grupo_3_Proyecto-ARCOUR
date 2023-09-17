@@ -1,25 +1,26 @@
 const express = require("express");
 const router = express.Router();
 const controllerUser = require("../controllers/usersController");
-const authMiddleware = require('../middlewares/authMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const adminMiddleware = require('../middlewares/adminMiddleware');
+const authMiddleware = require("../middlewares/authMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const adminMiddleware = require("../middlewares/adminMiddleware");
+const validations = require("../middlewares/validationMiddleware")
 
 
 //@ GET /users/login
 router.get("/login", guestMiddleware, controllerUser.login);
 //@ POST /users/login/post
-router.post("/login/post", controllerUser.processLogin);
+router.post("/login/post", validations.loginValidation, controllerUser.processLogin);
 
 //@ GET /users/register
 router.get("/register",guestMiddleware, controllerUser.register);
 //@ POST /users/post
-router.post("/post", controllerUser.postUser);
+router.post("/post", validations.registerUserValidation, controllerUser.postUser);
 
 //@ GET /users/:id/editUser
 router.get ("/:id/editUser",controllerUser.getEditUser)
 //@ PUT /users/:id/put/user
-router.put("/:id/put/user", controllerUser.putEditUser)
+router.put("/:id/put/user", validations.editUserValidation, controllerUser.putEditUser)
 
 
 //@ GET /users/create

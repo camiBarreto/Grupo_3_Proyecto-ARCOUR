@@ -63,5 +63,18 @@
     "pais": "colombia",
     "aerolineaFav": "latam",
     "password": "$2a$10$Ppmhk5uUURn3jzb5kOBSAOve07FIfIdMayNYXXUEVZ.uwO/VcWniS"
+  },
+  {
+    "id": "49ea9b2f-aea6-4dba-95f9-9b6605cafce9",
+    "nombre": "Samuel",
+    "apellido": "Rivera",
+    "genero": "masculino",
+    "documento": "1107841464",
+    "fechaNacimiento": "2000-05-16",
+    "celular": "3105088909",
+    "correo": "samuelrivera639@gmail.com",
+    "password": "$2a$10$XhU9ctCbUkcsDnrfxHpUy.Qb663WiqrgVbPlgU90pReUm3QaC3E/e",
+    "pais": "paraguay",
+    "aerolineaFav": "latam"
   }
 ]

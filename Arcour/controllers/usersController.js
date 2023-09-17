@@ -6,10 +6,25 @@ const { validationResult } = require("express-validator");
 
 const controllerUser = {
   login: (req, res) => {
-    res.render("login");
+    const errorMessage = req.query.error;
+
+    res.render("login", {errorMessage});
   },
 
   postUser: (req, res) => {
+
+    const errors = validationResult(req);
+
+    console.log(errors);
+
+		
+		if (!errors.isEmpty()) {
+			return res.render('register', {
+				errors: errors.mapped(),
+				oldData: req.body
+			});
+		}
+
     const newUser = {
       nombre: req.body.nombre,
       apellido: req.body.apellidos,
@@ -18,7 +33,7 @@ const controllerUser = {
       fechaNacimiento: req.body.fechaNacimiento,
       celular: req.body.celular,
       correo: req.body.mail,
-      password: req.body.contraseña,
+      password: req.body.password,
       pais: req.body.pais,
       aerolineaFav: req.body.aerolinea,
     };
@@ -60,6 +75,15 @@ const controllerUser = {
     let user = userModel.findByEmail(req.body.correo);
     let admin = adminModel.findByEmail(req.body.correo);
 
+    const errors = validationResult(req);
+		
+		if (!errors.isEmpty()) {
+			return res.render('login', {
+				errors: errors.mapped(),
+				oldData: req.body
+			});
+		}
+
     if (user) {
       let isOkThePassword = bcrypt.compareSync(req.body.password, user.password);
       if (isOkThePassword) {
@@ -71,7 +95,7 @@ const controllerUser = {
         return res.redirect("/users/profile")
       }
       else {
-        return res.render("login")
+        return res.redirect("/users/login?error=Credenciales invalidas")
       }
 
       //login de user
@@ -86,12 +110,12 @@ const controllerUser = {
         return res.redirect("/users/admin")
       }
       else {
-        return res.send("hola")
+        return res.redirect("/users/login?error=Credenciales invalidas")
       }
 
       //login de admin
     } else {
-      return res.send("hola")
+      return res.redirect("/users/login?error=Credenciales invalidas")
 
       //error email inexistente
     }
