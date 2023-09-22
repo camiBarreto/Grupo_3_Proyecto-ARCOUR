@@ -1,54 +1,54 @@
-module.exports = (sequelize, DataType) => {
-  const alias = "Users";
+module.exports = (sequelize, DataTypes) => {
+  const alias = "User";
 
   const cols = {
     id: {
-      type: DataType.INTEGER,
-      prymaryKey: true,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
       autoIncrement: true,
     },
     first_name: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     last_name: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     gender: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     document: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     date_birth: {
-      type: DataType.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     cell_phone: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     email: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     password: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     country: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     favorite_aeroline: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     id_product: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   };
