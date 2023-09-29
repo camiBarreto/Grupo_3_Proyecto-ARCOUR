@@ -1,7 +1,17 @@
 const path = require("path");
 const productModel = require("../models/productModels");
+const db = require ("../database/models")
 
 const controllerProduct = {
+  hola: async (req, res) => {
+  try { 
+    const productos = await db.Product.findAll()
+    console.log(productos)
+    res.render ("prueba", {productos})
+  } catch (error) {
+    console.error(error)
+  }
+  },
   getProductDetail: (req, res) => {
     //Obtener los datos de búsqueda del formulario
     const queryData = req.query;

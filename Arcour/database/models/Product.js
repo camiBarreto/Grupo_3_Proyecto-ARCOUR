@@ -1,41 +1,41 @@
-module.exports = (sequelize, DataType) => {
-  const alias = "Products";
+module.exports = (sequelize, DataTypes) => {
+  const alias = "Product";
 
   const cols = {
     flight_number: {
-      type: DataType.INTEGER,
-      prymaryKey: true,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
     },
     departure_airport: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     arrival_airport: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     departure_date: {
-      type: DataType.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     departure_time: {
-      type: DataType.TIME,
+      type: DataTypes.TIME,
       allowNull: false,
     },
     arrival_time: {
-      type: DataType.TIME,
+      type: DataTypes.TIME,
       allowNull: false,
     },
     ticket_price: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     flight_duration: {
-      type: DataType.TIME,
+      type: DataTypes.TIME,
       allowNull: false,
     },
     id_product: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   };
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataType) => {
     timestamps: false,
   };
 
-  const Products = sequelize.define(alias, cols, config);
+  const Product = sequelize.define(alias, cols, config);
 
-  return Products;
+  return Product;
 };
