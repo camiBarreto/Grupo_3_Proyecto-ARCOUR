@@ -11,13 +11,79 @@ header i {
   color: rgb(255, 255, 255);
 }
 
+/*CSS de Header */
 .iconos-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
+/* Estilos para el despliegue del perfil */
+.profile-dropdown {
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px; /* Espacio entre el perfil y otros elementos del encabezado */
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-header img {
+  width: 8vw;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.profile-header span {
+  font-weight: bold;
+  color: mintcream;
+  font-size: 1.5rem;
+}
+
+/* Estilos para la flecha hacia abajo */
+.arrow-icon {
+  position: relative;
+  font-size: 1.5vw;
+  margin-left: 2.9vw; /* Espacio entre la imagen de perfil y la flecha */
+  padding: 1.2vh; 
+}
+
+/* Estilos para el menú desplegable */
+#dropdown-menu {
+  display: none;
+}
+
+#dropdown-menu.show-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 15vw;
+  height: 10vh;
+  top: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+#dropdown-menu.show-menu li {
+  padding: 8px 16px;
+}
+
+#dropdown-menu.show-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+#dropdown-menu.show-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+
+/*Fin CSS de Header */
 header {
   display: flex;
   flex-direction: row;

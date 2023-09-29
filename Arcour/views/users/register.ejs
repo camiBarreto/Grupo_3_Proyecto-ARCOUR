@@ -40,6 +40,11 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.nombre ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.nombre : null %>" maxlength="25" id="name" name="nombre">
                                 </div>
+                                <% if (locals.errors && errors.nombre) { %>
+                                    <div class="text-danger">
+                                        <%= errors.nombre.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                         
@@ -51,24 +56,14 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.apellidos ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.apellidos : null %>" maxlength="15" id="apellidos" name="apellidos">
                                 </div>
+                                <% if (locals.errors && errors.apellidos) { %>
+                                    <div class="text-danger">
+                                        <%= errors.apellidos.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
-                    <% if (locals.errors) { %>
-                        <div class="text-danger">
-                            <% if (errors.nombre) { %>
-                                <div class="text1">
-                                    <%= errors.nombre.msg %>
-                                </div>
-                            <% } %>
-                            <% if (errors.apellidos) { %>
-                                <div class="text1"></div>
-                                <div class="text2">
-                                    <%= errors.apellidos.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% } %>
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -100,17 +95,14 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.documento ? 'is-invalid' : '' %>" type="number" value="<%= locals.oldData ? oldData.documento : null %>" maxlength="15" id="id" name="documento">
                                 </div>
+                                <% if (locals.errors && errors.documento) { %>
+                                    <div class="text-danger">
+                                        <%= errors.documento.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
-                    <% if (locals.errors && errors.documento) { %>
-                        <div class="text-danger">
-                            <div class="text1"></div>
-                            <div class="text2">
-                                <%= errors.documento.msg %> 
-                            </div>
-                        </div>
-                    <% } %>
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -121,6 +113,11 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.fechaNacimiento ? 'is-invalid' : '' %>" type="date" value="<%= locals.oldData ? oldData.fechaNacimiento : null %>" id="fecha" name="fechaNacimiento">
                                 </div>
+                                <% if (locals.errors && errors.fechaNacimiento) { %>
+                                    <div class="text-danger">
+                                        <%= errors.fechaNacimiento.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -132,24 +129,14 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.celular : null %>" maxlength="15" id="cel" name="celular">
                                 </div>
+                                <% if (locals.errors && errors.celular) { %>
+                                    <div class="text-danger">
+                                        <%= errors.celular.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
-                    <% if (locals.errors) { %>
-                        <div class="text-danger">
-                            <% if (errors.fechaNacimiento) { %>
-                                <div class="text1">
-                                    <%= errors.fechaNacimiento.msg %>
-                                </div>
-                            <% } %>
-                            <% if (errors.celular) { %>
-                                <div class="text1"></div>
-                                <div class="text2">
-                                    <%= errors.celular.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% } %>
 
                     <h2 class="register-subtitulo2">02 Datos de Acceso</h2>
                     <div class="ant-row">
@@ -161,6 +148,11 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.mail ? 'is-invalid' : '' %>" type="email" value="<%= locals.oldData ? oldData.mail : null %>" maxlength="40" id="mail" name="mail">
                                 </div>
+                                <% if (locals.errors && errors.mail) { %>
+                                    <div class="text-danger">
+                                        <%= errors.mail.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -172,24 +164,14 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.mailConfirm  ? 'is-invalid' : '' %>" type="email" value="<%= locals.oldData ? oldData.mailConfirm : null %>" maxlength="40" id="mail-re" name="mailConfirm">
                                 </div>
+                                <% if (locals.errors && errors.mailConfirm) { %>
+                                    <div class="text-danger">
+                                        <%= errors.mailConfirm.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
-                    <% if (locals.errors) { %>
-                        <div class="text-danger">
-                            <% if (errors.mail) { %>
-                                <div class="text1">
-                                    <%= errors.mail.msg %>
-                                </div>
-                            <% } %>
-                            <% if (errors.mailConfirm) { %>
-                                <div class="text1"></div>
-                                <div class="text2">
-                                    <%= errors.mailConfirm.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% } %>
                         
                     
 
@@ -202,6 +184,11 @@
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.password ? 'is-invalid' : '' %>" type="password" id="pass" name="password">
                                 </div>
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -212,27 +199,16 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.passConfirm ? 'is-invalid' : '' %>" type="password" maxlength="15" id="passConfirm"
-                                        name="passConfirm">
+                                    name="passConfirm">
                                 </div>
+                                <% if (locals.errors && errors.passConfirm) { %>
+                                    <div class="text-danger">
+                                        <%= errors.passConfirm.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
-                    <% if (locals.errors) { %>
-                        <div class="text-danger">
-                            <% if (errors.password) { %>
-                                <div class="text1">
-                                    <%= errors.password.msg %>
-                                </div>
-                            <% } %>
-                            <% if (errors.passConfirm) { %>
-                                <div class="text1"></div>
-                                <div class="text2">
-                                    <%= errors.passConfirm.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% } %>
-                    
 
                     <div class="ant-row">
                         <div class="ant-col">

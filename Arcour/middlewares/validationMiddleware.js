@@ -28,7 +28,7 @@ const validations = {
             .isBefore('01-01-2009').withMessage('Debes ser mayor de 14 años'),
         body("celular")
             .notEmpty().withMessage("El campo es requerido").bail()
-            .isLength({min:7, max:12}).withMessage("Entre 7 y 12 dígitos")
+            .isLength({min:7, max:15}).withMessage("Entre 7 y 15 dígitos")
             .matches(/^\+?[0-9]*$/).withMessage("Campo númerico"),
         body("mail")
             .notEmpty().withMessage("El campo es requerido").bail()

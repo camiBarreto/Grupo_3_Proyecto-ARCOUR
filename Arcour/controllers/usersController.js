@@ -90,7 +90,7 @@ const controllerUser = {
         delete user.password;
         req.session.loggedUser = user;
         if (req.body.recordarme) {
-          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 2 })
+          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 60 })
         }
         return res.redirect("/users/profile")
       }
@@ -113,7 +113,6 @@ const controllerUser = {
         return res.redirect("/users/login?error=Credenciales invalidas")
       }
 
-      //login de admin
     } else {
       return res.redirect("/users/login?error=Credenciales invalidas")
 
