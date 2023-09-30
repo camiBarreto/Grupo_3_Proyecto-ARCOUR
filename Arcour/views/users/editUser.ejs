@@ -40,17 +40,27 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.nombre%>" >
                                 </div>
+                                <% if (locals.errors && errors.nombre) { %>
+                                    <div class="text-danger">
+                                        <%= errors.nombre.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="apellidos" title>Apellidos</label>
+                                    <label for="apellido" title>Apellido</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="apellidos" name="apellido" value = "<%= user.apellido%>">
+                                    <input class="input-box" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.apellido %>">
                                 </div>
+                                <% if (locals.errors && errors.apellido) { %>
+                                    <div class="text-danger">
+                                        <%= errors.apellido.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -65,10 +75,10 @@
                                     <select name="genero" id="gender">
                                         
                                         <% const generos =["masculino", "femenino"] %>
-                                           <% generos.forEach(genero=> { %>
+                                            <% generos.forEach(genero=> { %>
                                                 <option value="<%= genero %>" <%=user.genero===genero? "selected" : "" %>><%= genero.charAt(0).toUpperCase() + genero.slice(1) %>
                                                 </option>
-                                                <% }); %>
+                                            <% }); %>
 
                                     </select>
                                 </div>
@@ -83,6 +93,11 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="number" maxlength="15" id="id" name="documento" value = "<%= user.documento%>">
                                 </div>
+                                <% if (locals.errors && errors.documento) { %>
+                                    <div class="text-danger">
+                                        <%= errors.documento.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -97,6 +112,11 @@
                                     <input class="input-box" type="date" id="fecha" name="fechaNacimiento" value = "<%=user.fechaNacimiento%>">
                                 </div>
                             </div>
+                            <% if (locals.errors && errors.fechaNacimiento) { %>
+                                <div class="text-danger">
+                                    <%= errors.fechaNacimiento.msg %>
+                                </div>
+                            <% } %>
                         </div>
 
                         <div class="ant-col">
@@ -107,6 +127,11 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.celular%>">
                                 </div>
+                                <% if (locals.errors && errors.celular) { %>
+                                    <div class="text-danger">
+                                        <%= errors.celular.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -123,10 +148,15 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="email" maxlength="40" id="mail" name="correo" value = "<%= user.correo%>">
                                 </div>
+                                <% if (locals.errors && errors.correo) { %>
+                                    <div class="text-danger">
+                                        <%= errors.correo.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
-                     </div>
+                    </div>
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -137,10 +167,10 @@
                                 <div class="ant-input">
                                     <select name="pais" id="pais">
                                         <% const paises =["argentina", "colombia", "uruguay", "bolivia", "paraguay", "peru", "brasil", "venezuela", "chile", "ecuador"]%>
-                                           <% paises.forEach(pais=> { %>
+                                            <% paises.forEach(pais=> { %>
                                                 <option value="<%= pais %>" <%=user.pais===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
                                                 </option>
-                                                <% }); %>
+                                            <% }); %>
                                     </select>
                                 </div>
                             </div>
@@ -154,10 +184,10 @@
                                 <div class="ant-input">
                                     <select name="aerolineaFav" id="aereo">
                                         <% const aerolinea =["latam","avianca","aero-ar"]%>
-                                           <% aerolinea.forEach(linea => { %>
+                                            <% aerolinea.forEach(linea => { %>
                                                 <option value="<%= linea %>" <%=user.linea===linea? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
                                                 </option>
-                                                <% }); %>
+                                            <% }); %>
                                     </select>
                                 </div>
                             </div>

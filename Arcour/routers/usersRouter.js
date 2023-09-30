@@ -18,9 +18,9 @@ router.get("/register",guestMiddleware, controllerUser.register);
 router.post("/post", validations.registerUserValidation, controllerUser.postUser);
 
 //@ GET /users/:id/editUser
-router.get ("/:id/editUser",controllerUser.getEditUser)
+router.get ("/:id/editUser", controllerUser.getEditUser);
 //@ PUT /users/:id/put/user
-router.put("/:id/put/user", validations.editUserValidation, controllerUser.putEditUser)
+router.put("/:id/put/user",validations.editUserValidation, controllerUser.putEditUser);
 
 
 //@ GET /users/create
@@ -29,9 +29,9 @@ router.get("/create", controllerUser.getCreateAdmin);
 router.post("/post/admin", controllerUser.postAdmin);
 
 //@ GET /users/:id/editAdmin
-router.get ("/:id/editAdmin",controllerUser.getEditAdmin)
+router.get ("/:id/editAdmin",controllerUser.getEditAdmin);
 //@ PUT /users/put/admin
-router.put("/:id/put/admin", controllerUser.putEditAdmin)
+router.put("/:id/put/admin",validations.editAdminValidation, controllerUser.putEditAdmin);
 
 //@ GET /users/admin
 router.get("/admin",adminMiddleware, controllerUser.admin);

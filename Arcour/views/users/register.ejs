@@ -51,14 +51,14 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="apellidos" title>Apellidos</label>
+                                    <label for="apellido" title>Apellido</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.apellidos ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.apellidos : null %>" maxlength="15" id="apellidos" name="apellidos">
+                                    <input class="input-box <%= locals.errors && errors.apellido ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.apellido : null %>" maxlength="15" id="apellido" name="apellido">
                                 </div>
-                                <% if (locals.errors && errors.apellidos) { %>
+                                <% if (locals.errors && errors.apellido) { %>
                                     <div class="text-danger">
-                                        <%= errors.apellidos.msg %>
+                                        <%= errors.apellido.msg %>
                                     </div>
                                 <% } %>
                             </div>
@@ -75,13 +75,14 @@
                                     <select name="genero" id="gender">
                                         <%  
 									    let generos = ["Masculino", "Femenino"];
-									%>
-									<% for (const oneGender of generos) { %>
-										<option 
-											value="<%= oneGender %>"
-											<%= locals.oldData && (oneGender === oldData.genero) ? 'selected' : null %> 
-										> <%= oneGender %> </option>
-									<% } %>
+									    %>
+									    <% for (const oneGender of generos) { %>
+										    <option
+											    value="<%= oneGender.toLowerCase() %>"
+											    <%= locals.oldData && (oneGender === oldData.genero) ? 'selected' : null %> 
+										    > <%= oneGender %> 
+                                            </option>
+									    <% } %>
                                     </select>
                                 </div>
                             </div>

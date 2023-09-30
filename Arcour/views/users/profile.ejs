@@ -77,8 +77,8 @@
           </div>
           
           <div class="botones">
-            <button class="boton-submit" id="editar">Editar Usuario</button>
-            <button class="boton-submit" id="eliminar">Eliminar Usuario</button>
+            <a href="/users/<%= locals.loggedUser.id %>/editUser"><button class="boton-submit" id="editar">Editar Usuario</button></a>
+            <a href=""></a><button class="boton-submit" id="eliminar">Eliminar Usuario</button></a>
           </div>
           <% } else if (locals.validationAdmin) { %>
             <div class="input-box">
@@ -121,8 +121,8 @@
             </div>
 
             <div class="botones">
-              <button class="boton-submit" id="editar">Editar Administrador</button>
-              <button class="boton-submit" id="eliminar">Eliminar Administrador</button>
+              <a href="/users/<%= locals.loggedAdmin.id %>/editAdmin"><button class="boton-submit" id="editar">Editar Administrador</button></a>
+              <a href=""><button class="boton-submit" id="eliminar">Eliminar Administrador</button></a>
             </div>
             <% } %>
       </div>

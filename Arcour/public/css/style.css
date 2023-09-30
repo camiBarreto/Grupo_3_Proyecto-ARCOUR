@@ -60,8 +60,7 @@ header i {
   flex-direction: column;
   justify-content: space-around;
   width: 15vw;
-  height: 10vh;
-  top: 100%;
+  top: 80px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   list-style: none;
@@ -999,7 +998,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 15px;
 }
 
 .login-box {

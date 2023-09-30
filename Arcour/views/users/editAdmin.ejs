@@ -40,6 +40,11 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="text" maxlength="25" id="name" name="empresa" value="<%= admin.empresa %>">
                                 </div>
+                                <% if (locals.errors && errors.empresa) { %>
+                                    <div class="text-danger">
+                                        <%= errors.empresa.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -52,9 +57,9 @@
                                     <select name="paisDeOrigen" id="paisOrigen">
                                         <% const paises =["argentina", "colombia", "uruguay", "bolivia", "paraguay", "peru", "brasil", "venezuela", "chile", "ecuador"]%>
                                         <% paises.forEach(pais=> { %>
-                                             <option value="<%= pais %>" <%=admin.paisDeOrigen===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
-                                             </option>
-                                             <% }); %>
+                                            <option value="<%= pais %>" <%=admin.paisDeOrigen===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
+                                            </option>
+                                        <% }); %>
                                     </select>
                                 </div>
                             </div>
@@ -71,6 +76,11 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="email" maxlength="40" id="mail" name="correoEmpresarial"  value="<%= admin.correoEmpresarial %>">
                                 </div>
+                                <% if (locals.errors && errors.correoEmpresarial) { %>
+                                    <div class="text-danger">
+                                        <%= errors.correoEmpresarial.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -124,6 +134,11 @@
                             <div class="ant-input">
                                 <input name="contacto" class="input-box" type="text" maxlength="25" id="number"  value="<%= admin.contacto %>">
                             </div>
+                            <% if (locals.errors && errors.contacto) { %>
+                                <div class="text-danger">
+                                    <%= errors.contacto.msg %>
+                                </div>
+                            <% } %>
                         </div>
                     </div>
 

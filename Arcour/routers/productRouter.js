@@ -3,6 +3,7 @@ const multer = require("multer")
 const router = express.Router();
 const controllerProduct = require("../controllers/productController");
 const adminMiddleware = require('../middlewares/adminMiddleware');
+const validations = require("../middlewares/validationMiddleware");
 
 
 // creamos un storage de multer
@@ -36,7 +37,7 @@ router.delete("/:id/delete", controllerProduct.destroyProduct);
 //@ GET /products/:id/productEdits
 router.get("/:id/productEdits", adminMiddleware,controllerProduct.getProductEdits);
 //@ PUT /products/:id/productEdits
-router.put("/:id/put", controllerProduct.updateProduct);
+router.put("/:id/put" , controllerProduct.updateProduct);
 
 
 //@ GET /products/create

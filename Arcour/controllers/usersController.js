@@ -27,7 +27,7 @@ const controllerUser = {
 
     const newUser = {
       nombre: req.body.nombre,
-      apellido: req.body.apellidos,
+      apellido: req.body.apellido,
       genero: req.body.genero,
       documento: req.body.documento,
       fechaNacimiento: req.body.fechaNacimiento,
@@ -105,7 +105,7 @@ const controllerUser = {
         delete admin.password;
         req.session.loggedAdmin = admin;
         if (req.body.recordarme) {
-          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 2 })
+          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 60 })
         }
         return res.redirect("/users/admin")
       }
@@ -132,6 +132,16 @@ const controllerUser = {
     return res.render("editUser", { user });
   },
   putEditUser: (req, res) => {
+    const errors = validationResult(req);
+    console.log(errors);
+    const user = userModel.findById(req.params.id);
+		if (!errors.isEmpty()) {
+			return res.render('editUser', {
+				errors: errors.mapped(),
+				oldData: req.body,
+        user
+			});
+		}
 
     let firstId = {
       id: (req.params.id)
@@ -157,6 +167,17 @@ const controllerUser = {
     return res.render("editAdmin", { admin });
   },
   putEditAdmin: (req, res) => {
+    const errors = validationResult(req);
+    console.log(errors);
+    const admin = adminModel.findById(req.params.id);
+    console.log(admin)
+		if (!errors.isEmpty()) {
+			return res.render('editAdmin', {
+				errors: errors.mapped(),
+				oldData: req.body,
+        admin
+			});
+		}
 
     let firstId = {
       id: (req.params.id)

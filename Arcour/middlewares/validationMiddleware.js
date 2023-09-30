@@ -14,7 +14,7 @@ const validations = {
             .notEmpty().withMessage("El campo es requerido").bail()
             .isLength({min:3, max:25}).withMessage("Entre 3 y 25 caracteres")
             .matches(/^[^\d]*$/).withMessage('El campo no admite números'),
-        body("apellidos")
+        body("apellido")
             .notEmpty().withMessage("El campo es requerido").bail()
             .isLength({min:3, max:25}).withMessage("Entre 3 y 25 caracteres")
             .matches(/^[^\d]*$/).withMessage('El campo no admite números'),
@@ -47,7 +47,7 @@ const validations = {
         body("passConfirm")
             .custom((value, { req }) => {
                 if (value !== req.body.password) {
-                  throw new Error("Las contraseñas no coinciden");
+                    throw new Error("Las contraseñas no coinciden");
                 }
                 return true;
             }),
@@ -67,7 +67,6 @@ const validations = {
             .isLength({min:7, max:15}).withMessage("Entre 7 y 15 dígitos"),
         body("fechaNacimiento")
             .notEmpty().withMessage('La fecha es requerida')
-            .isDate().withMessage('Debe ser una fecha válida')
             .isAfter('1920-01-01').withMessage('Fecha invalida')
             .isBefore('2009-01-01').withMessage('Debes ser mayor de 14 años'),
         body("celular")
@@ -78,6 +77,29 @@ const validations = {
             .notEmpty().withMessage("El campo es requerido").bail()
             .isEmail().withMessage("Formato de correo requerido")
             .normalizeEmail().withMessage("Formato de correo requerido")
+    ],
+    editAdminValidation:[
+        body('empresa')
+        .notEmpty().withMessage("El campo es requerido").bail()
+        .isLength({min:3, max:25}).withMessage("Entre 3 y 25 caracteres")
+        .matches(/^[^\d]*$/).withMessage("El campo no admite números"),
+        body('correoEmpresarial')
+        .notEmpty().withMessage('El campo es requerido').bail()
+        .isEmail().withMessage("Formato de correo requerido")
+        .normalizeEmail().withMessage("Formato de correo requerido"),
+        body('contacto')
+        .notEmpty().withMessage("El campo es requerido").bail()
+        .isLength({min:7, max:12}).withMessage("Entre 7 y 12 dígitos")
+        .matches(/^\+?[0-9]*$/).withMessage("Campo númerico")
+    ],
+    productValidation: [
+
+    ],
+    editProductValidation: [
+
+    ],
+    registerAdminValidation: [
+
     ]
 }
 
