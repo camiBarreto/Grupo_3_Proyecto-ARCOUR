@@ -93,7 +93,16 @@ const validations = {
         .matches(/^\+?[0-9]*$/).withMessage("Campo númerico")
     ],
     productValidation: [
-
+        body('departureTime')
+        .notEmpty().withMessage("El campo es requerido").bail(),
+        body('arrivalTime')
+        .notEmpty().withMessage("El campo es requerido").bail(),
+        body('departureDate')
+        .notEmpty().withMessage("El campo es requerido").bail()
+        .isAfter('2023-10-01').withMessage('Fecha invalida'),
+        body('ticketPrice')
+        .notEmpty().withMessage("El campo es requerido").bail()
+        .matches(/^\+?[0-9]*$/).withMessage("Campo númerico"),
     ],
     editProductValidation: [
 

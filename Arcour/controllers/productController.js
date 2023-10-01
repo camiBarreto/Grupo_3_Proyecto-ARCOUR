@@ -1,6 +1,7 @@
 const path = require("path");
 const productModel = require("../models/productModels");
-const db = require ("../database/models")
+const db = require ("../database/models");
+const { validationResult } = require("express-validator");
 
 const controllerProduct = {
   hola: async (req, res) => {
@@ -79,6 +80,16 @@ destroyProduct: (req,res) => {
     res.render("createProduct")
   },
   postProduct: (req, res) => {
+    const errors = validationResult(req);
+    console.log(errors);
+    const product = productModel.findByflightNumber(req.params.id);
+		if (!errors.isEmpty()) {
+			return res.render('createProduct', {
+				errors: errors.mapped(),
+				oldData: req.body,
+        product
+			});
+		}
 
     const newProduct = {
       departureAirport: req.body.departureAirport,
