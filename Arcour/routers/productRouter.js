@@ -48,7 +48,7 @@ router.put(
 //@ GET /products/create
 router.get("/create", adminMiddleware, controllerProduct.getCreate);
 //@ POST /products
-router.post("/post", controllerProduct.postProduct);
+router.post("/post", validations.productValidation , controllerProduct.postProduct);
 
 router.get("/get", controllerProduct.hola);
 

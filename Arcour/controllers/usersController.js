@@ -179,7 +179,6 @@ const controllerUser = {
     const errors = validationResult(req);
     console.log(errors);
     const admin = adminModel.findById(req.params.id);
-    console.log(admin);
     if (!errors.isEmpty()) {
       return res.render("editAdmin", {
         errors: errors.mapped(),
