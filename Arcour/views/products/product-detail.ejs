@@ -60,7 +60,7 @@
 
       <% if (vuelosIda.length===0 || vuelosVuelta.length===0 && !queryData.flightTypeIda) { %>
 
-      <div class="not-found-container">
+      <div class="not-found-container" id="error">
         <h1>¡Oops! No se ha encontrado un iterinario para tu viaje</h1>
         <p>Vuelve a intentarlo nuevamente o cambia tus fechas</p>
         <a href="/" class="back-home-link">Volver a la página de inicio</a>
@@ -377,5 +377,8 @@
       <% } %> <% } %>
     </main>
     <footer><%- include("../partials/footer.ejs") %></footer>
+
+    <script src="/js/scriptBarraHome.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
