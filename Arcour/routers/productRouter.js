@@ -34,22 +34,13 @@ router.delete("/:id/delete", controllerProduct.destroyProduct);
 
 //@ GET /products/:id/productEdits
 router.get(
-  "/:id/productEdits",
-  adminMiddleware,
-  controllerProduct.getProductEdits
-);
+  "/:id/productEdits", adminMiddleware, controllerProduct.getProductEdits);
 //@ PUT /products/:id/productEdits
-router.put(
-  "/:id/put",
-  validations.editProductValidation,
-  controllerProduct.updateProduct
-);
+router.put("/:id/put", validations.editProductValidation, controllerProduct.updateProduct);
 
 //@ GET /products/create
 router.get("/create", adminMiddleware, controllerProduct.getCreate);
 //@ POST /products
 router.post("/post", validations.productValidation , controllerProduct.postProduct);
-
-router.get("/get", controllerProduct.hola);
 
 module.exports = router;

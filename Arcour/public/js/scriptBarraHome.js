@@ -27,8 +27,9 @@ window.addEventListener("load", () => {
 
 //Script SweetAlert product-detail
 
+const validation = document.getElementById("error");
+
 window.addEventListener("load", () => {
-    const validation = document.getElementById("error");
     if(validation) {
         Swal.fire({
             icon: 'error',

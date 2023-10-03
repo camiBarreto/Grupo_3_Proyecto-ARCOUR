@@ -14,8 +14,6 @@ const controllerUser = {
   postUser: (req, res) => {
     const errors = validationResult(req);
 
-    console.log(errors);
-
     if (!errors.isEmpty()) {
       return res.render("register", {
         errors: errors.mapped(),
@@ -52,6 +50,16 @@ const controllerUser = {
     res.render("createAdmin");
   },
   postAdmin: (req, res) => {
+    const errors = validationResult(req);
+    const admin = userModel.findById(req.params.id);
+    if (!errors.isEmpty()) {
+      return res.render("createAdmin", {
+        errors: errors.mapped(),
+        oldData: req.body,
+        admin,
+      });
+    }
+
     const newCompany = {
       empresa: req.body.nombreEmpresa,
       correoEmpresarial: req.body.correo,
@@ -62,15 +70,6 @@ const controllerUser = {
       contacto: req.body.contacto,
     };
 
-    const errors = validationResult(req);
-    const admin = userModel.findById(req.params.id);
-    if (!errors.isEmpty()) {
-      return res.render("createAdmin", {
-        errors: errors.mapped(),
-        oldData: req.body,
-        admin,
-      });
-    }
 
     adminModel.createAdmin(newCompany);
 
@@ -144,8 +143,8 @@ const controllerUser = {
   },
   putEditUser: (req, res) => {
     const errors = validationResult(req);
-    console.log(errors);
     const user = userModel.findById(req.params.id);
+
     if (!errors.isEmpty()) {
       return res.render("editUser", {
         errors: errors.mapped(),
@@ -177,8 +176,8 @@ const controllerUser = {
   },
   putEditAdmin: (req, res) => {
     const errors = validationResult(req);
-    console.log(errors);
     const admin = adminModel.findById(req.params.id);
+    
     if (!errors.isEmpty()) {
       return res.render("editAdmin", {
         errors: errors.mapped(),

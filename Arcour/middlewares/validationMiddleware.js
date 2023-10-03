@@ -158,7 +158,9 @@ const validations = {
       .notEmpty()
       .withMessage("El campo es requerido")
       .bail(),
-    body("arrivalTime").notEmpty().withMessage("El campo es requerido").bail(),
+    body("arrivalTime")
+      .notEmpty()
+      .withMessage("El campo es requerido").bail(),
     body("departureDate")
       .notEmpty()
       .withMessage("El campo es requerido")
@@ -173,15 +175,16 @@ const validations = {
       .withMessage("Campo númerico"),
   ],
   editProductValidation: [
-    body("arrivalTime").notEmpty().withMessage("El campo es requerido").bail(),
-
+    body("arrivalTime")
+      .notEmpty()
+      .withMessage("El campo es requerido")
+      .bail(),
     body("departureDate")
       .notEmpty()
       .withMessage("El campo es requerido")
       .bail()
       .isAfter("2023-10-01")
       .withMessage("La fecha es invalida"),
-
     body("ticketPrice")
       .notEmpty()
       .withMessage("El campo es requerido")

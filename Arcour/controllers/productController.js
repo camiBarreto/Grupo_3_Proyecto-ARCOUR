@@ -4,15 +4,6 @@ const db = require("../database/models");
 const { validationResult } = require("express-validator");
 
 const controllerProduct = {
-  hola: async (req, res) => {
-    try {
-      const productos = await db.Product.findAll();
-      console.log(productos);
-      res.render("prueba", { productos });
-    } catch (error) {
-      console.error(error);
-    }
-  },
   getProductDetail: (req, res) => {
     //Obtener los datos de búsqueda del formulario
     const queryData = req.query;
@@ -45,18 +36,20 @@ const controllerProduct = {
     res.render("productEdits", { flight });
   },
   updateProduct: (req, res) => {
-    let firstId = {
-      flightNumber: Number(req.params.id),
-    };
     const errors = validationResult(req);
-    const flight = productModel.findByflightNumber(Number(req.params.id));
+    
     if (!errors.isEmpty()) {
+      const flight = productModel.findByflightNumber(Number(req.params.id));
       return res.render("productEdits", {
         errors: errors.mapped(),
         oldData: req.body,
-        flight,
+        flight
       });
     }
+
+    let firstId = {
+      flightNumber: Number(req.params.id),
+    };
 
     updatedProduct = {
       ...firstId,
@@ -89,6 +82,15 @@ const controllerProduct = {
     res.render("createProduct");
   },
   postProduct: (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.render("createProduct", {
+        errors: errors.mapped(),
+        oldData: req.body
+      });
+    }
+
     const newProduct = {
       departureAirport: req.body.departureAirport,
       arrivalAirport: req.body.arrivalAirport,
