@@ -71,8 +71,13 @@
                                     <label for="horarioSalida" title>Hora de Salida</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="time" id="horarioSalida" name="departureTime">
+                                    <input class="input-box" type="time" id="horarioSalida" name="departureTime" value="<%= locals.oldData ? oldData.departureTime : null %>">
                                 </div>
+                                <% if (locals.errors && errors.departureTime) { %>
+                                    <div class="text-danger">
+                                        <%= errors.departureTime.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -82,8 +87,13 @@
                                     <label for="horarioLlegada" title>Hora de llegada</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="time" id="horarioLlegada" name="arrivalTime">
+                                    <input class="input-box" type="time" id="horarioLlegada" name="arrivalTime" value="<%= locals.oldData ? oldData.arrivalTime : null %>">
                                 </div>
+                                <% if (locals.errors && errors.arrivalTime) { %>
+                                    <div class="text-danger">
+                                        <%= errors.arrivalTime.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -97,8 +107,13 @@
                                     <label for="diaVuelo" title>Dia del vuelo</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="diaVuelo" name="departureDate">
+                                    <input class="input-box" type="date" id="diaVuelo" name="departureDate" value="<%= locals.oldData ? oldData.departureDate : null %>">
                                 </div>
+                                <% if (locals.errors && errors.departureDate) { %>
+                                    <div class="text-danger">
+                                        <%= errors.departureDate.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -108,8 +123,13 @@
                                     <label for="precio" title>Precio del vuelo</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" id="precio" name="ticketPrice">
+                                    <input class="input-box" type="number" id="precio" name="ticketPrice" value="<%= locals.oldData ? oldData.ticketPrice : null %>">
                                 </div>
+                                <% if (locals.errors && errors.ticketPrice) { %>
+                                    <div class="text-danger">
+                                        <%= errors.ticketPrice.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>

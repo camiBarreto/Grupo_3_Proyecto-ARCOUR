@@ -1,10 +1,9 @@
 const express = require("express");
-const multer = require("multer")
+const multer = require("multer");
 const router = express.Router();
 const controllerProduct = require("../controllers/productController");
-const adminMiddleware = require('../middlewares/adminMiddleware');
+const adminMiddleware = require("../middlewares/adminMiddleware");
 const validations = require("../middlewares/validationMiddleware");
-
 
 // creamos un storage de multer
 // seteamos el destination y el filename (dónde se guarda la imagen, y con qué nombre)
@@ -12,12 +11,12 @@ const validations = require("../middlewares/validationMiddleware");
 // pasamos este multer como segundo parámetro al router.post
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images/products');
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname);
-    }
+  destination: (req, file, cb) => {
+    cb(null, "./public/images/products");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
 });
 
 const upload = multer({ storage });
@@ -29,21 +28,27 @@ router.get("/product-detail", controllerProduct.getProductDetail);
 //@ GET /product-detail/ver-detalle
 router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
 //@ GET /products
-router.get("/data",adminMiddleware, controllerProduct.getProductList);
+router.get("/data", adminMiddleware, controllerProduct.getProductList);
 //@ DELETE /products/delete
 router.delete("/:id/delete", controllerProduct.destroyProduct);
 
-
 //@ GET /products/:id/productEdits
-router.get("/:id/productEdits", adminMiddleware,controllerProduct.getProductEdits);
+router.get(
+  "/:id/productEdits",
+  adminMiddleware,
+  controllerProduct.getProductEdits
+);
 //@ PUT /products/:id/productEdits
-router.put("/:id/put" , controllerProduct.updateProduct);
-
+router.put(
+  "/:id/put",
+  validations.editProductValidation,
+  controllerProduct.updateProduct
+);
 
 //@ GET /products/create
-router.get("/create",adminMiddleware, controllerProduct.getCreate);
+router.get("/create", adminMiddleware, controllerProduct.getCreate);
 //@ POST /products
-router.post("/post", controllerProduct.postProduct);
+router.post("/post", validations.productValidation , controllerProduct.postProduct);
 
 router.get("/get", controllerProduct.hola);
 
