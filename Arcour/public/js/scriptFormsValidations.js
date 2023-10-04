@@ -32,7 +32,7 @@ if (formRegister) {
               confirmButton: 'boton-submit-form',
             },
             inputValidator: (result) => {
-              return !result && "You need to agree with T&C";
+              return !result && "Tienes que aceptar los T&C";
             },
           });
           if (accept) {

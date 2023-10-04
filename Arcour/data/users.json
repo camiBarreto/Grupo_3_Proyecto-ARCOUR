@@ -89,18 +89,5 @@
     "pais": "argentina",
     "aerolineaFav": "latam",
     "password": "$2a$10$oR8nic6NrZj8PLnqlHf2Te6k9Xpp5tBxpN0a/bAuhHR/7FTcUl6gi"
-  },
-  {
-    "id": "1f1b81fa-8836-4f4b-be37-b0576ad8efcf",
-    "nombre": "Samuel",
-    "apellido": "Samuel Rivera",
-    "genero": "masculino",
-    "documento": "1107841464",
-    "fechaNacimiento": "2007-07-05",
-    "celular": "3105088909",
-    "correo": "samuelrivera639@gmail.com",
-    "password": "$2a$10$YbAp.FWwy3fQiFRpjNWmtuF8WK9NrD2bCW7lJrS7qvIdw1UOYATRC",
-    "pais": "Colombia",
-    "aerolineaFav": "Latam Airlines"
-  }
+  } 
 ]
