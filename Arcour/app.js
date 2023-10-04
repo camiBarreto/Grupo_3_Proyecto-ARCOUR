@@ -67,7 +67,5 @@ app.listen(port || 3000, () => {
     "Servidor escuchando en puerto " + port + "| http://localhost:" + port ||
       3000
   );
-
-console.log("prueba");
 });
 

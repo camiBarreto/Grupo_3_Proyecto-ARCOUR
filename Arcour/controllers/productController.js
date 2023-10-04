@@ -1,17 +1,8 @@
 const path = require("path");
 const productModel = require("../models/productModels");
-const db = require ("../database/models")
+const {Product} = require ("../database/models")
 
 const controllerProduct = {
-  hola: async (req, res) => {
-  try { 
-    const productos = await db.Product.findAll()
-    console.log(productos)
-    res.render ("prueba", {productos})
-  } catch (error) {
-    console.error(error)
-  }
-  },
   getProductDetail: (req, res) => {
     //Obtener los datos de búsqueda del formulario
     const queryData = req.query;
@@ -25,10 +16,13 @@ const controllerProduct = {
     res.render("product-detail", { vuelosIda, vuelosVuelta, queryData });
   },
 
-  getProductList: (req, res) => {
-    const flights = productModel.findAll();
-
-    res.render("productList", {flights});
+  getProductList: async (req, res) => {
+    try { 
+      const flights = await Product.findAll();
+      res.render("productList", {flights});
+    } catch (error) {
+      console.error(error);
+    };
   },
   getVerDetalle: (req, res) => {
      //Obtener los datos de búsqueda del formulario
@@ -88,8 +82,6 @@ destroyProduct: (req,res) => {
       arrivalTime: req.body.arrivalTime,
       ticketPrice: req.body.ticketPrice,
     };
-
-    const createdProduct = productModel.createProduct(newProduct);
 
     res.redirect("/users/admin");
 
