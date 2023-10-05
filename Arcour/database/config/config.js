@@ -1,9 +1,9 @@
 module.exports = {
   development: {
     username: "root",
-    password: "riverita20",
+    password: "",
     database: "arcour_db",
-    host: "127.0.0.1",
+    host: "localhost",
     dialect: "mysql",
   },
   test: {

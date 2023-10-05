@@ -26,10 +26,10 @@ const upload = multer({ storage });
 router.get("/product-cart", controllerProduct.getProductCart);
 //@ GET /product-detail
 router.get("/product-detail", controllerProduct.getProductDetail);
-//@ GET /product-detail/ver-detalle
+//@ GET /products/:id/ver-detalle
 router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
-//@ GET /products
-router.get("/data",adminMiddleware, controllerProduct.getProductList);
+//@ GET /products/data
+router.get("/data", adminMiddleware, controllerProduct.getProductList);
 //@ DELETE /products/delete
 router.delete("/:id/delete", controllerProduct.destroyProduct);
 
@@ -44,7 +44,5 @@ router.put("/:id/put" , controllerProduct.updateProduct);
 router.get("/create",adminMiddleware, controllerProduct.getCreate);
 //@ POST /products
 router.post("/post", controllerProduct.postProduct);
-
-router.get("/get", controllerProduct.hola);
 
 module.exports = router;
