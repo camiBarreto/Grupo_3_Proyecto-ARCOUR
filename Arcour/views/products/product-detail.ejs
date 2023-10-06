@@ -119,12 +119,12 @@
           <div class="destino">
             <b>
               <% if (!queryData.flightTypeIda) { %> <%=
-                `${vuelosIda[0].departureAirport} -
-                ${vuelosVuelta[0].departureAirport}` %> 
+                `${vuelosIda[0].departure_airport} -
+                ${vuelosVuelta[0].departure_airport}` %> 
               <% } else { %>
                 <%=
-                `${vuelosIda[0].departureAirport} -
-                ${vuelosIda[0].arrivalAirport}` %>
+                `${vuelosIda[0].departure_airport} -
+                ${vuelosIda[0].arrival_airport}` %>
                 <% } %>  
             </b>
           </div>
@@ -132,7 +132,7 @@
             <div class="fecha">
               <span class="span-header">
                 <div><i class="fa-solid fa-calendar-days"></i></div>
-                <div class="fyc"><%= `${vuelosIda[0].departureDate}` %></div>
+                <div class="fyc"><%= `${vuelosIda[0].departure_date}` %></div>
               </span>
             </div>
             <div class="cantidad">
@@ -154,7 +154,7 @@
           <div><i class="fa-solid fa-plane"></i></div>
           <div>
             <b> Salida</b>
-            <%= vueloIda.departureDate %>
+            <%= vueloIda.departure_date %>
           </div>
         </div>
         <div class="economy">
@@ -169,17 +169,17 @@
               <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
             </div>
             <div class="salida">
-              <div class="hora"><%= vueloIda.departureTime %></div>
-              <div class="tamaño-main"><%= vueloIda.departureAirport %></div>
+              <div class="hora"><%= vueloIda.departure_time %></div>
+              <div class="tamaño-main"><%= vueloIda.departure_airport %></div>
             </div>
             <div class="salida">
-              <div class="tamaño-main"><%= vueloIda.flightDuration %></div>
+              <div class="tamaño-main"><%= vueloIda.flight_duration %></div>
               <div class="tamaño-main">----o----></div>
             </div>
             <div>
               <div class="salida">
-                <div class="hora"><%= vueloIda.arrivalTime %></div>
-                <div class="tamaño-main"><%= vueloIda.arrivalAirport %></div>
+                <div class="hora"><%= vueloIda.arrival_time %></div>
+                <div class="tamaño-main"><%= vueloIda.arrival_airport %></div>
               </div>
             </div>
           </div>
@@ -195,7 +195,7 @@
           </button>
           <div class="caja-reservar">
             <div class="reservar-precio">
-              <b class="tamaño-main">USD$<%= vueloIda.ticketPrice %></b>
+              <b class="tamaño-main">USD$<%= vueloIda.ticket_price %></b>
               <b class="tamaño-main">Precio por adulto</b>
             </div>
             <button class="boton-reservar">
@@ -216,7 +216,7 @@
           <div><i class="fa-solid fa-plane"></i></div>
           <div>
             <b> Salida</b>
-            <%= vueloIda.departureDate %>
+            <%= vueloIda.departure_date %>
           </div>
         </div>
         <div class="economy">
@@ -231,17 +231,17 @@
               <div class="a" class="tamaño-main"><b>ARCOUR</b></div>
             </div>
             <div class="salida">
-              <div class="hora"><%= vueloIda.departureTime %></div>
-              <div class="tamaño-main"><%= vueloIda.departureAirport %></div>
+              <div class="hora"><%= vueloIda.departure_time %></div>
+              <div class="tamaño-main"><%= vueloIda.departure_airport %></div>
             </div>
             <div class="salida">
-              <div class="tamaño-main"><%= vueloIda.flightDuration %></div>
+              <div class="tamaño-main"><%= vueloIda.flight_duration %></div>
               <div class="tamaño-main">----o----></div>
             </div>
             <div>
               <div class="salida">
-                <div class="hora"><%= vueloIda.arrivalTime %></div>
-                <div class="tamaño-main"><%= vueloIda.arrivalAirport %></div>
+                <div class="hora"><%= vueloIda.arrival_time %></div>
+                <div class="tamaño-main"><%= vueloIda.arrival_airport %></div>
               </div>
             </div>
           </div>
@@ -257,7 +257,7 @@
           </button>
           <div class="caja-reservar">
             <div class="reservar-precio">
-              <b class="tamaño-main">USD$<%= vueloIda.ticketPrice %></b>
+              <b class="tamaño-main">USD$<%= vueloIda.ticket_price %></b>
               <b class="tamaño-main">Precio por adulto</b>
             </div>
             <button class="boton-reservar">
