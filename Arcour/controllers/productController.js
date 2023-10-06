@@ -2,6 +2,8 @@ const path = require("path");
 const productModel = require("../models/productModels");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
+const { Product } = require("../database/models");
+
 
 const controllerProduct = {
   getProductDetail: (req, res) => {
@@ -22,13 +24,15 @@ const controllerProduct = {
 
     res.render("productList", { flights });
   },
-  getVerDetalle: (req, res) => {
-    //Obtener los datos de búsqueda del formulario
-    const flight = productModel.findByflightNumber(Number(req.params.id));
-
-    //Guardar las listas de vuelos de ida y vuelta recibidos por el modelo.
-
+  getVerDetalle: async (req, res) => {
+    const id = req.params.id;
+   try {
+    const flight = await Product.findByPk(id)
     res.render("ver-detalle", { flight });
+   } catch (error) {
+    console.error(error);
+   }
+
   },
 
   getProductEdits: (req, res) => {
