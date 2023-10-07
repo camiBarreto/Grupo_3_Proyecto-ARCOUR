@@ -15,15 +15,15 @@
       <div class="login-box">
         <div class="user-avatar">
           <h2 class="titulo-buscador-vuelos">
-            <% if (locals.validationUser) { %> Hola <%= locals.loggedUser.nombre %>
+            <% if (locals.validationUser) { %> Hola <%= locals.loggedUser.first_name %>
                 <% } else { %> Administra tu empresa
-                  <%= locals.loggedAdmin.empresa.charAt(0).toUpperCase() + locals.loggedAdmin.empresa.slice(1) %>
+                  <%= locals.loggedAdmin.enterprise.charAt(0).toUpperCase() + locals.loggedAdmin.enterprise.slice(1) %>
                     <% } %>
           </h2>
-          <% if ( locals.validationUser && locals.loggedUser.genero=="masculino" ) { %>
+          <% if ( locals.validationUser && locals.loggedUser.gender=="masculino" ) { %>
             <img src="/images/hombre.png" alt="Imagen de Usuario" />
 
-            <% } else if (locals.validationUser && locals.loggedUser.genero=="femenino" ) { %>
+            <% } else if (locals.validationUser && locals.loggedUser.gender=="femenino" ) { %>
               <img src="/images/mujer.png" alt="Imagen de Usuario" />
 
               <% } else { %>
@@ -35,44 +35,44 @@
           <div class="input-box">
             <h3>Nombre y Apellido</h3>
             <p>
-              <%= (`${locals.loggedUser.nombre} ${locals.loggedUser.apellido}`) %>
+              <%= (`${locals.loggedUser.first_name} ${locals.loggedUser.last_name}`) %>
             </p>
           </div>
           <div class="input-box">
             <h3>Documento de Identidad</h3>
             <p>
-              <%= locals.loggedUser.documento %>
+              <%= locals.loggedUser.document %>
             </p>
           </div>
           <div class="input-box">
             <h3>Fecha de Nacimiento</h3>
             <p>
-              <%= locals.loggedUser.fechaNacimiento %>
+              <%= locals.loggedUser.date_birth %>
             </p>
           </div>
 
           <div class="input-box">
             <h3>Número de Celular</h3>
             <p>
-              <%= locals.loggedUser.celular %>
+              <%= locals.loggedUser.cell_phone %>
             </p>
           </div>
           <div class="input-box">
             <h3>Correo Electrónico</h3>
             <p>
-              <%= locals.loggedUser.correo%>
+              <%= locals.loggedUser.email%>
             </p>
           </div>
           <div class="input-box">
             <h3>País</h3>
             <p>
-              <%= locals.loggedUser.pais.charAt(0).toUpperCase() + locals.loggedUser.pais.slice(1)%>
+              <%= locals.loggedUser.country.charAt(0).toUpperCase() + locals.loggedUser.country.slice(1)%>
             </p>
           </div>
           <div class="input-box">
             <h3>Aerolínea preferida</h3>
             <p>
-              <%= (locals.loggedUser.aerolineaFav).toUpperCase()%>
+              <%= (locals.loggedUser.favourite_aeroline).toUpperCase()%>
             </p>
           </div>
           
@@ -84,39 +84,39 @@
             <div class="input-box">
               <h3>Empresa</h3>
               <p>
-                <%= locals.loggedAdmin.empresa.charAt(0).toUpperCase() + locals.loggedAdmin.empresa.slice(1) %>
+                <%= locals.loggedAdmin.enterprise.charAt(0).toUpperCase() + locals.loggedAdmin.enterprise.slice(1) %>
               </p>
             </div>
             <div class="input-box">
               <h3>País de Origen</h3>
               <p>
-                <%= locals.loggedAdmin.paisDeOrigen.charAt(0).toUpperCase() + locals.loggedAdmin.paisDeOrigen.slice(1)
+                <%= locals.loggedAdmin.country_origin.charAt(0).toUpperCase() + locals.loggedAdmin.country_origin.slice(1)
                   %>
               </p>
             </div>
             <div class="input-box">
               <h3>Aerolínea</h3>
               <p>
-                <%= (locals.loggedAdmin.aerolinea).toUpperCase() %>
+                <%= (locals.loggedAdmin.aeroline_name).toUpperCase() %>
               </p>
             </div>
 
             <div class="input-box">
               <h3>País de Operación</h3>
               <p>
-                <%= locals.loggedAdmin.paisRuta.charAt(0).toUpperCase() + locals.loggedAdmin.paisRuta.slice(1) %>
+                <%= locals.loggedAdmin.country_route.charAt(0).toUpperCase() + locals.loggedAdmin.country_route.slice(1) %>
               </p>
             </div>
             <div class="input-box">
               <h3>Correo Empresarial</h3>
               <p>
-                <%= locals.loggedAdmin.correoEmpresarial %>
+                <%= locals.loggedAdmin.email_enterprise %>
               </p>
             </div>
             <div class="input-box">
               <h3>Contacto</h3>
               <p>
-                <%= locals.loggedAdmin.contacto %>
+                <%= locals.loggedAdmin.contact %>
               </p>
             </div>
 

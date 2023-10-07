@@ -38,7 +38,7 @@
                                     <label for="name" title>Nombre</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.nombre%>" >
+                                    <input class="input-box" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.first_name%>" >
                                 </div>
                                 <% if (locals.errors && errors.nombre) { %>
                                     <div class="text-danger">
@@ -54,7 +54,7 @@
                                     <label for="apellido" title>Apellido</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.apellido %>">
+                                    <input class="input-box" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.last_name %>">
                                 </div>
                                 <% if (locals.errors && errors.apellido) { %>
                                     <div class="text-danger">
@@ -76,7 +76,7 @@
                                         
                                         <% const generos =["masculino", "femenino"] %>
                                             <% generos.forEach(genero=> { %>
-                                                <option value="<%= genero %>" <%=user.genero===genero? "selected" : "" %>><%= genero.charAt(0).toUpperCase() + genero.slice(1) %>
+                                                <option value="<%= genero %>" <%=user.gender===genero? "selected" : "" %>><%= genero.charAt(0).toUpperCase() + genero.slice(1) %>
                                                 </option>
                                             <% }); %>
 
@@ -91,7 +91,7 @@
                                     <label for="id" title>Número de documento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" maxlength="15" id="id" name="documento" value = "<%= user.documento%>">
+                                    <input class="input-box" type="number" maxlength="15" id="id" name="documento" value = "<%= user.document%>">
                                 </div>
                                 <% if (locals.errors && errors.documento) { %>
                                     <div class="text-danger">
@@ -109,7 +109,7 @@
                                     <label for="fecha" title>Fecha de nacimiento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="fecha" name="fechaNacimiento" value = "<%=user.fechaNacimiento%>">
+                                    <input class="input-box" type="date" id="fecha" name="fechaNacimiento" value = "<%=user.birth_date%>">
                                 </div>
                             </div>
                             <% if (locals.errors && errors.fechaNacimiento) { %>
@@ -125,7 +125,7 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.celular%>">
+                                    <input class="input-box" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cell_phone%>">
                                 </div>
                                 <% if (locals.errors && errors.celular) { %>
                                     <div class="text-danger">
@@ -146,7 +146,7 @@
                                     <label for="mail" title>Correo electrónico</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correo" value = "<%= user.correo%>">
+                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correo" value = "<%= user.email%>">
                                 </div>
                                 <% if (locals.errors && errors.correo) { %>
                                     <div class="text-danger">
@@ -168,7 +168,7 @@
                                     <select name="pais" id="pais">
                                         <% const paises =["argentina", "colombia", "uruguay", "bolivia", "paraguay", "peru", "brasil", "venezuela", "chile", "ecuador"]%>
                                             <% paises.forEach(pais=> { %>
-                                                <option value="<%= pais %>" <%=user.pais===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
+                                                <option value="<%= pais %>" <%=user.country===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
                                                 </option>
                                             <% }); %>
                                     </select>
@@ -185,7 +185,7 @@
                                     <select name="aerolineaFav" id="aereo">
                                         <% const aerolinea =["latam","avianca","aero-ar"]%>
                                             <% aerolinea.forEach(linea => { %>
-                                                <option value="<%= linea %>" <%=user.linea===linea? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
+                                                <option value="<%= linea %>" <%=user.favourite_airline===linea? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
                                                 </option>
                                             <% }); %>
                                     </select>

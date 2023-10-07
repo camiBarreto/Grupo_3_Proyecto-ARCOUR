@@ -27,9 +27,7 @@ const controllerProduct = {
           where: {
             departure_airport: queryData.arrivalAirport,
             arrival_airport: queryData.departureAirport,
-            departure_date: new DATEONLY
-            
-            (queryData.returnDate)
+            departure_date: new DATEONLY(queryData.returnDate)
           },
         });
       }

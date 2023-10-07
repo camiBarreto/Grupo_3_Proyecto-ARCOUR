@@ -1,19 +1,30 @@
-const userModel = require("../models/usersModels");
-const adminModel = require("../models/adminsModels");
+const { User, Admin } = require("../database/models");
 
-const isLogged = (req, res, next) => {
+const isLogged = async (req, res, next) => {
     res.locals.validationUser = false;
     res.locals.validationAdmin = false;
 
     let emailInCookie = req.cookies.userEmail;
-	let userFromCookie = userModel.findByEmail(emailInCookie);
-	let adminFromCookie = adminModel.findByEmail(emailInCookie);
-
-
-    if (userFromCookie) {
-		req.session.loggedUser = userFromCookie;
-	} else if (adminFromCookie){
-		req.session.loggedAdmin = adminFromCookie;
+	try {
+        let userFromCookie = await User.findOne({
+            raw: true,
+            where: {
+              email: emailInCookie,
+            },
+          });
+          let adminFromCookie = await Admin.findOne({
+            raw: true,
+            where: {
+              email_enterprise: emailInCookie,
+            },
+          });
+          if (userFromCookie) {
+              req.session.loggedUser = userFromCookie;
+          } else if (adminFromCookie){
+              req.session.loggedAdmin = adminFromCookie;
+          }
+    } catch (error) {
+        console.error(error);
     }
 
     //Cokkies validation (Parte de mariano)
