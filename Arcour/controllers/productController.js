@@ -1,6 +1,9 @@
 const path = require("path");
 const productModel = require("../models/productModels");
 const { Product } = require("../database/models");
+const { Console } = require("console");
+const { Sequelize } = require('sequelize');
+
 
 const controllerProduct = {
   getProductDetail: async (req, res) => {
@@ -12,7 +15,7 @@ const controllerProduct = {
         where: {
           departure_airport: queryData.departureAirport,
           arrival_airport: queryData.arrivalAirport,
-          departure_date: queryData.departureDate
+          departure_date: Sequelize.literal(`DATE(departure_date) = '${queryData.departureDate}'`)
         },
       });
 
@@ -20,7 +23,7 @@ const controllerProduct = {
         where: {
           departure_airport: queryData.arrivalAirport,
           arrival_airport: queryData.departureAirport,
-          departure_date: queryData.returnDate,
+          departure_date: Sequelize.literal(`DATE(departure_date) = '${queryData.returnDate}'`),
         },
       });
 
