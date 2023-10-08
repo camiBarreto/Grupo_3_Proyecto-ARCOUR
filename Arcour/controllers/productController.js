@@ -9,7 +9,6 @@ const controllerProduct = {
   getProductDetail: async (req, res) => {
     //Obtener los datos de búsqueda del formulario
     const queryData = req.query;
-    //test
 
     try {
       const vuelosIda = await Product.findAll({
