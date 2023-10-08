@@ -30,8 +30,6 @@ router.get("/product-detail", controllerProduct.getProductDetail);
 router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
 //@ GET /products
 router.get("/data",adminMiddleware, controllerProduct.getProductList);
-//@ DELETE /products/delete
-router.delete("/:id/delete", controllerProduct.destroyProduct);
 
 
 //@ GET /products/:id/productEdits

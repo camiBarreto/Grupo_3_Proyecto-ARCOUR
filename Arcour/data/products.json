@@ -1,1 +1,12 @@
-[{"flightNumber":9756,"departureAirport":"Aeropuerto Internacional de Carrasco","arrivalAirport":"Aeropuerto Internacional El Dorado","departureTime":"23:37","arrivalTime":"05:45","departureDate":"2023-09-09","ticketPrice":"723","flightDuration":"6 h 8 min"}]
+[
+  {
+    "flightNumber": 9756,
+    "departureAirport": "Aeropuerto Internacional de Carrasco",
+    "arrivalAirport": "Aeropuerto Internacional El Dorado",
+    "departureTime": "23:37",
+    "arrivalTime": "05:45",
+    "departureDate": "2023-09-09",
+    "ticketPrice": "723",
+    "flightDuration": "6 h 8 min"
+  }
+]

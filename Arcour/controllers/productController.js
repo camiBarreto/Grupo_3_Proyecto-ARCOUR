@@ -64,13 +64,6 @@ const controllerProduct = {
 
     res.redirect("/products/data");
 },
-destroyProduct: (req,res) => {
-  const flightId = Number(req.params.id);
-
-  productModel.destroyProduct(flightId);
-
-  res.redirect("/products/data")
-},
 
   getProductCart: (req, res) => {
     res.render("productCart");
@@ -108,9 +101,8 @@ destroyProduct: (req,res) => {
         },
       });
 
-    const flights = productModel.findAll();
 
-    res.render("productList", {flights});
+    res.redirect("/products/data");
     } catch (error) {
       console.error(error);
     }
