@@ -12,6 +12,7 @@ const controllerProduct = {
 
     try {
       const vuelosIda = await Product.findAll({
+        raw: true,
         where: {
           departure_airport: queryData.departureAirport,
           arrival_airport: queryData.arrivalAirport,
@@ -19,13 +20,17 @@ const controllerProduct = {
         },
       });
 
-      const vuelosVuelta = await Product.findAll({
-        where: {
-          departure_airport: queryData.arrivalAirport,
-          arrival_airport: queryData.departureAirport,
-          departure_date: Sequelize.literal(`DATE(departure_date) = '${queryData.returnDate}'`),
-        },
-      });
+      let vuelosVuelta = []
+      if(!queryData.flightTypeIda) {
+        vuelosVuelta = await Product.findAll({
+          raw: true,
+          where: {
+            departure_airport: queryData.arrivalAirport,
+            arrival_airport: queryData.departureAirport,
+            departure_date: Sequelize.literal(`DATE(departure_date) = '${queryData.returnDate}'`),
+          },
+        });
+      }
 
       console.log({ vuelosIda, vuelosVuelta });
       //Pasarle a la vista, product-detail los datos para mostrarlos dinamicamente.
