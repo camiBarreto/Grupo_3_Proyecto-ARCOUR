@@ -1,6 +1,7 @@
 const path = require("path");
 const productModel = require("../models/productModels");
 const db = require ("../database/models")
+const { Product } = require('../database/models');
 
 const controllerProduct = {
   hola: async (req, res) => {
@@ -95,6 +96,24 @@ destroyProduct: (req,res) => {
 
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/products');
+  },
+
+  deleteProduct: async (req, res) => {
+    const id = req.params.id;
+
+    try {
+      await Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+
+    const flights = productModel.findAll();
+
+    res.render("productList", {flights});
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 

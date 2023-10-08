@@ -38,6 +38,8 @@ router.delete("/:id/delete", controllerProduct.destroyProduct);
 router.get("/:id/productEdits", adminMiddleware,controllerProduct.getProductEdits);
 //@ PUT /products/:id/productEdits
 router.put("/:id/put" , controllerProduct.updateProduct);
+//@ DELETE /products/:id/delete
+router.delete ("/:id/delete", controllerProduct.deleteProduct);
 
 
 //@ GET /products/create

@@ -42,4 +42,10 @@ router.get("/logOut",authMiddleware, controllerUser.logOut);
 //@ GET /users/profile
 router.get("/profile",authMiddleware, controllerUser.profile);
 
+//@ DELETE /users/:id/delete
+router.delete ("/:id/deleteAdmin", controllerUser.deleteOneAdmin);
+
+//@ DELETE /users/:id/delete/deleteUser
+router.delete ("/:id/deleteUser", controllerUser.deleteOneUser);
+
 module.exports = router;

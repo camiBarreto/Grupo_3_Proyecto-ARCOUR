@@ -3,12 +3,13 @@ const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const { User, Admin } = require('../database/models');
 
 const controllerUser = {
   login: (req, res) => {
     const errorMessage = req.query.error;
 
-    res.render("login", {errorMessage});
+    res.render("login", { errorMessage });
   },
 
   postUser: (req, res) => {
@@ -17,13 +18,13 @@ const controllerUser = {
 
     console.log(errors);
 
-		
-		if (!errors.isEmpty()) {
-			return res.render('register', {
-				errors: errors.mapped(),
-				oldData: req.body
-			});
-		}
+
+    if (!errors.isEmpty()) {
+      return res.render('register', {
+        errors: errors.mapped(),
+        oldData: req.body
+      });
+    }
 
     const newUser = {
       nombre: req.body.nombre,
@@ -76,13 +77,13 @@ const controllerUser = {
     let admin = adminModel.findByEmail(req.body.correo);
 
     const errors = validationResult(req);
-		
-		if (!errors.isEmpty()) {
-			return res.render('login', {
-				errors: errors.mapped(),
-				oldData: req.body
-			});
-		}
+
+    if (!errors.isEmpty()) {
+      return res.render('login', {
+        errors: errors.mapped(),
+        oldData: req.body
+      });
+    }
 
     if (user) {
       let isOkThePassword = bcrypt.compareSync(req.body.password, user.password);
@@ -127,7 +128,7 @@ const controllerUser = {
     req.session.destroy();
     return res.redirect("/")
   },
-  getEditUser: (req, res) => {    
+  getEditUser: (req, res) => {
     const user = userModel.findById(req.params.id);
     return res.render("editUser", { user });
   },
@@ -135,13 +136,13 @@ const controllerUser = {
     const errors = validationResult(req);
     console.log(errors);
     const user = userModel.findById(req.params.id);
-		if (!errors.isEmpty()) {
-			return res.render('editUser', {
-				errors: errors.mapped(),
-				oldData: req.body,
+    if (!errors.isEmpty()) {
+      return res.render('editUser', {
+        errors: errors.mapped(),
+        oldData: req.body,
         user
-			});
-		}
+      });
+    }
 
     let firstId = {
       id: (req.params.id)
@@ -154,7 +155,7 @@ const controllerUser = {
     updatedUser = {
       ...firstId,
       ...req.body,
-      
+
     };
 
     userModel.updateUser(updatedUser);
@@ -162,7 +163,7 @@ const controllerUser = {
 
     return res.redirect("/users/profile")
   },
-  getEditAdmin: (req, res) => {    
+  getEditAdmin: (req, res) => {
     const admin = adminModel.findById(req.params.id);
     return res.render("editAdmin", { admin });
   },
@@ -171,13 +172,13 @@ const controllerUser = {
     console.log(errors);
     const admin = adminModel.findById(req.params.id);
     console.log(admin)
-		if (!errors.isEmpty()) {
-			return res.render('editAdmin', {
-				errors: errors.mapped(),
-				oldData: req.body,
+    if (!errors.isEmpty()) {
+      return res.render('editAdmin', {
+        errors: errors.mapped(),
+        oldData: req.body,
         admin
-			});
-		}
+      });
+    }
 
     let firstId = {
       id: (req.params.id)
@@ -192,7 +193,45 @@ const controllerUser = {
 
 
     return res.redirect("/users/profile")
-  }
+  },
+
+  deleteOneAdmin: async (req, res) => {
+    const id = req.params.id;
+    
+    try {
+      await Admin.destroy({
+        where: {
+          id: id,
+        },
+      });
+
+      res.clearCookie("userEmail");
+      req.session.destroy();
+      return res.redirect("/")
+
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  deleteOneUser: async (req, res) => {
+    const id = req.params.id;
+
+    try {
+      await User.destroy({
+        where: {
+          id: id,
+        },
+      });
+
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    return res.redirect("/")
+
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 module.exports = controllerUser;

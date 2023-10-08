@@ -75,11 +75,19 @@
               <%= (locals.loggedUser.aerolineaFav).toUpperCase()%>
             </p>
           </div>
-          
+
           <div class="botones">
-            <a href="/users/<%= locals.loggedUser.id %>/editUser"><button class="boton-submit" id="editar">Editar Usuario</button></a>
-            <a href=""></a><button class="boton-submit" id="eliminar">Eliminar Usuario</button></a>
+            <a href="/users/<%= locals.loggedUser.id %>/editUser"><button class="boton-submit" id="editar">Editar
+                Usuario</button></a>
+
+                <form id="deleteFormUser" action="/users/<%= locals.loggedUser.id %>/deleteUser?_method=delete" method="post">
+                  <button class="boton-submit" id="eliminar" type="button" onclick="confirmDeleteUser()">Eliminar
+                    Usuario</button>
+                </form>
           </div>
+
+
+
           <% } else if (locals.validationAdmin) { %>
             <div class="input-box">
               <h3>Empresa</h3>
@@ -119,16 +127,38 @@
                 <%= locals.loggedAdmin.contacto %>
               </p>
             </div>
-
             <div class="botones">
-              <a href="/users/<%= locals.loggedAdmin.id %>/editAdmin"><button class="boton-submit" id="editar">Editar Administrador</button></a>
-              <a href=""><button class="boton-submit" id="eliminar">Eliminar Administrador</button></a>
+              <a href="/users/<%= locals.loggedAdmin.id %>/editAdmin"><button class="boton-submit" id="editar">Editar
+                  Administrador</button> </a>
+
+              <form id="deleteFormAdmin" action="/users/<%= locals.loggedAdmin.id %>/deleteAdmin?_method=delete"
+                method="post">
+                <button class="boton-submit" id="eliminar" type="button" onclick="confirmDeleteAdmin()">Eliminar
+                  Usuario</button>
+              </form>
+
+              <% } %>
             </div>
-            <% } %>
       </div>
     </div>
   </main>
   <script src="/js/scriptHeader.js"></script>
+
+  <script>
+    function confirmDeleteAdmin() {
+      if (confirm('¿Estás seguro de que quieres eliminar al administrador?')) {
+        document.getElementById('deleteFormAdmin').submit();
+      }
+    }
+  </script>
+
+  <script>
+    function confirmDeleteUser() {
+      if (confirm('¿Estás seguro de que quieres eliminar al usuario?')) {
+        document.getElementById('deleteFormUser').submit();
+      }
+    }
+  </script>
 </body>
 
 </html>
