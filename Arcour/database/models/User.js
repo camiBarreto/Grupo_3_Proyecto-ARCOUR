@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    favorite_aeroline: {
+    favourite_aeroline: {
       type: DataTypes.STRING,
       allowNull: false,
     },
