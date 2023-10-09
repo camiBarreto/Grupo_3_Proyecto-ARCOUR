@@ -3,9 +3,10 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID, // Tipo de dato UUID
+      defaultValue: DataTypes.UUIDV4, // Valor por defecto para generar un UUID
       primaryKey: true,
-      autoIncrement: true,
+      allowNull: false
     },
     first_name: {
       type: DataTypes.STRING,
@@ -28,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     cell_phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {

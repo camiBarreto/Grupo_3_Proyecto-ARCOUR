@@ -43,7 +43,7 @@ const controllerProduct = {
     const flight = productModel.findByflightNumber(Number(req.params.id));
     res.render("productEdits", { flight });
   },
-  updateProduct: (req, res) => {
+  updateProduct: async (req, res) => {
     /*let firstId = {
         flightNumber: Number(req.params.id)
     };
@@ -60,20 +60,26 @@ const controllerProduct = {
     
 
     productModel.updateProduct(updatedProduct); */
-    db.Product.update({
-      departure_airport: departureAirport,
-      arrival_airport: arrivalAirport,
-      departure_time: departureTime,
-      arrival_time: arrivalTime,
-      departure_date: departureDate,
-      ticket_price: ticketPrice,
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-
-    res.redirect("/products/data");
+    const updateProduct = {
+      departure_airport: req.body.departureAirport,
+      arrival_airport: req.body.arrivalAirport,
+      departure_time: req.body.departureTime,
+      arrival_time: req.body.arrivalTime,
+      departure_date: req.body.departureDate,
+      ticket_price: req.body.ticketPrice,
+    };
+    const id = req.params.id;
+    try {
+      await db.Product.update(updateProduct, {
+        where: {
+          flight_number: id
+        }
+      })
+  
+      return res.redirect("/products/data");      
+    } catch (error) {
+      console.error(error)
+    }
 },
 destroyProduct: (req,res) => {
   const flightId = Number(req.params.id);

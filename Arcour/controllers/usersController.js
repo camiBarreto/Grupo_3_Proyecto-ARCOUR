@@ -132,7 +132,7 @@ const controllerUser = {
     const user = userModel.findById(req.params.id);
     return res.render("editUser", { user });
   },
-  putEditUser: (req, res) => {
+  putEditUser: async (req, res) => {
     const errors = validationResult(req);
     console.log(errors);
     const user = userModel.findById(req.params.id);
@@ -159,30 +159,36 @@ const controllerUser = {
     };
 
     userModel.updateUser(updatedUser);*/
-    db.User.update({
-      first_name: nombre,
-      last_name: apellido,
-      gender: genero,
-      document: documento,
-      date_birth: fechaNacimiento,
-      cell_phone: celular,
-      email: correo,
-      country: pais,
-      favourite_aeroline: aerolineaFav
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
+    const updateUser = {
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      gender: req.body.genero,
+      document: req.body.documento,
+      date_birth: req.body.fechaNacimiento,
+      cell_phone: req.body.celular,
+      email: req.body.correo,
+      country: req.body.pais,
+      favourite_aeroline: req.body.aerolineaFav
+    };
+    const id = req.params.id;
+    try {
+      await db.User.update( updateUser , {
+        where: {
+          id: id
+        }
+      })
 
-
-    return res.redirect("/users/profile")
+      return res.redirect("/users/profile");
+      
+    } catch (error) {
+      console.error(error);     
+    }
   },
   getEditAdmin: (req, res) => {
     const admin = adminModel.findById(req.params.id);
     return res.render("editAdmin", { admin });
   },
-  putEditAdmin: (req, res) => {
+  putEditAdmin: async (req, res) => {
     const errors = validationResult(req);
     console.log(errors);
     const admin = adminModel.findById(req.params.id);
@@ -206,21 +212,27 @@ const controllerUser = {
 
     adminModel.updateAdmin(updatedAdmin);*/
 
-    db.Admin.update({
-      enterprise: empresa,
-      country_origin: paisDeOrigen,
-      email_enterprise: correoEmpresarial,
-      country_route: paisRuta,
-      aeroline_name: aerolinea,
-      contact: contacto,
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
+    const updateAdmin = {
+      enterprise: req.body.empresa,
+      country_origin: req.body.paisDeOrigen,
+      email_enterprise: req.body.correoEmpresarial,
+      country_route: req.body.paisRuta,
+      aeroline_name: req.body.aerolinea,
+      contact: req.body.contacto,
+    }
+    const id = req.params.id;
+    try {
+      await db.Admin.update( updateAdmin , {
+        where: {
+          id: id
+        }
+      })
 
-
-    return res.redirect("/users/profile")
+      return res.redirect("/users/profile")
+      
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 
