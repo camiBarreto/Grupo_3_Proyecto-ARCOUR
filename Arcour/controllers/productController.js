@@ -44,7 +44,7 @@ const controllerProduct = {
     res.render("productEdits", { flight });
   },
   updateProduct: (req, res) => {
-    let firstId = {
+    /*let firstId = {
         flightNumber: Number(req.params.id)
     };
 
@@ -54,12 +54,24 @@ const controllerProduct = {
         flightDuration: productModel.calculateDuration(req.body)
     };
 
-    /* 
+    
         const updatedProduct = req.body;
         updatedProduct.id = Number(req.params.id); 
-    */
+    
 
-    productModel.updateProduct(updatedProduct);
+    productModel.updateProduct(updatedProduct); */
+    db.Product.update({
+      departure_airport: departureAirport,
+      arrival_airport: arrivalAirport,
+      departure_time: departureTime,
+      arrival_time: arrivalTime,
+      departure_date: departureDate,
+      ticket_price: ticketPrice,
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
 
     res.redirect("/products/data");
 },

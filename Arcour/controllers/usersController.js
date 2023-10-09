@@ -3,12 +3,13 @@ const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 const controllerUser = {
   login: (req, res) => {
     const errorMessage = req.query.error;
 
-    res.render("login", {errorMessage});
+    res.render("login", { errorMessage });
   },
 
   postUser: (req, res) => {
@@ -17,13 +18,13 @@ const controllerUser = {
 
     console.log(errors);
 
-		
-		if (!errors.isEmpty()) {
-			return res.render('register', {
-				errors: errors.mapped(),
-				oldData: req.body
-			});
-		}
+
+    if (!errors.isEmpty()) {
+      return res.render('register', {
+        errors: errors.mapped(),
+        oldData: req.body
+      });
+    }
 
     const newUser = {
       nombre: req.body.nombre,
@@ -76,13 +77,13 @@ const controllerUser = {
     let admin = adminModel.findByEmail(req.body.correo);
 
     const errors = validationResult(req);
-		
-		if (!errors.isEmpty()) {
-			return res.render('login', {
-				errors: errors.mapped(),
-				oldData: req.body
-			});
-		}
+
+    if (!errors.isEmpty()) {
+      return res.render('login', {
+        errors: errors.mapped(),
+        oldData: req.body
+      });
+    }
 
     if (user) {
       let isOkThePassword = bcrypt.compareSync(req.body.password, user.password);
@@ -127,7 +128,7 @@ const controllerUser = {
     req.session.destroy();
     return res.redirect("/")
   },
-  getEditUser: (req, res) => {    
+  getEditUser: (req, res) => {
     const user = userModel.findById(req.params.id);
     return res.render("editUser", { user });
   },
@@ -135,34 +136,49 @@ const controllerUser = {
     const errors = validationResult(req);
     console.log(errors);
     const user = userModel.findById(req.params.id);
-		if (!errors.isEmpty()) {
-			return res.render('editUser', {
-				errors: errors.mapped(),
-				oldData: req.body,
+    if (!errors.isEmpty()) {
+      return res.render('editUser', {
+        errors: errors.mapped(),
+        oldData: req.body,
         user
-			});
-		}
+      });
+    }
 
-    let firstId = {
+    /*let firstId = {
       id: (req.params.id)
-    };
+    };*/
 
     if (req.body.hasOwnProperty("t&c")) {
       delete req.body["t&c"];
     }
 
-    updatedUser = {
+    /*updatedUser = {
       ...firstId,
       ...req.body,
       
     };
 
-    userModel.updateUser(updatedUser);
+    userModel.updateUser(updatedUser);*/
+    db.User.update({
+      first_name: nombre,
+      last_name: apellido,
+      gender: genero,
+      document: documento,
+      date_birth: fechaNacimiento,
+      cell_phone: celular,
+      email: correo,
+      country: pais,
+      favourite_aeroline: aerolineaFav
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
 
 
     return res.redirect("/users/profile")
   },
-  getEditAdmin: (req, res) => {    
+  getEditAdmin: (req, res) => {
     const admin = adminModel.findById(req.params.id);
     return res.render("editAdmin", { admin });
   },
@@ -171,15 +187,15 @@ const controllerUser = {
     console.log(errors);
     const admin = adminModel.findById(req.params.id);
     console.log(admin)
-		if (!errors.isEmpty()) {
-			return res.render('editAdmin', {
-				errors: errors.mapped(),
-				oldData: req.body,
+    if (!errors.isEmpty()) {
+      return res.render('editAdmin', {
+        errors: errors.mapped(),
+        oldData: req.body,
         admin
-			});
-		}
+      });
+    }
 
-    let firstId = {
+    /*let firstId = {
       id: (req.params.id)
     };
 
@@ -188,7 +204,20 @@ const controllerUser = {
       ...req.body,
     };
 
-    adminModel.updateAdmin(updatedAdmin);
+    adminModel.updateAdmin(updatedAdmin);*/
+
+    db.Admin.update({
+      enterprise: empresa,
+      country_origin: paisDeOrigen,
+      email_enterprise: correoEmpresarial,
+      country_route: paisRuta,
+      aeroline_name: aerolinea,
+      contact: contacto,
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
 
 
     return res.redirect("/users/profile")

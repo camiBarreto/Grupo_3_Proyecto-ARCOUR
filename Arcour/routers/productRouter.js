@@ -37,7 +37,7 @@ router.delete("/:id/delete", controllerProduct.destroyProduct);
 //@ GET /products/:id/productEdits
 router.get("/:id/productEdits", adminMiddleware,controllerProduct.getProductEdits);
 //@ PUT /products/:id/productEdits
-router.put("/:id/put" , controllerProduct.updateProduct);
+router.put("/:id/put" , controllerProduct.updateProduct);  //////
 
 
 //@ GET /products/create
