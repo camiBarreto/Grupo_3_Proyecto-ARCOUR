@@ -3,7 +3,7 @@ const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const { User, Admin } = require('../database/models');
+const { User, Admin } = require("../database/models");
 
 const controllerUser = {
   login: (req, res) => {
@@ -12,7 +12,7 @@ const controllerUser = {
     res.render("login", { errorMessage });
   },
 
-  postUser: (req, res) => {
+  postUser: async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -23,21 +23,24 @@ const controllerUser = {
     }
 
     const newUser = {
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      genero: req.body.genero,
-      documento: req.body.documento,
-      fechaNacimiento: req.body.fechaNacimiento,
-      celular: req.body.celular,
-      correo: req.body.mail,
-      password: req.body.password,
-      pais: req.body.pais,
-      aerolineaFav: req.body.aerolinea,
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      gender: req.body.genero,
+      document: req.body.documento,
+      date_birth: req.body.fechaNacimiento,
+      cell_phone: req.body.celular,
+      email: req.body.mail,
+      country: req.body.pais,
+      favourite_aeroline: req.body.aerolinea,
     };
 
-    userModel.createUsers(newUser);
-
-    res.redirect("/users/login");
+    newUser.password = bcrypt.hashSync(req.body.password, 10);
+    try {
+      await User.create(newUser);
+      res.redirect("/users/login");
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   register: (req, res) => {
@@ -50,7 +53,7 @@ const controllerUser = {
   getCreateAdmin: (req, res) => {
     res.render("createAdmin");
   },
-  postAdmin: (req, res) => {
+  postAdmin: async (req, res) => {
     const errors = validationResult(req);
     const admin = userModel.findById(req.params.id);
     if (!errors.isEmpty()) {
@@ -60,21 +63,23 @@ const controllerUser = {
         admin,
       });
     }
-
     const newCompany = {
-      empresa: req.body.nombreEmpresa,
-      correoEmpresarial: req.body.correo,
-      password: req.body.password,
-      paisDeOrigen: req.body.paisOrigen,
-      aerolinea: req.body.aerolinea,
-      paisRuta: req.body.paisRuta,
-      contacto: req.body.contacto,
+      enterprise: req.body.nombreEmpresa,
+      email_enterprise: req.body.correo,
+      country_origin: req.body.paisOrigen,
+      aeroline_name: req.body.aerolinea,
+      country_route: req.body.paisRuta,
+      contact: req.body.contacto,
+      admin: true,
     };
+    newCompany.password = bcrypt.hashSync(req.body.password, 10);
 
-
-    adminModel.createAdmin(newCompany);
-
-    res.redirect("/users/admin");
+    try {
+      await Admin.create(newCompany);
+      res.redirect("/users/admin");
+    } catch (error) {
+      console.error(error);
+    }
 
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/');
@@ -146,17 +151,17 @@ const controllerUser = {
     const errors = validationResult(req);
     const user = userModel.findById(req.params.id);
     if (!errors.isEmpty()) {
-      return res.render('editUser', {
+      return res.render("editUser", {
         errors: errors.mapped(),
         oldData: req.body,
-        user
+        user,
       });
     }
 
     if (req.body.hasOwnProperty("t&c")) {
       delete req.body["t&c"];
     }
-    
+
     const updateUser = {
       first_name: req.body.nombre,
       last_name: req.body.apellido,
@@ -166,20 +171,19 @@ const controllerUser = {
       cell_phone: req.body.celular,
       email: req.body.correo,
       country: req.body.pais,
-      favourite_aeroline: req.body.aerolineaFav
+      favourite_aeroline: req.body.aerolineaFav,
     };
     const id = req.params.id;
     try {
-      await db.User.update( updateUser , {
+      await db.User.update(updateUser, {
         where: {
-          id: id
-        }
-      })
+          id: id,
+        },
+      });
 
       return res.redirect("/users/profile");
-      
     } catch (error) {
-      console.error(error);     
+      console.error(error);
     }
   },
   getEditAdmin: (req, res) => {
@@ -190,10 +194,10 @@ const controllerUser = {
     const errors = validationResult(req);
     const admin = adminModel.findById(req.params.id);
     if (!errors.isEmpty()) {
-      return res.render('editAdmin', {
+      return res.render("editAdmin", {
         errors: errors.mapped(),
         oldData: req.body,
-        admin
+        admin,
       });
     }
     const updateAdmin = {
@@ -203,21 +207,20 @@ const controllerUser = {
       country_route: req.body.paisRuta,
       aeroline_name: req.body.aerolinea,
       contact: req.body.contacto,
-    }
+    };
     const id = req.params.id;
     try {
-      await db.Admin.update( updateAdmin , {
+      await db.Admin.update(updateAdmin, {
         where: {
-          id: id
-        }
-      })
+          id: id,
+        },
+      });
 
-      return res.redirect("/users/profile")
-      
+      return res.redirect("/users/profile");
     } catch (error) {
       console.error(error);
     }
-  }
+  },
 };
 
 module.exports = controllerUser;
