@@ -38,7 +38,7 @@
                                     <label for="name" title>Nombre de la Empresa</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="25" id="name" name="empresa" value="<%= admin.empresa %>">
+                                    <input class="input-box" type="text" maxlength="25" id="name" name="empresa" value="<%= admin.enterprise %>">
                                 </div>
                                 <% if (locals.errors && errors.empresa) { %>
                                     <div class="text-danger">
@@ -57,7 +57,7 @@
                                     <select name="paisDeOrigen" id="paisOrigen">
                                         <% const paises =["argentina", "colombia", "uruguay", "bolivia", "paraguay", "peru", "brasil", "venezuela", "chile", "ecuador"]%>
                                         <% paises.forEach(pais=> { %>
-                                            <option value="<%= pais %>" <%=admin.paisDeOrigen===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
+                                            <option value="<%= pais %>" <%=admin.country_origin===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
                                             </option>
                                         <% }); %>
                                     </select>
@@ -74,7 +74,7 @@
                                     <label for="mail" title>Correo Empresarial</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correoEmpresarial"  value="<%= admin.correoEmpresarial %>">
+                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correoEmpresarial"  value="<%= admin.email_enterprise %>">
                                 </div>
                                 <% if (locals.errors && errors.correoEmpresarial) { %>
                                     <div class="text-danger">
@@ -97,7 +97,7 @@
                                     <select name="paisRuta" id="pais">
                                         <% const paisesRuta =["argentina", "colombia", "uruguay"]%>
                                         <% paisesRuta.forEach(pais=> { %>
-                                             <option value="<%= pais %>" <%=admin.paisRuta===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
+                                             <option value="<%= pais %>" <%=admin.country_route===pais? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
                                              </option>
                                              <% }); %>
                                     </select>
@@ -114,7 +114,7 @@
                                     <select name="aerolinea" id="aereo">
                                         <% const aerolinea =["latam Airlines","avianca","aerolineas Argentinas"]%>
                                         <% aerolinea.forEach(linea => { %>
-                                             <option value="<%= linea %>" <%=admin.linea===linea? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
+                                             <option value="<%= linea %>" <%=admin.aeroline_name===linea? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
                                              </option>
                                              <% }); %>
                                     </select>
@@ -132,7 +132,7 @@
                                 <label for="number" title>Número de contacto (+)</label>
                             </div>
                             <div class="ant-input">
-                                <input name="contacto" class="input-box" type="text" maxlength="25" id="number"  value="<%= admin.contacto %>">
+                                <input name="contacto" class="input-box" type="text" maxlength="25" id="number"  value="<%= admin.contact %>">
                             </div>
                             <% if (locals.errors && errors.contacto) { %>
                                 <div class="text-danger">

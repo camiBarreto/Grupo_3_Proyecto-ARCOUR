@@ -9,12 +9,12 @@
           <!-- Implementación del profile -->
           <div id="profile-dropdown" class="profile-dropdown">
             <div class="profile-header">
-              <% if (locals.loggedUser.genero === "masculino") { %>
+              <% if (locals.loggedUser.gender === "masculino") { %>
                 <img src="/images/hombre1.png" alt="Imagen de Usuario" class="img-user1" />
-              <% } else if (locals.loggedUser.genero === "femenino") { %>
+              <% } else if (locals.loggedUser.gender === "femenino") { %>
                 <img src="/images/mujer1.png" alt="Imagen de Usuario" class="img-user1" />
               <% } %>
-              <span>Hola <%= locals.loggedUser.nombre %></span>
+              <span>Hola <%= locals.loggedUser.first_name %></span>
             </div>
             <i class="fa-solid fa-chevron-down arrow-icon"></i>
             <ul id="dropdown-menu">
@@ -27,7 +27,7 @@
           <div id="profile-dropdown" class="profile-dropdown">
             <div class="profile-header">
                 <img src="/images/perfil.png" alt="Imagen de Administrador" />
-                <span>Hola <%= locals.loggedAdmin.empresa %></span>
+                <span>Hola <%= locals.loggedAdmin.enterprise %></span>
             </div>
             <i class="fa-solid fa-chevron-down arrow-icon"></i>
             <ul id="dropdown-menu">

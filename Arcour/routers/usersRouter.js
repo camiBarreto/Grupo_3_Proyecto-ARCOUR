@@ -57,6 +57,6 @@ router.get("/profile", authMiddleware, controllerUser.profile);
 router.delete ("/:id/deleteAdmin", controllerUser.deleteOneAdmin);
 
 //@ DELETE /users/:id/delete/deleteUser
-router.delete ("/:id/deleteUser", controllerUser.deleteOneUser);
+router.delete("/:id/deleteUser", controllerUser.deleteOneUser);
 
 module.exports = router;
