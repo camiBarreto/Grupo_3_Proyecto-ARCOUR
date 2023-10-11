@@ -3,44 +3,44 @@ const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const { User, Admin } = require("../database/models");
 
 const controllerUser = {
   login: (req, res) => {
     const errorMessage = req.query.error;
 
-    res.render("login", {errorMessage});
+    res.render("login", { errorMessage });
   },
 
-  postUser: (req, res) => {
-
+  postUser: async (req, res) => {
     const errors = validationResult(req);
 
-    console.log(errors);
-
-		
-		if (!errors.isEmpty()) {
-			return res.render('register', {
-				errors: errors.mapped(),
-				oldData: req.body
-			});
-		}
+    if (!errors.isEmpty()) {
+      return res.render("register", {
+        errors: errors.mapped(),
+        oldData: req.body,
+      });
+    }
 
     const newUser = {
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      genero: req.body.genero,
-      documento: req.body.documento,
-      fechaNacimiento: req.body.fechaNacimiento,
-      celular: req.body.celular,
-      correo: req.body.mail,
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      gender: req.body.genero,
+      document: req.body.documento,
+      date_birth: req.body.fechaNacimiento,
+      cell_phone: req.body.celular,
+      email: req.body.mail,
       password: req.body.password,
-      pais: req.body.pais,
-      aerolineaFav: req.body.aerolinea,
+      country: req.body.pais,
+      favourite_aeroline: req.body.aerolinea,
     };
 
-    userModel.createUsers(newUser);
-
-    res.redirect("/users/login");
+    try {
+      await User.create(newUser);
+      res.redirect("/users/login");
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   register: (req, res) => {
@@ -53,20 +53,23 @@ const controllerUser = {
   getCreateAdmin: (req, res) => {
     res.render("createAdmin");
   },
-  postAdmin: (req, res) => {
+  postAdmin: async (req, res) => {
     const newCompany = {
-      empresa: req.body.nombreEmpresa,
-      correoEmpresarial: req.body.correo,
+      enterprise: req.body.nombreEmpresa,
+      email_enterprise: req.body.correo,
       password: req.body.password,
-      paisDeOrigen: req.body.paisOrigen,
-      aerolinea: req.body.aerolinea,
-      paisRuta: req.body.paisRuta,
-      contacto: req.body.contacto
+      country_origin: req.body.paisOrigen,
+      aeroline_name: req.body.aerolinea,
+      country_route: req.body.paisRuta,
+      contact: req.body.contacto,
     };
 
-    adminModel.createAdmin(newCompany);
-
-    res.redirect("/users/admin");
+    try {
+      await Admin.create(newCompany);
+      res.redirect("/users/admin");
+    } catch (error) {
+      console.error(error);
+    }
 
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/');
@@ -76,45 +79,48 @@ const controllerUser = {
     let admin = adminModel.findByEmail(req.body.correo);
 
     const errors = validationResult(req);
-		
-		if (!errors.isEmpty()) {
-			return res.render('login', {
-				errors: errors.mapped(),
-				oldData: req.body
-			});
-		}
+
+    if (!errors.isEmpty()) {
+      return res.render("login", {
+        errors: errors.mapped(),
+        oldData: req.body,
+      });
+    }
 
     if (user) {
-      let isOkThePassword = bcrypt.compareSync(req.body.password, user.password);
+      let isOkThePassword = bcrypt.compareSync(
+        req.body.password,
+        user.password
+      );
       if (isOkThePassword) {
         delete user.password;
         req.session.loggedUser = user;
         if (req.body.recordarme) {
-          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 60 })
+          res.cookie("userEmail", req.body.correo, { maxAge: 1000 * 60 * 60 });
         }
-        return res.redirect("/users/profile")
-      }
-      else {
-        return res.redirect("/users/login?error=Credenciales invalidas")
+        return res.redirect("/users/profile");
+      } else {
+        return res.redirect("/users/login?error=Credenciales invalidas");
       }
 
       //login de user
     } else if (admin) {
-      let isOkThePassword = bcrypt.compareSync(req.body.password, admin.password);
+      let isOkThePassword = bcrypt.compareSync(
+        req.body.password,
+        admin.password
+      );
       if (isOkThePassword) {
         delete admin.password;
         req.session.loggedAdmin = admin;
         if (req.body.recordarme) {
-          res.cookie("userEmail", req.body.correo, { maxAge: (1000 * 60) * 60 })
+          res.cookie("userEmail", req.body.correo, { maxAge: 1000 * 60 * 60 });
         }
-        return res.redirect("/users/admin")
+        return res.redirect("/users/admin");
+      } else {
+        return res.redirect("/users/login?error=Credenciales invalidas");
       }
-      else {
-        return res.redirect("/users/login?error=Credenciales invalidas")
-      }
-
     } else {
-      return res.redirect("/users/login?error=Credenciales invalidas")
+      return res.redirect("/users/login?error=Credenciales invalidas");
 
       //error email inexistente
     }
@@ -125,9 +131,9 @@ const controllerUser = {
   logOut: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();
-    return res.redirect("/")
+    return res.redirect("/");
   },
-  getEditUser: (req, res) => {    
+  getEditUser: (req, res) => {
     const user = userModel.findById(req.params.id);
     return res.render("editUser", { user });
   },
@@ -135,16 +141,16 @@ const controllerUser = {
     const errors = validationResult(req);
     console.log(errors);
     const user = userModel.findById(req.params.id);
-		if (!errors.isEmpty()) {
-			return res.render('editUser', {
-				errors: errors.mapped(),
-				oldData: req.body,
-        user
-			});
-		}
+    if (!errors.isEmpty()) {
+      return res.render("editUser", {
+        errors: errors.mapped(),
+        oldData: req.body,
+        user,
+      });
+    }
 
     let firstId = {
-      id: (req.params.id)
+      id: req.params.id,
     };
 
     if (req.body.hasOwnProperty("t&c")) {
@@ -154,15 +160,13 @@ const controllerUser = {
     updatedUser = {
       ...firstId,
       ...req.body,
-      
     };
 
     userModel.updateUser(updatedUser);
 
-
-    return res.redirect("/users/profile")
+    return res.redirect("/users/profile");
   },
-  getEditAdmin: (req, res) => {    
+  getEditAdmin: (req, res) => {
     const admin = adminModel.findById(req.params.id);
     return res.render("editAdmin", { admin });
   },
@@ -170,17 +174,17 @@ const controllerUser = {
     const errors = validationResult(req);
     console.log(errors);
     const admin = adminModel.findById(req.params.id);
-    console.log(admin)
-		if (!errors.isEmpty()) {
-			return res.render('editAdmin', {
-				errors: errors.mapped(),
-				oldData: req.body,
-        admin
-			});
-		}
+    console.log(admin);
+    if (!errors.isEmpty()) {
+      return res.render("editAdmin", {
+        errors: errors.mapped(),
+        oldData: req.body,
+        admin,
+      });
+    }
 
     let firstId = {
-      id: (req.params.id)
+      id: req.params.id,
     };
 
     updatedAdmin = {
@@ -190,9 +194,8 @@ const controllerUser = {
 
     adminModel.updateAdmin(updatedAdmin);
 
-
-    return res.redirect("/users/profile")
-  }
+    return res.redirect("/users/profile");
+  },
 };
 
 module.exports = controllerUser;
