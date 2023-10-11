@@ -45,6 +45,4 @@ router.get("/create",adminMiddleware, controllerProduct.getCreate);
 //@ POST /products
 router.post("/post", controllerProduct.postProduct);
 
-router.get("/get", controllerProduct.hola);
-
 module.exports = router;

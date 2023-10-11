@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     flight_number: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      allowNull: false
     },
     departure_airport: {
       type: DataTypes.STRING,
@@ -19,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     departure_time: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     arrival_time: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     ticket_price: {
@@ -31,14 +32,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     flight_duration: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     id_product: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-  };
+    },
+  };
 
   const config = {
     tableName: "products",

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const r = require("lodash"); // Libreria para generar numeros aleatorios
+
 
 const modelo = {
   fileRoute: path.join(__dirname, "../data/products.json"),
