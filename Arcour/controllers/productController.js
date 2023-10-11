@@ -1,7 +1,5 @@
 const path = require("path");
-const productModel = require("../models/productModels");
 const { Product } = require("../database/models");
-const { Console } = require("console");
 const { Sequelize } = require('sequelize');
 const { validationResult } = require("express-validator");
 
@@ -22,7 +20,7 @@ const controllerProduct = {
       });
 
       let vuelosVuelta = []
-      if(!queryData.flightTypeIda) {
+      if (!queryData.flightTypeIda) {
         vuelosVuelta = await Product.findAll({
           raw: true,
           where: {
@@ -51,27 +49,27 @@ const controllerProduct = {
   },
   getVerDetalle: async (req, res) => {
     const id = req.params.id;
-   try {
-    const flight = await Product.findByPk(id)
-    res.render("ver-detalle", { flight });
-   } catch (error) {
-    console.error(error);
-   }
+    try {
+      const flight = await Product.findByPk(id)
+      res.render("ver-detalle", { flight });
+    } catch (error) {
+      console.error(error);
+    }
 
   },
 
   getProductEdits: async (req, res) => {
     const id = req.params.id;
     try {
-     const flight = await Product.findByPk(id)
-     res.render("productEdits", { flight });
+      const flight = await Product.findByPk(id)
+      res.render("productEdits", { flight });
     } catch (error) {
-     console.error(error);
+      console.error(error);
     }
   },
-  updateProduct: (req, res) => {
+  updateProduct: async (req, res) => {
     const errors = validationResult(req);
-    
+
     if (!errors.isEmpty()) {
       const flight = productModel.findByflightNumber(Number(req.params.id));
       return res.render("productEdits", {
@@ -80,25 +78,26 @@ const controllerProduct = {
         flight
       });
     }
-
-    let firstId = {
-      flightNumber: Number(req.params.id),
+    const updateProduct = {
+      departure_airport: req.body.departureAirport,
+      arrival_airport: req.body.arrivalAirport,
+      departure_time: req.body.departureTime,
+      arrival_time: req.body.arrivalTime,
+      departure_date: req.body.departureDate,
+      ticket_price: req.body.ticketPrice,
     };
+    const id = req.params.id;
+    try {
+      await Product.update(updateProduct, {
+        where: {
+          flight_number: id
+        }
+      })
 
-    updatedProduct = {
-      ...firstId,
-      ...req.body,
-      flightDuration: productModel.calculateDuration(req.body),
-    };
-
-    /* 
-        const updatedProduct = req.body;
-        updatedProduct.id = Number(req.params.id); 
-    */
-
-    productModel.updateProduct(updatedProduct);
-
-    res.redirect("/products/data");
+      return res.redirect("/products/data");
+    } catch (error) {
+      console.error(error)
+    }
   },
   destroyProduct: (req, res) => {
     const flightId = Number(req.params.id);

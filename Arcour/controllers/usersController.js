@@ -3,6 +3,7 @@ const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 const controllerUser = {
   login: (req, res) => {
@@ -141,64 +142,82 @@ const controllerUser = {
     const user = userModel.findById(req.params.id);
     return res.render("editUser", { user });
   },
-  putEditUser: (req, res) => {
+  putEditUser: async (req, res) => {
     const errors = validationResult(req);
     const user = userModel.findById(req.params.id);
-
     if (!errors.isEmpty()) {
-      return res.render("editUser", {
+      return res.render('editUser', {
         errors: errors.mapped(),
         oldData: req.body,
-        user,
+        user
       });
     }
-
-    let firstId = {
-      id: req.params.id,
-    };
 
     if (req.body.hasOwnProperty("t&c")) {
       delete req.body["t&c"];
     }
-
-    updatedUser = {
-      ...firstId,
-      ...req.body,
+    
+    const updateUser = {
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      gender: req.body.genero,
+      document: req.body.documento,
+      date_birth: req.body.fechaNacimiento,
+      cell_phone: req.body.celular,
+      email: req.body.correo,
+      country: req.body.pais,
+      favourite_aeroline: req.body.aerolineaFav
     };
+    const id = req.params.id;
+    try {
+      await db.User.update( updateUser , {
+        where: {
+          id: id
+        }
+      })
 
-    userModel.updateUser(updatedUser);
-
-    return res.redirect("/users/profile");
+      return res.redirect("/users/profile");
+      
+    } catch (error) {
+      console.error(error);     
+    }
   },
   getEditAdmin: (req, res) => {
     const admin = adminModel.findById(req.params.id);
     return res.render("editAdmin", { admin });
   },
-  putEditAdmin: (req, res) => {
+  putEditAdmin: async (req, res) => {
     const errors = validationResult(req);
     const admin = adminModel.findById(req.params.id);
-    
     if (!errors.isEmpty()) {
-      return res.render("editAdmin", {
+      return res.render('editAdmin', {
         errors: errors.mapped(),
         oldData: req.body,
-        admin,
+        admin
       });
     }
+    const updateAdmin = {
+      enterprise: req.body.empresa,
+      country_origin: req.body.paisDeOrigen,
+      email_enterprise: req.body.correoEmpresarial,
+      country_route: req.body.paisRuta,
+      aeroline_name: req.body.aerolinea,
+      contact: req.body.contacto,
+    }
+    const id = req.params.id;
+    try {
+      await db.Admin.update( updateAdmin , {
+        where: {
+          id: id
+        }
+      })
 
-    let firstId = {
-      id: req.params.id,
-    };
-
-    updatedAdmin = {
-      ...firstId,
-      ...req.body,
-    };
-
-    adminModel.updateAdmin(updatedAdmin);
-
-    return res.redirect("/users/profile");
-  },
+      return res.redirect("/users/profile")
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }
 };
 
 module.exports = controllerUser;

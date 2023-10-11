@@ -27,11 +27,8 @@ router.post(
 //@ GET /users/:id/editUser
 router.get("/:id/editUser", controllerUser.getEditUser);
 //@ PUT /users/:id/put/user
-router.put(
-  "/:id/put/user",
-  validations.editUserValidation,
-  controllerUser.putEditUser
-);
+router.put("/:id/put/user",validations.editUserValidation, controllerUser.putEditUser);
+
 
 //@ GET /users/create
 router.get("/create", controllerUser.getCreateAdmin);
@@ -45,11 +42,7 @@ router.post(
 //@ GET /users/:id/editAdmin
 router.get("/:id/editAdmin", controllerUser.getEditAdmin);
 //@ PUT /users/put/admin
-router.put(
-  "/:id/put/admin",
-  validations.editAdminValidation,
-  controllerUser.putEditAdmin
-);
+router.put("/:id/put/admin",validations.editAdminValidation, controllerUser.putEditAdmin);
 
 //@ GET /users/admin
 router.get("/admin", adminMiddleware, controllerUser.admin);
