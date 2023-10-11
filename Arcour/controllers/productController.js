@@ -1,16 +1,16 @@
 const path = require("path");
 const productModel = require("../models/productModels");
-const db = require ("../database/models")
+const { Product } = require("../database/models");
 
 const controllerProduct = {
   hola: async (req, res) => {
-  try { 
-    const productos = await db.Product.findAll()
-    console.log(productos)
-    res.render ("prueba", {productos})
-  } catch (error) {
-    console.error(error)
-  }
+    try {
+      const productos = await db.Product.findAll();
+      console.log(productos);
+      res.render("prueba", { productos });
+    } catch (error) {
+      console.error(error);
+    }
   },
   getProductDetail: (req, res) => {
     //Obtener los datos de búsqueda del formulario
@@ -19,7 +19,7 @@ const controllerProduct = {
     //Guardar las listas de vuelos de ida y vuelta recibidos por el modelo.
     const { vuelosIda, vuelosVuelta } = productModel.findFlight(queryData);
 
-    console.log({vuelosIda, vuelosVuelta});
+    console.log({ vuelosIda, vuelosVuelta });
 
     //Pasarle a la vista, product-detail los datos para mostrarlos dinamicamente.
     res.render("product-detail", { vuelosIda, vuelosVuelta, queryData });
@@ -28,30 +28,30 @@ const controllerProduct = {
   getProductList: (req, res) => {
     const flights = productModel.findAll();
 
-    res.render("productList", {flights});
+    res.render("productList", { flights });
   },
   getVerDetalle: (req, res) => {
-     //Obtener los datos de búsqueda del formulario
-     const flight = productModel.findByflightNumber(Number(req.params.id));
+    //Obtener los datos de búsqueda del formulario
+    const flight = productModel.findByflightNumber(Number(req.params.id));
 
-     //Guardar las listas de vuelos de ida y vuelta recibidos por el modelo.
- 
-    res.render("ver-detalle", {flight})
+    //Guardar las listas de vuelos de ida y vuelta recibidos por el modelo.
+
+    res.render("ver-detalle", { flight });
   },
 
-  getProductEdits:(req,res)=>{
+  getProductEdits: (req, res) => {
     const flight = productModel.findByflightNumber(Number(req.params.id));
     res.render("productEdits", { flight });
   },
   updateProduct: (req, res) => {
     let firstId = {
-        flightNumber: Number(req.params.id)
+      flightNumber: Number(req.params.id),
     };
 
     updatedProduct = {
-        ...firstId,
-        ...req.body,
-        flightDuration: productModel.calculateDuration(req.body)
+      ...firstId,
+      ...req.body,
+      flightDuration: productModel.calculateDuration(req.body),
     };
 
     /* 
@@ -62,24 +62,36 @@ const controllerProduct = {
     productModel.updateProduct(updatedProduct);
 
     res.redirect("/products/data");
-},
-destroyProduct: (req,res) => {
-  const flightId = Number(req.params.id);
+  },
+  destroyProduct: (req, res) => {
+    const flightId = Number(req.params.id);
 
-  productModel.destroyProduct(flightId);
+    productModel.destroyProduct(flightId);
 
-  res.redirect("/products/data")
-},
+    res.redirect("/products/data");
+  },
 
   getProductCart: (req, res) => {
     res.render("productCart");
   },
 
-  getCreate: (req, res) => {
-    res.render("createProduct")
-  },
-  postProduct: (req, res) => {
+  getCreate: async (req, res) => {
+    const id = req.params.id;
 
+    try {
+      await Product.postProduct({
+        where: {
+          id: id,
+        },
+      });
+
+      res.redirect("/products/create");
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  postProduct: (req, res) => {
     const newProduct = {
       departureAirport: req.body.departureAirport,
       arrivalAirport: req.body.arrivalAirport,
