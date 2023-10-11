@@ -3,7 +3,7 @@ const adminModel = require("../models/adminsModels");
 const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const db = require("../database/models");
+const { User, Admin } = require('../database/models');
 
 const controllerUser = {
   login: (req, res) => {

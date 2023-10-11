@@ -138,6 +138,23 @@ const controllerProduct = {
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/products');
   },
+
+  deleteProduct: async (req, res) => {
+    const id = req.params.id;
+
+    try {
+      await Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+
+
+    res.redirect("/products/data");
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 
 module.exports = controllerProduct;

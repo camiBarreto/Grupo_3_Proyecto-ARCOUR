@@ -27,15 +27,16 @@ router.get("/product-cart", controllerProduct.getProductCart);
 router.get("/product-detail", controllerProduct.getProductDetail);
 //@ GET /products/:id/ver-detalle
 router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
-//@ GET /products/data
-router.get("/data", adminMiddleware, controllerProduct.getProductList);
-//@ DELETE /products/delete
-router.delete("/:id/delete", controllerProduct.destroyProduct);
+//@ GET /products
+router.get("/data",adminMiddleware, controllerProduct.getProductList);
 
 //@ GET /products/:id/productEdits
 router.get("/:id/productEdits", adminMiddleware, controllerProduct.getProductEdits);
 //@ PUT /products/:id/productEdits
-router.put("/:id/put", validations.editProductValidation, controllerProduct.updateProduct);
+router.put("/:id/put" ,validations.editProductValidation, controllerProduct.updateProduct);
+//@ DELETE /products/:id/delete
+router.delete ("/:id/delete", controllerProduct.deleteProduct);
+
 
 //@ GET /products/create
 router.get("/create", adminMiddleware, controllerProduct.getCreate);
