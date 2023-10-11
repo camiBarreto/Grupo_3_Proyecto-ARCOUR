@@ -26,6 +26,7 @@
 
     <div class="contenido-register">
 
+<<<<<<< HEAD
       <div class="login-box">
         <h2 id="titulo">Editando el vuelo #<%= flight.flightNumber %>
         </h2>
@@ -50,6 +51,112 @@
                   </select>
                 </div>
               </div>
+=======
+            <div class="login-box">
+                <h2 id="titulo">Editando el vuelo #<%= flight.flight_number %>
+                </h2>
+                <h2 class="register-subtitulo">Salida y llegada</h2>
+                <form action="/products/<%= flight.flight_number %>/put?_method=PUT" method="post"
+                    class="register-form">
+
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="salida" title>Sale desde</label>
+                                </div>
+                                <div class="ant-input">
+                                    <select name="departureAirport" id="aereo">
+                                        <% const airports=["Aeropuerto Internacional El Dorado", "Aeropuerto Internacional Ministro Pistarini", "Aeropuerto Internacional de Carrasco" ]; %>
+                                            <% airports.forEach(airport=> { %>
+                                                <option value="<%= airport %>" <%=flight.departure_airport===airport? "selected" : "" %>><%= airport %>
+                                                </option>
+                                                <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="llegada" title>Llega a</label>
+                                </div>
+                                <div class="ant-input">
+                                    <select name="arrivalAirport" id="aereo">
+                                        <% const airports1=["Aeropuerto Internacional El Dorado", "Aeropuerto Internacional Ministro Pistarini", "Aeropuerto Internacional de Carrasco" ]; %>
+                                            <% airports1.forEach(airport=> { %>
+                                                <option value="<%= airport %>" <%=flight.arrival_airport===airport? "selected" : "" %>><%= airport %>
+                                                </option>
+                                                <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="register-subtitulo2">Datos del viaje</h2>
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="horarioSalida" title>Hora de Salida</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input class="input-box" type="time" value="<%= flight.departure_time %>"
+                                        id="horarioSalida" name="departureTime">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="horarioLlegada" title>Hora de llegada</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input class="input-box" type="time" value="<%= flight.arrival_time %>"
+                                        id="horarioLlegada" name="arrivalTime">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="diaVuelo" title>Dia del vuelo</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input class="input-box" type="date" value="<%= flight.departure_date %>"
+                                        id="diaVuelo" name="departureDate">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="precio" title>Precio del vuelo</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input class="input-box" type="number" value="<%= flight.ticket_price %>" id="precio"
+                                        name="ticketPrice">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="crear-cuenta">
+                        <button title="Crear Producto" type="submit" class="boton-submit">
+                            <span>Confirmar Edición de Producto</span>
+                        </button>
+                    </div>
+                </form>
+>>>>>>> ramaSamuel
             </div>
 
             <div class="ant-col">

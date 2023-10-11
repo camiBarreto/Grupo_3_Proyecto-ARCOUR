@@ -1,28 +1,53 @@
 const path = require("path");
 const productModel = require("../models/productModels");
-const db = require("../database/models");
-const { validationResult } = require("express-validator");
 const { Product } = require("../database/models");
+const { Console } = require("console");
+const { Sequelize } = require('sequelize');
+const { validationResult } = require("express-validator");
 
 
 const controllerProduct = {
-  getProductDetail: (req, res) => {
+  getProductDetail: async (req, res) => {
     //Obtener los datos de búsqueda del formulario
     const queryData = req.query;
 
-    //Guardar las listas de vuelos de ida y vuelta recibidos por el modelo.
-    const { vuelosIda, vuelosVuelta } = productModel.findFlight(queryData);
+    try {
+      const vuelosIda = await Product.findAll({
+        raw: true,
+        where: {
+          departure_airport: queryData.departureAirport,
+          arrival_airport: queryData.arrivalAirport,
+          departure_date: Sequelize.literal(`DATE(departure_date) = '${queryData.departureDate}'`)
+        },
+      });
 
-    console.log({ vuelosIda, vuelosVuelta });
+      let vuelosVuelta = []
+      if(!queryData.flightTypeIda) {
+        vuelosVuelta = await Product.findAll({
+          raw: true,
+          where: {
+            departure_airport: queryData.arrivalAirport,
+            arrival_airport: queryData.departureAirport,
+            departure_date: Sequelize.literal(`DATE(departure_date) = '${queryData.returnDate}'`),
+          },
+        });
+      }
 
-    //Pasarle a la vista, product-detail los datos para mostrarlos dinamicamente.
-    res.render("product-detail", { vuelosIda, vuelosVuelta, queryData });
+      console.log({ vuelosIda, vuelosVuelta });
+      //Pasarle a la vista, product-detail los datos para mostrarlos dinamicamente.
+      res.render("product-detail", { vuelosIda, vuelosVuelta, queryData });
+    } catch (error) {
+      console.error("Error al obtener vuelos: ", error);
+    }
   },
 
-  getProductList: (req, res) => {
-    const flights = productModel.findAll();
-
-    res.render("productList", { flights });
+  getProductList: async (req, res) => {
+    try {
+      const flights = await Product.findAll();
+      res.render("productList", { flights });
+    } catch (error) {
+      console.error(error);
+    }
   },
   getVerDetalle: async (req, res) => {
     const id = req.params.id;
@@ -35,9 +60,14 @@ const controllerProduct = {
 
   },
 
-  getProductEdits: (req, res) => {
-    const flight = productModel.findByflightNumber(Number(req.params.id));
-    res.render("productEdits", { flight });
+  getProductEdits: async (req, res) => {
+    const id = req.params.id;
+    try {
+     const flight = await Product.findByPk(id)
+     res.render("productEdits", { flight });
+    } catch (error) {
+     console.error(error);
+    }
   },
   updateProduct: (req, res) => {
     const errors = validationResult(req);
@@ -103,8 +133,6 @@ const controllerProduct = {
       arrivalTime: req.body.arrivalTime,
       ticketPrice: req.body.ticketPrice,
     };
-
-    const createdProduct = productModel.createProduct(newProduct);
 
     res.redirect("/users/admin");
 

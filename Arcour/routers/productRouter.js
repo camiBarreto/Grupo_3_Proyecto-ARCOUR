@@ -25,16 +25,15 @@ const upload = multer({ storage });
 router.get("/product-cart", controllerProduct.getProductCart);
 //@ GET /product-detail
 router.get("/product-detail", controllerProduct.getProductDetail);
-//@ GET /product-detail/ver-detalle
+//@ GET /products/:id/ver-detalle
 router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
-//@ GET /products
+//@ GET /products/data
 router.get("/data", adminMiddleware, controllerProduct.getProductList);
 //@ DELETE /products/delete
 router.delete("/:id/delete", controllerProduct.destroyProduct);
 
 //@ GET /products/:id/productEdits
-router.get(
-  "/:id/productEdits", adminMiddleware, controllerProduct.getProductEdits);
+router.get("/:id/productEdits", adminMiddleware, controllerProduct.getProductEdits);
 //@ PUT /products/:id/productEdits
 router.put("/:id/put", validations.editProductValidation, controllerProduct.updateProduct);
 

@@ -3,9 +3,10 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID, // Tipo de dato UUID
+      defaultValue: DataTypes.UUIDV4, // Valor por defecto para generar un UUID
       primaryKey: true,
-      autoIncrement: true,
+      allowNull: false
     },
     enterprise: {
       type: DataTypes.STRING,

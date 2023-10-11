@@ -9,27 +9,5 @@
     "contacto": "313819260",
     "password": "$2a$10$61zOiNSkS0Z3B/sWbVXtYObWksh.PcbVs50y3ES3jCH01uACq0hl6",
     "admin": true
-  },
-  {
-    "id": "245959d1-f7cb-4acb-a8c4-7e3e92bc10af",
-    "empresa": "",
-    "correoEmpresarial": "",
-    "password": "$2a$10$OnsGcsQVWVBglLjPhX8gy.ZZ4px6wTjBVgTWkoEyd3ns5IwH6QgyK",
-    "paisDeOrigen": "argentina",
-    "aerolinea": "latam",
-    "paisRuta": "argentina",
-    "contacto": "",
-    "admin": true
-  },
-  {
-    "id": "0f0fc42f-2047-4458-b375-23c67938dc75",
-    "empresa": "",
-    "correoEmpresarial": "",
-    "password": "$2a$10$rFrtRE.Unh7pwbwflyEmSOCYBYskVu6N8h/LTQ.QN9aOPAlnMFHv6",
-    "paisDeOrigen": "argentina",
-    "aerolinea": "latam",
-    "paisRuta": "argentina",
-    "contacto": "",
-    "admin": true
   }
 ]
