@@ -76,22 +76,9 @@ const controllerProduct = {
   },
 
   getCreate: async (req, res) => {
-    const id = req.params.id;
-
-    try {
-      await Product.postProduct({
-        where: {
-          id: id,
-        },
-      });
-
-      res.redirect("/products/create");
-    } catch (error) {
-      console.error(error);
-    }
   },
-
-  postProduct: (req, res) => {
+  
+  postProduct: async (req, res) => {
     const newProduct = {
       departureAirport: req.body.departureAirport,
       arrivalAirport: req.body.arrivalAirport,
@@ -101,7 +88,20 @@ const controllerProduct = {
       ticketPrice: req.body.ticketPrice,
     };
 
-    const createdProduct = productModel.createProduct(newProduct);
+    const id = req.params.id;
+  
+    try {
+      await Product.postProduct({
+        where: {
+          id: id,
+        },
+      });
+  
+      res.redirect("/products/create");
+    } catch (error) {
+      console.error(error);
+    }
+    
 
     res.redirect("/users/admin");
 
