@@ -30,11 +30,11 @@ const controllerUser = {
       date_birth: req.body.fechaNacimiento,
       cell_phone: req.body.celular,
       email: req.body.mail,
-      password: req.body.password,
       country: req.body.pais,
       favourite_aeroline: req.body.aerolinea,
     };
 
+    newUser.password = bcrypt.hashSync(req.body.password,10);
     try {
       await User.create(newUser);
       res.redirect("/users/login");
@@ -57,12 +57,13 @@ const controllerUser = {
     const newCompany = {
       enterprise: req.body.nombreEmpresa,
       email_enterprise: req.body.correo,
-      password: req.body.password,
       country_origin: req.body.paisOrigen,
       aeroline_name: req.body.aerolinea,
       country_route: req.body.paisRuta,
       contact: req.body.contacto,
+      admin: true
     };
+    newCompany.password = bcrypt.hashSync(req.body.password,10);
 
     try {
       await Admin.create(newCompany);
