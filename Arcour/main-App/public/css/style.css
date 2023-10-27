@@ -41,6 +41,40 @@ header i {
   font-size: 1.5rem;
 }
 
+/* Estilo para el botón de confirmación */
+.confirmButton {
+  background-color: #28a745; /* Color de fondo verde para éxito */
+  color: #fff; /* Color de texto blanco */
+  border: 1px solid #28a745; /* Borde verde */
+  padding: 10px 20px; /* Espaciado interno */
+  margin-left: 5px;
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cambiar el cursor a una mano al pasar el mouse sobre el botón */
+  transition: background-color 0.5s;
+}
+
+.confirmButton:hover {
+  background-color: #218838; /* Color de fondo verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón de cancelación */
+.cancelButton {
+  background-color: #dc3545; /* Color de fondo rojo para error */
+  color: #fff; /* Color de texto blanco */
+  border: 1px solid #dc3545; /* Borde rojo */
+  padding: 10px 20px; /* Espaciado interno */
+  margin-right: 5px;
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Cambiar el cursor a una mano al pasar el mouse sobre el botón */
+  transition: background-color 0.5s;
+}
+
+.cancelButton:hover {
+  background-color: #c82333; /* Color de fondo rojo más oscuro al pasar el mouse */
+}
+
 /* Estilos para la flecha hacia abajo */
 .arrow-icon {
   position: relative;

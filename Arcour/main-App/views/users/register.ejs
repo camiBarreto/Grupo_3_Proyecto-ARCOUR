@@ -38,7 +38,8 @@
                                     <label for="name" title>Nombre</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.nombre ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.nombre : null %>" maxlength="25" id="name" name="nombre">
+                                    <input class="input-box name-lastname <%= locals.errors && errors.nombre ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.nombre : null %>" maxlength="25" id="name" name="nombre">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.nombre) { %>
                                     <div class="text-danger">
@@ -54,7 +55,8 @@
                                     <label for="apellido" title>Apellido</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.apellido ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.apellido : null %>" maxlength="15" id="apellido" name="apellido">
+                                    <input class="input-box name-lastname <%= locals.errors && errors.apellido ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.apellido : null %>" maxlength="25" id="apellido" name="apellido">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.apellido) { %>
                                     <div class="text-danger">
@@ -94,7 +96,8 @@
                                     <label for="id" title>Número de documento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.documento ? 'is-invalid' : '' %>" type="number" value="<%= locals.oldData ? oldData.documento : null %>" maxlength="15" id="id" name="documento">
+                                    <input class="input-box cell-id <%= locals.errors && errors.documento ? 'is-invalid' : '' %>" type="number" value="<%= locals.oldData ? oldData.documento : null %>" maxlength="15" id="id" name="documento">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.documento) { %>
                                     <div class="text-danger">
@@ -113,6 +116,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.fechaNacimiento ? 'is-invalid' : '' %>" type="date" value="<%= locals.oldData ? oldData.fechaNacimiento : null %>" id="fecha" name="fechaNacimiento">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.fechaNacimiento) { %>
                                     <div class="text-danger">
@@ -128,7 +132,8 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.celular : null %>" maxlength="15" id="cel" name="celular">
+                                    <input class="input-box cell-id <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" value="<%= locals.oldData ? oldData.celular : null %>" maxlength="15" id="cel" name="celular">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.celular) { %>
                                     <div class="text-danger">
@@ -148,6 +153,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.mail ? 'is-invalid' : '' %>" type="email" value="<%= locals.oldData ? oldData.mail : null %>" maxlength="40" id="mail" name="mail">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.mail) { %>
                                     <div class="text-danger">
@@ -164,6 +170,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.mailConfirm  ? 'is-invalid' : '' %>" type="email" value="<%= locals.oldData ? oldData.mailConfirm : null %>" maxlength="40" id="mail-re" name="mailConfirm">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.mailConfirm) { %>
                                     <div class="text-danger">
@@ -184,6 +191,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.password ? 'is-invalid' : '' %>" type="password" id="pass" name="password">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.password) { %>
                                     <div class="text-danger">
@@ -199,8 +207,8 @@
                                     <label for="pass-re" title>Confirmar contraseña</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.passConfirm ? 'is-invalid' : '' %>" type="password" maxlength="15" id="passConfirm"
-                                    name="passConfirm">
+                                    <input class="input-box <%= locals.errors && errors.passConfirm ? 'is-invalid' : '' %>" type="password" maxlength="15" id="passConfirm" name="passConfirm">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.passConfirm) { %>
                                     <div class="text-danger">

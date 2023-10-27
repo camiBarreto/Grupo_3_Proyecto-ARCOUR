@@ -3,25 +3,25 @@ const deleteUser = document.getElementById("deleteFormUser");
 function confirmDeleteUser() {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-          confirmButton: 'btn btn-success',
-          cancelButton: 'btn btn-danger'
+          confirmButton: 'confirmButton',
+          cancelButton: 'cancelButton'
         },
         buttonsStyling: false
       })
       
       swalWithBootstrapButtons.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: '¿Estas seguro que quieres eliminar este usuario?',
+        text: 'No podrás revertir los cambios',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel!',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'No, cancelar!',
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
+            'Eliminado',
+            'El usuario ha sido eliminado',
             'success'
           )
           deleteUser.submit()
@@ -30,8 +30,8 @@ function confirmDeleteUser() {
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
+            'Cancelado',
+            'Tu usuario está seguro :)',
             'error'
           )
         }

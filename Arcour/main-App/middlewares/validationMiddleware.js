@@ -7,9 +7,9 @@ const validations = {
       .withMessage("Debes ingresar un correo")
       .bail()
       .isEmail()
-      .withMessage("Debes escribir un formato de correo válido")
+      .withMessage("El correo electrónico no es válido")
       .normalizeEmail()
-      .withMessage("Debes escribir un formato de correo válido"),
+      .withMessage("El correo electrónico no es válido"),
     body("password").notEmpty().withMessage("Debes ingresar una contraseña"),
   ],
   registerUserValidation: [
@@ -57,9 +57,9 @@ const validations = {
       .withMessage("El campo es requerido")
       .bail()
       .isEmail()
-      .withMessage("Formato de correo requerido")
+      .withMessage("El correo electrónico no es válido")
       .normalizeEmail()
-      .withMessage("Formato de correo requerido"),
+      .withMessage("El correo electrónico no es válido"),
     body("mailConfirm").custom((value, { req }) => {
       if (value !== req.body.mail) {
         throw new Error("Los correos deben coincidir");
@@ -123,9 +123,9 @@ const validations = {
       .withMessage("El campo es requerido")
       .bail()
       .isEmail()
-      .withMessage("Formato de correo requerido")
+      .withMessage("El correo electrónico no es válido")
       .normalizeEmail()
-      .withMessage("Formato de correo requerido"),
+      .withMessage("El correo electrónico no es válido"),
   ],
   editAdminValidation: [
     body("empresa")
@@ -141,9 +141,9 @@ const validations = {
       .withMessage("El campo es requerido")
       .bail()
       .isEmail()
-      .withMessage("Formato de correo requerido")
+      .withMessage("El correo electrónico no es válido")
       .normalizeEmail()
-      .withMessage("Formato de correo requerido"),
+      .withMessage("El correo electrónico no es válido"),
     body("contacto")
       .notEmpty()
       .withMessage("El campo es requerido")
@@ -207,9 +207,9 @@ const validations = {
       .withMessage("El campo es requerido")
       .bail()
       .isEmail()
-      .withMessage("Formato de correo requerido")
+      .withMessage("El correo electrónico no es válido")
       .normalizeEmail()
-      .withMessage("Formato de correo requerido"),
+      .withMessage("El correo electrónico no es válido"),
 
     body("password")
       .notEmpty()

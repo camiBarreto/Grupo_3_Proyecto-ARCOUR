@@ -218,6 +218,14 @@ select {
   color: indianred;
   font-weight: bold;
   font-size: 1rem;
+  padding: 5px;
+}
+
+.text-danger-front {
+  color: indianred;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: -5px 0px -10px 0px;
 }
 
 
@@ -375,6 +383,10 @@ h6{
   }
   .burger-container {
     display: none;
+  }
+
+  .text-danger {
+    margin-bottom: 0px;
   }
 }
 
