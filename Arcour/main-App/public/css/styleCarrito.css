@@ -245,6 +245,13 @@ h2 {
   margin-left: 10px;
 }
 
+.text-danger-front {
+  color: indianred;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: -5px 0px -10px 0px;
+}
+
 .checkbox {
   text-align: center;
   margin-top: 10px;
