@@ -29,7 +29,7 @@
             <div class="login-box">
                 <h2 class="titulo">Edita tu cuenta de Usuario</h2>
                 <h2 class="register-subtitulo">01 Datos Personales</h2>
-                <form action="/users/<%= user.id %>/put/user?_method=PUT" method="post" class="register-form">
+                <form action="/users/<%= user.id %>/put/user?_method=PUT" method="post" class="register-form" id="edit-form">
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -38,7 +38,8 @@
                                     <label for="name" title>Nombre</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.first_name%>" >
+                                    <input class="input-box name-lastname" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.first_name%>" >
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.nombre) { %>
                                     <div class="text-danger">
@@ -54,7 +55,8 @@
                                     <label for="apellido" title>Apellido</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.last_name %>">
+                                    <input class="input-box name-lastname" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.last_name %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.apellido) { %>
                                     <div class="text-danger">
@@ -91,7 +93,8 @@
                                     <label for="id" title>Número de documento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" maxlength="15" id="id" name="documento" value = "<%= user.document%>">
+                                    <input class="input-box cell-id" type="number" maxlength="15" id="id" name="documento" value = "<%= user.document%>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.documento) { %>
                                     <div class="text-danger">
@@ -110,6 +113,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="date" id="fecha" name="fechaNacimiento" value = "<%=user.date_birth%>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                             </div>
                             <% if (locals.errors && errors.fechaNacimiento) { %>
@@ -125,7 +129,8 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cell_phone%>">
+                                    <input class="input-box cell-id" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cell_phone%>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.celular) { %>
                                     <div class="text-danger">
@@ -147,6 +152,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="email" maxlength="40" id="mail" name="correo" value = "<%= user.email%>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.correo) { %>
                                     <div class="text-danger">
@@ -197,7 +203,7 @@
                     </div>
 
                     <div class="crear-cuenta">
-                        <button title="Editar informacion" type="submit" class="boton-submit">
+                        <button title="Editar informacion" type="submit" class="boton-submit" id="boton-edit">
                             <span>Editar informacion</span>
                         </button>
                     </div>
@@ -209,6 +215,9 @@
     <footer>
         <%- include("../partials/footer.ejs") %>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/scriptFormsValidations.js"></script>
+    <script src="/js/scriptHeader.js"></script>
 </body>
 
 </html>

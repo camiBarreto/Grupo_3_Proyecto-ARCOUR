@@ -1,15 +1,18 @@
 //Script formulario de register y editar usuario
-const formRegister = document.querySelector(".register-form"); //Importamos el formulario.
-const registerInputs = Array.from(document.getElementsByClassName("input-box")); //Importamos todos los inputs del formulario y convertimos en Array para poder usar el forEach.
-const checkboxRegister = document.getElementById("check"); //Importamos el checkbox de t&c para mostrar una alerta en caso de que no se acepten.
-const registerButton = document.getElementById("boton-register") //Importamos el botón de enviar el formulario para deshabilitarlo cuando se envié la info.
 
 //Preguntamos si existe el formulario, ya que acá mismo se definiran las validaciones de edición de usuario. Esto es mas que todo para evitar errores.
+const formRegister = document.getElementById("#register-form"); //Importamos el formulario.
+
 if (formRegister) {
+  const registerInputs = Array.from(document.getElementsByClassName("input-box")); //Importamos todos los inputs del formulario y convertimos en Array para poder usar el forEach.
+  const checkboxRegister = document.getElementById("check"); //Importamos el checkbox de t&c para mostrar una alerta en caso de que no se acepten.
+  const registerButton = document.getElementById("boton-register") //Importamos el botón de enviar el formulario para deshabilitarlo cuando se envié la info.
+
   //Aquí empieza la validación del formulario de registro en si.
   window.addEventListener("load", () => {
     //Definimos un Array vacío donde se irán agregando los inputs con errores para llevar un control.
-    let errorRegister = [];
+    let emptyErrors = [];
+    let lengthErrors = [];
     //Usamos el forEach para recorrer todos los inputs uno a uno y validar.
     //Validación de campo vacío.
     registerInputs.forEach(inputRegister => {
@@ -22,9 +25,9 @@ if (formRegister) {
           inputRegister.classList.add("is-invalid");
           inputRegister.nextElementSibling.innerText = "El campo es obligatorio";
           //Aquí se pregunta si el input ya está en el Array de errores.
-          if (!errorRegister.includes(inputRegister)) {
+          if (!emptyErrors.includes(inputRegister)) {
             //En caso de ser "false" ya que esta negando, lo añade.
-            errorRegister.push(inputRegister);
+            emptyErrors.push(inputRegister);
           }
           //Al momento de que nos muestre el error al dejar el input vacío queremos que cuando escribamos algo (osea cuando ya no esté vacío) se deja de mostrar el error.
         } else {
@@ -32,9 +35,9 @@ if (formRegister) {
           inputRegister.classList.remove("is-invalid");
           inputRegister.nextElementSibling.innerText = "";
           //No tienen que entender esta parte por completo, lo hizo ChatGpt jajajaja.
-          const index = errorRegister.indexOf(inputRegister);
+          const index = emptyErrors.indexOf(inputRegister);
           if (index !== -1) {
-            errorRegister.splice(index, 1);
+            emptyErrors.splice(index, 1);
           }
         }
       });
@@ -53,15 +56,15 @@ if (formRegister) {
         if(e.target.value.length < 3 || e.target.value.length > 25) {
           input.classList.add("is-invalid");
           input.nextElementSibling.innerText = "Entre 3 y 25 caracteres";
-          if (!errorRegister.includes(input)) {
-            errorRegister.push(input);
+          if (!lengthErrors.includes(input)) {
+            lengthErrors.push(input);
           }
         } else {
           input.classList.remove("is-invalid");
           input.nextElementSibling.innerText = "";
-          const index = errorRegister.indexOf(input);
+          const index = lengthErrors.indexOf(input);
           if (index !== -1) {
-            errorRegister.splice(index, 1);
+            lengthErrors.splice(index, 1);
           }
         }
       });
@@ -72,15 +75,15 @@ if (formRegister) {
         if(e.target.value.length < 7 || e.target.value.length > 15) {
           input.classList.add("is-invalid");
           input.nextElementSibling.innerText = "Entre 7 y 15 dígitos";
-          if (!errorRegister.includes(input)) {
-            errorRegister.push(input);
+          if (!lengthErrors.includes(input)) {
+            lengthErrors.push(input);
           }
         } else {
           input.classList.remove("is-invalid");
           input.nextElementSibling.innerText = "";
-          const index = errorRegister.indexOf(input);
+          const index = lengthErrors.indexOf(input);
           if (index !== -1) {
-            errorRegister.splice(index, 1);
+            lengthErrors.splice(index, 1);
           }
         }
       });
@@ -90,15 +93,15 @@ if (formRegister) {
       if(!isValidEmail(e.target.value)) {
         mailInput.classList.add("is-invalid");
         mailInput.nextElementSibling.innerText = "El correo electrónico no es válido";
-        if (!errorRegister.includes(mailInput)) {
-          errorRegister.push(mailInput);
+        if (!lengthErrors.includes(mailInput)) {
+          lengthErrors.push(mailInput);
         }
       } else {
         mailInput.classList.remove("is-invalid");
         mailInput.nextElementSibling.innerText = "";
-        const index = errorRegister.indexOf(mailInput);
+        const index = lengthErrors.indexOf(mailInput);
         if (index !== -1) {
-          errorRegister.splice(index, 1);
+          lengthErrors.splice(index, 1);
         }
       }
     });
@@ -107,15 +110,15 @@ if (formRegister) {
       if(e.target.value !== mailInput.value) {
         reMailInput.classList.add("is-invalid");
         reMailInput.nextElementSibling.innerText = "Los correos deben coincidir";
-        if (!errorRegister.includes(reMailInput)) {
-          errorRegister.push(reMailInput);
+        if (!lengthErrors.includes(reMailInput)) {
+          lengthErrors.push(reMailInput);
         }
       } else {
         reMailInput.classList.remove("is-invalid");
         reMailInput.nextElementSibling.innerText = "";
-        const index = errorRegister.indexOf(reMailInput);
+        const index = lengthErrors.indexOf(reMailInput);
         if (index !== -1) {
-          errorRegister.splice(index, 1);
+          lengthErrors.splice(index, 1);
         }
       }
     });
@@ -125,24 +128,24 @@ if (formRegister) {
         pwInput.classList.add("is-invalid");
         pwInput.nextElementSibling.style.color = "indianred";
         pwInput.nextElementSibling.innerText = "La contraseña es insegura";
-        if (!errorRegister.includes(pwInput)) {
-          errorRegister.push(pwInput);
+        if (!lengthErrors.includes(pwInput)) {
+          lengthErrors.push(pwInput);
         }
       } else if(e.target.value.length < 8) {
           pwInput.classList.add("is-invalid");
           pwInput.nextElementSibling.style.color = "#FFC436";
           pwInput.nextElementSibling.innerText = "La contraseña es débil";
-          if (!errorRegister.includes(pwInput)) {
-            errorRegister.push(pwInput);
+          if (!lengthErrors.includes(pwInput)) {
+            lengthErrors.push(pwInput);
           }
       
       } else {
         pwInput.classList.remove("is-invalid");
         pwInput.nextElementSibling.style.color = "#54B435";
         pwInput.nextElementSibling.innerText = "La contraseña es segura";
-        const index = errorRegister.indexOf(pwInput);
+        const index = lengthErrors.indexOf(pwInput);
         if (index !== -1) {
-          errorRegister.splice(index, 1);
+          lengthErrors.splice(index, 1);
         }
       }
     });
@@ -151,19 +154,18 @@ if (formRegister) {
       if(e.target.value !== pwInput.value) {
         rePwInput.classList.add("is-invalid");
         rePwInput.nextElementSibling.innerText = "Las contraseñas no coinciden";
-        if (!errorRegister.includes(rePwInput)) {
-          errorRegister.push(rePwInput);
+        if (!lengthErrors.includes(rePwInput)) {
+          lengthErrors.push(rePwInput);
         }
       } else {
         rePwInput.classList.remove("is-invalid");
         rePwInput.nextElementSibling.innerText = "";
-        const index = errorRegister.indexOf(rePwInput);
+        const index = lengthErrors.indexOf(rePwInput);
         if (index !== -1) {
-          errorRegister.splice(index, 1);
+          lengthErrors.splice(index, 1);
         }
       }
     });
-
     //Aquí le añadamos el evento de submit al formulario.
     formRegister.addEventListener("submit", async (e) => {
       //Usamos el forEach para recorrer otra vez los inputs.
@@ -174,21 +176,21 @@ if (formRegister) {
           e.preventDefault();
           inputRegister.classList.add("is-invalid");
           inputRegister.nextElementSibling.innerText = "El campo es obligatorio";
-          if (!errorRegister.includes(inputRegister)) {
-            errorRegister.push(inputRegister);
+          if (!emptyErrors.includes(inputRegister)) {
+            emptyErrors.push(inputRegister);
           }
         } else {
           inputRegister.classList.remove("is-invalid");
           inputRegister.nextElementSibling.innerText = "";
-          const index = errorRegister.indexOf(inputRegister);
+          const index = emptyErrors.indexOf(inputRegister);
           if (index !== -1) {
-            errorRegister.splice(index, 1);
+            emptyErrors.splice(index, 1);
           }
         }
         
       });
       //Aquí preguntamos si el Array de errores está o no vacío.
-      if (!errorRegister.length == 0) {
+      if (emptyErrors.length !== 0 || lengthErrors.length !== 0) {
         //En caso de no estar vacío (osea hay errores) prevenimos que se envié el formulario y mostramos la alerta de error.
         e.preventDefault();
         //La sintaxis de este tipo de alerta es sencilla.
@@ -263,3 +265,159 @@ if (formRegister) {
 }
 
 //Espero haberme explicado bien :) 🫶
+
+//------------------------------------------------------------------------------------------00-------------------------------------------------------------------------------------
+
+//Script formulario validaciones edición usuario
+
+
+//Preguntamos si existe el formulario, ya que acá mismo se definiran las validaciones de edición de usuario. Esto es mas que todo para evitar errores.
+const formEditUser = document.getElementById("edit-form"); //Importamos el formulario.
+
+if (formEditUser) {
+  const editUserInputs = Array.from(document.getElementsByClassName("input-box")); //Importamos todos los inputs del formulario y convertimos en Array para poder usar el forEach.
+  const editUserButton = document.getElementById("boton-edit") //Importamos el botón de enviar el formulario para deshabilitarlo cuando se envié la info.
+
+  window.addEventListener("load", () => {
+    let emptyErrors = [];
+    let lengthErrors = [];
+    editUserInputs.forEach(inputEdit => {
+      inputEdit.addEventListener("input", e => {
+        if (e.target.value.length < 1) {
+          inputEdit.classList.add("is-invalid");
+          inputEdit.nextElementSibling.innerText = "El campo es obligatorio";
+          if (!emptyErrors.includes(inputEdit)) {
+            emptyErrors.push(inputEdit);
+          }
+        } else {
+          inputEdit.classList.remove("is-invalid");
+          inputEdit.nextElementSibling.innerText = "";
+          const index = emptyErrors.indexOf(inputEdit);
+          if (index !== -1) {
+            emptyErrors.splice(index, 1);
+          }
+        }
+      });
+    });
+    
+
+    //Validación de longitudes específicas
+    const NameLastNameInputs = Array.from(document.getElementsByClassName("name-lastname"));
+    const phoneIdInputs = Array.from(document.getElementsByClassName("cell-id"));
+    const mailInput = document.getElementById("mail");
+
+    NameLastNameInputs.forEach( input => {
+      input.addEventListener("input", e => {
+        if(e.target.value.length < 3 || e.target.value.length > 25) {
+          input.classList.add("is-invalid");
+          input.nextElementSibling.innerText = "Entre 3 y 25 caracteres";
+          if (!lengthErrors.includes(input)) {
+            lengthErrors.push(input);
+          }
+        } else {
+          input.classList.remove("is-invalid");
+          input.nextElementSibling.innerText = "";
+          const index = lengthErrors.indexOf(input);
+          if (index !== -1) {
+            lengthErrors.splice(index, 1);
+          }
+        }
+      });
+    });
+
+    phoneIdInputs.forEach( input => {
+      input.addEventListener("input", e => {
+        if(e.target.value.length < 7 || e.target.value.length > 15) {
+          input.classList.add("is-invalid");
+          input.nextElementSibling.innerText = "Entre 7 y 15 dígitos";
+          if (!lengthErrors.includes(input)) {
+            lengthErrors.push(input);
+          }
+        } else {
+          input.classList.remove("is-invalid");
+          input.nextElementSibling.innerText = "";
+          const index = lengthErrors.indexOf(input);
+          if (index !== -1) {
+            lengthErrors.splice(index, 1);
+          }
+        }
+      });
+    });
+
+    mailInput.addEventListener("input", e => {
+      if(!isValidEmail(e.target.value)) {
+        mailInput.classList.add("is-invalid");
+        mailInput.nextElementSibling.innerText = "El correo electrónico no es válido";
+        if (!lengthErrors.includes(mailInput)) {
+          lengthErrors.push(mailInput);
+        }
+      } else {
+        mailInput.classList.remove("is-invalid");
+        mailInput.nextElementSibling.innerText = "";
+        const index = lengthErrors.indexOf(mailInput);
+        if (index !== -1) {
+          lengthErrors.splice(index, 1);
+        }
+      }
+    });
+
+
+
+    formEditUser.addEventListener("submit", async (e) => {
+      editUserInputs.forEach( inputEdit => {
+        if(inputEdit.value.length < 1) {
+          e.preventDefault();
+          inputEdit.classList.add("is-invalid");
+          inputEdit.nextElementSibling.innerText = "El campo es obligatorio";
+          if (!emptyErrors.includes(inputEdit)) {
+            emptyErrors.push(inputEdit);
+          }
+        } else {
+          inputEdit.classList.remove("is-invalid");
+          inputEdit.nextElementSibling.innerText = "";
+          const index = emptyErrors.indexOf(inputEdit);
+          if (index !== -1) {
+            emptyErrors.splice(index, 1);
+          }
+        }
+        
+      });
+      if (emptyErrors.length !== 0 || lengthErrors.length !== 0) {
+        e.preventDefault();
+        Swal.fire({
+          icon: "error",
+          title: "Oops...", 
+          text: "El formulario tiene campos con errores, revisalos",
+          confirmButtonColor: '#292fa2' 
+        });
+      } else {
+        e.preventDefault()
+        editUserButton.disabled = true;
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+
+        await Toast.fire({
+          icon: "success",
+          title: "Usuario editado correctamente",
+        });
+        formEditUser.submit();
+      }
+    });
+  });
+  
+  // Función para verificar la validez del correo electrónico
+  function isValidEmail(email) {
+    // Utilizamos una expresión regular para verificar si la cadena contiene "@".
+    const emailPattern = /\S+@\S+\.\S+/;
+    return emailPattern.test(email);
+  }
+}
