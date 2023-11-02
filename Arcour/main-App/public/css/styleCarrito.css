@@ -249,7 +249,14 @@ h2 {
   color: indianred;
   font-weight: bold;
   font-size: 1rem;
-  margin: -5px 0px -10px 0px;
+  margin: -5px 0px -10px 20px;
+}
+
+#boton-register:disabled {
+  background-color: #ccc; /* Cambia el color de fondo */
+  color: #999; /* Cambia el color del texto */
+  cursor: not-allowed; /* Cambia el cursor al estilo "no permitido" */
+  box-shadow: none;
 }
 
 .checkbox {

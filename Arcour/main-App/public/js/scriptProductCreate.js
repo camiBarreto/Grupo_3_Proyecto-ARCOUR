@@ -4,7 +4,7 @@
 
 const formRegister = document.querySelector(".register-form");
 const inputCollection = document.querySelectorAll(".input-box");
-const registerButton = document.getElementById("boton-submit");
+const registerButton = document.querySelector(".boton-submit");
 
 if (formRegister) {
     //Aquí empieza la validación del formulario de registro en si.
@@ -33,6 +33,8 @@ if (formRegister) {
                 }
 
             });
+
+    
 
             if (!errorRegister.length == 0) { 
                     //En caso de no estar vacío (osea hay errores) prevenimos que se envié el formulario y mostramos la alerta de error.
