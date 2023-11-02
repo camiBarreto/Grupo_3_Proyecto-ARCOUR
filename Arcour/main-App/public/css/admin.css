@@ -66,6 +66,13 @@ ul {
   margin-left: 10px;
 }
 
+.text-danger-front {
+  color: indianred;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: -5px 0px -10px 0px;
+}
+
 .menu__item:hover {
   background-color: #dedddd;
 }
@@ -137,6 +144,12 @@ form {
   list-style: none;
   font-feature-settings: "tnum", "tnum";
 }
+
+.is-invalid{
+  color: red;
+}
+
+
 
 .ant-row {
   display: flex;

@@ -30,7 +30,7 @@
                 <h2 id="titulo">Editando el vuelo #<%= flight.flight_number %>
                 </h2>
                 <h2 class="register-subtitulo">Salida y llegada</h2>
-                <form action="/products/<%= flight.flight_number %>/put?_method=PUT" method="post"
+                <form action="/products/<%= flight.flight_number %>/post" method="post"
                     class="register-form">
 
                     <div class="ant-row">
@@ -78,6 +78,7 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="time" value="<%= flight.departure_time %>"
                                         id="horarioSalida" name="departureTime">
+                                        <p class="text-danger-front"></p>
                                 </div>
                             </div>
                         </div>
@@ -90,6 +91,7 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="time" value="<%= flight.arrival_time %>"
                                         id="horarioLlegada" name="arrivalTime">
+                                        <p class="text-danger-front"></p>
                                 </div>
                             </div>
                         </div>
@@ -106,6 +108,7 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="date" value="<%= flight.departure_date %>"
                                         id="diaVuelo" name="departureDate">
+                                        <p class="text-danger-front"></p>
                                 </div>
                             </div>
                         </div>
@@ -118,6 +121,7 @@
                                 <div class="ant-input">
                                     <input class="input-box" type="number" value="<%= flight.ticket_price %>" id="precio"
                                         name="ticketPrice">
+                                        <p class="text-danger-front"></p>
                                 </div>
                             </div>
                         </div>
@@ -135,6 +139,10 @@
   <footer>
     <%- include("../partials/footer.ejs") %>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/scriptEditProduct.js"></script>
+  
+
 </body>
 
 </html>

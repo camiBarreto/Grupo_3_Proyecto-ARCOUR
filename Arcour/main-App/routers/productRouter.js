@@ -32,8 +32,8 @@ router.get("/data",adminMiddleware, controllerProduct.getProductList);
 
 //@ GET /products/:id/productEdits
 router.get("/:id/productEdits", adminMiddleware, controllerProduct.getProductEdits);
-//@ PUT /products/:id/productEdits
-router.put("/:id/put" ,validations.editProductValidation, controllerProduct.updateProduct);
+//@ post /products/:id/post
+router.post("/:id/post" ,validations.editProductValidation, controllerProduct.updateProduct);
 //@ DELETE /products/:id/delete
 router.delete ("/:id/delete", controllerProduct.deleteProduct);
 
