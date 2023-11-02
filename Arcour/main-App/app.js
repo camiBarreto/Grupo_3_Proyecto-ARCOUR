@@ -62,10 +62,10 @@ app.use("/products", productRouter);
 app.use(notFoundMiddleware);
 
 //Server start (Entry point)
-app.listen(port || 3000, () => {
+app.listen(port || 3001, () => {
   console.log(
     "Servidor escuchando en puerto " + port + "| http://localhost:" + port ||
-      3000
+      3001
   );
 });
 
