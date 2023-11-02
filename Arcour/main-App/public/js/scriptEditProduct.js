@@ -3,7 +3,7 @@
 
 const formRegister = document.querySelector(".register-form");
 const inputCollection = document.querySelectorAll(".input-box");
-const registerButton = document.getElementById("boton-submit");
+const registerButton = document.querySelector(".boton-submit");
 
 if (formRegister) {
     //Aquí empieza la validación del formulario edicion del producto.

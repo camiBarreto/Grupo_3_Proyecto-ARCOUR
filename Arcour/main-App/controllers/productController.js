@@ -105,6 +105,7 @@ const controllerProduct = {
     console.log(id)
 
     if (!errors.isEmpty()) {
+      console.log(errors)
       const flight = await Product.findByPk(id);
       return res.render("productEdits", {
         errors: errors.mapped(),
