@@ -138,6 +138,10 @@ form {
   font-feature-settings: "tnum", "tnum";
 }
 
+.is-invalid{
+  color: red;
+}
+
 .ant-row {
   display: flex;
   flex-flow: row wrap;
