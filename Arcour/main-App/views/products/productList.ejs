@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<header>
+    <%- include("../partials/header.ejs") %>
+</header>
+
+<nav>
+    <%- include("../partials/navBar.ejs") %>
+</nav>
+
+<body>
+    <div class="flight-list">
+        <% for (const flight of flights) { %>
+            <div class="flight-item">
+                <div class="flight-number">Vuelo #<%= flight.flight_number %>
+                </div>
+                <div class="titles">Salida: <span class="departure-date-badge">
+                        <%= flight.departure_airport %>
+                    </span>
+                    <%= flight.departure_time %>
+                </div>
+                <div class="titles">Llegada: <%= flight.departure_date %>
+                        <%= flight.arrival_time %>
+                </div>
+                <div class="titles">Duración: <%= flight.flight_duration %>
+                </div>
+                <div class="titles">Aeropuerto de salida: <%= flight.departure_airport %>
+                </div>
+                <div class="titles">Aeropuerto de llegada: <%= flight.arrival_airport %>
+                </div>
+                <div class="info-container">
+                    <div class="flight-price">
+                        Precio: $<%= flight.ticket_price %>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="button-container">
+                        <a href="/products/<%= flight.flight_number %>/productEdits">
+                            <button class="edit-button">Editar</button>
+                        </a>
+
+                        <form action="/products/<%= flight.flight_number %>/delete?_method=DELETE" method="post">
+                            <input class="delete-button" type="submit" value="Eliminar">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <% } %>
+    </div>
+</body>
+
+<footer>
+    <%- include("../partials/footer.ejs") %>
+</footer>
+
+</html>

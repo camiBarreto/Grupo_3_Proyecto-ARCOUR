@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCOUR</title>
+    <link rel="icon" href="/images/Logo-ARCOUR.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styleCarrito.css">
+</head>
+
+<body>
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
+    <nav>
+        <%- include("../partials/navBar.ejs") %>
+    </nav>
+
+</body>
+
+<main>
+
+    <div class="main-flex">
+        <section class="section">
+            <h2>Completa tus datos y finaliza la compra!</h2>
+            <div class="nombre-apellido">
+                <h3>Titular de la reserva</h3>
+                <form action="/productCart" method="POST"></form>
+                <label for="nombres">Nombres</label>
+                <input type="text" name="nombres" id="nombres">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos">
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="pagos">
+                <h3> Datos de la tarjeta</h3>
+                <form action="/productCart" method="POST"></form>
+                <label for="tarjeta">Numero de la tarjeta</label>
+                <input type="number" name="tarjeta" id="tarjeta">
+                <label for="titular">Titular de la tarjeta</label>
+                <input type="text" name="titular" id="titular">
+                <label for="vencimiento">Vencimiento</label>
+                <input type="date" name="vencimiento" id="vencimiento">
+                <label for="cedula">Cedula de identidad</label>
+                <input type="number" name="cedula" id="cedula">
+            </div>
+            <button>PAGAR</button>
+        </section>
+
+            <div class="pedido">
+                <h3>Detalle del pedido</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, harum eligendi, unde, consequatur
+                    voluptas
+                    facilis dolores temporibus illum dicta at ipsum fuga enim quidem nostrum sunt. Harum praesentium
+                    blanditiis
+                    iure.</p>
+                <h2>Total a pagar: $150.000</h2>
+
+
+            </div>
+    </div>
+</main>
+<footer>
+    <%- include("../partials/footer.ejs") %>
+</footer>
+
+
+</html>

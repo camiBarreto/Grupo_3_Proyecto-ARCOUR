@@ -1,0 +1,44 @@
+<a href="/" class="link-img"><img src="/images/arcour-fondo-blanco.png"></a>
+
+    <div class="burger-menu">
+        <i class="fas fa-bars" style="color: white;"></i>
+    </div>
+
+    <div class="iconos-header">
+        <% if (locals.validationUser) { %>
+          <!-- Implementación del profile -->
+          <div id="profile-dropdown" class="profile-dropdown">
+            <div class="profile-header">
+              <% if (locals.loggedUser.gender === "masculino") { %>
+                <img src="/images/hombre1.png" alt="Imagen de Usuario" class="img-user1" />
+              <% } else if (locals.loggedUser.gender === "femenino") { %>
+                <img src="/images/mujer1.png" alt="Imagen de Usuario" class="img-user1" />
+              <% } %>
+              <span>Hola <%= locals.loggedUser.first_name %></span>
+            </div>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            <ul id="dropdown-menu">
+                <a href="/users/profile"><li>Ver perfil</li></a>
+                <a href="/users/logOut"><li>Cerrar Sesión</li></a>
+            </ul>
+          </div>
+        <% } else if (locals.validationAdmin) { %>
+          <!-- Implementación del profile y el icono admin -->
+          <div id="profile-dropdown" class="profile-dropdown">
+            <div class="profile-header">
+                <img src="/images/perfil.png" alt="Imagen de Administrador" />
+                <span>Hola <%= locals.loggedAdmin.enterprise %></span>
+            </div>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            <ul id="dropdown-menu">
+              <a href="/users/profile"><li>Ver perfil</li></a>
+              <a href="/users/admin"><li>Admin</li></a>
+              <a href="/users/logOut"><li>Cerrar Sesión</li></a>
+            </ul>
+          </div>
+        <% } else { %>
+          <!-- Opciones de inicio de sesión y registro -->
+          <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+          <a href="/users/register"><i class="fa-solid fa-registered"></i></a>
+        <% } %>
+      </div>

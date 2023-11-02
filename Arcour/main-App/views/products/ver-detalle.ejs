@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
+
+    <nav>
+        <%- include("../partials/navBar.ejs") %>
+    </nav>
+    <div class='flex-detalle-vuelo'>
+        <img src="/images/bogota.jpg" alt="Paisaje del destino" class="product-detail-image">
+        <div class="product-details">
+            <div class="product-detail-title">Detalle del vuelo</div>
+            <div class= 'margin-detalle-vuelo'>
+                <div class="product-detail-item">
+                    <div class="product-detail-label">Salida:</div>
+                    <div class="product-detail-value"><%= flight.departure_airport %> </div>
+                </div>
+
+                <div class="product-detail-item">
+                    <div class="product-detail-label">Llegada:</div>
+                    <div class="product-detail-value"><%= flight.arrival_airport %> </div>
+                </div>
+                     
+                <div class="product-detail-item">
+                    <div class="product-detail-label">Día del vuelo:</div>
+                    <div class="product-detail-value"> <%= flight.departure_date %></div>
+                </div>
+                <div class="product-detail-item">
+                    <div class="product-detail-label">Hora del vuelo:</div>
+                    <div class="product-detail-value"><%= flight.departure_time %></div>
+                </div>
+
+                <div class="product-detail-item">
+                    <div class="product-detail-label">Precio del vuelo:</div>
+                    <div class="product-detail-price">$<%= flight.ticket_price %></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <%- include("../partials/footer.ejs") %>
+    </footer>
+</body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+  <header><%- include("../partials/header.ejs") %></header>
+
+  <nav class="main-nav"><%- include("../partials/navBar.ejs") %></nav>
+
+  <main>
+    <div class="contenido-register">
+      <div class="login-box">
+        <div class="user-avatar">
+          <h2 class="titulo-buscador-vuelos">
+            <% if (locals.validationUser) { %> Hola <%= locals.loggedUser.first_name %>
+                <% } else { %> Administra tu empresa
+                  <%= locals.loggedAdmin.enterprise.charAt(0).toUpperCase() + locals.loggedAdmin.enterprise.slice(1) %>
+                    <% } %>
+          </h2>
+          <% if ( locals.validationUser && locals.loggedUser.gender=="masculino" ) { %>
+            <img src="/images/hombre.png" alt="Imagen de Usuario" />
+
+            <% } else if (locals.validationUser && locals.loggedUser.gender=="femenino" ) { %>
+              <img src="/images/mujer.png" alt="Imagen de Usuario" />
+
+              <% } else { %>
+                <img src="/images/perfil.png" alt="Imagen de Usuario" />
+                <% } %>
+        </div>
+
+        <% if (locals.validationUser) { %>
+          <div class="input-box">
+            <h3>Nombre y Apellido</h3>
+            <p>
+              <%= (`${locals.loggedUser.first_name} ${locals.loggedUser.last_name}`) %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Documento de Identidad</h3>
+            <p>
+              <%= locals.loggedUser.document %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Fecha de Nacimiento</h3>
+            <p>
+              <%= locals.loggedUser.date_birth %>
+            </p>
+          </div>
+
+          <div class="input-box">
+            <h3>Número de Celular</h3>
+            <p>
+              <%= locals.loggedUser.cell_phone %>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Correo Electrónico</h3>
+            <p>
+              <%= locals.loggedUser.email%>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>País</h3>
+            <p>
+              <%= locals.loggedUser.country.charAt(0).toUpperCase() + locals.loggedUser.country.slice(1)%>
+            </p>
+          </div>
+          <div class="input-box">
+            <h3>Aerolínea preferida</h3>
+            <p>
+              <%= (locals.loggedUser.favourite_aeroline).toUpperCase()%>
+            </p>
+          </div>
+          
+          <div class="botones">
+            <a href="/users/<%= locals.loggedUser.id %>/editUser"><button class="boton-submit" id="editar">Editar Usuario</button></a>
+            <form id="deleteFormUser" action="/users/<%= locals.loggedUser.id %>/deleteUser?_method=delete"
+              method="post">
+              <button class="boton-submit" id="eliminar" type="button" onclick="confirmDeleteUser()">Eliminar
+                Usuario</button>
+            </form>
+          </div>
+          <% } else if (locals.validationAdmin) { %>
+            <div class="input-box">
+              <h3>Empresa</h3>
+              <p>
+                <%= locals.loggedAdmin.enterprise.charAt(0).toUpperCase() + locals.loggedAdmin.enterprise.slice(1) %>
+              </p>
+            </div>
+            <div class="input-box">
+              <h3>País de Origen</h3>
+              <p>
+                <%= locals.loggedAdmin.country_origin.charAt(0).toUpperCase() + locals.loggedAdmin.country_origin.slice(1)
+                  %>
+              </p>
+            </div>
+            <div class="input-box">
+              <h3>Aerolínea</h3>
+              <p>
+                <%= (locals.loggedAdmin.aeroline_name).toUpperCase() %>
+              </p>
+            </div>
+
+            <div class="input-box">
+              <h3>País de Operación</h3>
+              <p>
+                <%= locals.loggedAdmin.country_route.charAt(0).toUpperCase() + locals.loggedAdmin.country_route.slice(1) %>
+              </p>
+            </div>
+            <div class="input-box">
+              <h3>Correo Empresarial</h3>
+              <p>
+                <%= locals.loggedAdmin.email_enterprise %>
+              </p>
+            </div>
+            <div class="input-box">
+              <h3>Contacto</h3>
+              <p>
+                <%= locals.loggedAdmin.contact %>
+              </p>
+            </div>
+            <div class="botones">
+              <a href="/users/<%= locals.loggedAdmin.id %>/editAdmin"><button class="boton-submit" id="editar">Editar
+                  Administrador</button> </a>
+
+              <form id="deleteFormAdmin" action="/users/<%= locals.loggedAdmin.id %>/deleteAdmin?_method=delete"
+                method="post">
+                <button class="boton-submit" id="eliminar" type="submit" onclick="confirmDeleteAdmin()">Eliminar
+                  Usuario</button>
+              </form>
+
+              <% } %>
+            </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="/js/scriptHeader.js"></script>
+  <script src="/js/scriptConfirmDelete.js"></script>
+
+</body>
+
+</html>
