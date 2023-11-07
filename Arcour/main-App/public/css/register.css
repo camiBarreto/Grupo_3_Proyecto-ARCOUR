@@ -396,7 +396,7 @@ select {
   background-color: #181b59;
 }
 
-#boton-register:disabled {
+.boton-submit:disabled {
   background-color: #ccc; /* Cambia el color de fondo */
   color: #999; /* Cambia el color del texto */
   cursor: not-allowed; /* Cambia el cursor al estilo "no permitido" */

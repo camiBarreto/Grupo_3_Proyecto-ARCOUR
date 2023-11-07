@@ -66,6 +66,13 @@ ul {
   margin-left: 10px;
 }
 
+.text-danger-front {
+  color: indianred;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: -5px 0px -10px 0px;
+}
+
 .menu__item:hover {
   background-color: #dedddd;
 }
@@ -137,6 +144,12 @@ form {
   list-style: none;
   font-feature-settings: "tnum", "tnum";
 }
+
+.is-invalid{
+  color: red;
+}
+
+
 
 .ant-row {
   display: flex;
@@ -295,6 +308,13 @@ select {
   background-color: #181b59;
 }
 
+.boton-submit:disabled {
+  background-color: #ccc; /* Cambia el color de fondo */
+  color: #999; /* Cambia el color del texto */
+  cursor: not-allowed; /* Cambia el cursor al estilo "no permitido" */
+  box-shadow: none;
+}
+
 footer {
   background-color: black;
   text-align: center;
@@ -316,6 +336,19 @@ footer {
 
 h6 {
   margin: 0px;
+}
+
+.is-invalid {
+  border: 2px solid indianred;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.text-danger-front {
+  color: indianred;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: -5px 0px -10px 0px;
 }
 
 @media (max-width: 361px) {

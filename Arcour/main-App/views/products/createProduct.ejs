@@ -72,6 +72,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="time" id="horarioSalida" name="departureTime" value="<%= locals.oldData ? oldData.departureTime : null %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.departureTime) { %>
                                     <div class="text-danger">
@@ -88,6 +89,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="time" id="horarioLlegada" name="arrivalTime" value="<%= locals.oldData ? oldData.arrivalTime : null %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.arrivalTime) { %>
                                     <div class="text-danger">
@@ -108,6 +110,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="date" id="diaVuelo" name="departureDate" value="<%= locals.oldData ? oldData.departureDate : null %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.departureDate) { %>
                                     <div class="text-danger">
@@ -124,6 +127,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box" type="number" id="precio" name="ticketPrice" value="<%= locals.oldData ? oldData.ticketPrice : null %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.ticketPrice) { %>
                                     <div class="text-danger">
@@ -146,6 +150,8 @@
     <footer>
         <%- include("../partials/footer.ejs") %>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/scriptProductCreate.js"></script>
 </body>
 
 </html>

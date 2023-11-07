@@ -91,6 +91,7 @@ const controllerProduct = {
 
   getProductEdits: async (req, res) => {
     const id = req.params.id;
+    console.log(id)
     try {
       const flight = await Product.findByPk(id);
       res.render("productEdits", { flight });
@@ -100,9 +101,12 @@ const controllerProduct = {
   },
   updateProduct: async (req, res) => {
     const errors = validationResult(req);
+    const id = req.params.id;
+    console.log(id)
 
     if (!errors.isEmpty()) {
-      const flight = productModel.findByflightNumber(Number(req.params.id));
+      console.log(errors)
+      const flight = await Product.findByPk(id);
       return res.render("productEdits", {
         errors: errors.mapped(),
         oldData: req.body,
@@ -117,15 +121,14 @@ const controllerProduct = {
       departure_date: req.body.departureDate,
       ticket_price: req.body.ticketPrice,
     };
-    const id = req.params.id;
     try {
       await Product.update(updateProduct, {
         where: {
           flight_number: id,
         },
       });
-
       return res.redirect("/products/data");
+
     } catch (error) {
       console.error(error);
     }
