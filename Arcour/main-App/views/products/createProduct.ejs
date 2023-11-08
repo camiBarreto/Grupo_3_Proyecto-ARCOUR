@@ -39,9 +39,11 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="departureAirport" id="aereo">
-                                        <option value="Aeropuerto Internacional El Dorado" selected>Aeropuerto Internacional El Dorado</option>
-                                        <option value="Aeropuerto Internacional Ministro Pistarini">Aeropuerto Internacional Ministro Pistarini</option>
-                                        <option value="Aeropuerto Internacional de Carrasco">Aeropuerto Internacional de Carrasco</option>
+                                        <% const airports=["Aeropuerto Internacional El Dorado", "Aeropuerto Internacional Ministro Pistarini", "Aeropuerto Internacional de Carrasco" ]; %>
+                                            <% airports.forEach(airport=> { %>
+                                                <option value="<%= airport %>" <%=locals.oldData && (airport === oldData.departureAirport) ? "selected" : "" %>><%= airport %>
+                                                </option>
+                                                <% }); %>
                                     </select>
                                 </div>
                             </div>
@@ -54,9 +56,10 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="arrivalAirport" id="aereo">
-                                        <option value="Aeropuerto Internacional El Dorado" selected>Aeropuerto Internacional El Dorado</option>
-                                        <option value="Aeropuerto Internacional Ministro Pistarini">Aeropuerto Internacional Ministro Pistarini</option>
-                                        <option value="Aeropuerto Internacional de Carrasco">Aeropuerto Internacional de Carrasco</option>
+                                        <% airports.forEach(airport=> { %>
+                                            <option value="<%= airport %>" <%=locals.oldData && (airport === oldData.arrivalAirport) ? "selected" : "" %>><%= airport %>
+                                            </option>
+                                            <% }); %>
                                     </select>
                                 </div>
                             </div>
@@ -71,7 +74,7 @@
                                     <label for="horarioSalida" title>Hora de Salida</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="time" id="horarioSalida" name="departureTime" value="<%= locals.oldData ? oldData.departureTime : null %>">
+                                    <input class="input-box <%= locals.errors && errors.departureTime ? 'is-invalid' : '' %>" type="time" id="horarioSalida" name="departureTime" value="<%= locals.oldData ? oldData.departureTime : null %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.departureTime) { %>
@@ -88,7 +91,7 @@
                                     <label for="horarioLlegada" title>Hora de llegada</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="time" id="horarioLlegada" name="arrivalTime" value="<%= locals.oldData ? oldData.arrivalTime : null %>">
+                                    <input class="input-box <%= locals.errors && errors.arrivalTime ? 'is-invalid' : '' %>" type="time" id="horarioLlegada" name="arrivalTime" value="<%= locals.oldData ? oldData.arrivalTime : null %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.arrivalTime) { %>
@@ -109,7 +112,7 @@
                                     <label for="diaVuelo" title>Dia del vuelo</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="diaVuelo" name="departureDate" value="<%= locals.oldData ? oldData.departureDate : null %>">
+                                    <input class="input-box <%= locals.errors && errors.departureDate ? 'is-invalid' : '' %>" type="date" id="diaVuelo" name="departureDate" value="<%= locals.oldData ? oldData.departureDate : null %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.departureDate) { %>
@@ -126,7 +129,7 @@
                                     <label for="precio" title>Precio del vuelo</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" id="precio" name="ticketPrice" value="<%= locals.oldData ? oldData.ticketPrice : null %>">
+                                    <input class="input-box <%= locals.errors && errors.ticketPrice ? 'is-invalid' : '' %>" type="number" id="precio" name="ticketPrice" value="<%= locals.oldData ? oldData.ticketPrice : null %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.ticketPrice) { %>

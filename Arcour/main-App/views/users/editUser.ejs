@@ -38,7 +38,7 @@
                                     <label for="name" title>Nombre</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box name-lastname" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.first_name%>" >
+                                    <input class="input-box name-lastname <%= locals.errors && errors.nombre ? 'is-invalid' : '' %>" type="text" maxlength="25" id="name" name="nombre" value = "<%= user.first_name%>" >
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.nombre) { %>
@@ -55,7 +55,7 @@
                                     <label for="apellido" title>Apellido</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box name-lastname" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.last_name %>">
+                                    <input class="input-box name-lastname <%= locals.errors && errors.apellido ? 'is-invalid' : '' %>" type="text" maxlength="15" id="apellido" name="apellido" value = "<%= user.last_name %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.apellido) { %>
@@ -93,7 +93,7 @@
                                     <label for="id" title>Número de documento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box cell-id" type="number" maxlength="15" id="id" name="documento" value = "<%= user.document%>">
+                                    <input class="input-box cell-id <%= locals.errors && errors.documento ? 'is-invalid' : '' %>" type="number" maxlength="15" id="id" name="documento" value = "<%= user.document%>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.documento) { %>
@@ -112,7 +112,7 @@
                                     <label for="fecha" title>Fecha de nacimiento</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" id="fecha" name="fechaNacimiento" value = "<%=user.date_birth%>">
+                                    <input class="input-box <%= locals.errors && errors.fechaNacimiento ? 'is-invalid' : '' %>" type="date" id="fecha" name="fechaNacimiento" value = "<%=user.date_birth%>">
                                     <p class="text-danger-front"></p>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box cell-id" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cell_phone%>">
+                                    <input class="input-box cell-id <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cell_phone%>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.celular) { %>
@@ -151,7 +151,7 @@
                                     <label for="mail" title>Correo electrónico</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correo" value = "<%= user.email%>">
+                                    <input class="input-box <%= locals.errors && errors.correo ? 'is-invalid' : '' %>" type="email" maxlength="40" id="mail" name="correo" value = "<%= user.email%>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.correo) { %>

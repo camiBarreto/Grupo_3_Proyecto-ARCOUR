@@ -76,10 +76,15 @@
                                     <label for="horarioSalida" title>Hora de Salida</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="time" value="<%= flight.departure_time %>"
+                                    <input class="input-box <%= locals.errors && errors.departureTime ? 'is-invalid' : '' %>" type="time" value="<%= flight.departure_time %>"
                                         id="horarioSalida" name="departureTime">
                                         <p class="text-danger-front"></p>
                                 </div>
+                                <% if (locals.errors && errors.departureTime) { %>
+                                    <div class="text-danger">
+                                        <%= errors.departureTime.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -89,10 +94,15 @@
                                     <label for="horarioLlegada" title>Hora de llegada</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="time" value="<%= flight.arrival_time %>"
+                                    <input class="input-box <%= locals.errors && errors.arrivalTime ? 'is-invalid' : '' %>" type="time" value="<%= flight.arrival_time %>"
                                         id="horarioLlegada" name="arrivalTime">
                                         <p class="text-danger-front"></p>
                                 </div>
+                                <% if (locals.errors && errors.arrivalTime) { %>
+                                    <div class="text-danger">
+                                        <%= errors.arrivalTime.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -106,10 +116,15 @@
                                     <label for="diaVuelo" title>Dia del vuelo</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="date" value="<%= flight.departure_date %>"
+                                    <input class="input-box <%= locals.errors && errors.departureDate ? 'is-invalid' : '' %>" type="date" value="<%= flight.departure_date %>"
                                         id="diaVuelo" name="departureDate">
                                         <p class="text-danger-front"></p>
                                 </div>
+                                <% if (locals.errors && errors.departureDate) { %>
+                                    <div class="text-danger">
+                                        <%= errors.departureDate.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
 
@@ -119,10 +134,15 @@
                                     <label for="precio" title>Precio del vuelo</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="number" value="<%= flight.ticket_price %>" id="precio"
+                                    <input class="input-box <%= locals.errors && errors.ticketPrice ? 'is-invalid' : '' %>" type="number" value="<%= flight.ticket_price %>" id="precio"
                                         name="ticketPrice">
                                         <p class="text-danger-front"></p>
                                 </div>
+                                <% if (locals.errors && errors.ticketPrice) { %>
+                                    <div class="text-danger">
+                                        <%= errors.ticketPrice.msg %> 
+                                    </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>

@@ -38,7 +38,7 @@
                                     <label for="name" title>Nombre de la Empresa</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="text" maxlength="25" id="name" name="nombreEmpresa">
+                                    <input class="input-box <%= locals.errors && errors.nombreEmpresa ? 'is-invalid' : '' %>" type="text" maxlength="25" id="name" name="nombreEmpresa" value="<%= locals.oldData ? oldData.nombreEmpresa : null %>">
                                 </div>
                                 <% if (locals.errors && errors.nombreEmpresa) { %>
                                     <div class=" text-danger">
@@ -55,16 +55,15 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="paisOrigen" id="paisOrigen">
-                                        <option value="argentina" selected>Argentina</option>
-                                        <option value="colombia">Colombia</option>
-                                        <option value="uruguay">Uruguay</option>
-                                        <option value="bolivia">Bolivia</option>
-                                        <option value="paraguay">Paraguay</option>
-                                        <option value="peru">Peru</option>
-                                        <option value="brasil">Brasil</option>
-                                        <option value="venezuela">Venezuela</option>
-                                        <option value="chile">Chile</option>
-                                        <option value="ecuador">Ecuador</option>
+                                    <%  
+									    let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
+									%>
+									<% for (const oneCountry of countries) { %>
+										<option 
+											value="<%= oneCountry %>"
+											<%= locals.oldData && (oneCountry === oldData.paisOrigen) ? 'selected' : null %> 
+										> <%= oneCountry %> </option>
+									<% } %>
                                     </select>
                                 </div>
                             </div>
@@ -79,7 +78,7 @@
                                     <label for="mail" title>Correo Empresarial</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="email" maxlength="40" id="mail" name="correo">
+                                    <input class="input-box <%= locals.errors && errors.correo ? 'is-invalid' : '' %>" type="email" maxlength="40" id="mail" name="correo" value="<%= locals.oldData ? oldData.correo : null %>">
                                 </div>
                                 <% if (locals.errors && errors.correo) { %>
                                     <div class=" text-danger">
@@ -95,8 +94,7 @@
                                     <label for="mail-re" title>Contraseña</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box" type="password" maxlength="40" id="mail-re"
-                                        name="password">
+                                    <input class="input-box <%= locals.errors && errors.password ? 'is-invalid' : '' %>" type="password" maxlength="40" id="mail-re" name="password" value="<%= locals.oldData ? oldData.password : null %>">
                                 </div>
                                 <% if (locals.errors && errors.password) { %>
                                     <div class=" text-danger">
@@ -117,9 +115,13 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="paisRuta" id="pais">
-                                        <option value="argentina" selected>Argentina</option>
-                                        <option value="colombia">Colombia</option>
-                                        <option value="uruguay">Uruguay</option>
+                                        <% const paisesRuta =["argentina", "colombia", "uruguay"]%>
+                                        <% paisesRuta.forEach(pais=> { %>
+                                             <option 
+                                                value="<%= pais %>" 
+                                                <%=locals.oldData && (pais === oldData.paisRuta) ? "selected" : "" %>><%= pais.charAt(0).toUpperCase() + pais.slice(1) %>
+                                             </option>
+                                             <% }); %>
                                     </select>
                                 </div>
                             </div>
@@ -132,9 +134,11 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="aerolinea" id="aereo">
-                                        <option value="latam" selected>LATAM Airlines</option>
-                                        <option value="avianca">Avianca</option>
-                                        <option value="aerolíneas Argentinas">Aerolíneas Argentinas</option>
+                                        <% const aerolinea =["latam Airlines","avianca","aerolineas Argentinas"]%>
+                                        <% aerolinea.forEach(linea => { %>
+                                             <option value="<%= linea %>" <%=locals.oldData && (linea === oldData.aerolinea) ? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
+                                             </option>
+                                             <% }); %>
                                     </select>
                                 </div>
                             </div>
@@ -150,7 +154,7 @@
                                 <label for="number" title>Número de contacto (+)</label>
                             </div>
                             <div class="ant-input">
-                                <input name="contacto" class="input-box" type="text" maxlength="25" id="number">
+                                <input name="contacto" class="input-box <%= locals.errors && errors.contacto ? 'is-invalid' : '' %>" type="text" maxlength="25" id="number" value="<%= locals.oldData ? oldData.contacto : null %>">
                             </div>
                             <% if (locals.errors && errors.contacto) { %>
                                 <div class=" text-danger">

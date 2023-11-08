@@ -190,7 +190,13 @@ const validations = {
       .withMessage("El campo es requerido")
       .bail()
       .matches(/^\+?[0-9]*$/)
-      .withMessage("Campo númerico"),
+      .withMessage("Campo númerico")
+      .custom((value) => {
+        if (parseInt(value) > 0) {
+          return true;
+        }
+        throw new Error('El valor debe ser mayor que 0');
+      }),
   ],
   registerAdminValidation: [
     body("nombreEmpresa")
