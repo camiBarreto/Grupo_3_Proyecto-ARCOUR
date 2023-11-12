@@ -1,6 +1,6 @@
 import React from 'react';
 import imagenFondo from '../assets/images/mandalorian.jpg';
-import GenresInDb from './GenresInDb';
+import AerolineasInDb from './AerolineasInDb';
 import ContentRowMovies from './ContentRowMovies';
 function ContentRowTop(){
     return(
@@ -22,7 +22,7 @@ function ContentRowTop(){
 						<div className="col-lg-6 mb-4">
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Last movie in Data Base</h5>
+									<h5 className="m-0 font-weight-bold text-gray-800">Destinos</h5>
 								</div>
 								<div className="card-body">
 									<div className="text-center">
@@ -36,7 +36,7 @@ function ContentRowTop(){
 						{/*<!-- End content row last movie in Data Base -->*/}
 
 						{/*<!-- Genres in DB -->*/}
-						<GenresInDb />
+						<AerolineasInDb />
 
 						{/*<!--End Genres In Db-->*/}		
 					</div>

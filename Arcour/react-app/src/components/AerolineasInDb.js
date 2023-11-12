@@ -1,33 +1,26 @@
 import React from 'react';
-import Genre  from './Genre';
+import Aerolinea  from './Aerolinea';
 
-let genres = [
-    {genre: 'Acción'},
-    {genre: 'Animación'},
-    {genre: 'Aventura'},
-    {genre: 'Ciencia Ficción'},
-    {genre: 'Comedia'},
-    {genre: 'Documental'},
-    {genre: 'Drama'},
-    {genre: 'Fantasia'},
-    {genre: 'Infantiles'},
-    {genre: 'Musical'}
-]
+let aerolineas = [
+    {aerolinea: 'Aerolíneas Argentinas'},
+    {aerolinea: 'Latam'},
+    {aerolinea: 'Avianca'}
+   ]
 
-function GenresInDb(){
+function AerolineasInDb(){
     return (
         <React.Fragment>
                 {/*<!-- Categories in DB -->*/}
                 <div className="col-lg-6 mb-4">						
                     <div className="card shadow mb-4">
                         <div className="card-header py-3">
-                            <h6 className="m-0 font-weight-bold text-gray-800">Genres in Data Base</h6>
+                            <h6 className="m-0 font-weight-bold text-gray-800">Total de vuelos por Aerolínea</h6>
                         </div>
                         <div className="card-body">
                             <div className="row">
                                 {
-                                    genres.map((genre,index)=>{
-                                        return  <Genre  {...genre}  key={index} />
+                                    aerolineas.map((aerolinea,index)=>{
+                                        return  <Aerolinea  {...aerolinea}  key={index} />
                                     })
                                 }
                             </div>
@@ -39,4 +32,4 @@ function GenresInDb(){
     )
 
 }
-export default GenresInDb;
+export default AerolineasInDb;

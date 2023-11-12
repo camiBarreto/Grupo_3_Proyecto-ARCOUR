@@ -33,7 +33,7 @@ function SideBar(){
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="/">
-                        <i className="fas fa-fw fa-folder"></i>
+                        <i className="fas fa-user"></i>
                         <span>Usuarios</span>
                     </a>
                 </li>
