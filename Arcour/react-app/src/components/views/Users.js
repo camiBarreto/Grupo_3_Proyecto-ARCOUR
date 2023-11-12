@@ -1,7 +1,7 @@
 import React from "react";
 import TopBar from '../../components/TopBar';
-import ContentRowTop from '../../components/ContentRowTop';
-import Movie from '../../components/Movie';
+import UsersComponent from '../UsersComponent';
+import AllTheUsers from '../../components/AllTheUsers';
 import Footer from '../../components/Footer';
 
 function Users() {
@@ -11,8 +11,8 @@ function Users() {
             {/*<!-- Main Content -->*/}
             <div id="content">
                 <TopBar />
-                <ContentRowTop />
-                <Movie />
+                <UsersComponent />
+                <AllTheUsers />
                 <Footer />
             </div>
         </div>    
