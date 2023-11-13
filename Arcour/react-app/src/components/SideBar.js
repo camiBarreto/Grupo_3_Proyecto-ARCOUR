@@ -32,7 +32,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
+                    <a className="nav-link collapsed" href="/usuarios">
                         <i className="fas fa-user"></i>
                         <span>Usuarios</span>
                     </a>
@@ -40,14 +40,14 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <a className="nav-link" href="/administradores">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Administradores</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <a className="nav-link" href="/vuelos">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Vuelos</span></a>
                 </li>

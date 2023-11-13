@@ -1,11 +1,11 @@
 import React from 'react';
 
-function AllTheUsers() {
+function AllTheAdmins() {
 	return (
 		<React.Fragment>
 			{/*<!-- PRODUCTS LIST -->*/}
 			<div className="container-fluid">
-				<h1 className="h3 mb-2 text-gray-800">Listado de Usuarios</h1>
+				<h1 className="h3 mb-2 text-gray-800">Listado de Administradores</h1>
 
 				{/*<!-- DataTales Example -->*/}
 				<div className="card shadow mb-4">
@@ -45,4 +45,4 @@ function AllTheUsers() {
 		</React.Fragment>
 	)
 }
-export default AllTheUsers;
+export default AllTheAdmins;

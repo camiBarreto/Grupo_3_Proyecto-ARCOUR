@@ -2,7 +2,7 @@ import React from 'react';
 import imgUsuario from '../assets/images/mujer.png';
 
 
-function UsuariosInDb() {
+function AdminsInDb() {
     return (
         <React.Fragment>
             {/*<!-- Categories in DB -->*/}
@@ -35,4 +35,4 @@ function UsuariosInDb() {
     )
 
 }
-export default UsuariosInDb;
+export default AdminsInDb;
