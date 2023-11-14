@@ -27,7 +27,7 @@ class App extends Component {
               <Admins/>
             </Route>
 
-            <Route path='/flight'>
+            <Route path='/vuelos'>
               <Flight/>
             </Route>
             
