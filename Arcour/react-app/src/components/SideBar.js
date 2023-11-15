@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/logo-arcour.png';
 
 function SideBar(){
     return(
@@ -21,7 +21,7 @@ function SideBar(){
                 <li className="nav-item active">
                     <a className="nav-link" href="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - Arcour Admin</span></a>
+                        <span>Dashboard</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -32,24 +32,24 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Users Data</span>
+                    <a className="nav-link collapsed" href="/usuarios">
+                        <i className="fas fa-user"></i>
+                        <span>Usuarios</span>
                     </a>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Admin Data</span></a>
+                    <a className="nav-link" href="/administradores">
+                    <i class="fas fa-user-lock"></i>
+                        <span>Administradores</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Flights Data</span></a>
+                    <a className="nav-link" href="/vuelos">
+                    <i class="fas fa-plane"></i>
+                        <span>Vuelos</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}

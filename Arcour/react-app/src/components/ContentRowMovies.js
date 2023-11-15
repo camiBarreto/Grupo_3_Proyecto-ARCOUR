@@ -3,23 +3,23 @@ import SmallCard from './SmallCard';
 
 let productInDataBase = {
     color:   "primary",
-    titulo: "Movies in Data Base",
+    titulo: "Total Vuelos",
     valor: 21,
-    icono: "fas fa-film",
+    icono: "fa-solid fa-plane-departure",
 }
 
 let amount ={
     color:   "success",
-    titulo: "Total awards",
+    titulo: "Total Usuarios",
     valor: 79,
-    icono: "fas fa-award",
+    icono: "fas fa-user",
 }
 
 let user = {
     color:   "warning",
-    titulo: "Actors quantity",
+    titulo: "Total Administradores",
     valor: 49,
-    icono: "fas fa-user",
+    icono: "fa-solid fa-user-tie", 
 }
 
 let cardProps = [productInDataBase,amount,user];
