@@ -89,6 +89,91 @@ const controllerProduct = {
     }
   },
 
+  apiProductList: async (req, res) => {
+    try {
+      const flights = await Product.findAll();
+  
+      // Inicializa variables para llevar el registro de los totales
+      let totalFlightsToBogota = 0;
+      let totalFlightsToBuenosAires = 0;
+      let totalFlightsToMontevideo = 0;
+
+      let totalFlightsAvianca = 0;
+      let totalFlightsLatam = 0;
+      let totalFlightsAeroArg = 0;
+  
+      // Calcula los totales
+      flights.forEach(flight => {
+        if (flight.arrival_airport === "Aeropuerto Internacional El Dorado") {
+          totalFlightsToBogota++;
+        } else if (flight.arrival_airport === "Aeropuerto Internacional Ministro Pistarini") {
+          totalFlightsToBuenosAires++;
+        } else if (flight.arrival_airport === "Aeropuerto Internacional de Carrasco") {
+          totalFlightsToMontevideo++;
+        }
+  
+        if (flight.airline === "avianca") {
+          totalFlightsAvianca++;
+        } else if (flight.airline === "latam Airlines") {
+          totalFlightsLatam++;
+        } else if (flight.airline === "aerolineas Argentinas") {
+          totalFlightsAeroArg++;
+        }
+      });
+  
+      const response = {
+        //Cantidad de vuelos por destino
+        totalFlights: [
+          bogotaFlights = {
+            airport: "Aeropuerto Internacional El Dorado",
+            total: totalFlightsToBogota
+          },
+          montevideoFlights = {
+            airport: "Aeropuerto Internacional de Carrasco",
+            total: totalFlightsToMontevideo
+          },
+          buenosAiresFlights = {
+            airport: "Aeropuerto Internacional Ministro Pistarini",
+            total: totalFlightsToBuenosAires
+          },
+        ],
+        //Cantidad de vuelos por aerolínea
+        totalAirlines: [
+          aviancaFlights = {
+            airline: "Avianca",
+            total: totalFlightsAvianca
+          },
+          latamFlights = {
+            airline: "Latam Airlines",
+            total: totalFlightsLatam
+          },
+          aeroArgFlights = {
+            airline: "Aerolíneas Argentinas",
+            total: totalFlightsAeroArg
+          },
+        ],
+        count: flights.length,
+        flights_list: flights
+      };
+  
+      res.status(200).json(response);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+  apiProductDetail: async (req, res) => {
+    const id = req.params.id;
+    try {
+      const flight = await Product.findByPk(id);
+  
+      res.status(200).json({ flight });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+
   getProductEdits: async (req, res) => {
     const id = req.params.id;
     console.log(id)
@@ -116,6 +201,7 @@ const controllerProduct = {
     const updateProduct = {
       departure_airport: req.body.departureAirport,
       arrival_airport: req.body.arrivalAirport,
+      airline: req.body.aerolinea,
       departure_time: req.body.departureTime,
       arrival_time: req.body.arrivalTime,
       departure_date: req.body.departureDate,
@@ -156,6 +242,7 @@ const controllerProduct = {
       flight_number: randomInt,
       departure_airport: req.body.departureAirport,
       arrival_airport: req.body.arrivalAirport,
+      airline: req.body.aerolinea,
       departure_date: req.body.departureDate,
       departure_time: req.body.departureTime,
       arrival_time: req.body.arrivalTime,

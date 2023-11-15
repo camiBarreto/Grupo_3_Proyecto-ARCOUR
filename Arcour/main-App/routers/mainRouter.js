@@ -4,6 +4,7 @@ const controllerMain = require("../controllers/mainController");
 
 //rutas para todas las vistas del home (incluida el home)
 router.get("/", controllerMain.home);
+router.get("/ensayo", controllerMain.prueba);
 router.get("/contacto", controllerMain.contact);
 router.get("/nuestra-empresa", controllerMain.aboutUs);
 router.get("/empresas-amigas", controllerMain.allies);

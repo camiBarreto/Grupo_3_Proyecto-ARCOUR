@@ -27,7 +27,7 @@ router.get("/product-cart", controllerProduct.getProductCart);
 router.get("/product-detail", controllerProduct.getProductDetail);
 //@ GET /products/:id/ver-detalle
 router.get("/:id/ver-detalle", controllerProduct.getVerDetalle);
-//@ GET /products
+//@ GET /products/data
 router.get("/data",adminMiddleware, controllerProduct.getProductList);
 
 //@ GET /products/:id/productEdits

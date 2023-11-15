@@ -1,6 +1,9 @@
 const path = require("path");
 
 const controllerMain = { //controlador para todas las vistas del home
+  prueba: (req, res) => {
+    res.render("ensayo");
+  },
   home: (req, res) => {
     res.render("home");
   },

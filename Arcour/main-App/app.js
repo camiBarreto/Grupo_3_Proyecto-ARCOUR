@@ -5,6 +5,7 @@ const path = require("path");
 const dotenv = require("dotenv").config();
 const cookies = require("cookie-parser");
 const session = require("express-session");
+const cors = require("cors");
 
 
 //PORT
@@ -14,6 +15,10 @@ const port = process.env.PORT || 3000;
 const mainRouter = require("./routers/mainRouter");
 const userRouter = require("./routers/usersRouter");
 const productRouter = require("./routers/productRouter");
+
+//Api routers requires
+const apiUserRouter = require("./routers/apis/userApis");
+const apiProductRouter = require("./routers/apis/productApis");
 
 //Middlewares requires
 const isLoggedMiddleware = require("./middlewares/isLoggedMiddleware")
@@ -46,6 +51,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookies());
 app.use(express.json());
 app.use(methodOverride("_method"));
+app.use(cors());
 
 //Locals application middlewares
 app.use(isLoggedMiddleware);
@@ -57,6 +63,10 @@ app.use("/", mainRouter);
 app.use("/users", userRouter);
 
 app.use("/products", productRouter);
+
+app.use(apiUserRouter);
+
+app.use(apiProductRouter);
 
 //Not found Middleware (debe ir aqui o si no se rompe el codigo (lo digo despues de 2 horas de frustracion))
 app.use(notFoundMiddleware);

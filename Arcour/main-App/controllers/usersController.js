@@ -43,6 +43,34 @@ const controllerUser = {
     }
   },
 
+  apiUserList: async (req, res) => {
+    try {
+      const users = await User.findAll({ attributes: { exclude: ["password", "favourite_aeroline"] } });
+      const response = {
+        count: users.length,
+        users_list: users
+      };
+      res.status(200).json(response);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+  apiUserDetail: async (req, res) => {
+    const id = req.params.id;
+    try {
+      const user = await User.findByPk(id, { attributes: { exclude: ["password", "favourite_aeroline"] } });
+      if (!user) {
+        res.status(404).json({ error: "Usuario no encontrado" });
+      } else {
+        res.status(200).json({ user });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+  
   register: (req, res) => {
     res.render("register");
   },
@@ -55,12 +83,10 @@ const controllerUser = {
   },
   postAdmin: async (req, res) => {
     const errors = validationResult(req);
-    const admin = userModel.findById(req.params.id);
     if (!errors.isEmpty()) {
       return res.render("createAdmin", {
         errors: errors.mapped(),
         oldData: req.body,
-        admin,
       });
     }
     const newCompany = {

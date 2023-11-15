@@ -147,6 +147,25 @@
                         </div>
                     </div>
 
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="aereo" title>Aerolínea que agrega la Nueva Ruta</label>
+                                </div>
+                                <div class="ant-input">
+                                    <select name="aerolinea" id="aereo">
+                                        <% const aerolinea =["latam Airlines","avianca","aerolineas Argentinas"]%>
+                                        <% aerolinea.forEach(linea => { %>
+                                             <option value="<%= linea %>" <%=locals.oldData && (linea === oldData.aerolinea) ? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
+                                             </option>
+                                             <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="crear-cuenta">
                         <button title="Crear Producto" type="submit" class="boton-submit">
                             <span>Confirmar Edición de Producto</span>
