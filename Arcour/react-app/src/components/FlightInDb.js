@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 function FlightInDb() {
     return (
@@ -9,19 +10,7 @@ function FlightInDb() {
                 <div className="flex-flight">
                     <div className="card shadow mb-4 flex-medium">
                         <div className="card-body">
-                            <div className="row"> Id:
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card shadow mb-4 flex-medium">
-                        <div className="card-body">
-                            <div className="row"> Destino:
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card shadow mb-4 flex-medium">
-                        <div className="card-body">
-                            <div className="row"> Partida:
+                            <div className="row"> Número de vuelo:
                             </div>
                         </div>
                     </div>
@@ -31,24 +20,9 @@ function FlightInDb() {
                             </div>
                         </div>
                     </div>
-                    <div className="card shadow mb-4 flex-medium">
-                        <div className="card-body">
-                            <div className="row"> Fecha:
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card shadow mb-4 flex-medium">
-                        <div className="card-body">
-                            <div className="row"> Hora Partida:
-                            </div>
-                        </div>
-                    </div>
-                    
-                
-                <div>
-                </div>
                 <div className="flight-button">
-                    <a className="btn btn-danger flight-button" target="_blank" rel="nofollow" href="/">Ver detalle</a>
+                <Link to= "/vuelos/:id/detail" exact={true} className="btn btn-danger flight-button" target="_blank" rel="nofollow" href="/">Ver detalle</Link>
+                                         
                 </div>
             </div>
            

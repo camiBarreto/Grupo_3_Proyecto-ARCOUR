@@ -8,7 +8,7 @@ import Admins from './views/Admins'
 import Flight from './views/Flight'
 import ProfileAdmins from './views/ProfileAdmins'
 import ProfileUsers from './views/ProfileUsers'
-
+import FlightDetail from './views/FlightDetail'
 
 class App extends Component {
 
@@ -30,7 +30,7 @@ class App extends Component {
               <Admins/>
             </Route>
 
-            <Route path='/vuelos'>
+            <Route path='/vuelos' exact={true}>
               <Flight/>
             </Route>
 
@@ -40,6 +40,10 @@ class App extends Component {
             
             <Route path='/usuarios/:id/profile'>
               <ProfileUsers/>
+            </Route>
+
+            <Route path='/vuelos/:id/detail'>
+              <FlightDetail/>
             </Route>
           </Switch>
         </div> 
