@@ -1,5 +1,6 @@
 import React from 'react';
 import imgUsuario from '../assets/images/mujer.png';
+import {Link} from 'react-router-dom'
 
 
 function AdminsInDb() {
@@ -26,7 +27,7 @@ function AdminsInDb() {
                     </div>
                     <div className = "flex-img-button">
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 10 + 'rem' }} src={imgUsuario} alt="" />
-                        <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle</a>
+                        <Link to= "/administradores/:id/profile" exact={true} className="btn btn-danger" target="_blank" rel="nofollow" href="./">Ver detalle</Link>
                     </div>
                 </div>
             </div>

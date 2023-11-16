@@ -17,6 +17,9 @@ function AllTheAdmins() {
 										<th>Id</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
+										<th>Género</th>
+										<th>Documento</th>
+										<th>Fecha Nacimiento</th>
 										<th>Correo</th>
 
 									</tr>
@@ -27,6 +30,9 @@ function AllTheAdmins() {
 										<td>01</td>
 										<td>Camila</td>
 										<td>Barreto</td>
+										<td>Femenino</td>
+										<td>1552121</td>
+										<td>27-04-1995</td>
 										<td>cami@gmail.com</td>
 
 									</tr>

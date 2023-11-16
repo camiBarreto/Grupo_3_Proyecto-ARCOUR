@@ -4,9 +4,9 @@ import ContentRowMovies from './ContentRowMovies';
 import Destinos from './Destinos';
 
 let destinos = [
-	{ destino: 'Uruguay' },
-	{ destino: 'Argentina' },
-	{ destino: 'Colombia' }
+	{ destino: 'Uruguay:' },
+	{ destino: 'Argentina:' },
+	{ destino: 'Colombia:' }
 ]
 
 
@@ -30,7 +30,7 @@ function ContentRowTop() {
 					<div className="col-lg-6 mb-4">
 						<div className="card shadow mb-4">
 							<div className="card-header py-3">
-								<h5 className="m-0 font-weight-bold text-gray-800">Destinos</h5>
+								<h5 className="m-0 font-weight-bold text-gray-800">Total de vuelos por Destino</h5>
 							</div>
 
 							<div className="card-body">

@@ -2,9 +2,9 @@ import React from 'react';
 import Aerolinea from './Aerolinea';
 
 let aerolineas = [
-    { aerolinea: 'Aerolíneas Argentinas' },
-    { aerolinea: 'Latam' },
-    { aerolinea: 'Avianca' }
+    { aerolinea: 'Aerolíneas Argentinas:' } ,
+    { aerolinea: 'Latam:' },
+    { aerolinea: 'Avianca:' }
 ]
 
 function AerolineasInDb() {
@@ -18,15 +18,17 @@ function AerolineasInDb() {
                     </div>
                     
                         <div className="card-body">
-                            <div className="row">
+                            <div className="row"> 
                                 {
                                     aerolineas.map((aerolinea, index) => {
                                         return <Aerolinea  {...aerolinea} key={index} 
+                                    
                                         />
                                         
                                     })
                                     
                                 }
+                                
                             </div>
                         
                     </div>

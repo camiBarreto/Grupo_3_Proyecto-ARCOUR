@@ -17,7 +17,10 @@ function AllTheFlight() {
 										<th>Id</th>
 										<th>Destino</th>
 										<th>Partida</th>
-										<th>Hora</th>
+										<th>Aerolínea</th>
+										<th>Fecha</th>
+										<th>Hora Partida</th>
+										<th>Hora Arribo</th>
 
 									</tr>
 								</thead>

@@ -14,9 +14,12 @@ function AllTheUsers() {
 							<table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Id</th>
+									<th>Id</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
+										<th>Género</th>
+										<th>Documento</th>
+										<th>Fecha Nacimiento</th>
 										<th>Correo</th>
 
 									</tr>
