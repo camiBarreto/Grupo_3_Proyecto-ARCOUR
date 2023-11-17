@@ -110,6 +110,62 @@ const controllerUser = {
     // Desde los POST no renderizamos vistas, solo redireccionamos
     //res.redirect('/');
   },
+   apiUserList: async (req, res) => {
+    try {
+      const users = await User.findAll({ attributes: { exclude: ["password", "favourite_aeroline"] } });
+      const response = {
+        count: users.length,
+        users_list: users
+      };
+      res.status(200).json(response);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+  apiUserDetail: async (req, res) => {
+    const id = req.params.id;
+    try {
+      const user = await User.findByPk(id, { attributes: { exclude: ["password", "favourite_aeroline"] } });
+      if (!user) {
+        res.status(404).json({ error: "Usuario no encontrado" });
+      } else {
+        res.status(200).json({ user });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+
+  apiAdminList: async (req, res) => {
+    try {
+      const admins = await Admin.findAll({ attributes: { exclude: ["password"] } });
+      const response = {
+        count: admins.length,
+        admins_list: admins
+      };
+      res.status(200).json(response);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+  apiAdminDetail: async (req, res) => {
+    const id = req.params.id;
+    try {
+      const admin = await Admin.findByPk(id, { attributes: { exclude: ["password"] } });
+      if (!admin) {
+        res.status(404).json({ error: "Usuario no encontrado" });
+      } else {
+        res.status(200).json({ admin });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+
   processLogin: async (req, res) => {
     const errors = validationResult(req);
     

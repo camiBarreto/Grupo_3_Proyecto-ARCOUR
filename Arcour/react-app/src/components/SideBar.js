@@ -41,14 +41,14 @@ function SideBar(){
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/administradores">
-                    <i class="fas fa-user-lock"></i>
+                    <i className="fas fa-user-lock"></i>
                         <span>Administradores</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/vuelos">
-                    <i class="fas fa-plane"></i>
+                    <i className="fas fa-plane"></i>
                         <span>Vuelos</span></a>
                 </li>
 

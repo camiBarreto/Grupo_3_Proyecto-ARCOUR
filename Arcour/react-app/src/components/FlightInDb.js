@@ -21,7 +21,7 @@ function FlightInDb() {
                         </div>
                     </div>
                 <div className="flight-button">
-                <Link to= "/vuelos/:id/detail" exact={true} className="btn btn-danger flight-button" target="_blank" rel="nofollow" href="/">Ver detalle</Link>
+                <Link to= "/vuelos/:id/detail" exact={true} className="btn btn-danger flight-button">Ver detalle</Link>
                                          
                 </div>
             </div>

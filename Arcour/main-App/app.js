@@ -18,6 +18,7 @@ const productRouter = require("./routers/productRouter");
 
 //Api routers requires
 const apiUserRouter = require("./routers/apis/userApis");
+const apiAdminRouter = require("./routers/apis/adminApis");
 const apiProductRouter = require("./routers/apis/productApis");
 
 //Middlewares requires
@@ -67,6 +68,8 @@ app.use("/products", productRouter);
 app.use(apiUserRouter);
 
 app.use(apiProductRouter);
+
+app.use(apiAdminRouter);
 
 //Not found Middleware (debe ir aqui o si no se rompe el codigo (lo digo despues de 2 horas de frustracion))
 app.use(notFoundMiddleware);

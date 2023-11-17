@@ -26,7 +26,7 @@ function UsuariosInDb() {
                     </div>
                     <div className = "flex-img-button">
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 10 + 'rem' }} src={imgUsuario} alt="" />
-                        <Link to= "/administradores/:id/profile" exact={true} className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle</Link>
+                        <Link to= "/administradores/:id/profile" exact={true} className="btn btn-danger">Ver detalle</Link>
                     </div>
                 </div>
             </div>

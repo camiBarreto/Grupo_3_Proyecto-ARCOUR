@@ -32,7 +32,7 @@ if (formRegister) {
 
         formRegister.addEventListener("submit", (e) => {
 
-            if (passwordField.value.length <= 8) {
+            if (passwordField.value.length < 8) {
                 passwordField.classList.add("is-invalid");
                 passwordField.nextElementSibling.innerText = "Contraseña inválida"
                 e.preventDefault();
