@@ -19,7 +19,7 @@ if (formRegister) {
         });
 
         emailField.addEventListener("input", e => {
-            if (!isValidEmail(e.target.value)) {
+            if (!validarEmail(e.target.value)) {
                 emailField.classList.add("is-invalid");
                 emailField.nextElementSibling.innerText = "El correo electrónico no es válido";
 

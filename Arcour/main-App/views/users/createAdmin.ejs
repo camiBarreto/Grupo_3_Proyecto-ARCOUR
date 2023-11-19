@@ -56,7 +56,7 @@
                                 <div class="ant-input">
                                     <select name="paisOrigen" id="paisOrigen">
                                     <%  
-									    let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
+									    let countries = ['argentina', 'bolivia', 'brasil', 'colombia', 'chile', 'ecuador', 'paraguay', 'perú', 'uruguay', 'venezuela'];
 									%>
 									<% for (const oneCountry of countries) { %>
 										<option 
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <select name="aerolinea" id="aereo">
-                                        <% const aerolinea =["latam Airlines","avianca","aerolineas Argentinas"]%>
+                                        <% const aerolinea =["latam Airlines","avianca","aerolíneas Argentinas"]%>
                                         <% aerolinea.forEach(linea => { %>
                                              <option value="<%= linea %>" <%=locals.oldData && (linea === oldData.aerolinea) ? "selected" : "" %>><%= linea.charAt(0).toUpperCase() + linea.slice(1) %>
                                              </option>

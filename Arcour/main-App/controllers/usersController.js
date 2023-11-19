@@ -1,6 +1,4 @@
 const path = require("path");
-const adminModel = require("../models/adminsModels");
-const userModel = require("../models/usersModels");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { User, Admin } = require("../database/models");
@@ -28,7 +26,7 @@ const controllerUser = {
       gender: req.body.genero,
       document: req.body.documento,
       date_birth: req.body.fechaNacimiento,
-      cell_phone: req.body.celular,
+      cellphone: req.body.celular,
       email: req.body.mail,
       country: req.body.pais,
       favourite_aeroline: req.body.aerolinea,
@@ -130,7 +128,7 @@ const controllerUser = {
       if (!user) {
         res.status(404).json({ error: "Usuario no encontrado" });
       } else {
-        res.status(200).json({ user });
+        res.status(200).json(user);
       }
     } catch (error) {
       console.error(error);
@@ -158,7 +156,7 @@ const controllerUser = {
       if (!admin) {
         res.status(404).json({ error: "Usuario no encontrado" });
       } else {
-        res.status(200).json({ admin });
+        res.status(200).json(admin);
       }
     } catch (error) {
       console.error(error);
@@ -281,7 +279,7 @@ const controllerUser = {
       gender: req.body.genero,
       document: req.body.documento,
       date_birth: req.body.fechaNacimiento,
-      cell_phone: req.body.celular,
+      cellphone: req.body.celular,
       email: req.body.correo,
       country: req.body.pais,
       favourite_aeroline: req.body.aerolineaFav,

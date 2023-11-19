@@ -26,7 +26,7 @@ function ContentRowTop() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Realiza la solicitud a la API de productos
+                // Realiza la solicitud a la API de vuelos
                 const apiFlight = "http://localhost:3001/api/flights";
                 const flightResponse = await fetch(apiFlight);
                 const flightsData = await flightResponse.json();

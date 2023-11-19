@@ -129,7 +129,7 @@
                                     <label for="cel" title>Celular</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box cell-id <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cell_phone%>">
+                                    <input class="input-box cell-id <%= locals.errors && errors.celular ? 'is-invalid' : '' %>" type="text" maxlength="15" id="cel" name="celular" value = "<%= user.cellphone%>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.celular) { %>

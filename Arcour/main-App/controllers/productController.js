@@ -167,7 +167,7 @@ const controllerProduct = {
     try {
       const flight = await Product.findByPk(id);
   
-      res.status(200).json({ flight });
+      res.status(200).json(flight);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Internal Server Error" });
@@ -269,7 +269,7 @@ const controllerProduct = {
     try {
       await Product.destroy({
         where: {
-          id: id,
+          flight_number: id,
         },
       });
 

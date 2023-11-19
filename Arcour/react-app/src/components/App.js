@@ -34,17 +34,12 @@ class App extends Component {
               <Flight/>
             </Route>
 
-            <Route path='/administradores/:id/profile'>
-              <ProfileAdmins/>
-            </Route>
+            <Route path='/administradores/:id/profile' component={ProfileAdmins} />
             
-            <Route path='/usuarios/:id/profile'>
-              <ProfileUsers/>
-            </Route>
+            <Route path='/usuarios/:id/profile' component={ProfileUsers} />
 
-            <Route path='/vuelos/:id/detail'>
-              <FlightDetail/>
-            </Route>
+            <Route path='/vuelos/:id/detail' component={FlightDetail} />
+            
           </Switch>
         </div> 
         

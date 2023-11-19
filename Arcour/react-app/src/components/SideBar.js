@@ -1,5 +1,6 @@
 import React from 'react';
 import image from '../assets/images/logo-arcour.png';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function SideBar(){
     return(
@@ -8,20 +9,21 @@ function SideBar(){
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <Link to="/" exact="true" className="sidebar-brand d-flex align-items-center justify-content-center">
                     <div className="sidebar-brand-icon">
                         <img className="w-100" src={image} alt="Digital House"/>
                     </div>
-                </a>
+                </Link>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider my-0"/>
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <a className="nav-link" href="/">
+                    <Link to="/" exact="true" className="nav-link">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
+                        <span>Dashboard</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -32,24 +34,26 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/usuarios">
+                    <Link to="/usuarios" exact="true" className="nav-link collapsed">
                         <i className="fas fa-user"></i>
                         <span>Usuarios</span>
-                    </a>
+                    </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/administradores">
-                    <i className="fas fa-user-lock"></i>
-                        <span>Administradores</span></a>
+                    <Link to="/administradores" exact="true" className="nav-link">
+                        <i className="fas fa-user-lock"></i>
+                        <span>Administradores</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/vuelos">
-                    <i className="fas fa-plane"></i>
-                        <span>Vuelos</span></a>
+                    <Link to="/vuelos" exact="true" className="nav-link">
+                        <i className="fas fa-plane"></i>
+                        <span>Vuelos</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Divider -->*/}

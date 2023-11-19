@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID, // Tipo de dato UUID
       defaultValue: DataTypes.UUIDV4, // Valor por defecto para generar un UUID
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      unique: true,
     },
     first_name: {
       type: DataTypes.STRING,
@@ -28,13 +29,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    cell_phone: {
+    cellphone: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,

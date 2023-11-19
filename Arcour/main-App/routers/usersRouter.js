@@ -31,7 +31,7 @@ router.put("/:id/put/user",validations.editUserValidation, controllerUser.putEdi
 
 
 //@ GET /users/create
-router.get("/create", controllerUser.getCreateAdmin);
+router.get("/create", guestMiddleware, controllerUser.getCreateAdmin);
 //@ POST /users/post/admin
 router.post(
   "/post/admin",

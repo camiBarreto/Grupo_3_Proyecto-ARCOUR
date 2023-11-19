@@ -1,9 +1,9 @@
 import React from 'react';
-import imgUsuario from '../assets/images/mujer.png';
+import imgAdmin from '../assets/images/perfil.png';
 import {Link} from 'react-router-dom'
 
 
-function AdminsInDb() {
+function AdminsInDb(props) {
     return (
         <React.Fragment>
             {/*<!-- Categories in DB -->*/}
@@ -12,13 +12,15 @@ function AdminsInDb() {
                     <div className="flex-users-data">
                         <div className="card shadow mb-4">
                             <div className="card-body">
-                                <div className="row"> Nombre y apellido:
+                                <div className="row"> 
+                                    Nombre de la empresa: {props.enterprise}
                                 </div>
                             </div>
                         </div>
                         <div className="card shadow mb-4">
                             <div className="card-body">
-                                <div className="row"> Correo:
+                                <div className="row"> 
+                                    Correo Empresarial: {props.email_enterprise}
                                 </div>
                             </div>
                         </div>
@@ -26,8 +28,8 @@ function AdminsInDb() {
                     <div>
                     </div>
                     <div className = "flex-img-button">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 10 + 'rem' }} src={imgUsuario} alt="" />
-                        <Link to= "/administradores/:id/profile" exact={true} className="btn btn-danger">Ver detalle</Link>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 10 + 'rem' }} src={imgAdmin} alt="" />
+                        <Link to= {`/administradores/${props.id}/profile`} exact="true" className="btn btn-danger">Ver detalle</Link>
                     </div>
                 </div>
             </div>
