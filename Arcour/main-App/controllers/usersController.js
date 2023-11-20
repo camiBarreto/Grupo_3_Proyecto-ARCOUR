@@ -2,6 +2,7 @@ const path = require("path");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { User, Admin } = require("../database/models");
+const { conforms } = require("lodash");
 
 const controllerUser = {
   login: (req, res) => {
@@ -307,14 +308,21 @@ const controllerUser = {
   },
   putEditAdmin: async (req, res) => {
     const errors = validationResult(req);
-    const admin = adminModel.findById(req.params.id);
-    if (!errors.isEmpty()) {
-      return res.render("editAdmin", {
-        errors: errors.mapped(),
-        oldData: req.body,
-        admin,
-      });
+    const id = req.params.id;
+  
+    try {
+      const admin = await Admin.findByPk(id)
+      if (!errors.isEmpty()) {
+        return res.render("editAdmin", {
+          errors: errors.mapped(),
+          oldData: req.body,
+          admin,
+        });
+      }
+    } catch (error) {
+      console.error(error);
     }
+
     const updateAdmin = {
       enterprise: req.body.empresa,
       country_origin: req.body.paisDeOrigen,
@@ -323,9 +331,8 @@ const controllerUser = {
       aeroline_name: req.body.aerolinea,
       contact: req.body.contacto,
     };
-    const id = req.params.id;
     try {
-      await db.Admin.update(updateAdmin, {
+      await Admin.update(updateAdmin, {
         where: {
           id: id,
         },

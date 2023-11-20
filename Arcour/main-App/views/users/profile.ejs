@@ -27,7 +27,7 @@
               <img src="/images/mujer.png" alt="Imagen de Usuario" />
 
               <% } else { %>
-                <img src="/images/perfil.png" alt="Imagen de Usuario" />
+                <img src="/images/perfil.png" alt="Imagen de Administrador" />
                 <% } %>
         </div>
 
@@ -129,8 +129,8 @@
 
               <form id="deleteFormAdmin" action="/users/<%= locals.loggedAdmin.id %>/deleteAdmin?_method=delete"
                 method="post">
-                <button class="boton-submit" id="eliminar" type="submit" onclick="confirmDeleteAdmin()">Eliminar
-                  Usuario</button>
+                <button class="boton-submit" id="eliminar" type="button" onclick="confirmDeleteAdmin()">Eliminar
+                  Administrador</button>
               </form>
 
               <% } %>

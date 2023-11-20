@@ -62,7 +62,7 @@
 										<option 
 											value="<%= oneCountry %>"
 											<%= locals.oldData && (oneCountry === oldData.paisOrigen) ? 'selected' : null %> 
-										> <%= oneCountry %> </option>
+										> <%= oneCountry.charAt(0).toUpperCase() + oneCountry.slice(1) %> </option>
 									<% } %>
                                     </select>
                                 </div>

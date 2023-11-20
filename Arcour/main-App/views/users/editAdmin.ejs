@@ -132,7 +132,7 @@
                                 <label for="number" title>Número de contacto (+)</label>
                             </div>
                             <div class="ant-input">
-                                <input name="contacto <%= locals.errors && errors.contacto ? 'is-invalid' : '' %>" class="input-box" type="text" maxlength="25" id="number"  value="<%= admin.contact %>">
+                                <input name="contacto" class="input-box <%= locals.errors && errors.contacto ? 'is-invalid' : '' %>" type="text" maxlength="25" id="number"  value="<%= admin.contact %>">
                             </div>
                             <% if (locals.errors && errors.contacto) { %>
                                 <div class="text-danger">
@@ -154,6 +154,7 @@
     <footer>
         <%- include("../partials/footer.ejs") %>
     </footer>
+    <script src="/js/scriptHeader.js"></script>
 </body>
 
 </html>
