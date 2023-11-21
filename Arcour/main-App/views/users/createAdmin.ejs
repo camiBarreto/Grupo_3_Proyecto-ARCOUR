@@ -29,7 +29,7 @@
             <div class="login-box">
                 <h2 id="titulo">Crea tu cuenta de Administrador</h2>
                 <h2 class="register-subtitulo">01 Datos de la Empresa</h2>
-                <form action="/users/post/admin" method="post" class="register-form">
+                <form action="/users/post/admin" method="post" class="register-form" id="register-form">
 
                     <div class="ant-row">
                         <div class="ant-col">
@@ -39,6 +39,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.nombreEmpresa ? 'is-invalid' : '' %>" type="text" maxlength="25" id="name" name="nombreEmpresa" value="<%= locals.oldData ? oldData.nombreEmpresa : null %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.nombreEmpresa) { %>
                                     <div class=" text-danger">
@@ -79,6 +80,7 @@
                                 </div>
                                 <div class="ant-input">
                                     <input class="input-box <%= locals.errors && errors.correo ? 'is-invalid' : '' %>" type="email" maxlength="40" id="mail" name="correo" value="<%= locals.oldData ? oldData.correo : null %>">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.correo) { %>
                                     <div class=" text-danger">
@@ -91,10 +93,30 @@
                         <div class="ant-col">
                             <div class="ant-inside">
                                 <div class="ant-label">
-                                    <label for="mail-re" title>Contraseña</label>
+                                    <label for="mail-re" title>Confirmar Correo Empresarial</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box <%= locals.errors && errors.password ? 'is-invalid' : '' %>" type="password" maxlength="40" id="mail-re" name="password" value="<%= locals.oldData ? oldData.password : null %>">
+                                    <input class="input-box <%= locals.errors && errors.mailConfirm ? 'is-invalid' : '' %>" type="email" maxlength="40" id="mail-re" name="mailConfirm" value="<%= locals.oldData ? oldData.mailConfirm : null %>">
+                                    <p class="text-danger-front"></p>
+                                </div>
+                                <% if (locals.errors && errors.mailConfirm) { %>
+                                    <div class=" text-danger">
+                                        <%= errors.mailConfirm.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ant-row">
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="pass" title>Contraseña</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input class="input-box <%= locals.errors && errors.password ? 'is-invalid' : '' %>" type="password" maxlength="40" id="pass" name="password">
+                                    <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.password) { %>
                                     <div class=" text-danger">
@@ -103,7 +125,25 @@
                                     <% } %>
                             </div>
                         </div>
+
+                        <div class="ant-col">
+                            <div class="ant-inside">
+                                <div class="ant-label">
+                                    <label for="passConfirm" title>Confirmar Contraseña</label>
+                                </div>
+                                <div class="ant-input">
+                                    <input class="input-box <%= locals.errors && errors.passConfirm ? 'is-invalid' : '' %>" type="password" maxlength="40" id="passConfirm" name="passConfirm">
+                                    <p class="text-danger-front"></p>
+                                </div>
+                                <% if (locals.errors && errors.passConfirm) { %>
+                                    <div class=" text-danger">
+                                        <%= errors.passConfirm.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                        </div>
                     </div>
+                    
 
 
 
@@ -155,6 +195,7 @@
                             </div>
                             <div class="ant-input">
                                 <input name="contacto" class="input-box <%= locals.errors && errors.contacto ? 'is-invalid' : '' %>" type="text" maxlength="25" id="number" value="<%= locals.oldData ? oldData.contacto : null %>">
+                                <p class="text-danger-front"></p>
                             </div>
                             <% if (locals.errors && errors.contacto) { %>
                                 <div class=" text-danger">
@@ -187,7 +228,7 @@
                     </div>
 
                     <div class="crear-cuenta">
-                        <button title="Crear Admin" type="submit" class="boton-submit">
+                        <button title="Crear Admin" type="submit" class="boton-submit" id="boton-admin">
                             <span>Crear Cuenta de Administrador</span>
                         </button>
                     </div>
@@ -198,6 +239,9 @@
     <footer>
         <%- include("../partials/footer.ejs") %>
     </footer>
+    <script src="/js/scriptHeader.js"></script>
+    <script src="/js/scriptAdminValidation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -148,8 +148,8 @@ const validations = {
       .notEmpty()
       .withMessage("El campo es requerido")
       .bail()
-      .isLength({ min: 7, max: 12 })
-      .withMessage("Entre 7 y 12 dígitos")
+      .isLength({ min: 7, max: 15 })
+      .withMessage("Entre 7 y 15 dígitos")
       .matches(/^\+?[0-9]*$/)
       .withMessage("Campo númerico"),
   ],
@@ -208,7 +208,7 @@ const validations = {
       .matches(/^[^\d]*$/)
       .withMessage("El campo no admite números"),
 
-    body("correo")
+      body("correo")
       .notEmpty()
       .withMessage("El campo es requerido")
       .bail()
@@ -216,19 +216,31 @@ const validations = {
       .withMessage("El correo electrónico no es válido")
       .normalizeEmail()
       .withMessage("El correo electrónico no es válido"),
+    body("mailConfirm").custom((value, { req }) => {
+      if (value !== req.body.correo) {
+        throw new Error("Los correos deben coincidir");
+      }
+      return true;
+    }),
 
     body("password")
       .notEmpty()
       .withMessage("El campo es requerido")
       .isLength({ min: 8 })
       .withMessage("Mínimo 8 caracteres"),
+    body("passConfirm").custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error("Las contraseñas no coinciden");
+      }
+      return true;
+    }),
 
     body("contacto")
       .notEmpty()
       .withMessage("El campo es requerido")
       .bail()
-      .isLength({ min: 7, max: 12 })
-      .withMessage("Entre 7 y 12 dígitos")
+      .isLength({ min: 7, max: 15 })
+      .withMessage("Entre 7 y 15 dígitos")
       .matches(/^\+?[0-9]*$/)
       .withMessage("Campo númerico"),
   ],
