@@ -38,7 +38,7 @@
                                     <label for="name" title>Nombre de la Empresa</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box-edit <%= locals.errors && errors.empresa ? 'is-invalid' : '' %>" type="text" maxlength="25" id="name" name="empresa" value="<%= admin.enterprise %>">
+                                    <input class="input-box <%= locals.errors && errors.empresa ? 'is-invalid' : '' %>" type="text" maxlength="25" id="name" name="empresa" value="<%= admin.enterprise %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.empresa) { %>
@@ -75,7 +75,7 @@
                                     <label for="mail" title>Correo Empresarial</label>
                                 </div>
                                 <div class="ant-input">
-                                    <input class="input-box-edit nameCompany <%= locals.errors && errors.correoEmpresarial ? 'is-invalid' : '' %>" type="email" maxlength="40" id="mail" name="correoEmpresarial"  value="<%= admin.email_enterprise %>">
+                                    <input class="input-box <%= locals.errors && errors.correoEmpresarial ? 'is-invalid' : '' %>" type="email" maxlength="40" id="mail" name="correoEmpresarial"  value="<%= admin.email_enterprise %>">
                                     <p class="text-danger-front"></p>
                                 </div>
                                 <% if (locals.errors && errors.correoEmpresarial) { %>
@@ -134,7 +134,7 @@
                                 <label for="number" title>Número de contacto (+)</label>
                             </div>
                             <div class="ant-input">
-                                <input name="contacto" class="input-box-edit cell-id <%= locals.errors && errors.contacto ? 'is-invalid' : '' %>" type="text" maxlength="25" id="number"  value="<%= admin.contact %>">
+                                <input name="contacto" class="input-box <%= locals.errors && errors.contacto ? 'is-invalid' : '' %>" type="text" maxlength="25" id="number"  value="<%= admin.contact %>">
                                 <p class="text-danger-front"></p>
                             </div>
                             <% if (locals.errors && errors.contacto) { %>

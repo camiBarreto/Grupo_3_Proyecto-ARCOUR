@@ -273,34 +273,35 @@ if (formAdmin) {
 const formEditAdmin = document.getElementById("edit-form"); //Importamos el formulario.
 
 if (formEditAdmin) {
-  const editAdminInputs = document.getElementsByClassName("input-box-edit"); //Importamos todos los inputs del formulario y convertimos en Array para poder usar el forEach.
+  const editAdminInputs = Array.from(document.getElementsByClassName("input-box")); //Importamos todos los inputs del formulario y convertimos en Array para poder usar el forEach.
   const editAdminButton = document.getElementById("boton-edit") //Importamos el botón de enviar el formulario para deshabilitarlo cuando se envié la info.
 
   window.addEventListener("load", () => {
     let emptyErrors = [];
     let lengthErrors = [];
-      editAdminInputs.addEventListener("input", e => {
+    editAdminInputs.forEach(inputAdmin => {
+      inputAdmin.addEventListener("input", e => {
         if (e.target.value.length < 1) {
-          editAdminInputs.classList.add("is-invalid");
-          editAdminInputs.nextElementSibling.innerText = "El campo es obligatorio";
-          if (!emptyErrors.includes(editAdminInputs)) {
-            emptyErrors.push(editAdminInputs);
+          inputAdmin.classList.add("is-invalid");
+          inputAdmin.nextElementSibling.innerText = "El campo es obligatorio";
+          if (!emptyErrors.includes(inputAdmin)) {
+            emptyErrors.push(inputAdmin);
           }
         } else {
-          editAdminInputs.classList.remove("is-invalid");
-          editAdminInputs.nextElementSibling.innerText = "";
-          const index = emptyErrors.indexOf(editAdminInputs);
+          inputAdmin.classList.remove("is-invalid");
+          inputAdmin.nextElementSibling.innerText = "";
+          const index = emptyErrors.indexOf(inputAdmin);
           if (index !== -1) {
             emptyErrors.splice(index, 1);
           }
         }
       });
+    });
     
 
     //Validación de longitudes específicas
-    const companyNameInput = document.getElementsByClassName("nameCompany");
-    console.log(companyNameInput)
-    const phoneIdInputs = document.getElementsByClassName("cell-id");
+    const companyNameInput = document.getElementById("name");
+    const phoneIdInputs = document.getElementById("number");
     const mailInput = document.getElementById("mail");
 
     
@@ -358,21 +359,26 @@ if (formEditAdmin) {
 
 
     formEditAdmin.addEventListener("submit", async (e) => {
-        if(editAdminInputs.value.length < 1) {
+      editAdminInputs.forEach( inputAdmin => {
+        //Y aquí mas que todo resolvemos un problema, ya que apenes cargue la vista si mandamos el formulario tal cual, no habría ningún error, entonces lo que hacemos es validar
+        //al momento de enviar. El resto es igual que arriba, exceptuando el e.target, ya que no estamos usando el evento de "input".
+        if(inputAdmin.value.length < 1) {
           e.preventDefault();
-          editAdminInputs.classList.add("is-invalid");
-          editAdminInputs.nextElementSibling.innerText = "El campo es obligatorio";
-          if (!emptyErrors.includes(editAdminInputs)) {
-            emptyErrors.push(editAdminInputs);
+          inputAdmin.classList.add("is-invalid");
+          inputAdmin.nextElementSibling.innerText = "El campo es obligatorio";
+          if (!emptyErrors.includes(inputAdmin)) {
+            emptyErrors.push(inputAdmin);
           }
         } else {
-          editAdminInputs.classList.remove("is-invalid");
-          editAdminInputs.nextElementSibling.innerText = "";
-          const index = emptyErrors.indexOf(editAdminInputs);
+          inputAdmin.classList.remove("is-invalid");
+          inputAdmin.nextElementSibling.innerText = "";
+          const index = emptyErrors.indexOf(inputAdmin);
           if (index !== -1) {
             emptyErrors.splice(index, 1);
           }
         }
+        
+      });
         
       if (emptyErrors.length !== 0 || lengthErrors.length !== 0) {
         e.preventDefault();

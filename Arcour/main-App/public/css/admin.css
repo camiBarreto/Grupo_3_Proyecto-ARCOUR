@@ -279,25 +279,6 @@ select {
   background-color: #fff;
   background-image: none;
 }
-.input-box-edit {
-  height: 2.5em;
-  border: 1px solid #797979;
-  border-radius: 5px;
-  max-height: 2.62em;
-  margin: 0;
-  font-variant: tabular-nums;
-  list-style: none;
-  font-feature-settings: "tnum", "tnum";
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  padding: 4px 11px;
-  color: rgba(0, 0, 0, 0.65);
-  font-size: 14px;
-  line-height: 1.5;
-  background-color: #fff;
-  background-image: none;
-}
 
 .ant-checkbox {
   position: relative;
